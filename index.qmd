@@ -183,7 +183,7 @@ Quality gates such as tests, security, deployment, and maintenance are part of t
 ![](media/measure-whole-job.webp){.illustration width="880" height="495" fig-alt="Two-panel illustration: choose among a direct human edit, a script or existing tool, and an agent, starting with a real pain point. Preparation, generation, verification, and review all contribute to time to an accepted result. Also track review effort, defects, and maintenance burden, and keep the approach that improves the whole job."}
 
 ::: {.source}
-Simplest-solution principle: [Building effective agents](https://www.anthropic.com/engineering/building-effective-agents) (Anthropic). Why measure: in [METR's early-2025 study](https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/), developers felt 20% faster with AI but took 19% longer.
+Simplest-solution principle: [Building effective agents](https://www.anthropic.com/engineering/building-effective-agents) (Anthropic). The whole-job measures are practical recommendations for coding work.
 :::
 
 ::: {.notes}
@@ -192,8 +192,6 @@ Decide whether an agent is useful before deciding how to orchestrate one. A dire
 Anthropic recommends starting with the simplest solution and adding complexity when it demonstrably improves outcomes. This is an application of that principle to day-to-day coding work, not evidence that agents always help or always hurt.
 
 Judge the whole job: time from preparing the task to an accepted result, human review and rework effort, defects discovered after acceptance, and maintenance burden. Generation speed and code volume omit much of this work. Include abandoned attempts and track human review time separately so faster generation does not hide extra work for colleagues.
-
-Perception is not measurement. In METR's randomised study of 16 experienced open-source developers working on 246 real issues, developers expected AI to speed them up by 24% and afterwards believed it had sped them up by 20%, yet tasks with AI allowed took 19% longer. METR describes this as a snapshot of early-2025 tools in one setting, and its February 2026 update reports that measuring later tools reliably is harder still. The lesson is not that agents slow everyone down; it is that felt speed is an unreliable guide.
 
 Compare similar tasks and agreed acceptance criteria. Record enough context to interpret the result: task difficulty, the approach used, and relevant conditions. A one-off anecdote cannot establish a universal productivity gain.
 
