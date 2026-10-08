@@ -216,59 +216,22 @@ DevEx equals AgentEx: the same things that make a codebase easy for humans also 
 If developers need to hunt through unclear documentation, inconsistent commands, or hidden conventions, agents will struggle too. They burn tokens, make assumptions, or ask for more context.
 :::
 
-## DevEx = AgentEx: in practice {.smaller}
+## DevEx = AgentEx: in practice {.rule-slide}
 
-:::: {.columns}
+[One setup command. The same starting point for humans and agents.]{.lede}
 
-::: {.column width="44%"}
-
-::: {.card .card-stone}
-[Invest in]{.eyebrow}
-
-- A README that explains how to set up, run, and test
-- A short `AGENTS.md`: gotchas, what to read first, and which checks to run
-- **One obvious command** per task: `make setup`, `make qa`, `make hooks`
-- Small modules with clear boundaries
-- Stable scripts instead of tribal knowledge
-:::
-
-:::
-
-::: {.column width="56%"}
-
-```{.makefile filename="Makefile"}
-# One entry point for humans and agents
-setup:
-	uv sync --frozen
-format:
-	uv run ruff format .
-lint:
-	uv run ruff check --fix .
-type-check:
-	uv run ty check
-test:
-	uv run coverage run -m pytest
-	uv run coverage report
-type-coverage:
-	uv run pyrefly coverage check --fail-under 100
-audit:
-	uv run deptry .
-security-scan:
-	uvx checkov --config-file .checkov.yaml
-secret-scan:
-	gitleaks git --redact .
-hooks:
-	prek run --all-files
-qa: format lint type-check test type-coverage \
-    audit security-scan secret-scan
-```
-
-:::
-
-::::
+![](media/one-command-setup.webp){.illustration width="880" height="495" fig-alt="Two-panel illustration: on the left, a detailed ten-step project setup checklist leaves both a human developer and a coding agent confused. On the right, AGENTS.md contains a single instruction, run make setup, and the same human and agent are happy. The command encapsulates the setup procedure behind one shared entry point."}
 
 ::: {.source}
 See the [AGENTS.md](https://agents.md/) convention.
+:::
+
+::: {.notes}
+A long setup checklist asks every developer and agent to reconstruct the procedure: install the runtime, create an environment, install dependencies, configure variables, install hooks, start services, apply migrations, load fixtures, and verify the result.
+
+Capture that procedure in a maintained setup command. Then AGENTS.md can point to one starting instruction: run `make setup`. Humans use the same command.
+
+The work still happens; the command owns the sequence, checks prerequisites, and reports useful errors. Keep the implementation reproducible and the instruction current so neither humans nor agents have to guess the next step.
 :::
 
 # [Rule 02]{.section-eyebrow} Guardrails
