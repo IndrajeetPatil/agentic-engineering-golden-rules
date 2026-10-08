@@ -322,29 +322,27 @@ Signs of a haunted session include reviving a rejected approach, confusing earli
 Reset with a compact handoff: the goal in one sentence, constraints on what must not change, relevant files to start with, and acceptance checks that show when the work is done.
 :::
 
-## [06]{.rule-tag} Know thy tools {.smaller}
+## [06]{.rule-tag} Know thy tools {.rule-slide}
 
 [Sometimes the unlock is a hidden tool affordance.]{.lede}
 
-::: {.table-card}
-
-| Coding agent | Affordances users often miss |
-|--------------|------------------------------|
-| **Claude Code** | `ultrathink` keyword · worktree lifecycle management · plan mode · hooks · skills · subagents |
-| **GitHub Copilot CLI** | `/chronicle` · rubber-duck review · voice mode · custom agents · cloud agent delegation |
-| **Any agent** | Permission allowlists · custom instructions · MCP servers · session resume and compaction |
-
-:::
-
-::: {.card .card-ink .card-wide}
-Read the changelog: a release note can remove a bottleneck you have been working around for months.
-:::
+![](media/know-thy-tools.webp){.illustration width="880" height="495" fig-alt="Example affordances that users miss: Claude Code voice dictation turns a spoken prompt into terminal input with /voice; Codex generates and edits visual assets; GitHub Copilot CLI computer use operates GUI-only desktop apps with /computer on. An ellipsis indicates more examples, and the footer encourages reading the changelog to discover what the tools can do."}
 
 ::: {.source}
-See [Claude Code best practices](https://code.claude.com/docs/en/best-practices) and [Using GitHub Copilot CLI](https://docs.github.com/en/copilot/how-tos/use-copilot-agents/use-copilot-cli).
+Official docs: [Claude Code voice](https://code.claude.com/docs/en/voice-dictation) · [Codex images](https://learn.chatgpt.com/docs/image-generation) · [Copilot CLI computer use](https://docs.github.com/en/copilot/how-tos/copilot-cli/use-copilot-cli/computer-use).
 :::
 
 ::: {.notes}
+These are example affordances that users miss, not an exhaustive feature list or a claim that each capability is exclusive to one product. Official documentation and release notes were checked on 8 October 2026.
+
+Claude Code voice mode is prompt dictation: `/voice` enables speech-to-text input. It requires a Claude.ai sign-in and a local microphone; it is not available with direct API-key or third-party-provider authentication, or in cloud or SSH sessions.
+
+Codex supports built-in image generation for creating and editing visual assets alongside code, including in the CLI. Describe the desired asset and supply a reference image for an edit; `$imagegen` invokes the skill explicitly. The illustration uses the general product name because this affordance is not limited to the desktop app.
+
+GitHub Copilot CLI computer use entered public preview on 1 October 2026. `/computer on` enables it in local sessions on macOS and Windows, subject to permissions and organisation policy. It can read, click, type, and navigate desktop interfaces. Use a direct API, CLI, MCP, or dedicated browser tool when one fits the task; computer use is useful for GUI-only workflows.
+
+Read the changelog: a release note can remove a bottleneck you have been working around for months. Availability and commands can change, so revisit the linked official docs when updating this slide.
+
 When results are poor, ask whether the agent had the right context, the right tools, and the right feedback.
 
 Sometimes the limiting factor is not the model; it is the tool interface available to the model.
@@ -507,6 +505,8 @@ Reinforce the theme: use coding agents to move faster, but make the system aroun
 - Anthropic. [Claude Code best practices](https://code.claude.com/docs/en/best-practices).
 
 - Böckeler, B. [Harness engineering for coding agent users](https://martinfowler.com/articles/harness-engineering.html). martinfowler.com.
+
+- Lopopolo, R. [Harness engineering: leveraging Codex in an agent-first world](https://openai.com/index/harness-engineering/). OpenAI.
 
 - Beck, K. [Augmented coding: beyond the vibes](https://tidyfirst.substack.com/p/augmented-coding-beyond-the-vibes).
 

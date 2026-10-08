@@ -3,7 +3,8 @@
 The seven rule illustrations were restyled with built-in image generation.
 The guardrails workflow was generated from its original decision path, and
 the setup contrast illustrates a shared one-command entry point. The automation
-examples draw on chatbot-template prompts and its PR screenshot skill. Final
+examples draw on chatbot-template prompts and its PR screenshot skill. The
+tool-affordance examples were checked against current official docs. Final
 assets are WebP; the social card is the deck's typography and palette reference.
 The social card already matched the theme and was retained.
 
@@ -187,9 +188,88 @@ Small caption exactly "Steps, decisions, and evidence"
 Along the bottom, one slim full-width footer with a restrained human-review line icon and the exact text "Humans review evidence and decide what ships". Keep the footer separate from the flowchart. No additional headings, slogans, invented numbers, CVE IDs, or text.
 ```
 
+## know-thy-tools.webp
+
+Created with built-in image generation. The Session hygiene illustration
+and social card were supplied as style references, not edit targets.
+Official docs and release notes were checked on 8 October 2026:
+[Claude Code voice dictation](https://code.claude.com/docs/en/voice-dictation),
+[Codex image generation](https://learn.chatgpt.com/docs/image-generation), and
+[Copilot CLI computer use](https://docs.github.com/en/copilot/how-tos/copilot-cli/use-copilot-cli/computer-use).
+The [1 October release note](https://github.blog/changelog/2026-10-01-github-copilot-can-now-interact-with-desktop-apps/)
+confirms Copilot computer use is in public preview. These are illustrative
+examples, not an exhaustive or exclusive feature comparison.
+
+```text
+Use case: productivity-visual.
+Asset type: landscape 16:9 illustration for the "Know thy tools" slide in an engineering presentation.
+Input images: image 1 is a style and character reference ONLY (Session hygiene); image 2 is a typography and palette reference ONLY (social card). Create NEW content, do not reproduce their wording or subjects.
+Primary request: an elegant, memorable illustration of three example tool affordances users miss: Claude Code voice dictation, Codex built-in image generation, and GitHub Copilot CLI computer use. Exactly one capability per product, plus an ellipsis suggesting more to discover. Illustrate meaningful actions, not a feature table.
+
+Style: refined pen-and-ink editorial illustration. Flat ivory #fdfaf3 canvas, warm stone #e9e5db square panels, near-black #141414 text and linework. Restrained gold #dac284 for thin borders and dividers only, dark brown #7d6020 for readable occasional emphasis text. Bodoni/Didot high-contrast serif headings and Montserrat-like sans-serif body. Spacious layout with square corners. Friendly small robot consistent with image 1. No official product logos, bright colours, gradients, glossy 3D, tiny paragraphs, or watermarks.
+
+Layout: one prominent restrained top heading exactly "Example affordances that users miss". Beneath it, three equal square-corner panels side by side with ample white space. Product names at top, feature headline below, generous expressive illustration, then a short caption and command/example.
+
+LEFT:
+Product name exactly "Claude Code".
+Feature headline exactly "Voice dictation".
+Show a human speaking into a microphone with a simple waveform flowing into a laptop terminal prompt while a friendly robot listens. Convey speech-to-text prompt input, NOT an audio conversation with a talking assistant.
+Caption exactly "Speak your prompt".
+Large, clear terminal command exactly "/voice".
+Small legible scope note exactly "Claude.ai sign-in + local microphone".
+
+CENTRE:
+Product name exactly "Codex".
+Small scope label exactly "Desktop app".
+Feature headline exactly "Built-in image generation".
+Show a robot and human reviewing two editorial illustration thumbnails in an app window, with a sketched revision arrow and one thumbnail transformed. The thumbnails should be abstract image assets, not extra products or additional feature examples.
+Caption exactly "Generate and edit visual assets".
+Readable brief prompt inside a small text strip exactly "Create a matching illustration".
+No invented slash command or API key requirement.
+
+RIGHT:
+Product name exactly "GitHub Copilot CLI" (may wrap neatly).
+Feature headline exactly "Computer use".
+Show a robot controlling a desktop application window from a terminal, using a cursor arrow to click a visible control. An abstract slide/page with editable text can appear in the app, with no readable fake UI words.
+Caption exactly "Work in GUI-only desktop apps".
+Large, clear terminal command exactly "/computer on".
+Small legible scope note exactly "Public preview · macOS / Windows".
+
+BOTTOM:
+A generous clearly visible ellipsis "…" on the right outside the panels, expressing that these three examples are not exhaustive.
+A thin full-width footer line with a small release-note document icon and exact text "Read the changelog. Discover what your tools can do."
+No "Know thy tools" repeated inside the illustration, no slide number, no dates, no claims that these features are exclusive to these tools, no extra capabilities or marketing slogans. All text exact, legible, and well spaced for projection.
+```
+
 ## Final text corrections
 
 Apply these edits to the first generated output for each named asset.
+
+### know-thy-tools
+
+Final built-in image edit: remove temporary availability notes and the
+desktop-only label. This supersedes those labels in the original prompt.
+
+```text
+Use case: precise-object-edit.
+Edit this presentation illustration with exactly three changes:
+1. Remove the small line "Claude.ai sign-in + local microphone" beneath /voice in the left panel; leave clean matching ivory space.
+2. Remove the small line "Public preview · macOS / Windows" beneath /computer on in the right panel; leave clean matching ivory space.
+3. Remove the small "Desktop app" label and its vertical separator to the right of "Codex" in the centre panel. Centre the word "Codex" above "Built-in image generation".
+Keep every other element unchanged: the title "Example affordances that users miss", the three product names and capabilities, all illustration scenes, captions, /voice, /computer on, centre example prompt, ellipsis, footer, panel geometry, canvas dimensions, ivory/stone palette, fine gold borders, typography, and friendly line art. Do not replace the removed labels with new text or caveats.
+```
+
+### know-thy-tools alignment
+
+Apply this built-in edit after the caveat-removal edit above.
+
+```text
+Use case: precise-object-edit.
+Edit this existing presentation illustration only for alignment and column heading sizes.
+For EACH of the three bordered columns, align all contents to that column's horizontal centre: product name, feature subtitle, illustration scene as a whole, caption, and command/example box. In the centre column, centre "Create a matching illustration" within its box; remove the small decorative sparkle in that box if it interferes with centred text.
+Reduce all three product-name titles and all three feature subtitles to about 85 percent of their present font sizes. Use one consistent product-name size across all columns, and one consistent feature-subtitle size across all columns. Keep their elegant serif styles and upright versus italic distinction. Put all product names on the same baseline and all feature subtitles on the same baseline; "GitHub Copilot CLI" and "Built-in image generation" should fit comfortably on one line at the smaller size. Maintain generous side margins and consistent spacing. Align the three captions to one baseline and the three command/example boxes to one baseline.
+Keep the top main title exactly "Example affordances that users miss" at its current size and position. Preserve all wording verbatim: "Claude Code", "Voice dictation", "Speak your prompt", "/voice"; "Codex", "Built-in image generation", "Generate and edit visual assets", "Create a matching illustration"; "GitHub Copilot CLI", "Computer use", "Work in GUI-only desktop apps", "/computer on". Preserve the three illustration narratives, friendly robots and humans, ellipsis outside the panels, footer wording, canvas dimensions, ivory/stone palette, and fine gold borders. Do not add availability caveats, a Desktop app label, logos, dates, or new text. Change only horizontal alignment, consistent vertical alignment, and the requested column heading sizes.
+```
 
 ### curious-humble
 
