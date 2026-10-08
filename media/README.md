@@ -31,8 +31,34 @@ Two panels: left title "Without guardrails", a confused line-drawn robot amidst 
 
 ## bitter-lesson.webp
 
+The current revision uses only the previous `bitter-lesson.webp` as its edit
+target and style reference, with the following complete prompt.
+
 ```text
-Two panels: left title "Brittle recipes", a line-drawn robot tangled in fine black strings attached to papers labelled "Exact plans", "Tool-call recipes", "Global rules", "Fallbacks", "Rigid instructions". Right title "Clear intent, strong tools", the same calm robot working at a clean terminal, a goal card labelled "Goal", toolkit with exact labels "Formatter", "Linter", "Tests", "Type checker", "Debugger", "Search", "Docs", "CI". Show a simple genuine feedback loop labelled "Explore → Check → Adapt", leading to "Reliable code". Preserve distinction between brittle orchestration and clear goals with tool-supported iteration.
+Use case: infographic-diagram. Edit image 1, the existing "Intent over ceremony" presentation illustration. Keep its refined editorial visual identity: landscape 16:9, flat ivory #fdfaf3 background, warm stone #e9e5db square panels, near-black #141414 text and pen-and-ink robot drawings, restrained gold #dac284 hairlines and borders, dark brown #7d6020 for occasional text emphasis, elegant Bodoni/Didot serif headings, highly readable Montserrat-like sans-serif labels. Redesign the content and layout to incorporate two concrete prompting examples, strong tools, and explicit agent self-verification. Keep the figures expressive but professional; generous space, crisp projected-slide legibility. No overall slide title, watermark, glossy 3D, bright colours, gradients, tiny simulated code, or decorative clutter.
+
+Two side-by-side panels, left roughly 40% of width, right roughly 60%.
+LEFT heading exactly "Ceremony". Under it one large instruction sheet with five short lines, each clearly legible:
+"Open utils.py at line 40."
+"Add a try block."
+"Add exactly three tests."
+"Use single quotes."
+"Do not deviate."
+Below the sheet, a confused robot tangled in a few fine strings attached to the instruction sheet. Bottom caption exactly "Prescribed route".
+
+RIGHT heading exactly "Intent". At top one spacious brief, with this exact text on separate lines:
+"Fix the failing date-parsing test."
+"Preserve the public API."
+"Keep the diff small."
+"Explain any trade-off."
+Below the brief, show one compact tool tray headed "Strong tools" with readable labels "Search", "Docs", "Debugger", "Formatter", "Linter", "Type checker", "Tests", "CI". Use small restrained line icons if helpful; do not turn this into the largest element.
+Below, a calm, engaged robot actively inspecting check results at a laptop. A clearly visible results sheet next to the robot shows three short checked items: "Tests", "Types", "Build". Above or next to this scene, a prominent readable label exactly "Agent verifies its own work". Make the checking activity as important as the tool tray.
+
+At bottom of RIGHT panel only, ONE feedback loop drawn using three connected nodes in a horizontal row, arrow from first to second to third, and a clear return arrow from third back to first. Each node has its label ONCE, with a short supporting line:
+"Explore" / "Inspect and try"
+"Check" / "Run checks; inspect results"
+"Adapt" / "Fix failures; re-check"
+Do NOT add a second "Explore → Check → Adapt" heading anywhere. The words Explore, Check, and Adapt must each occur exactly once as node labels. Avoid a medal or a claim that checks guarantee reliable code. The central message is: give the model a clear outcome and constraints, strong tools, and responsibility to verify and iterate on its own work, rather than prescribing every implementation step. Text accuracy and legibility are essential.
 ```
 
 ## small-scope.webp

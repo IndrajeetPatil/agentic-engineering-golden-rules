@@ -296,50 +296,24 @@ Strong models need intent, not ceremony.
 
 ## [03]{.rule-tag} Intent over ceremony {.rule-slide}
 
-[Say **what** you want. Do not script **how** to achieve it.]{.lede}
+[Do not get in the model's way.]{.lede}
 
-![](media/bitter-lesson.webp){.illustration width="880" height="495" fig-alt="Two-panel illustration: a robot tangled in brittle recipes, exact plans, tool-call recipes, global rules, fallbacks, and rigid instructions contrasts with a calm robot given a clear goal and strong tools: formatter, linter, tests, type checker, debugger, search, docs, and CI. An Explore, Check, Adapt feedback loop leads to reliable code."}
+![](media/bitter-lesson.webp){.illustration width="880" height="495" fig-alt="Ceremony versus intent. A confused robot follows a prescribed route: open utils.py at line 40, add a try block, add exactly three tests, use single quotes, and do not deviate. An engaged robot receives an outcome and constraints: fix the failing date-parsing test, preserve the public API, keep the diff small, and explain any trade-off. Strong tools include search, docs, debugger, formatter, linter, type checker, tests, and CI. The agent verifies its own work by inspecting test, type, and build results. A single feedback loop shows Explore: inspect and try; Check: run checks and inspect results; Adapt: fix failures and re-check."}
 
 ::: {.source}
 Inspired by Rich Sutton's essay [The Bitter Lesson](http://www.incompleteideas.net/IncIdeas/BitterLesson.html) (2019).
 :::
 
 ::: {.notes}
-The bitter lesson here is that stronger models usually need clearer intent, not more ceremony.
-:::
+The bitter lesson here is that stronger models usually need clearer intent, not more ceremony. Do not get in the model's way by prescribing every implementation step.
 
-## Intent over ceremony: in practice {.smaller}
+Ceremony: "Open utils.py. Find the function on line 40. Add a try block. Then open the test file and add three tests. Use single quotes. Do not deviate from these steps." This over-specifies the route and leaves no room for the model to reason about a better one.
 
-:::: {.columns}
+Intent: "Fix the failing date-parsing test without changing the public API. Keep the diff small, and explain any trade-off." This states the outcome, constraints, acceptance criteria, and what must not change.
 
-::: {.column width="50%"}
+Strong tools matter, and agents must use them to verify their own work: run the relevant checks, inspect the results, fix failures, and re-check before reporting completion. The Explore, Check, Adapt loop shows this responsibility explicitly.
 
-::: {.card .card-outline .card-tall}
-[Ceremony]{.eyebrow}
-
-*"Open `utils.py`. Find the function on line 40. Add a `try` block. Then open the test file and add three tests. Use single quotes. Do not deviate from these steps."*
-
-Over-specifies the route and leaves no room for the model to reason about a better one.
-:::
-
-:::
-
-::: {.column width="50%"}
-
-::: {.card .card-ink .card-tall}
-[Intent]{.eyebrow}
-
-*"Fix the failing date-parsing test without changing the public API. Keep the diff small, and explain any trade-off."*
-
-States the **outcome**, the **constraints**, the **acceptance criteria**, and what must **not** change.
-:::
-
-:::
-
-::::
-
-::: {.card .card-stone .card-wide}
-Specify implementation steps only when they genuinely matter. Otherwise, give the agent a target and strong tools.
+Specify implementation steps only when they genuinely matter. Otherwise, give the agent a target, constraints, strong tools, and responsibility for verification. Passing checks still leaves humans responsible for review and what ships.
 :::
 
 # [Rule 04]{.section-eyebrow} Scope Control
