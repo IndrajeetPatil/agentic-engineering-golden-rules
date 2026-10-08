@@ -9,7 +9,7 @@ coding agents to boost productivity without compromising quality.
 2. Guardrails: fast feedback beats orchestration
 3. Specify intent: state outcomes and constraints, not ceremony
 4. Scope control: small, reversible changes
-5. Session hygiene: fresh context beats haunted context
+5. Session hygiene: coherent context beats haunted context
 6. Know thy tools
 7. Meta-automation: automate repeated agent choreography
 8. Be curious. Be humble. Be kind.

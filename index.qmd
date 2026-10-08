@@ -316,7 +316,7 @@ Agents are good at making many changes quickly, but reviewers need changes that 
 
 ## [05]{.rule-tag} Session hygiene {.rule-slide}
 
-[Fresh context beats haunted context.]{.lede}
+[Coherent context beats haunted context.]{.lede}
 
 ![](media/session-hygiene.webp){.illustration width="880" height="495" fig-alt="Three-panel illustration: one task per session gives a robot fresh context and clear focus; parallel tasks A and B run in separate Git worktrees from the same repository; durable conventions, decisions, and lessons move from chat history into AGENTS.md, which a new session consults. A compact handoff contains the goal, constraints, relevant files, and acceptance checks."}
 
@@ -325,15 +325,17 @@ See [Effective context engineering for AI agents](https://www.anthropic.com/engi
 :::
 
 ::: {.notes}
-Keep sessions focused, parallel tasks isolated, and durable knowledge in the repository.
+Keep sessions coherent, parallel tasks isolated, and durable knowledge in the repository.
 
 Every correction, abandoned approach, and reversed decision stays in the context window. After enough of them, the agent is reasoning over contradictions.
 
-Run one task per session, and use one Git worktree per parallel task so each task has its own working directory. Keep durable conventions, decisions, and lessons in the repository, for example in `AGENTS.md`, so future sessions can find them without relying on old chat history.
+One task per session is a useful default, not an absolute. A closely related follow-up can benefit from the reasoning and discoveries already in context, and restarting has a cost: a handoff can lose an important constraint or a failed hypothesis. Restart when the context stops being coherent, not merely because it is no longer fresh.
+
+Use one Git worktree per parallel task so each task has its own working directory. Keep durable conventions, decisions, and lessons in the repository, for example in `AGENTS.md`, so future sessions can find them without relying on old chat history.
 
 Signs of a haunted session include reviving a rejected approach, confusing earlier and current requirements, repeating the same correction, or continuing after the conversation has outgrown its original task.
 
-Reset with a compact handoff: the goal in one sentence, constraints on what must not change, relevant files to start with, and acceptance checks that show when the work is done.
+Reset with a compact handoff: the goal in one sentence, constraints on what must not change, relevant files to start with, approaches already ruled out, and acceptance checks that show when the work is done.
 :::
 
 ## [06]{.rule-tag} Know thy tools {.rule-slide}
