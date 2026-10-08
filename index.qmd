@@ -424,30 +424,26 @@ Automate repeated agent choreography.
 Once a useful agent workflow repeats, automate the choreography around it.
 :::
 
-## Meta-automation: in practice {.smaller}
+## Meta-automation: in practice {.rule-slide}
 
-::: {.card .card-stone .card-wide}
-If you repeatedly ask an agent to *update dependencies → run `make qa` → fix what broke → open a PR*, that sequence belongs in a versioned prompt file, a skill, a slash command, or a workflow.
+[Prompts, skills, shortcuts, and workflows turn repeated work into reusable automation.]{.lede}
+
+![](media/meta-automation-examples.webp){.illustration width="880" height="495" fig-alt="Four concrete automation examples. Prompt: update-deps.md instructs an agent to refresh dependencies, fix compatibility breaks, run QA, and prepare a draft PR. Skill: frontend-pr-screenshot packages how to preview the app, capture a screenshot, and attach it to a PR. Slash command: an illustrative /address-review shortcut invokes a saved prompt to read review threads, make warranted fixes, and reply. Workflow: vulnerability management goes from scan to triage, then asks whether a finding is worth fixing. Yes leads to fix, verify, and draft PR; no leads to recording the reason. Humans review evidence and decide what ships."}
+
+::: {.source}
+Examples adapted from [chatbot-template prompts](https://github.com/IndrajeetPatil/chatbot-template/tree/main/.github/prompts) and its [PR screenshot skill](https://github.com/IndrajeetPatil/chatbot-template/blob/main/.agents/skills/frontend-pr-screenshot/SKILL.md).
 :::
-
-:::: {.card-grid .card-grid-2}
-
-::: {.card .card-ink}
-[Automate]{.eyebrow}
-
-The coordination: gathering context, running the same checks, formatting the same report, fanning out over many repositories.
-:::
-
-::: {.card .card-outline}
-[Keep human]{.eyebrow}
-
-The judgement: evaluating results, making trade-offs, and deciding what ships. Run unattended agents only in isolated sandboxes with scoped credentials.
-:::
-
-::::
 
 ::: {.notes}
-The goal is not to automate judgement away. The goal is to reduce repetitive coordination so humans spend more time evaluating results, making trade-offs, and deciding what should ship.
+These are examples of different ways to package automation, not four mutually exclusive systems. A slash command can invoke a prompt or a skill; a workflow can compose both.
+
+The dependency-update prompt in chatbot-template refreshes dependencies, fixes compatibility breaks, runs the project's quality gates, and prepares a draft PR. The screenshot skill packages the steps for previewing the app, capturing its appearance, and attaching evidence to a PR.
+
+The /address-review command is an illustrative shortcut to the repository's address-review.md prompt, not a claim that this checkout installs that slash command. Review comments need evaluation; make warranted fixes, verify them, and reply. Resolve only addressed comments or those confirmed to need no change.
+
+The vulnerability-management workflow is adapted from codex-security.md. Scan findings are claims to investigate. Triage checks reachability, existing mitigations, and regression risk before deciding whether a fix is warranted. Confirmed findings with a focused, safe fix proceed to remediation, verification, and a draft PR. Other findings get a recorded reason; no code changes means no PR. Verification includes checking that the vulnerability is resolved and running relevant regression checks. Failed verification returns to the fix step.
+
+Automate coordination: gathering context, running checks, formatting reports, and repeating the process across repositories. Humans evaluate evidence, make trade-offs, and decide what ships. Run unattended agents only in isolated sandboxes with scoped credentials.
 :::
 
 # [Rule 07]{.section-eyebrow} Know Thy Tools

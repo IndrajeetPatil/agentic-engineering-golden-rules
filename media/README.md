@@ -2,7 +2,8 @@
 
 The seven rule illustrations were restyled with built-in image generation.
 The guardrails workflow was generated from its original decision path, and
-the setup contrast illustrates a shared one-command entry point. Final
+the setup contrast illustrates a shared one-command entry point. The automation
+examples draw on chatbot-template prompts and its PR screenshot skill. Final
 assets are WebP; the social card is the deck's typography and palette reference.
 The social card already matched the theme and was retained.
 
@@ -102,6 +103,57 @@ Both supplied images are style references: `devex-agentex.webp` and
 Use case: productivity-visual. Asset type: two-panel presentation illustration for "DevEx = AgentEx: in practice". The supplied images are STYLE REFERENCES only: image 1 is another illustration in this deck; image 2 is the deck title card. Create a NEW landscape 16:9 illustration matching their elegant ivory, stone, near-black, and restrained gold editorial style, crisp pen-and-ink linework, Bodoni/Didot-like serif headings, readable Montserrat-like sans-serif body text, square panels with fine gold border rules, no bright colours, no glossy 3D, no gradients, no watermark.
 Primary message: a detailed manual project-setup procedure is confusing for both a human developer and a coding agent; encapsulating that procedure in make setup gives both the same simple, reliable entry point.
 Composition: two equal side-by-side panels. At LEFT, heading exactly "Manual setup". A large project instruction sheet labelled exactly "Project setup" shows this detailed numbered checklist in readable dark text: "1. Install the required runtime", "2. Create a virtual environment", "3. Install project dependencies", "4. Configure environment variables", "5. Install the Git hooks", "6. Start the local services", "7. Apply database migrations", "8. Load development fixtures", "9. Check tool versions", "10. Verify the setup". Below or beside the sheet, a human developer and a friendly small robot coding agent BOTH visibly look confused and overwhelmed: furrowed brows, puzzled expressions, a few subtle question marks. At RIGHT, heading exactly "One command". Show ONE clean document labelled exactly "AGENTS.md". That document has only ONE instruction, exactly "run `make setup`". Render make setup in very legible monospace, with the lowercase word run before it; the backticks may be literal Markdown characters because this is a Markdown instruction file. No other instructions, code, checklist, or labels inside the right document. Below or beside it, the SAME human developer and the SAME robot BOTH visibly happy, relaxed, and confident, smiling with a small celebratory thumbs-up gesture. Make the contrast between both pairs of expressions unmistakable, while retaining professional editorial restraint. Keep all four characters large enough to read from the back of a room. Warm stone panels on flat ivory #fdfaf3; near-black #141414 text; gold #dac284 for fine borders and separators and dark brown #7d6020 for occasional emphasis. Text must be accurate and clear. Do not add Makefile source code, terminal code blocks, additional commands, overall slide title, or a footer slogan.
+```
+
+## meta-automation-examples.webp
+
+Use `meta-automation.webp` only as a style reference. The dependency prompt,
+screenshot skill, and security triage are adapted from chatbot-template;
+`/address-review` is an illustrative shortcut to its saved review prompt.
+
+```text
+Use case: infographic-diagram.
+Asset type: landscape 16:9 presentation illustration, four concrete examples of meta-automation.
+Input image 1 is a STYLE REFERENCE ONLY: preserve its refined editorial visual language, not its content or layout. Create a new image. Ivory #fdfaf3 canvas, warm stone #e9e5db square panels, near-black #141414 text and thin line illustrations, restrained gold #dac284 hairlines, dark brown #7d6020 for text emphasis. Bodoni/Didot-style serif headings, legible Montserrat-like sans-serif labels, monospaced filenames and slash command. No bright colours (including green ticks), gradients, glossy 3D, rounded cards, watermark, or overall title.
+
+Composition: spacious 2-by-2 grid of four square-cornered panels with gold hairline dividers. Each panel has a large type heading, a medium example title, and an accurate, compact visual showing what that example does. Text must read clearly when the full image is displayed at 880 pixels wide on a slide. Prioritise the examples over decoration; no long code snippets or tiny body text.
+
+TOP LEFT:
+Heading exactly "Prompt"
+Example title exactly "Dependency update"
+Show a versioned instruction document labelled "update-deps.md", containing three readable lines exactly:
+"Refresh dependencies"
+"Fix compatibility breaks"
+"Run QA; prepare a draft PR"
+Small caption exactly "Reusable instructions"
+A small line-drawn document or engaged coding agent is optional.
+
+TOP RIGHT:
+Heading exactly "Skill"
+Example title exactly "PR screenshot"
+Show a simple browser window with an abstract chat interface (no small chat text) and a captured image being attached to a pull request sheet. A compact three-step sequence has labels exactly "Preview app", "Capture", "Attach to PR", connected left to right.
+Filename-like label exactly "frontend-pr-screenshot"
+Small caption exactly "Packaged know-how"
+
+BOTTOM LEFT:
+Heading exactly "Slash command"
+Example title exactly "Address review comments"
+A crisp terminal/chat input prominently shows "/address-review" in large readable monospace.
+Below, show three simple review comment bubbles becoming checked resolved comment bubbles, with a concise arrow sequence exactly "Read threads → Fix → Reply".
+Small caption exactly "One shortcut to a saved prompt"
+This is an illustrative shortcut, not a claim about an installed command.
+
+BOTTOM RIGHT:
+Heading exactly "Workflow"
+Example title exactly "Vulnerability management"
+Draw a clear compact branching flowchart:
+main first row "Scan" → "Triage" → decision diamond "Worth fixing?"
+The diamond's "yes" branch leads to "Fix" → "Verify" → "Draft PR".
+The diamond's "no" branch leads to "Record reason".
+Separate the two branches clearly; do not allow no to flow into Fix or Draft PR. Use neat ivory/stone nodes with black text and black arrows, no crossings. The decision label can wrap to two lines. Put Draft PR after Verify only. Avoid implying findings are trusted automatically or changes merge automatically.
+Small caption exactly "Steps, decisions, and evidence"
+
+Along the bottom, one slim full-width footer with a restrained human-review line icon and the exact text "Humans review evidence and decide what ships". Keep the footer separate from the flowchart. No additional headings, slogans, invented numbers, CVE IDs, or text.
 ```
 
 ## Final text corrections
