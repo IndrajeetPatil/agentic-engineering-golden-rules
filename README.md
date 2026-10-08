@@ -14,10 +14,12 @@ coding agents to boost productivity without compromising quality.
 7. Meta-automation: automate repeated agent choreography
 8. Be curious. Be humble. Be kind.
 
-The slides will be available here once published:<br>
+The slides can be seen here:<br>
 <https://www.indrapatil.com/agentic-engineering-golden-rules/>
 
+<a href="https://www.indrapatil.com/agentic-engineering-golden-rules/" target="_blank" rel="noopener noreferrer">
 <img src="media/social-media-card.webp" alt="Title slide reading Golden Rules for Agentic Engineering" width="600"/>
+</a>
 
 ## Design
 
@@ -83,10 +85,9 @@ not exercise every state. Normal builds omit the axe checker.
 
 ## Deployment
 
-Automatic builds and GitHub Pages deployments are paused while the deck is in
-progress: the workflow only runs when triggered manually from the Actions tab.
-Restore the `push` and `pull_request` triggers in
-`.github/workflows/build-presentation.yaml` to publish on every commit.
+Every push to `main` renders the deck and deploys it to GitHub Pages through
+the shared workflow in `.github/workflows/build-presentation.yaml`. Pull
+requests render the deck without deploying it.
 
 ## Feedback
 

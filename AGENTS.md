@@ -124,7 +124,7 @@ When modifying `index.qmd`:
 
 ## CI/CD
 
-- The GitHub Actions workflow in `.github/workflows/` renders the deck and deploys to GitHub Pages. Automatic runs are currently paused: the workflow only has a `workflow_dispatch` trigger until the deck is ready to publish. Do not restore the `push`/`pull_request` triggers unless asked. It calls a reusable workflow from `IndrajeetPatil/workflows` (Python and R decks use different workflow files). Do not inline the workflow.
+- The GitHub Actions workflow in `.github/workflows/` renders the deck and deploys to GitHub Pages on push to `main`; pull requests build without deploying. It calls a reusable workflow from `IndrajeetPatil/workflows` (Python and R decks use different workflow files). Do not inline the workflow.
 - **Reference the reusable workflow as `@main`, not a commit SHA.** These workflows are first-party, so tracking `main` is intentional: upstream fixes arrive immediately instead of waiting on a manual SHA bump. A previously pinned SHA went five months stale, leaving CI building with pre-release Quarto and installing a FontAwesome extension this deck does not use, long after upstream had fixed both. Dependabot cannot bump a branch ref, so there is nothing to keep in sync.
 - Install the latest a11y extension directly from upstream with
   `quarto add mcanouil/quarto-revealjs-a11y --no-prompt` in both `justfile` and CI.

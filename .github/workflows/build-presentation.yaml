@@ -1,15 +1,10 @@
 name: Build and Deploy Presentation
 
-# Automatic builds and GitHub Pages deployments are paused until the deck is
-# ready to publish. To re-enable them, restore the push and pull_request
-# triggers:
-#
-#   push:
-#     branches: [main, master]
-#   pull_request:
-#     branches: [main, master]
 on:
-  workflow_dispatch:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
 
 jobs:
   build-and-deploy:
