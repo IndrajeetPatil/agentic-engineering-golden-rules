@@ -10,10 +10,11 @@ The social card already matched the theme and was retained.
 
 ## Shared style prompt
 
-For each rule illustration, supply the previous version of the same image as
+For existing rule artwork being restyled, supply the previous version as
 image 1 (edit target) and `social-media-card.webp` as image 2 (style reference).
 Previous versions remain available through Git history. Apply this shared
-style prompt followed by the asset-specific instructions below.
+style prompt followed by the asset-specific instructions below. New artwork
+uses the references specified under Ten-rule expansion.
 
 ```text
 Restyle into a refined editorial infographic matching the supplied slide social-card style: flat ivory #fdfaf3 background, warm stone #e9e5db square panels, near-black #141414 text and fine line illustrations, restrained gold #dac284 hairlines and borders ONLY, dark brown #7d6020 where emphasis needs text. Elegant high-contrast Bodoni/Didot serif headings, legible Montserrat-like sans-serif labels. Spacious, disciplined layout, thin rules, square corners, confident professional composition. No blue, green, purple, red, bright colours, gradients, glossy 3D, rounded UI cards, heavy shadows, or excessive decoration. Keep text clear, large and sparse enough to read when projected. Keep the original conceptual message and visual metaphor; improve hierarchy and clarity. No slide number or redundant large slide title. Landscape 16:9 composition. No watermark.

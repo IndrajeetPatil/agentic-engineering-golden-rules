@@ -5,15 +5,15 @@
 This presentation distils ten golden rules for agentic engineering: using
 coding agents to boost productivity without compromising quality.
 
-1. DevEx = AgentEx
-2. Guardrails
+1. Measure the whole job
+2. DevEx = AgentEx
 3. Define done before delegating
-4. Bound the blast radius
-5. Scope control
-6. Session hygiene
-7. Know thy tools
-8. Meta-automation
-9. Measure the whole job
+4. Scope control
+5. Bound the blast radius
+6. Guardrails
+7. Session hygiene
+8. Know thy tools
+9. Meta-automation
 10. Be curious. Be humble. Be kind.
 
 The slides can be seen here:<br>
