@@ -70,8 +70,39 @@ Two panels: left title "One enormous prompt", stressed line-drawn robot with an 
 
 ## session-hygiene.webp
 
+Redesigned with built-in image generation to fold the practical advice into
+the rule illustration. Inputs: the previous image as the edit target and
+`social-media-card.webp` as the style reference. The final prompt below
+supersedes the original two-panel prompt and its reset-caption correction.
+
 ```text
-Two panels. Left "Haunted session": confused line-drawn robot at laptop beside a huge paper stack with a subtle outline ghost and labels "Stale assumptions", "Too much history", "Conflicting instructions", "Context drift". Centre reset arrow. Right "Fresh session": same calm robot working from one beautifully typeset compact handoff sheet labelled "Goal", "Constraints", "Relevant files", "Acceptance checks", with a clean terminal and "Clear next step". Footer "Fresh context beats haunted context". Preserve the reset/handoff meaning; omit simulated code and tiny chat paragraphs.
+Use case: productivity-visual.
+Asset type: landscape 16:9 editorial illustration for a Quarto slide.
+Input images: image 1 is the existing Session hygiene illustration to redesign; image 2 is the deck typography and palette reference.
+Primary request: redesign image 1 so three practical session-hygiene principles are conveyed visually, keeping the same friendly pen-and-ink robot character, refined ivory/stone palette, and professional editorial style. Make the main advice easy to read at presentation size.
+Style: flat ivory #fdfaf3 background, warm stone #e9e5db square panels, near-black #141414 text and fine line art, gold #dac284 for thin borders and hairline dividers only; dark brown #7d6020 for occasional text emphasis. Bodoni/Didot serif headings, Montserrat-like sans-serif labels. Spacious composition, square corners, no gradients, rounded cards, 3D, bright colours, watermarks, or tiny paragraphs.
+
+Composition: three equal vertical panels across the upper 75 percent, separated by thin gold rules. Each has a large two-line heading and a generous meaningful illustration, with sparse labels. A compact handoff strip spans the lower 20 percent.
+
+LEFT PANEL:
+Heading exactly "One task per session".
+Illustrate a focused happy robot at a laptop working with just one task sheet labelled "Task A", inside one clearly labelled frame "Session A". Beside it, a small fading vignette of an old tangled chat and ghost with a reset arrow pointing towards the clean session. The vignette must remain secondary and not overcrowd the main single-task scene. No extra labels in the vignette.
+Caption exactly "Fresh context. Clear focus."
+
+CENTRE PANEL:
+Heading exactly "One Git worktree per parallel task".
+Draw one repository at the top labelled "Repository", branching into two separate side-by-side workspaces with clear boundaries. Workspace A contains a small robot, a terminal, and task card labelled "Task A"; workspace B contains a second small robot, a terminal, and task card labelled "Task B". Under each workspace show "Worktree A" and "Worktree B" respectively. Make the isolation visually unmistakable, no overlapping files or arrows between worktrees.
+Caption exactly "Separate tasks. Separate working directories."
+
+RIGHT PANEL:
+Heading exactly "Durable knowledge lives in the repository".
+Draw a prominent repository folder labelled "Repository" holding a large legible document named exactly "AGENTS.md". The document has three readable short lines "Conventions", "Decisions", "Lessons". A small chat history scroll at the side sends a clear one-way arrow carrying a useful lesson into AGENTS.md; the scroll then fades away. Show a new happy robot session consulting the repository document, not the old chat history.
+Caption exactly "Keep knowledge beyond the chat."
+
+BOTTOM STRIP:
+Title exactly "Reset with a compact handoff".
+Four equal small labelled fields with simple appropriate line icons, exactly "Goal", "Constraints", "Relevant files", "Acceptance checks". Do not include specific implementation examples or invented code.
+No repeated large slide title or slide number. Render all exact text accurately, with generous spacing and readable sizes. Preserve conceptual continuity with the original haunted-to-fresh illustration while making the three practical principles the dominant content.
 ```
 
 ## meta-automation.webp

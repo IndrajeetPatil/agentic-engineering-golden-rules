@@ -362,52 +362,22 @@ Fresh context beats haunted context.
 
 ## [05]{.rule-tag} Session hygiene {.rule-slide}
 
-[Long sessions accumulate stale assumptions. Reset with a compact handoff.]{.lede}
+[Keep sessions focused, parallel tasks isolated, and durable knowledge in the repository.]{.lede}
 
-![](media/session-hygiene.webp){.illustration width="880" height="495" fig-alt="Two-panel illustration: a confused robot in a haunted session faces stale assumptions, too much history, conflicting instructions, and context drift. A reset leads to a fresh session with a compact handoff listing the goal, constraints, relevant files, and acceptance checks, giving a clear next step. Fresh context beats haunted context."}
-
-::: {.notes}
-Every correction, abandoned approach, and reversed decision stays in the context window. After enough of them, the agent is reasoning over contradictions.
-:::
-
-## Session hygiene: in practice {.smaller}
-
-:::: {.columns}
-
-::: {.column width="50%"}
-
-::: {.card .card-stone}
-[Signs of a haunted session]{.eyebrow}
-
-- The agent revives an approach you already rejected
-- It confuses earlier and current requirements
-- You keep repeating the same correction
-- The conversation outgrew the task it started with
-:::
-
-:::
-
-::: {.column width="50%"}
-
-::: {.card .card-ink}
-[A compact handoff]{.eyebrow}
-
-- **Goal**: the outcome, in one sentence
-- **Constraints**: what must not change
-- **Relevant files**: where to start looking
-- **Acceptance checks**: how you will know it is done
-:::
-
-:::
-
-::::
-
-::: {.card .card-outline .card-wide}
-One task per session, and one Git worktree per parallel task. Keep durable knowledge in the repository (for example, `AGENTS.md`) rather than in chat history.
-:::
+![](media/session-hygiene.webp){.illustration width="880" height="495" fig-alt="Three-panel illustration: one task per session gives a robot fresh context and clear focus; parallel tasks A and B run in separate Git worktrees from the same repository; durable conventions, decisions, and lessons move from chat history into AGENTS.md, which a new session consults. A compact handoff contains the goal, constraints, relevant files, and acceptance checks."}
 
 ::: {.source}
 See [Effective context engineering for AI agents](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents) (Anthropic).
+:::
+
+::: {.notes}
+Every correction, abandoned approach, and reversed decision stays in the context window. After enough of them, the agent is reasoning over contradictions.
+
+Run one task per session, and use one Git worktree per parallel task so each task has its own working directory. Keep durable conventions, decisions, and lessons in the repository, for example in `AGENTS.md`, so future sessions can find them without relying on old chat history.
+
+Signs of a haunted session include reviving a rejected approach, confusing earlier and current requirements, repeating the same correction, or continuing after the conversation has outgrown its original task.
+
+Reset with a compact handoff: the goal in one sentence, constraints on what must not change, relevant files to start with, and acceptance checks that show when the work is done.
 :::
 
 # [Rule 06]{.section-eyebrow} Meta-automation
