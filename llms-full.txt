@@ -25,10 +25,6 @@ The talk is aimed at software engineers who ship production software and have at
 7. Meta-automation. Automate repeated agent choreography with prompts, skills, slash commands, and workflows. Examples include a dependency-update prompt, a PR screenshot skill, an illustrative review-command shortcut, and a vulnerability-management workflow that triages findings, verifies warranted fixes, and records reasons for rejected findings. Automate coordination; keep judgement human, and run unattended agents only in isolated sandboxes with scoped credentials.
 8. Be curious. Be humble. Be kind. AI is not an excuse to become incompetent or disagreeable. AI does not remove responsibility for design, code, tests, security, or communication.
 
-## Call to action
-
-Pick one workflow and make it better for humans and agents alike: add a single make qa command, write down agent instructions, turn a repeated prompt into a reusable one, or remove one source of context friction.
-
 ## References discussed
 
 - Simon Willison, Agentic Engineering Patterns.

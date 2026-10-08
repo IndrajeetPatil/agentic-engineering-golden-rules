@@ -74,7 +74,7 @@ Invite the audience to think about one area of their daily engineering work wher
 
 ## Before we start
 
-:::: {.card-grid .card-grid-2}
+:::: {.card-grid .card-grid-3}
 
 ::: {.card .card-stone}
 [Audience]{.eyebrow}
@@ -82,6 +82,14 @@ Invite the audience to think about one area of their daily engineering work wher
 [You ship production software]{.card-title}
 
 Tests, deployment, security, and maintenance matter.
+:::
+
+::: {.card .card-outline}
+[Exception]{.eyebrow}
+
+[Throwaway code]{.card-title}
+
+For proofs of concept, demos, and prototypes, much of this caution is optional. Apply it once the code is no longer throwaway.
 :::
 
 ::: {.card .card-ink}
@@ -95,7 +103,7 @@ These are principles that sharpen judgement, not a magic recipe.
 ::::
 
 ::: {.notes}
-Quality gates such as tests, security, deployment, and maintenance are part of the conversation. The aim is to sharpen judgement, not to sell a magic solution.
+Quality gates such as tests, security, deployment, and maintenance are part of the conversation. Throwaway proofs of concept, demos, and prototypes can trade rigour for speed; the rules apply once that code starts to matter, which often happens sooner than planned. The aim is to sharpen judgement, not to sell a magic solution.
 :::
 
 ## Golden rules {.smaller}
@@ -460,36 +468,6 @@ If you are already set in your ways with coding agents, these tools change month
 
 ::: {.notes}
 Code generation is often the easy part. The hard part is planning work in a team: dividing tasks, coordinating changes, preserving quality, and making results reviewable.
-:::
-
-## One thing to do this week
-
-::: {.card .card-ink .card-callout}
-Pick **one** workflow and make it better for humans and agents alike.
-:::
-
-:::: {.card-grid .card-grid-4}
-
-::: {.card .card-outline}
-Add a single `make qa` command
-:::
-
-::: {.card .card-outline}
-Write down agent instructions
-:::
-
-::: {.card .card-outline}
-Turn a repeated prompt into a reusable one
-:::
-
-::: {.card .card-outline}
-Remove one source of context friction
-:::
-
-::::
-
-::: {.notes}
-Reinforce the theme: use coding agents to move faster, but make the system around them strong enough that quality improves rather than erodes.
 :::
 
 ## Further reading {.smaller}

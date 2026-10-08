@@ -301,16 +301,6 @@
   min-height: 9em;
 }
 
-.reveal .card-callout {
-  font-family: var(--deck-display);
-  font-variation-settings: "opsz" 28;
-  font-style: italic;
-  font-size: 1.1em;
-  text-align: center;
-  padding: 0.6em 1em;
-  margin: 0.4em 0 1em;
-}
-
 .reveal .eyebrow {
   display: block;
   font-size: 0.7em;
