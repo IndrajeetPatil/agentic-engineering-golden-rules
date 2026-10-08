@@ -223,13 +223,13 @@ Formatters, linters, type checkers, tests with coverage gates, Git hooks, and se
 ::: {.card .card-ink}
 [One command]{.eyebrow}
 
-`make qa` says whether the work is acceptable, and CI runs the **same gates**
+`make qa` checks the agreed gates, and CI runs the **same gates**. Review checks whether we solved the right problem.
 :::
 
 ::: {.card .card-stone}
 [Agents optimise for green]{.eyebrow}
 
-Never lower a threshold or disable a check to get there
+Never weaken a check merely to get there. Repairing a wrong gate is deliberate, reviewed work.
 :::
 
 ::::
@@ -242,6 +242,10 @@ See also [Harness engineering for coding agent users](https://martinfowler.com/a
 An agent can propose changes quickly, but quality comes from the harness around it: tests, linters, type checks, build commands, security scans, and reproducible local setup.
 
 The workflow sends failed checks back to the agent with precise error output. Passing checks lead to human review before merge.
+
+Green checks establish less than "the work is acceptable". They show that the configured gates pass, not that the requirements were right, that the tests capture them, or that the user experience works. Review answers those questions.
+
+Agents will find the shortest path to green, including lowering a threshold or disabling a check. Do not weaken a check merely to pass. Sometimes a gate really is wrong, such as a flaky test or a rule that does not fit the code; repairing it is legitimate work, but make it a deliberate, separately reviewed change.
 
 Coverage gates invite filler tests. Ask agents to assert behaviour at the boundaries you own (the outbound request, the streamed output, the logged event), never to execute lines for the sake of coverage.
 :::
