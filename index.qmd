@@ -232,8 +232,8 @@ If developers need to hunt through unclear documentation, inconsistent commands,
 [Invest in]{.eyebrow}
 
 - A README that explains how to set up, run, and test
-- An `AGENTS.md` that records conventions agents cannot infer
-- **One obvious command** per task: install, check, test
+- A short `AGENTS.md`: gotchas, what to read first, and which checks to run
+- **One obvious command** per task: `make setup`, `make qa`
 - Small modules with clear boundaries
 - Stable scripts instead of tribal knowledge
 :::
@@ -242,16 +242,21 @@ If developers need to hunt through unclear documentation, inconsistent commands,
 
 ::: {.column width="50%"}
 
-```{.bash}
-# justfile: one entry point for humans and agents
-install:
-    uv sync
+```{.makefile}
+# Makefile: one entry point for humans and agents
+setup:
+	uv sync --frozen
 
-check:
-    uv run ruff format --check .
-    uv run ruff check .
-    uv run mypy src
-    uv run pytest
+lint:
+	uv run ruff check --fix .
+
+type-check:
+	uv run ty check
+
+test:
+	uv run pytest
+
+qa: lint type-check test security-scan
 ```
 
 ::: {.card .card-lime}
@@ -297,16 +302,24 @@ flowchart LR
 
 :::
 
-:::: {.card-grid .card-grid-2}
+:::: {.card-grid .card-grid-3}
 
 ::: {.card .card-outline}
 [The harness]{.eyebrow}
 
-Formatters · linters · type checkers · fast, non-flaky tests · pre-commit hooks · CI · security scans and sanitisers
+Formatters, linters, type checkers, tests with coverage gates, Git hooks, and security scans
 :::
 
 ::: {.card .card-lime}
-Invest in **one reliable command** that says whether the work is acceptable. The tighter the loop, the more confidently you can let agents attempt changes.
+[One command]{.eyebrow}
+
+`make qa` says whether the work is acceptable, and CI runs the **same gates**
+:::
+
+::: {.card .card-cream}
+[Agents optimise for green]{.eyebrow}
+
+Never lower a threshold or disable a check to get there
 :::
 
 ::::
@@ -317,6 +330,8 @@ See also [Harness engineering for coding agent users](https://martinfowler.com/a
 
 ::: {.notes}
 An agent can propose changes quickly, but quality comes from the harness around it: tests, linters, type checks, build commands, security scans, and reproducible local setup.
+
+Coverage gates invite filler tests. Ask agents to assert behaviour at the boundaries you own (the outbound request, the streamed output, the logged event), never to execute lines for the sake of coverage.
 :::
 
 # [Rule 03]{.section-eyebrow} The Bitter Lesson
@@ -458,7 +473,7 @@ Every correction, abandoned approach, and reversed decision stays in the context
 ::::
 
 ::: {.card .card-outline .card-wide}
-One task per session. Summarise, start fresh, and keep durable knowledge in the repository (for example, `AGENTS.md`) rather than in chat history.
+One task per session, and one Git worktree per parallel task. Keep durable knowledge in the repository (for example, `AGENTS.md`) rather than in chat history.
 :::
 
 ::: {.source}
@@ -482,7 +497,7 @@ Once a useful agent workflow repeats, automate the choreography around it.
 ## Meta-automation: in practice {.smaller}
 
 ::: {.card .card-cream .card-wide}
-If you repeatedly ask an agent to *inspect logs → run tests → summarise failures → create a fix → open a PR*, that sequence can become a prompt file, a skill, a slash command, or a workflow.
+If you repeatedly ask an agent to *update dependencies → run `make qa` → fix what broke → open a PR*, that sequence belongs in a versioned prompt file, a skill, a slash command, or a workflow.
 :::
 
 :::: {.card-grid .card-grid-2}
@@ -496,7 +511,7 @@ The coordination: gathering context, running the same checks, formatting the sam
 ::: {.card .card-outline}
 [Keep human]{.eyebrow}
 
-The judgement: evaluating results, making trade-offs, and deciding what ships.
+The judgement: evaluating results, making trade-offs, and deciding what ships. Run unattended agents only in isolated sandboxes with scoped credentials.
 :::
 
 ::::
@@ -626,7 +641,7 @@ Pick **one** workflow and make it better for humans and agents alike.
 :::: {.card-grid .card-grid-4}
 
 ::: {.card .card-outline}
-Add a single check command
+Add a single `make qa` command
 :::
 
 ::: {.card .card-outline}
