@@ -20,6 +20,7 @@ This presentation distils golden rules for agentic engineering: working with cod
 - Intent-driven prompting over over-specified instructions
 - Scope control and reviewable, reversible changes
 - Session hygiene and context management
+- Tool affordances that coding agents offer
 - Meta-automation with prompts, skills, slash commands, and workflows
 - Team culture and responsibility when using AI
 

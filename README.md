@@ -10,8 +10,8 @@ coding agents to boost productivity without compromising quality.
 3. The Bitter Lesson: strong models need intent, not ceremony
 4. Scope control: small, reversible changes
 5. Session hygiene: fresh context beats haunted context
-6. Meta-automation: automate repeated agent choreography
-7. Know thy tools
+6. Know thy tools
+7. Meta-automation: automate repeated agent choreography
 8. Be curious. Be humble. Be kind.
 
 The slides will be available here once published:<br>

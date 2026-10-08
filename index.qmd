@@ -28,7 +28,7 @@ execute:
   echo: true
   eval: false
 keywords: ["agentic-engineering", "coding-agents", "software-engineering", "ai-assisted-development"]
-description-meta: "Golden rules for agentic engineering: how to use coding agents to boost productivity without compromising quality. Covers developer experience, deterministic guardrails, intent over ceremony, scope control, session hygiene, meta-automation, tool affordances, and team culture."
+description-meta: "Golden rules for agentic engineering: how to use coding agents to boost productivity without compromising quality. Covers developer experience, deterministic guardrails, intent over ceremony, scope control, session hygiene, tool affordances, meta-automation, and team culture."
 license: "CC0 1.0 Universal"
 pagetitle: "Golden Rules for Agentic Engineering"
 author-meta: "Indrajeet Patil"
@@ -135,13 +135,13 @@ Quality gates such as tests, security, deployment, and maintenance are part of t
 ::: {.card}
 [06]{.rule-number}
 
-**Meta-automation**
+**Know thy tools**
 :::
 
 ::: {.card}
 [07]{.rule-number}
 
-**Know thy tools**
+**Meta-automation**
 :::
 
 ::: {.card}
@@ -332,11 +332,43 @@ Signs of a haunted session include reviving a rejected approach, confusing earli
 Reset with a compact handoff: the goal in one sentence, constraints on what must not change, relevant files to start with, and acceptance checks that show when the work is done.
 :::
 
-# [Rule 06]{.section-eyebrow} Meta-automation
+# [Rule 06]{.section-eyebrow} Know thy tools
+
+Sometimes the unlock is a hidden tool affordance.
+
+## [06]{.rule-tag} Know thy tools {.smaller}
+
+[When results are poor, ask whether the agent had the right **context**, the right **tools**, and the right **feedback**.]{.lede}
+
+::: {.table-card}
+
+| Coding agent | Affordances users often miss |
+|--------------|------------------------------|
+| **Claude Code** | `ultrathink` keyword · worktree lifecycle management · plan mode · hooks · skills · subagents |
+| **GitHub Copilot CLI** | `/chronicle` · rubber-duck review · voice mode · custom agents · cloud agent delegation |
+| **Any agent** | Permission allowlists · custom instructions · MCP servers · session resume and compaction |
+
+:::
+
+::: {.card .card-ink .card-wide}
+Read the changelog: a release note can remove a bottleneck you have been working around for months.
+:::
+
+::: {.source}
+See [Claude Code best practices](https://code.claude.com/docs/en/best-practices) and [Using GitHub Copilot CLI](https://docs.github.com/en/copilot/how-tos/use-copilot-agents/use-copilot-cli).
+:::
+
+::: {.notes}
+Sometimes the limiting factor is not the model; it is the tool interface available to the model.
+
+Agents perform better when they can inspect files, run commands, search the repository, execute tests, and see failures. If a tool is hidden, blocked, or awkward, the agent may appear less capable than it really is.
+:::
+
+# [Rule 07]{.section-eyebrow} Meta-automation
 
 Automate repeated agent choreography.
 
-## [06]{.rule-tag} Meta-automation {.rule-slide}
+## [07]{.rule-tag} Meta-automation {.rule-slide}
 
 [Capture once. Run many times.]{.lede}
 
@@ -366,38 +398,6 @@ The /address-review command is an illustrative shortcut to the repository's addr
 The vulnerability-management workflow is adapted from codex-security.md. Scan findings are claims to investigate. Triage checks reachability, existing mitigations, and regression risk before deciding whether a fix is warranted. Confirmed findings with a focused, safe fix proceed to remediation, verification, and a draft PR. Other findings get a recorded reason; no code changes means no PR. Verification includes checking that the vulnerability is resolved and running relevant regression checks. Failed verification returns to the fix step.
 
 Automate coordination: gathering context, running checks, formatting reports, and repeating the process across repositories. Humans evaluate evidence, make trade-offs, and decide what ships. Run unattended agents only in isolated sandboxes with scoped credentials.
-:::
-
-# [Rule 07]{.section-eyebrow} Know thy tools
-
-Sometimes the unlock is a hidden tool affordance.
-
-## [07]{.rule-tag} Know thy tools {.smaller}
-
-[When results are poor, ask whether the agent had the right **context**, the right **tools**, and the right **feedback**.]{.lede}
-
-::: {.table-card}
-
-| Coding agent | Affordances users often miss |
-|--------------|------------------------------|
-| **Claude Code** | `ultrathink` keyword · worktree lifecycle management · plan mode · hooks · skills · subagents |
-| **GitHub Copilot CLI** | `/chronicle` · rubber-duck review · voice mode · custom agents · cloud agent delegation |
-| **Any agent** | Permission allowlists · custom instructions · MCP servers · session resume and compaction |
-
-:::
-
-::: {.card .card-ink .card-wide}
-Read the changelog: a release note can remove a bottleneck you have been working around for months.
-:::
-
-::: {.source}
-See [Claude Code best practices](https://code.claude.com/docs/en/best-practices) and [Using GitHub Copilot CLI](https://docs.github.com/en/copilot/how-tos/use-copilot-agents/use-copilot-cli).
-:::
-
-::: {.notes}
-Sometimes the limiting factor is not the model; it is the tool interface available to the model.
-
-Agents perform better when they can inspect files, run commands, search the repository, execute tests, and see failures. If a tool is hidden, blocked, or awkward, the agent may appear less capable than it really is.
 :::
 
 # [Rule 08]{.section-eyebrow} Be curious. Be humble. Be kind.
