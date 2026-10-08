@@ -1,58 +1,61 @@
 /*
- * Design inspired by Mode (https://mode.com/): deep green canvas, cream and
- * lime cards with soft 16px radii, a large display face over a clean sans.
- * Bricolage Grotesque, Geist, and Geist Mono are open-licence Google Fonts.
+ * Design inspired by Rossini Caviar (https://rossinicaviar.com/): an ivory page,
+ * warm stone panels, near-black ink, gold reserved for hairlines and rims,
+ * high-contrast Bodoni Moda headings, and small tracked Montserrat labels.
  */
-@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..700&family=Montserrat:wght@300;400;500;600&display=swap");
 
 :root {
-  --mode-green: #043f2e;
-  --mode-green-mid: #2a6f2b;
-  --mode-cream: #eef2e3;
-  --mode-lime: #c8f169;
-  --mode-white: #fcfcfc;
-  --mode-muted: #d3dcc6;
-  --mode-radius: 16px;
-  --mode-display: "Bricolage Grotesque", "Helvetica Neue", Arial, sans-serif;
-  --mode-sans: "Geist", "Helvetica Neue", Arial, sans-serif;
-  --mode-mono: "Geist Mono", ui-monospace, Menlo, monospace;
+  --deck-ivory: #fdfaf3;
+  --deck-stone: #e9e5db;
+  --deck-ink: #141414;
+  --deck-gold: #dac284;
+  /* Gold dark enough for text on ivory and stone (WCAG AA). */
+  --deck-gold-deep: #7d6020;
+  --deck-muted: #5c574d;
+  --deck-display: "Bodoni Moda", "Didot", "Bodoni 72", Georgia, serif;
+  --deck-sans: "Montserrat", "Helvetica Neue", Arial, sans-serif;
+  --deck-mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
 
-  --r-background-color: var(--mode-green);
-  --r-main-color: var(--mode-cream);
-  --r-heading-color: var(--mode-cream);
-  --r-link-color: var(--mode-lime);
-  --r-link-color-hover: var(--mode-white);
-  --r-selection-background-color: var(--mode-lime);
-  --r-selection-color: var(--mode-green);
-  --r-main-font: var(--mode-sans);
-  --r-heading-font: var(--mode-display);
-  --r-code-font: var(--mode-mono);
+  --r-background-color: var(--deck-ivory);
+  --r-main-color: var(--deck-ink);
+  --r-heading-color: var(--deck-ink);
+  --r-link-color: var(--deck-ink);
+  --r-link-color-hover: var(--deck-gold-deep);
+  --r-selection-background-color: var(--deck-gold);
+  --r-selection-color: var(--deck-ink);
+  --r-main-font: var(--deck-sans);
+  --r-heading-font: var(--deck-display);
+  --r-code-font: var(--deck-mono);
 }
 
 /* ---------- Canvas and typography ---------- */
 
 .reveal-viewport {
-  background: var(--mode-green);
+  background: var(--deck-ivory);
 }
 
 .reveal {
-  color: var(--mode-cream);
-  font-family: var(--mode-sans);
+  color: var(--deck-ink);
+  font-family: var(--deck-sans);
+  font-weight: 400;
 }
 
 .reveal h1,
 .reveal h2 {
-  font-family: var(--mode-display);
-  font-weight: 400;
-  color: var(--mode-cream);
-  letter-spacing: -0.02em;
+  font-family: var(--deck-display);
+  font-variation-settings: "opsz" 28;
+  font-weight: 500;
+  color: var(--deck-ink);
+  letter-spacing: -0.01em;
   line-height: 1.1;
   text-transform: none;
+  text-wrap: balance;
 }
 
 .reveal h2 {
   font-size: 1.45em;
-  margin-bottom: 0.3em;
+  margin-bottom: 0.35em;
 }
 
 .reveal .slides section.smaller h2 {
@@ -60,26 +63,35 @@
 }
 
 .reveal a {
-  color: var(--mode-lime);
+  color: inherit;
   text-decoration: underline;
-  text-underline-offset: 0.15em;
+  text-decoration-color: var(--deck-gold-deep);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
 }
 
 .reveal strong {
   font-weight: 600;
 }
 
+.reveal em {
+  font-family: var(--deck-display);
+  font-variation-settings: "opsz" 28;
+  font-size: 1.08em;
+}
+
 .reveal .lede {
   display: block;
-  font-size: 0.7em;
-  line-height: 1.4;
-  color: var(--mode-muted);
-  margin-bottom: 0.8em;
+  font-size: 0.62em;
+  font-weight: 300;
+  line-height: 1.5;
+  color: var(--deck-muted);
+  margin-bottom: 0.9em;
 }
 
 .reveal .slides section.smaller .lede {
   font-size: 0.9em;
-  margin-bottom: 0.5em;
+  margin-bottom: 0.6em;
 }
 
 .reveal .source {
@@ -88,67 +100,70 @@
   left: 0;
   right: 0;
   text-align: center;
-  font-size: 0.45em;
-  color: var(--mode-muted);
+  font-size: 0.42em;
+  color: var(--deck-muted);
 }
 
 .reveal .slides section.smaller .source {
-  font-size: 0.65em;
+  font-size: 0.6em;
 }
 
-/* ---------- Title slide: Mode's stepped lime hero ---------- */
+/* ---------- Title slide: a centred wordmark ---------- */
 
 .reveal .hero {
-  display: flex;
-  flex-direction: column;
-  gap: 0.15em;
-  margin-top: 0.6em;
+  text-align: center;
+  margin-top: 1.4em;
 }
 
 .reveal .hero p {
   margin: 0;
 }
 
-.reveal .hero p:nth-child(2) {
-  text-align: center;
-}
-
-.reveal .hero p:nth-child(3) {
-  text-align: right;
-}
-
-.reveal .hero-line {
+.reveal .hero-kicker {
   display: inline-block;
-  font-family: var(--mode-display);
-  font-size: 2.15em;
-  line-height: 1.05;
-  letter-spacing: -0.03em;
-  color: var(--mode-green);
-  background: var(--mode-lime);
-  border-radius: var(--mode-radius);
-  padding: 0.04em 0.28em 0.12em;
+  font-size: 0.42em;
+  font-weight: 500;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  margin-bottom: 1em;
 }
 
-.reveal .hero-meta {
-  margin-top: 1.1em;
-  max-width: 60%;
+.reveal .hero-title,
+.reveal .hero-title-italic {
+  display: block;
+  font-family: var(--deck-display);
+  font-variation-settings: "opsz" 28;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.01em;
+}
+
+.reveal .hero-title {
+  font-size: 2.9em;
+}
+
+.reveal .hero-title-italic {
+  font-size: 1.9em;
+  font-style: italic;
+  margin-top: 0.05em;
 }
 
 .reveal .hero-subtitle {
-  font-size: 0.8em;
+  display: inline-block;
+  font-size: 0.48em;
   font-weight: 500;
-}
-
-.reveal .hero-author {
-  font-size: 0.65em;
-  color: var(--mode-muted);
-  margin-top: 0.4em;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-top: 1.4em;
+  padding-top: 1em;
+  border-top: 1px solid var(--deck-gold);
 }
 
 .reveal .hero-source {
-  font-size: 0.42em;
-  color: var(--mode-muted);
-  margin-top: 1.4em;
+  text-align: center;
+  font-size: 0.38em;
+  color: var(--deck-muted);
+  margin-top: 3.5em;
 }
 
 /* ---------- Section slides ---------- */
@@ -158,42 +173,41 @@
 }
 
 .reveal .slides section.level1 h1 {
-  font-size: 2.3em;
-  letter-spacing: -0.03em;
+  font-size: 2.4em;
+  font-style: italic;
+  text-transform: lowercase;
 }
 
 .reveal .slides section.level1 > p {
-  font-size: 0.85em;
-  color: var(--mode-muted);
+  font-size: 0.6em;
+  font-weight: 300;
+  color: var(--deck-muted);
 }
 
 .reveal .section-eyebrow {
   display: table;
-  margin: 0 auto 0.5em;
-  font-family: var(--mode-sans);
-  font-size: 0.26em;
+  margin: 0 auto 1.2em;
+  font-family: var(--deck-sans);
+  font-size: 0.17em;
+  font-style: normal;
   font-weight: 600;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.3em;
   text-transform: uppercase;
-  color: var(--mode-green);
-  background: var(--mode-lime);
-  border-radius: 200px;
-  padding: 0.45em 1.1em;
+  color: var(--deck-gold-deep);
+  padding-bottom: 0.9em;
+  border-bottom: 1px solid var(--deck-gold);
 }
 
 /* ---------- Rule slides ---------- */
 
 .reveal .rule-tag {
-  font-family: var(--mode-sans);
-  font-size: 0.5em;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  vertical-align: 0.35em;
-  margin-right: 0.4em;
-  color: var(--mode-green);
-  background: var(--mode-lime);
-  border-radius: 200px;
-  padding: 0.2em 0.6em;
+  font-family: var(--deck-display);
+  font-style: italic;
+  font-size: 0.8em;
+  color: var(--deck-gold-deep);
+  margin-right: 0.35em;
+  padding-right: 0.45em;
+  border-right: 1px solid var(--deck-gold);
 }
 
 .reveal .slides section.rule-slide {
@@ -205,29 +219,28 @@
 }
 
 .reveal .slides section.rule-slide .lede {
-  font-size: 0.62em;
-  margin-bottom: 0.5em;
+  font-size: 0.56em;
+  margin-bottom: 0.6em;
 }
 
 .reveal img.illustration {
-  border-radius: var(--mode-radius);
-  background: var(--mode-white);
-  box-shadow: 0 0 0 6px var(--mode-cream);
+  background: var(--deck-ivory);
+  border: 1px solid var(--deck-gold);
+  padding: 6px;
   margin: 0.2em auto 0;
 }
 
 /* ---------- Cards ---------- */
 
 .reveal .card {
-  border-radius: var(--mode-radius);
-  padding: 0.75em 1em;
-  font-size: 0.62em;
-  line-height: 1.45;
+  padding: 0.85em 1.05em;
+  font-size: 0.6em;
+  line-height: 1.5;
   text-align: left;
 }
 
 .reveal .slides section.smaller .card {
-  font-size: 0.95em;
+  font-size: 0.92em;
 }
 
 .reveal .card > :first-child {
@@ -253,36 +266,45 @@
   margin: 0.2em 0;
 }
 
+.reveal .card li::marker {
+  color: var(--deck-gold-deep);
+}
+
 .reveal .card-title {
   display: block;
-  font-family: var(--mode-display);
-  font-size: 1.5em;
+  font-family: var(--deck-display);
+  font-variation-settings: "opsz" 28;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 1.6em;
   line-height: 1.15;
-  letter-spacing: -0.02em;
   margin: 0.15em 0 0.35em;
 }
 
-.reveal .card-cream,
-.reveal .card-lime {
-  color: var(--mode-green);
+.reveal .card-stone {
+  background: var(--deck-stone);
 }
 
-.reveal .card-cream {
-  background: var(--mode-cream);
+.reveal .card-ink {
+  background: var(--deck-ink);
+  color: var(--deck-ivory);
 }
 
-.reveal .card-lime {
-  background: var(--mode-lime);
+.reveal .card-ink .eyebrow,
+.reveal .card-ink li::marker {
+  color: var(--deck-gold);
 }
 
-.reveal .card-cream a,
-.reveal .card-lime a {
-  color: var(--mode-green);
+.reveal .card-ink code {
+  color: var(--deck-ivory);
+}
+
+.reveal .card-ink a {
+  text-decoration-color: var(--deck-gold);
 }
 
 .reveal .card-outline {
-  border: 1.5px solid var(--mode-cream);
-  color: var(--mode-cream);
+  border: 1px solid var(--deck-gold);
 }
 
 .reveal .card-wide {
@@ -294,8 +316,10 @@
 }
 
 .reveal .card-callout {
-  font-family: var(--mode-display);
-  font-size: 1.05em;
+  font-family: var(--deck-display);
+  font-variation-settings: "opsz" 28;
+  font-style: italic;
+  font-size: 1.1em;
   text-align: center;
   padding: 0.6em 1em;
   margin: 0.4em 0 1em;
@@ -303,15 +327,16 @@
 
 .reveal .eyebrow {
   display: block;
-  font-size: 0.72em;
+  font-size: 0.7em;
   font-weight: 600;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
+  color: var(--deck-gold-deep);
 }
 
 .reveal .card-grid {
   display: grid;
-  gap: 0.5em;
+  gap: 0.6em;
   margin-top: 0.4em;
 }
 
@@ -331,16 +356,33 @@
   grid-template-columns: repeat(4, 1fr);
 }
 
+/* Rule index: a spec-sheet grid of italic names under gold hairlines. */
+.reveal .rule-index {
+  row-gap: 1em;
+}
+
 .reveal .rule-index .card {
-  min-height: 6.5em;
+  border-top: 1px solid var(--deck-gold);
+  padding: 0.7em 0.2em 0;
+  min-height: 5.5em;
   font-size: 1.05em;
+}
+
+.reveal .rule-index strong {
+  font-family: var(--deck-display);
+  font-variation-settings: "opsz" 28;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 1.35em;
+  line-height: 1.2;
 }
 
 .reveal .rule-number {
   display: block;
-  font-family: var(--mode-display);
-  font-size: 2em;
-  line-height: 1;
+  font-size: 0.75em;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  color: var(--deck-gold-deep);
   margin-bottom: 0.4em;
 }
 
@@ -364,22 +406,20 @@
 /* ---------- Tables, code, and lists ---------- */
 
 .reveal .table-card {
-  background: var(--mode-cream);
-  color: var(--mode-green);
-  border-radius: var(--mode-radius);
+  background: var(--deck-stone);
   padding: 0.6em 1em;
 }
 
 .reveal .table-card table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 0.9em;
+  font-size: 0.85em;
 }
 
 .reveal .table-card th,
 .reveal .table-card td {
-  border-bottom: 1px solid rgba(4, 63, 46, 0.25);
-  padding: 0.35em 0.6em;
+  border-bottom: 1px solid var(--deck-gold);
+  padding: 0.4em 0.6em;
   text-align: left;
 }
 
@@ -389,15 +429,23 @@
 
 .reveal .table-card thead th {
   font-weight: 600;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  font-size: 0.85em;
+  font-size: 0.75em;
+  color: var(--deck-gold-deep);
+}
+
+.reveal .table-card tbody td:first-child {
+  font-family: var(--deck-display);
+  font-variation-settings: "opsz" 28;
+  font-style: italic;
+  font-size: 1.15em;
 }
 
 .reveal .slides div.sourceCode {
-  background: var(--mode-white);
+  background: var(--deck-stone);
   border: none;
-  border-radius: var(--mode-radius);
+  border-radius: 0;
   margin: 0 0 0.6em;
 }
 
@@ -409,7 +457,7 @@
 .reveal code,
 .reveal pre,
 .reveal pre code {
-  font-family: var(--mode-mono);
+  font-family: var(--deck-mono);
 }
 
 .reveal code {
@@ -418,34 +466,42 @@
 
 .reveal .reading-list ul {
   font-size: 1em;
-  line-height: 1.4;
+  line-height: 1.45;
 }
 
 .reveal .reading-list li {
   margin-bottom: 0.35em;
 }
 
+.reveal .reading-list li::marker {
+  color: var(--deck-gold-deep);
+}
+
 /* ---------- Reveal chrome ---------- */
 
-.reveal .controls,
+.reveal .controls {
+  color: var(--deck-gold-deep);
+}
+
 .reveal .progress {
-  color: var(--mode-lime);
+  color: var(--deck-gold);
 }
 
 .reveal .slide-number {
   background: transparent;
-  color: var(--mode-muted);
-  font-family: var(--mode-sans);
+  color: var(--deck-muted);
+  font-family: var(--deck-sans);
+  letter-spacing: 0.1em;
 }
 
-/* Quarto's menu icon is a navy SVG; recolour it for the dark canvas. */
+/* Quarto's menu icon is a navy SVG; recolour it to the deck's ink. */
 .reveal .slide-menu-button .fa-bars::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23eef2e3" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/></svg>');
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23141414" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/></svg>');
 }
 
 /* Links in the closing slide's icon row. */
 .reveal .deck-icon-link {
-  color: var(--mode-cream);
+  color: var(--deck-ink);
 }
 
 /* Name dense slides for assistive technology without moving their content. */

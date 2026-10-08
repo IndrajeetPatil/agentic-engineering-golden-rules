@@ -45,29 +45,25 @@ jupyter: python3
 
 ## Golden Rules for Agentic Engineering {.title-slide-custom .sr-only-heading}
 
-::: {.hero aria-hidden="true"}
-[Golden Rules]{.hero-line .hero-line-1}
+::: {.hero}
 
-[for Agentic]{.hero-line .hero-line-2}
+[Indrajeet Patil]{.hero-kicker}
 
-[Engineering]{.hero-line .hero-line-3}
+::: {aria-hidden="true"}
+
+[golden rules]{.hero-title}
+
+[for agentic engineering]{.hero-title-italic}
+
 :::
 
-::: {.hero-meta}
+[Boost productivity without compromising quality]{.hero-subtitle}
 
-::: {.hero-subtitle}
-Boost productivity without compromising quality
-:::
-
-::: {.hero-author}
-Indrajeet Patil
 :::
 
 ::: {.hero-source}
 Source code for these slides can be found [on GitHub](https://github.com/IndrajeetPatil/agentic-engineering-golden-rules/).
 All illustrations in this presentation are AI-generated.
-:::
-
 :::
 
 ::: {.notes}
@@ -84,7 +80,7 @@ Invite the audience to think about one area of their daily engineering work wher
 
 :::: {.card-grid .card-grid-3}
 
-::: {.card .card-cream}
+::: {.card .card-stone}
 [Assumption]{.eyebrow}
 
 [You ship production software]{.card-title}
@@ -92,7 +88,7 @@ Invite the audience to think about one area of their daily engineering work wher
 Tests, deployment, security, and maintenance matter.
 :::
 
-::: {.card .card-cream}
+::: {.card .card-stone}
 [Assumption]{.eyebrow}
 
 [You have used coding agents]{.card-title}
@@ -100,7 +96,7 @@ Tests, deployment, security, and maintenance matter.
 In the IDE or the terminal, however briefly.
 :::
 
-::: {.card .card-lime}
+::: {.card .card-ink}
 [Expectation]{.eyebrow}
 
 [No panacea]{.card-title}
@@ -142,7 +138,7 @@ Approved tools, data handling, and restrictions in your organisation
 
 ::::
 
-::: {.card .card-lime .card-wide}
+::: {.card .card-ink .card-wide}
 [Focus]{.eyebrow}
 
 Leveraging coding agents to boost productivity **without compromising quality**. The quality half matters as much as the speed half.
@@ -156,49 +152,49 @@ Clarify the boundaries early so the discussion stays productive. Costs, career i
 
 :::: {.card-grid .card-grid-4 .rule-index}
 
-::: {.card .card-cream}
+::: {.card}
 [01]{.rule-number}
 
 **DevEx = AgentEx**
 :::
 
-::: {.card .card-lime}
+::: {.card}
 [02]{.rule-number}
 
 **Guardrails over orchestration**
 :::
 
-::: {.card .card-cream}
+::: {.card}
 [03]{.rule-number}
 
 **Intent over ceremony**
 :::
 
-::: {.card .card-lime}
+::: {.card}
 [04]{.rule-number}
 
 **Small, reversible scope**
 :::
 
-::: {.card .card-lime}
+::: {.card}
 [05]{.rule-number}
 
 **Fresh context over haunted context**
 :::
 
-::: {.card .card-cream}
+::: {.card}
 [06]{.rule-number}
 
 **Automate the choreography**
 :::
 
-::: {.card .card-lime}
+::: {.card}
 [07]{.rule-number}
 
 **Know thy tools**
 :::
 
-::: {.card .card-cream}
+::: {.card}
 [08]{.rule-number}
 
 **Curious, humble, kind**
@@ -228,7 +224,7 @@ If developers need to hunt through unclear documentation, inconsistent commands,
 
 ::: {.column width="50%"}
 
-::: {.card .card-cream}
+::: {.card .card-stone}
 [Invest in]{.eyebrow}
 
 - A README that explains how to set up, run, and test
@@ -259,7 +255,7 @@ test:
 qa: lint type-check test security-scan
 ```
 
-::: {.card .card-lime}
+::: {.card .card-ink}
 These are not documentation chores. They are **leverage** for every human and every agent who touches the repository.
 :::
 
@@ -287,7 +283,7 @@ Guardrails are more important than elaborate orchestration. Fast, deterministic 
 
 ## Guardrails: in practice {.smaller}
 
-::: {.card .card-cream .diagram-card}
+::: {.card .card-stone .diagram-card}
 
 ```{mermaid}
 %%| eval: true
@@ -310,13 +306,13 @@ flowchart LR
 Formatters, linters, type checkers, tests with coverage gates, Git hooks, and security scans
 :::
 
-::: {.card .card-lime}
+::: {.card .card-ink}
 [One command]{.eyebrow}
 
 `make qa` says whether the work is acceptable, and CI runs the **same gates**
 :::
 
-::: {.card .card-cream}
+::: {.card .card-stone}
 [Agents optimise for green]{.eyebrow}
 
 Never lower a threshold or disable a check to get there
@@ -370,7 +366,7 @@ Over-specifies the route and leaves no room for the model to reason about a bett
 
 ::: {.column width="50%"}
 
-::: {.card .card-lime .card-tall}
+::: {.card .card-ink .card-tall}
 [Intent]{.eyebrow}
 
 *"Fix the failing date-parsing test without changing the public API. Keep the diff small, and explain any trade-off."*
@@ -382,7 +378,7 @@ States the **outcome**, the **constraints**, the **acceptance criteria**, and wh
 
 ::::
 
-::: {.card .card-cream .card-wide}
+::: {.card .card-stone .card-wide}
 Specify implementation steps only when they genuinely matter. Otherwise, give the agent a target and strong tools.
 :::
 
@@ -404,13 +400,13 @@ In brownfield systems, scope control is the difference between useful automation
 
 :::: {.card-grid .card-grid-2}
 
-::: {.card .card-cream}
+::: {.card .card-stone}
 [Why]{.eyebrow}
 
 Agents can change a lot of code quickly. Reviewers cannot review a lot of code quickly. **Review capacity is the bottleneck**, not generation speed.
 :::
 
-::: {.card .card-cream}
+::: {.card .card-stone}
 [How]{.eyebrow}
 
 Prefer narrow tasks: one bug, one refactor, one test gap, one migration step. Each chunk should be reviewable, testable, and revertible on its own.
@@ -418,7 +414,7 @@ Prefer narrow tasks: one bug, one refactor, one test gap, one migration step. Ea
 
 ::::
 
-::: {.card .card-lime .card-wide}
+::: {.card .card-ink .card-wide}
 When the agent discovers broader issues, **capture them as follow-up tasks** instead of expanding the current change indefinitely.
 :::
 
@@ -446,7 +442,7 @@ Every correction, abandoned approach, and reversed decision stays in the context
 
 ::: {.column width="50%"}
 
-::: {.card .card-cream}
+::: {.card .card-stone}
 [Signs of a haunted session]{.eyebrow}
 
 - The agent revives an approach you already rejected
@@ -459,7 +455,7 @@ Every correction, abandoned approach, and reversed decision stays in the context
 
 ::: {.column width="50%"}
 
-::: {.card .card-lime}
+::: {.card .card-ink}
 [A compact handoff]{.eyebrow}
 
 - **Goal**: the outcome, in one sentence
@@ -496,13 +492,13 @@ Once a useful agent workflow repeats, automate the choreography around it.
 
 ## Meta-automation: in practice {.smaller}
 
-::: {.card .card-cream .card-wide}
+::: {.card .card-stone .card-wide}
 If you repeatedly ask an agent to *update dependencies → run `make qa` → fix what broke → open a PR*, that sequence belongs in a versioned prompt file, a skill, a slash command, or a workflow.
 :::
 
 :::: {.card-grid .card-grid-2}
 
-::: {.card .card-lime}
+::: {.card .card-ink}
 [Automate]{.eyebrow}
 
 The coordination: gathering context, running the same checks, formatting the same report, fanning out over many repositories.
@@ -538,7 +534,7 @@ Sometimes the unlock is a hidden tool affordance.
 
 :::
 
-::: {.card .card-lime .card-wide}
+::: {.card .card-ink .card-wide}
 Read the changelog: a release note can remove a bottleneck you have been working around for months.
 :::
 
@@ -570,19 +566,19 @@ Be curious about what the tools can do, humble about their limits, and kind in h
 
 :::: {.card-grid .card-grid-3}
 
-::: {.card .card-cream}
+::: {.card .card-stone}
 [Curious]{.card-title}
 
 Experiment, prototype, and keep learning the fundamentals the agent is standing on.
 :::
 
-::: {.card .card-cream}
+::: {.card .card-stone}
 [Humble]{.card-title}
 
 Agents are confidently wrong. So are we. Verify before you trust, including your own prompt.
 :::
 
-::: {.card .card-cream}
+::: {.card .card-stone}
 [Kind]{.card-title}
 
 Review agent-generated work as carefully as human work, and review humans as kindly as ever.
@@ -590,7 +586,7 @@ Review agent-generated work as carefully as human work, and review humans as kin
 
 ::::
 
-::: {.card .card-lime .card-wide}
+::: {.card .card-ink .card-wide}
 **AI does not remove responsibility.** You still own the design, the code, the tests, the security implications, and the communication with your team.
 :::
 
@@ -602,25 +598,25 @@ Review agent-generated work as carefully as human work, and review humans as kin
 
 :::: {.card-grid .card-grid-2}
 
-::: {.card .card-cream}
+::: {.card .card-stone}
 [Share]{.eyebrow}
 
 Pool your team's tips and tricks for agentic coding. Someone has already solved your annoyance.
 :::
 
-::: {.card .card-cream}
+::: {.card .card-stone}
 [Fix pain points]{.eyebrow}
 
 The best way to upskill is to identify a real pain point (slow tests, unclear setup, flaky workflows) and resolve it.
 :::
 
-::: {.card .card-cream}
+::: {.card .card-stone}
 [Frontload planning]{.eyebrow}
 
 Task division, coordination, and reviewability matter more when everyone has an agent.
 :::
 
-::: {.card .card-cream}
+::: {.card .card-stone}
 [Challenge your habits]{.eyebrow}
 
 If you are already set in your ways with coding agents, these tools change monthly. So should your workflow.
@@ -634,7 +630,7 @@ Code generation is often the easy part. The hard part is planning work in a team
 
 ## One thing to do this week
 
-::: {.card .card-lime .card-callout}
+::: {.card .card-ink .card-callout}
 Pick **one** workflow and make it better for humans and agents alike.
 :::
 
