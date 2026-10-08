@@ -183,7 +183,7 @@ Quality gates such as tests, security, deployment, and maintenance are part of t
 ![](media/measure-whole-job.webp){.illustration width="880" height="495" fig-alt="Two-panel illustration: choose among a direct human edit, a script or existing tool, and an agent, starting with a real pain point. Preparation, generation, verification, and review all contribute to time to an accepted result. Also track review effort, defects, and maintenance burden, and keep the approach that improves the whole job."}
 
 ::: {.source}
-Inspired by [Building effective agents](https://www.anthropic.com/engineering/building-effective-agents) (Anthropic); the whole-job measures are practical recommendations for coding work.
+Simplest-solution principle: [Building effective agents](https://www.anthropic.com/engineering/building-effective-agents) (Anthropic). The whole-job measures are practical recommendations for coding work.
 :::
 
 ::: {.notes}
@@ -205,9 +205,7 @@ Start with a real pain point, try a small change in approach, and keep it when t
 ![](media/devex-agentex.webp){.illustration width="880" height="495" fig-alt="Editorial infographic: a human and a coding agent connect to the same well-designed codebase. Five panels identify clear structure (folders, names, boundaries), one-command workflows (setup, format, lint, test), deterministic QA (formatters, linters, types, tests), living documentation (README, conventions, examples), and modular design (small units, clear interfaces). Shared outcomes are speed, quality, and trust."}
 
 ::: {.notes}
-What makes a codebase easy for humans makes it cheaper and safer for agents.
-
-DevEx equals AgentEx: the same things that make a codebase easy for humans also make it easier and cheaper for agents to work in.
+DevEx equals AgentEx: what makes a codebase easy for humans makes it cheaper and safer for agents to work in.
 
 If developers need to hunt through unclear documentation, inconsistent commands, or hidden conventions, agents will struggle too. They burn tokens, make assumptions, or ask for more context.
 :::
@@ -237,7 +235,7 @@ The work still happens; the command owns the sequence, checks prerequisites, and
 ![](media/define-done.webp){.illustration width="880" height="495" fig-alt="Three-panel illustration: a human gives a robot a brief containing the goal, constraints, and what stays unchanged; evidence is chosen to fit the task, reproducing and fixing a bug, inspecting a UI interaction, or measuring performance; a human and robot compare tests with requirements because both can share the same mistake. Agree the criteria, verify against them, and review the evidence."}
 
 ::: {.source}
-See [Demystifying evals for AI agents](https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents) (Anthropic).
+On specifying success and grading outcomes rather than paths, see [Demystifying evals for AI agents](https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents) (Anthropic).
 :::
 
 ::: {.notes}
@@ -283,7 +281,7 @@ Measure before and after under comparable conditions. State the workload and tra
 :::
 
 ::: {.source}
-Verification examples adapted from [Demystifying evals for AI agents](https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents) (Anthropic).
+Bug and UI checks adapted from [Claude Code best practices](https://code.claude.com/docs/en/best-practices) (Anthropic).
 :::
 
 ::: {.notes}
@@ -301,9 +299,7 @@ A second agent can offer another perspective, but agreement between agents is no
 ![](media/small-scope.webp){.illustration width="880" height="495" fig-alt="Two-panel illustration: an enormous prompt covering onboarding, billing, analytics, search, SSO, and migrations produces a large diff that is hard to review and reverse. Five small steps, API change, UI update, tests, docs, and deployment configuration, each have a small diff and commit. One concern at a time makes changes reviewable and reversible, with fast feedback. Small diffs beat heroic prompts."}
 
 ::: {.notes}
-In brownfield projects, introduce changes in reviewable, reversible chunks.
-
-In brownfield systems, scope control is the difference between useful automation and an unreviewable mess.
+In brownfield projects, introduce changes in reviewable, reversible chunks. Scope control is the difference between useful automation and an unreviewable mess.
 :::
 
 ## Scope control: in practice {.smaller}
@@ -328,8 +324,14 @@ Prefer narrow tasks: one bug, one refactor, one test gap, one migration step. Ea
 When the agent discovers broader issues, **capture them as follow-up tasks** instead of expanding the current change indefinitely.
 :::
 
+::: {.source}
+See [Small CLs](https://google.github.io/eng-practices/review/developer/small-cls.html) (Google Engineering Practices).
+:::
+
 ::: {.notes}
 Agents are good at making many changes quickly, but reviewers need changes that are small enough to understand.
+
+Google's code review guide lists why small changes help: they are reviewed more quickly and more thoroughly, are less likely to introduce bugs, waste less work if the direction is wrong, and are simpler to roll back. Those benefits matter more, not less, when an agent can generate a large diff in minutes.
 :::
 
 ## [05]{.rule-tag} Bound the blast radius {.rule-slide}
@@ -455,7 +457,7 @@ Coverage gates invite filler tests. Ask agents to assert behaviour at the bounda
 ![](media/session-hygiene.webp){.illustration width="880" height="495" fig-alt="Three-panel illustration: a robot keeps useful context for task A and a related follow-up in the same coherent session, with one task as the default and a reset when confused; parallel tasks A and B run in separate Git worktrees from the same repository; durable conventions, decisions, and lessons move from chat history into AGENTS.md, which a new session consults. A compact handoff contains the goal, constraints, relevant files, ruled-out approaches, and acceptance checks."}
 
 ::: {.source}
-Sources: [Context engineering](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents) (Anthropic) · [Git worktrees](https://git-scm.com/docs/git-worktree).
+Sources: [Context engineering](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents) and [Claude Code best practices](https://code.claude.com/docs/en/best-practices) (Anthropic) · [Git worktrees](https://git-scm.com/docs/git-worktree).
 :::
 
 ::: {.notes}
@@ -463,11 +465,11 @@ Keep sessions coherent, parallel tasks isolated, and durable knowledge in the re
 
 Every correction, abandoned approach, and reversed decision stays in the context window. After enough of them, the agent is reasoning over contradictions.
 
-One task per session is a useful default, not an absolute. A closely related follow-up can benefit from the reasoning and discoveries already in context, and restarting has a cost: a handoff can lose an important constraint or a failed hypothesis. Restart when the context stops being coherent, not merely because it is no longer fresh.
+One task per session is a useful default, not an absolute. A closely related follow-up can benefit from the reasoning and discoveries already in context, and restarting has a cost: a handoff can lose an important constraint or a failed hypothesis. Length matters as well as coherence: Anthropic describes context rot, where recall of information in the context degrades as the token count grows. Clear context between unrelated tasks; compact only when continuing related work whose decisions are worth keeping. Restart when the context stops being coherent or is filling with material the next step does not need.
 
 Use one Git worktree per parallel task so each task has its own working directory. Worktrees isolate edits, not permissions; apply the access limits from Bound the blast radius as well. Keep durable conventions, decisions, and lessons in the repository, for example in `AGENTS.md`, so future sessions can find them without relying on old chat history.
 
-Signs of a haunted session include reviving a rejected approach, confusing earlier and current requirements, repeating the same correction, or continuing after the conversation has outgrown its original task.
+Signs of a haunted session include reviving a rejected approach, confusing earlier and current requirements, repeating the same correction, or continuing after the conversation has outgrown its original task. Claude Code's best practices suggest a concrete threshold: after two failed corrections on the same issue, start fresh with a better prompt.
 
 Reset with a compact handoff: the goal in one sentence, constraints on what must not change, relevant files to start with, approaches already ruled out, and acceptance checks that show when the work is done.
 :::
