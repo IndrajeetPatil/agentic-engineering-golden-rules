@@ -1,0 +1,482 @@
+/*
+ * Design inspired by Mode (https://mode.com/): deep green canvas, cream and
+ * lime cards with soft 16px radii, a large serif display face over a clean sans.
+ * Fraunces and Inter stand in for Mode's proprietary Grenette and Graphik.
+ */
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500&family=Inter:wght@400;500;600&display=swap");
+
+:root {
+  --mode-green: #043f2e;
+  --mode-green-mid: #2a6f2b;
+  --mode-cream: #eef2e3;
+  --mode-lime: #c8f169;
+  --mode-white: #fcfcfc;
+  --mode-muted: #d3dcc6;
+  --mode-radius: 16px;
+  --mode-serif: "Fraunces", Georgia, "Times New Roman", serif;
+  --mode-sans: "Inter", "Helvetica Neue", Arial, sans-serif;
+
+  --r-background-color: var(--mode-green);
+  --r-main-color: var(--mode-cream);
+  --r-heading-color: var(--mode-cream);
+  --r-link-color: var(--mode-lime);
+  --r-link-color-hover: var(--mode-white);
+  --r-selection-background-color: var(--mode-lime);
+  --r-selection-color: var(--mode-green);
+  --r-main-font: var(--mode-sans);
+  --r-heading-font: var(--mode-serif);
+}
+
+/* ---------- Canvas and typography ---------- */
+
+.reveal-viewport {
+  background: var(--mode-green);
+}
+
+.reveal {
+  color: var(--mode-cream);
+  font-family: var(--mode-sans);
+}
+
+.reveal h1,
+.reveal h2 {
+  font-family: var(--mode-serif);
+  font-weight: 400;
+  color: var(--mode-cream);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  text-transform: none;
+}
+
+.reveal h2 {
+  font-size: 1.45em;
+  margin-bottom: 0.3em;
+}
+
+.reveal .slides section.smaller h2 {
+  font-size: 1.45em;
+}
+
+.reveal a {
+  color: var(--mode-lime);
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.reveal strong {
+  font-weight: 600;
+}
+
+.reveal .lede {
+  display: block;
+  font-size: 0.7em;
+  line-height: 1.4;
+  color: var(--mode-muted);
+  margin-bottom: 0.8em;
+}
+
+.reveal .slides section.smaller .lede {
+  font-size: 0.9em;
+  margin-bottom: 0.5em;
+}
+
+.reveal .source {
+  position: absolute;
+  bottom: -0.6em;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 0.45em;
+  color: var(--mode-muted);
+}
+
+.reveal .slides section.smaller .source {
+  font-size: 0.65em;
+}
+
+/* ---------- Title slide: Mode's stepped lime hero ---------- */
+
+.reveal .hero {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15em;
+  margin-top: 0.6em;
+}
+
+.reveal .hero p {
+  margin: 0;
+}
+
+.reveal .hero p:nth-child(2) {
+  text-align: center;
+}
+
+.reveal .hero p:nth-child(3) {
+  text-align: right;
+}
+
+.reveal .hero-line {
+  display: inline-block;
+  font-family: var(--mode-serif);
+  font-size: 2.15em;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  color: var(--mode-green);
+  background: var(--mode-lime);
+  border-radius: var(--mode-radius);
+  padding: 0.04em 0.28em 0.12em;
+}
+
+.reveal .hero-meta {
+  margin-top: 1.1em;
+  max-width: 60%;
+}
+
+.reveal .hero-subtitle {
+  font-size: 0.8em;
+  font-weight: 500;
+}
+
+.reveal .hero-author {
+  font-size: 0.65em;
+  color: var(--mode-muted);
+  margin-top: 0.4em;
+}
+
+.reveal .hero-source {
+  font-size: 0.42em;
+  color: var(--mode-muted);
+  margin-top: 1.4em;
+}
+
+/* ---------- Section slides ---------- */
+
+.reveal .slides section.level1 {
+  text-align: center;
+}
+
+.reveal .slides section.level1 h1 {
+  font-size: 2.3em;
+  letter-spacing: -0.03em;
+}
+
+.reveal .slides section.level1 > p {
+  font-size: 0.85em;
+  color: var(--mode-muted);
+}
+
+.reveal .section-eyebrow {
+  display: table;
+  margin: 0 auto 0.5em;
+  font-family: var(--mode-sans);
+  font-size: 0.26em;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--mode-green);
+  background: var(--mode-lime);
+  border-radius: 200px;
+  padding: 0.45em 1.1em;
+}
+
+/* ---------- Rule slides ---------- */
+
+.reveal .rule-tag {
+  font-family: var(--mode-sans);
+  font-size: 0.5em;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  vertical-align: 0.35em;
+  margin-right: 0.4em;
+  color: var(--mode-green);
+  background: var(--mode-lime);
+  border-radius: 200px;
+  padding: 0.2em 0.6em;
+}
+
+.reveal .slides section.rule-slide {
+  text-align: center;
+}
+
+.reveal .slides section.rule-slide h2 {
+  font-size: 1.3em;
+}
+
+.reveal .slides section.rule-slide .lede {
+  font-size: 0.62em;
+  margin-bottom: 0.5em;
+}
+
+.reveal img.illustration {
+  border-radius: var(--mode-radius);
+  background: var(--mode-white);
+  box-shadow: 0 0 0 6px var(--mode-cream);
+  margin: 0.2em auto 0;
+}
+
+/* ---------- Cards ---------- */
+
+.reveal .card {
+  border-radius: var(--mode-radius);
+  padding: 0.75em 1em;
+  font-size: 0.62em;
+  line-height: 1.45;
+  text-align: left;
+}
+
+.reveal .slides section.smaller .card {
+  font-size: 0.95em;
+}
+
+.reveal .card > :first-child {
+  margin-top: 0;
+}
+
+.reveal .card > :last-child {
+  margin-bottom: 0;
+}
+
+.reveal .card p,
+.reveal .card ul {
+  margin: 0.35em 0;
+}
+
+.reveal .card ul {
+  padding-left: 1.1em;
+  margin-left: 0;
+  display: block;
+}
+
+.reveal .card li {
+  margin: 0.2em 0;
+}
+
+.reveal .card-title {
+  display: block;
+  font-family: var(--mode-serif);
+  font-size: 1.5em;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin: 0.15em 0 0.35em;
+}
+
+.reveal .card-cream,
+.reveal .card-lime {
+  color: var(--mode-green);
+}
+
+.reveal .card-cream {
+  background: var(--mode-cream);
+}
+
+.reveal .card-lime {
+  background: var(--mode-lime);
+}
+
+.reveal .card-cream a,
+.reveal .card-lime a {
+  color: var(--mode-green);
+}
+
+.reveal .card-outline {
+  border: 1.5px solid var(--mode-cream);
+  color: var(--mode-cream);
+}
+
+.reveal .card-wide {
+  margin-top: 0.8em;
+}
+
+.reveal .card-tall {
+  min-height: 9em;
+}
+
+.reveal .card-callout {
+  font-family: var(--mode-serif);
+  font-size: 1.05em;
+  text-align: center;
+  padding: 0.6em 1em;
+  margin: 0.4em 0 1em;
+}
+
+.reveal .eyebrow {
+  display: block;
+  font-size: 0.72em;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.reveal .card-grid {
+  display: grid;
+  gap: 0.5em;
+  margin-top: 0.4em;
+}
+
+.reveal .card-grid > .card {
+  margin: 0;
+}
+
+.reveal .card-grid-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.reveal .card-grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.reveal .card-grid-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.reveal .rule-index .card {
+  min-height: 6.5em;
+  font-size: 1.05em;
+}
+
+.reveal .rule-number {
+  display: block;
+  font-family: var(--mode-serif);
+  font-size: 2em;
+  line-height: 1;
+  margin-bottom: 0.4em;
+}
+
+.reveal .diagram-card {
+  padding: 0.4em 0.6em;
+  text-align: center;
+}
+
+.reveal .diagram-card .cell-output-display svg {
+  max-height: 260px;
+}
+
+/* ---------- Tables, code, and lists ---------- */
+
+.reveal .table-card {
+  background: var(--mode-cream);
+  color: var(--mode-green);
+  border-radius: var(--mode-radius);
+  padding: 0.6em 1em;
+}
+
+.reveal .table-card table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9em;
+}
+
+.reveal .table-card th,
+.reveal .table-card td {
+  border-bottom: 1px solid rgba(4, 63, 46, 0.25);
+  padding: 0.35em 0.6em;
+  text-align: left;
+}
+
+.reveal .table-card tr:last-child td {
+  border-bottom: none;
+}
+
+.reveal .table-card thead th {
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-size: 0.85em;
+}
+
+.reveal .slides div.sourceCode {
+  background: var(--mode-white);
+  border: none;
+  border-radius: var(--mode-radius);
+  margin: 0 0 0.6em;
+}
+
+.reveal div.sourceCode pre {
+  background: transparent;
+  border: none;
+}
+
+.reveal code {
+  color: inherit;
+}
+
+.reveal .reading-list ul {
+  font-size: 1em;
+  line-height: 1.4;
+}
+
+.reveal .reading-list li {
+  margin-bottom: 0.35em;
+}
+
+/* ---------- Reveal chrome ---------- */
+
+.reveal .controls,
+.reveal .progress {
+  color: var(--mode-lime);
+}
+
+.reveal .slide-number {
+  background: transparent;
+  color: var(--mode-muted);
+  font-family: var(--mode-sans);
+}
+
+/* Quarto's menu icon is a navy SVG; recolour it for the dark canvas. */
+.reveal .slide-menu-button .fa-bars::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23eef2e3" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/></svg>');
+}
+
+/* Links in the closing slide's icon row. */
+.reveal .deck-icon-link {
+  color: var(--mode-cream);
+}
+
+/* Name dense slides for assistive technology without moving their content. */
+.reveal .slides section.sr-only-heading > h2 {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Mermaid's default blue edge labels are too light on their grey backing. */
+.reveal svg .edgeLabel p {
+  color: #1a1a1a !important;
+}
+
+/* Lightweight SVG masks using Font Awesome Free 6.7.2 paths. Icons: CC BY 4.0; https://fontawesome.com/license/free */
+
+.deck-icon {
+  --deck-icon-image: none;
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  background-color: currentColor;
+  -webkit-mask: var(--deck-icon-image) center / contain no-repeat;
+  mask: var(--deck-icon-image) center / contain no-repeat;
+  vertical-align: -0.125em;
+}
+
+.deck-icon-2xl {
+  width: 2em;
+  height: 2em;
+  vertical-align: -0.1875em;
+}
+
+.deck-icon-brands-github {
+  --deck-icon-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0OTYgNTEyIj48cGF0aCBkPSJNMTY1LjkgMzk3LjRjMCAyLTIuMyAzLjYtNS4yIDMuNi0zLjMuMy01LjYtMS4zLTUuNi0zLjYgMC0yIDIuMy0zLjYgNS4yLTMuNiAzLS4zIDUuNiAxLjMgNS42IDMuNnptLTMxLjEtNC41Yy0uNyAyIDEuMyA0LjMgNC4zIDQuOSAyLjYgMSA1LjYgMCA2LjItMnMtMS4zLTQuMy00LjMtNS4yYy0yLjYtLjctNS41LjMtNi4yIDIuM3ptNDQuMi0xLjdjLTIuOS43LTQuOSAyLjYtNC42IDQuOS4zIDIgMi45IDMuMyA1LjkgMi42IDIuOS0uNyA0LjktMi42IDQuNi00LjYtLjMtMS45LTMtMy4yLTUuOS0yLjl6TTI0NC44IDhDMTA2LjEgOCAwIDExMy4zIDAgMjUyYzAgMTEwLjkgNjkuOCAyMDUuOCAxNjkuNSAyMzkuMiAxMi44IDIuMyAxNy4zLTUuNiAxNy4zLTEyLjEgMC02LjItLjMtNDAuNC0uMy02MS40IDAgMC03MCAxNS04NC43LTI5LjggMCAwLTExLjQtMjkuMS0yNy44LTM2LjYgMCAwLTIyLjktMTUuNyAxLjYtMTUuNCAwIDAgMjQuOSAyIDM4LjYgMjUuOCAyMS45IDM4LjYgNTguNiAyNy41IDcyLjkgMjAuOSAyLjMtMTYgOC44LTI3LjEgMTYtMzMuNy01NS45LTYuMi0xMTIuMy0xNC4zLTExMi4zLTExMC41IDAtMjcuNSA3LjYtNDEuMyAyMy42LTU4LjktMi42LTYuNS0xMS4xLTMzLjMgMi42LTY3LjkgMjAuOS02LjUgNjkgMjcgNjkgMjcgMjAtNS42IDQxLjUtOC41IDYyLjgtOC41czQyLjggMi45IDYyLjggOC41YzAgMCA0OC4xLTMzLjYgNjktMjcgMTMuNyAzNC43IDUuMiA2MS40IDIuNiA2Ny45IDE2IDE3LjcgMjUuOCAzMS41IDI1LjggNTguOSAwIDk2LjUtNTguOSAxMDQuMi0xMTQuOCAxMTAuNSA5LjIgNy45IDE3IDIyLjkgMTcgNDYuNCAwIDMzLjctLjMgNzUuNC0uMyA4My42IDAgNi41IDQuNiAxNC40IDE3LjMgMTIuMUM0MjguMiA0NTcuOCA0OTYgMzYyLjkgNDk2IDI1MiA0OTYgMTEzLjMgMzgzLjUgOCAyNDQuOCA4ek05Ny4yIDM1Mi45Yy0xLjMgMS0xIDMuMy43IDUuMiAxLjYgMS42IDMuOSAyLjMgNS4yIDEgMS4zLTEgMS0zLjMtLjctNS4yLTEuNi0xLjYtMy45LTIuMy01LjItMXptLTEwLjgtOC4xYy0uNyAxLjMuMyAyLjkgMi4zIDMuOSAxLjYgMSAzLjYuNyA0LjMtLjcuNy0xLjMtLjMtMi45LTIuMy0zLjktMi0uNi0zLjYtLjMtNC4zLjd6bTMyLjQgMzUuNmMtMS42IDEuMy0xIDQuMyAxLjMgNi4yIDIuMyAyLjMgNS4yIDIuNiA2LjUgMSAxLjMtMS4zLjctNC4zLTEuMy02LjItMi4yLTIuMy01LjItMi42LTYuNS0xem0tMTEuNC0xNC43Yy0xLjYgMS0xLjYgMy42IDAgNS45IDEuNiAyLjMgNC4zIDMuMyA1LjYgMi4zIDEuNi0xLjMgMS42LTMuOSAwLTYuMi0xLjQtMi4zLTQtMy4zLTUuNi0yeiIvPjwvc3ZnPg==");
+}
+
+.deck-icon-brands-linkedin {
+  --deck-icon-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0NDggNTEyIj48cGF0aCBkPSJNNDE2IDMySDMxLjlDMTQuMyAzMiAwIDQ2LjUgMCA2NC4zdjM4My40QzAgNDY1LjUgMTQuMyA0ODAgMzEuOSA0ODBINDE2YzE3LjYgMCAzMi0xNC41IDMyLTMyLjNWNjQuM2MwLTE3LjgtMTQuNC0zMi4zLTMyLTMyLjN6TTEzNS40IDQxNkg2OVYyMDIuMmg2Ni41VjQxNnptLTMzLjItMjQzYy0yMS4zIDAtMzguNS0xNy4zLTM4LjUtMzguNVM4MC45IDk2IDEwMi4yIDk2YzIxLjIgMCAzOC41IDE3LjMgMzguNSAzOC41IDAgMjEuMy0xNy4yIDM4LjUtMzguNSAzOC41em0yODIuMSAyNDNoLTY2LjRWMzEyYzAtMjQuOC0uNS01Ni43LTM0LjUtNTYuNy0zNC42IDAtMzkuOSAyNy0zOS45IDU0LjlWNDE2aC02Ni40VjIwMi4yaDYzLjd2MjkuMmguOWM4LjktMTYuOCAzMC42LTM0LjUgNjIuOS0zNC41IDY3LjIgMCA3OS43IDQ0LjMgNzkuNyAxMDEuOVY0MTZ6Ii8+PC9zdmc+");
+}
+
+.deck-icon-solid-envelope {
+  --deck-icon-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cGF0aCBkPSJNNDggNjRDMjEuNSA2NCAwIDg1LjUgMCAxMTJjMCAxNS4xIDcuMSAyOS4zIDE5LjIgMzguNEwyMzYuOCAzMTMuNmMxMS40IDguNSAyNyA4LjUgMzguNCAwTDQ5Mi44IDE1MC40YzEyLjEtOS4xIDE5LjItMjMuMyAxOS4yLTM4LjRjMC0yNi41LTIxLjUtNDgtNDgtNDhMNDggNjR6TTAgMTc2TDAgMzg0YzAgMzUuMyAyOC43IDY0IDY0IDY0bDM4NCAwYzM1LjMgMCA2NC0yOC43IDY0LTY0bDAtMjA4TDI5NC40IDMzOS4yYy0yMi44IDE3LjEtNTQgMTcuMS03Ni44IDBMMCAxNzZ6Ii8+PC9zdmc+");
+}
