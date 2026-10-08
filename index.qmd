@@ -207,9 +207,7 @@ Start with a real pain point, try a small change in approach, and keep it when t
 ![](media/devex-agentex.webp){.illustration width="880" height="495" fig-alt="Editorial infographic: a human and a coding agent connect to the same well-designed codebase. Five panels identify clear structure (folders, names, boundaries), one-command workflows (setup, format, lint, test), deterministic QA (formatters, linters, types, tests), living documentation (README, conventions, examples), and modular design (small units, clear interfaces). Shared outcomes are speed, quality, and trust."}
 
 ::: {.notes}
-What makes a codebase easy for humans makes it cheaper and safer for agents.
-
-DevEx equals AgentEx: the same things that make a codebase easy for humans also make it easier and cheaper for agents to work in.
+DevEx equals AgentEx: what makes a codebase easy for humans makes it cheaper and safer for agents to work in.
 
 If developers need to hunt through unclear documentation, inconsistent commands, or hidden conventions, agents will struggle too. They burn tokens, make assumptions, or ask for more context.
 :::
@@ -303,9 +301,7 @@ A second agent can offer another perspective, but agreement between agents is no
 ![](media/small-scope.webp){.illustration width="880" height="495" fig-alt="Two-panel illustration: an enormous prompt covering onboarding, billing, analytics, search, SSO, and migrations produces a large diff that is hard to review and reverse. Five small steps, API change, UI update, tests, docs, and deployment configuration, each have a small diff and commit. One concern at a time makes changes reviewable and reversible, with fast feedback. Small diffs beat heroic prompts."}
 
 ::: {.notes}
-In brownfield projects, introduce changes in reviewable, reversible chunks.
-
-In brownfield systems, scope control is the difference between useful automation and an unreviewable mess.
+In brownfield projects, introduce changes in reviewable, reversible chunks. Scope control is the difference between useful automation and an unreviewable mess.
 :::
 
 ## Scope control: in practice {.smaller}
