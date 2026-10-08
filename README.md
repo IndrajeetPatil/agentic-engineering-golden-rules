@@ -2,17 +2,19 @@
 
 [![Build and Deploy Presentation](https://github.com/IndrajeetPatil/agentic-engineering-golden-rules/actions/workflows/build-presentation.yaml/badge.svg)](https://github.com/IndrajeetPatil/agentic-engineering-golden-rules/actions/workflows/build-presentation.yaml)
 
-This presentation distils golden rules for agentic engineering: using
+This presentation distils ten golden rules for agentic engineering: using
 coding agents to boost productivity without compromising quality.
 
-1. DevEx = AgentEx
-2. Guardrails: fast feedback beats orchestration
-3. Specify intent: state outcomes and constraints, not ceremony
-4. Scope control: small, reversible changes
-5. Session hygiene: coherent context beats haunted context
-6. Know thy tools
-7. Meta-automation: automate repeated agent choreography
-8. Be curious. Be humble. Be kind.
+1. Measure the whole job
+2. DevEx = AgentEx
+3. Define done before delegating
+4. Scope control
+5. Bound the blast radius
+6. Guardrails
+7. Session hygiene
+8. Know thy tools
+9. Meta-automation
+10. Be curious. Be humble. Be kind.
 
 The slides can be seen here:<br>
 <https://www.indrapatil.com/agentic-engineering-golden-rules/>

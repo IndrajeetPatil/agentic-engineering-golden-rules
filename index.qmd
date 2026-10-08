@@ -28,7 +28,7 @@ execute:
   echo: true
   eval: false
 keywords: ["agentic-engineering", "coding-agents", "software-engineering", "ai-assisted-development"]
-description-meta: "Golden rules for agentic engineering: how to use coding agents to boost productivity without compromising quality. Covers developer experience, deterministic guardrails, intent over ceremony, scope control, session hygiene, tool affordances, meta-automation, and team culture."
+description-meta: "Golden rules for agentic engineering: how to use coding agents to boost productivity without compromising quality. Ten rules covering developer experience, guardrails, acceptance criteria, scoped permissions, reviewable changes, context, tools, automation, whole-job outcomes, and team culture."
 license: "CC0 1.0 Universal"
 pagetitle: "Golden Rules for Agentic Engineering"
 author-meta: "Indrajeet Patil"
@@ -107,29 +107,29 @@ On the risks of real actions, see [The lethal trifecta for AI agents](https://si
 :::
 
 ::: {.notes}
-Quality gates such as tests, security, deployment, and maintenance are part of the conversation. Throwaway proofs of concept, demos, and prototypes can trade engineering rigour for speed: tests, coverage, and polish can wait until the code starts to matter, which often happens sooner than planned. The consequences of running the code cannot wait. A disposable script can still expose credentials, alter real data, or send something externally, so keep scoped credentials, sandboxes, and confirmation before real actions. The aim is to sharpen judgement, not to sell a magic solution.
+Quality gates such as tests, security, deployment, and maintenance are part of the conversation. Throwaway proofs of concept, demos, and prototypes can trade engineering rigour for speed: tests, coverage, and polish can wait until the code starts to matter, which often happens sooner than planned. The consequences of running the code cannot wait. A disposable script can still expose credentials, alter real data, or send something externally, so keep scoped credentials, sandboxes, and approval before the agreed consequential actions. The aim is to sharpen judgement, not to sell a magic solution.
 :::
 
 ## Golden rules {.smaller}
 
-:::: {.card-grid .card-grid-4 .rule-index}
+:::: {.card-grid .card-grid-2 .rule-index}
 
 ::: {.card}
 [01]{.rule-number}
 
-**DevEx = AgentEx**
+**Measure the whole job**
 :::
 
 ::: {.card}
 [02]{.rule-number}
 
-**Guardrails**
+**DevEx = AgentEx**
 :::
 
 ::: {.card}
 [03]{.rule-number}
 
-**Specify intent**
+**Define done before delegating**
 :::
 
 ::: {.card}
@@ -141,30 +141,64 @@ Quality gates such as tests, security, deployment, and maintenance are part of t
 ::: {.card}
 [05]{.rule-number}
 
-**Session hygiene**
+**Bound the blast radius**
 :::
 
 ::: {.card}
 [06]{.rule-number}
 
-**Know thy tools**
+**Guardrails**
 :::
 
 ::: {.card}
 [07]{.rule-number}
 
-**Meta-automation**
+**Session hygiene**
 :::
 
 ::: {.card}
 [08]{.rule-number}
+
+**Know thy tools**
+:::
+
+::: {.card}
+[09]{.rule-number}
+
+**Meta-automation**
+:::
+
+::: {.card}
+[10]{.rule-number}
 
 **Be curious. Be humble. Be kind.**
 :::
 
 ::::
 
-## [01]{.rule-tag} DevEx = AgentEx {.rule-slide}
+## [01]{.rule-tag} Measure the whole job {.rule-slide}
+
+[Choose the simplest approach that improves time to an accepted result.]{.lede}
+
+![](media/measure-whole-job.webp){.illustration width="880" height="495" fig-alt="Two-panel illustration: choose among a direct human edit, a script or existing tool, and an agent, starting with a real pain point. Preparation, generation, verification, and review all contribute to time to an accepted result. Also track review effort, defects, and maintenance burden, and keep the approach that improves the whole job."}
+
+::: {.source}
+Inspired by [Building effective agents](https://www.anthropic.com/engineering/building-effective-agents) (Anthropic); the whole-job measures are practical recommendations for coding work.
+:::
+
+::: {.notes}
+Decide whether an agent is useful before deciding how to orchestrate one. A direct human edit, an existing tool, or a deterministic script can be the simplest effective answer. Use an agent when its flexibility improves the result enough to justify the extra coordination and verification.
+
+Anthropic recommends starting with the simplest solution and adding complexity when it demonstrably improves outcomes. This is an application of that principle to day-to-day coding work, not evidence that agents always help or always hurt.
+
+Judge the whole job: time from preparing the task to an accepted result, human review and rework effort, defects discovered after acceptance, and maintenance burden. Generation speed and code volume omit much of this work. Include abandoned attempts and track human review time separately so faster generation does not hide extra work for colleagues.
+
+Compare similar tasks and agreed acceptance criteria. Record enough context to interpret the result: task difficulty, the approach used, and relevant conditions. A one-off anecdote cannot establish a universal productivity gain.
+
+Start with a real pain point, try a small change in approach, and keep it when the total outcome improves. Revisit the choice as tools and team practices change.
+:::
+
+## [02]{.rule-tag} DevEx = AgentEx {.rule-slide}
 
 [If humans hunt for context, agents burn tokens too.]{.lede}
 
@@ -196,7 +230,169 @@ Capture that procedure in a maintained setup command. Then AGENTS.md can point t
 The work still happens; the command owns the sequence, checks prerequisites, and reports useful errors. Keep the implementation reproducible and the instruction current so neither humans nor agents have to guess the next step.
 :::
 
-## [02]{.rule-tag} Guardrails {.rule-slide}
+## [03]{.rule-tag} Define done before delegating {.rule-slide}
+
+[State the outcome, what must stay unchanged, and the evidence that will show it works.]{.lede}
+
+![](media/define-done.webp){.illustration width="880" height="495" fig-alt="Three-panel illustration: a human gives a robot a brief containing the goal, constraints, and what stays unchanged; evidence is chosen to fit the task, reproducing and fixing a bug, inspecting a UI interaction, or measuring performance; a human and robot compare tests with requirements because both can share the same mistake. Agree the criteria, verify against them, and review the evidence."}
+
+::: {.source}
+See [Demystifying evals for AI agents](https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents) (Anthropic).
+:::
+
+::: {.notes}
+This combines specifying intent with defining done. Before delegating, agree an observable outcome, constraints, what must remain unchanged, and the evidence needed to accept the result. Let the agent choose the route unless the sequence itself matters.
+
+For example: fix date parsing so invalid dates produce the documented error, preserve the public API and valid-date behaviour, and show a reproduction that fails before the fix and passes after it. Check the expected outcome against the requirement, rather than assuming the existing test is right.
+
+Choose evidence that addresses the task. A bug needs a reproduction and a changed outcome. UI work needs inspection of the rendered interaction, including relevant keyboard and responsive states. Performance work needs comparable before-and-after measurements under stated conditions.
+
+When the agent writes both implementation and tests, both can encode the same misunderstanding. Compare the assertions with the agreed criteria, include relevant unchanged behaviour, and inspect the actual result. More tests or higher coverage alone do not settle the question.
+
+Agents must verify their own work: run relevant checks, inspect results, fix failures, and re-check before reporting completion. Hand over evidence tied to the criteria, including any unresolved limitations. Guardrails provide fast feedback; this rule asks whether the evidence proves the intended outcome.
+
+Prescribe steps when their order matters, such as migrations, incident response, or a proven diagnostic workflow. Otherwise, specify the outcome and constraints, provide strong tools, and retain human review of what ships.
+:::
+
+## Define done before delegating: in practice {.smaller}
+
+:::: {.card-grid .card-grid-3}
+
+::: {.card .card-stone}
+[Bug fix]{.eyebrow}
+
+Reproduce the failure. Show the same case succeeding after the fix, and check relevant unchanged behaviour.
+:::
+
+::: {.card .card-outline}
+[UI change]{.eyebrow}
+
+Inspect the rendered interaction, including relevant keyboard and responsive states. A build alone cannot show this.
+:::
+
+::: {.card .card-stone}
+[Performance]{.eyebrow}
+
+Measure before and after under comparable conditions. State the workload and trade-offs.
+:::
+
+::::
+
+::: {.card .card-ink .card-wide}
+**Check the meaning of the tests.** Implementation and assertions can agree with each other while missing the requirement.
+:::
+
+::: {.source}
+Verification examples adapted from [Demystifying evals for AI agents](https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents) (Anthropic).
+:::
+
+::: {.notes}
+Define the expected result before the implementation. Keep the acceptance criteria independent of the agent's chosen solution.
+
+Ask for evidence that a reviewer can inspect: the reproduction and check results for a bug, the rendered interaction for a UI change, and before-and-after measurements for performance work. Check both the requested change and the behaviour that must remain unchanged.
+
+A second agent can offer another perspective, but agreement between agents is not a substitute for checking the requirement and observable outcome.
+:::
+
+## [04]{.rule-tag} Scope control {.rule-slide}
+
+[Small diffs beat heroic prompts.]{.lede}
+
+![](media/small-scope.webp){.illustration width="880" height="495" fig-alt="Two-panel illustration: an enormous prompt covering onboarding, billing, analytics, search, SSO, and migrations produces a large diff that is hard to review and reverse. Five small steps, API change, UI update, tests, docs, and deployment configuration, each have a small diff and commit. One concern at a time makes changes reviewable and reversible, with fast feedback. Small diffs beat heroic prompts."}
+
+::: {.notes}
+In brownfield projects, introduce changes in reviewable, reversible chunks.
+
+In brownfield systems, scope control is the difference between useful automation and an unreviewable mess.
+:::
+
+## Scope control: in practice {.smaller}
+
+:::: {.card-grid .card-grid-2}
+
+::: {.card .card-stone}
+[Why]{.eyebrow}
+
+Agents can produce changes faster than reviewers can assess them. **Keep each change within review capacity.**
+:::
+
+::: {.card .card-stone}
+[How]{.eyebrow}
+
+Prefer narrow tasks: one bug, one refactor, one test gap, one migration step. Each chunk should be reviewable, testable, and revertible on its own.
+:::
+
+::::
+
+::: {.card .card-ink .card-wide}
+When the agent discovers broader issues, **capture them as follow-up tasks** instead of expanding the current change indefinitely.
+:::
+
+::: {.notes}
+Agents are good at making many changes quickly, but reviewers need changes that are small enough to understand.
+:::
+
+## [05]{.rule-tag} Bound the blast radius {.rule-slide}
+
+[Limit what the agent can read, change, and execute; agree which actions need approval.]{.lede}
+
+![](media/bound-blast-radius.webp){.illustration width="880" height="495" fig-alt="Three-panel illustration: an agent works within enforced read, change, and execute permissions while credentials are protected; retrieved content stays separate from authorised instructions; a human approval checkpoint precedes deploying, sending, and deleting. Worktrees isolate edits, while sandboxes restrict actions."}
+
+::: {.source}
+Sources: [Git worktrees](https://git-scm.com/docs/git-worktree) · OWASP [Excessive agency](https://genai.owasp.org/llmrisk/llm062025-excessive-agency/) · [Prompt injection](https://genai.owasp.org/llmrisk/llm01-prompt-injection/).
+:::
+
+::: {.notes}
+Review before merge governs the diff, but an agent can read secrets, run commands, or affect external systems before there is a diff to review. Set the operating boundary before it starts.
+
+Define what it may read, change, and execute. Enforce the boundary with appropriate filesystem and network restrictions, limited tool access, and credentials scoped to the task. Keep unnecessary credentials out of its environment and protect secrets from prompts, logs, and generated artefacts. A written instruction alone is not an access control.
+
+Agree which consequential actions require human approval, such as deploying, sending messages, or deleting real data, and enforce that checkpoint before the action. Approval should identify the actual target and effect. Existing explicit authorisation can cover the action; the goal is a clear boundary, not repeated permission questions for routine work.
+
+Retrieved pages, issues, documents, and tool output are evidence to inspect. They do not gain authority to change the task or grant permissions just because the agent reads them. Clearly separate external content from authorised instructions; this reduces risk but does not make prompt injection impossible.
+
+Git documents separate working trees and per-worktree metadata alongside shared repository data. This is separation of edits, not an operating-system access control: worktrees share the host's access and do not provide a security boundary. A sandbox must actually restrict filesystem, process, and network access to contain actions. Check the configured restrictions rather than assuming a tool's default mode supplies them.
+:::
+
+## Bound the blast radius: in practice {.smaller}
+
+:::: {.card-grid .card-grid-3}
+
+::: {.card .card-stone}
+[Access]{.eyebrow}
+
+Allow only the files, tools, network access, and credentials needed for the task. Enforce the limits outside the prompt.
+:::
+
+::: {.card .card-outline}
+[Authority]{.eyebrow}
+
+Treat retrieved content as data. It cannot grant permissions or override authorised instructions.
+:::
+
+::: {.card .card-stone}
+[Approval]{.eyebrow}
+
+Agree the actions that need approval, and place the checkpoint before their real effects.
+:::
+
+::::
+
+::: {.card .card-ink .card-wide}
+**Worktrees isolate edits; they do not contain actions.** Use a sandbox with enforced access limits.
+:::
+
+::: {.source}
+Sources: [Git worktrees](https://git-scm.com/docs/git-worktree) · OWASP [Excessive agency](https://genai.owasp.org/llmrisk/llm062025-excessive-agency/) · [Prompt injection](https://genai.owasp.org/llmrisk/llm01-prompt-injection/).
+:::
+
+::: {.notes}
+Scope control keeps changes reviewable; bounding the blast radius limits what the agent can affect while making them. Both matter, and a narrow task still needs appropriate permissions.
+
+Start by listing necessary reads, writes, commands, and external access. Remove unused tools and credentials. Confirm that the sandbox and downstream systems enforce the agreed limits. Reserve human approval for the agreed consequential actions before they occur.
+:::
+
+## [06]{.rule-tag} Guardrails {.rule-slide}
 
 [Fast feedback beats orchestration.]{.lede}
 
@@ -219,7 +415,7 @@ Guardrails are more important than elaborate orchestration. Fast, deterministic 
 ::: {.card .card-outline}
 [The harness]{.eyebrow}
 
-Formatters, linters, type checkers, tests with coverage gates, Git hooks, and security scans
+Formatters, linters, type checkers, behaviour-focused tests, Git hooks, and security scans
 :::
 
 ::: {.card .card-ink}
@@ -252,76 +448,14 @@ Agents will find the shortest path to green, including lowering a threshold or d
 Coverage gates invite filler tests. Ask agents to assert behaviour at the boundaries you own (the outbound request, the streamed output, the logged event), never to execute lines for the sake of coverage.
 :::
 
-## [03]{.rule-tag} Specify intent {.rule-slide}
-
-[State outcomes and constraints; prescribe steps only when the sequence matters.]{.lede}
-
-![](media/bitter-lesson.webp){.illustration width="880" height="495" fig-alt="Ceremony versus intent. A confused robot follows a prescribed route: open utils.py at line 40, add a try block, add exactly three tests, use single quotes, and do not deviate. An engaged robot receives an outcome and constraints: fix the failing date-parsing test, preserve the public API, keep the diff small, and explain any trade-off. Strong tools include search, docs, debugger, formatter, linter, type checker, tests, and CI. The agent verifies its own work by inspecting test, type, and build results. A single feedback loop shows Explore: inspect and try; Check: run checks and inspect results; Adapt: fix failures and re-check. A separate note says to prescribe steps when the sequence matters, such as migrations, incident response, and proven diagnostics."}
-
-::: {.source}
-Inspired by Rich Sutton's essay [The Bitter Lesson](http://www.incompleteideas.net/IncIdeas/BitterLesson.html) (2019), as an analogy rather than evidence.
-:::
-
-::: {.notes}
-Stronger models usually need clearer intent, not more ceremony. Do not get in the model's way by prescribing every implementation step.
-
-The framing borrows from Rich Sutton's essay The Bitter Lesson, which argues that general methods that scale with search and learning outperform methods built around human domain knowledge. That is an analogy for this advice, not evidence for it: the essay says nothing about how much procedural guidance coding agents need.
-
-Ceremony: "Open utils.py. Find the function on line 40. Add a try block. Then open the test file and add three tests. Use single quotes. Do not deviate from these steps." This over-specifies the route and leaves no room for the model to reason about a better one.
-
-Intent: "Fix the failing date-parsing test without changing the public API. Keep the diff small, and explain any trade-off." This states the outcome, constraints, acceptance criteria, and what must not change.
-
-Strong tools matter, and agents must use them to verify their own work: run the relevant checks, inspect the results, fix failures, and re-check before reporting completion. The Explore, Check, Adapt loop shows this responsibility explicitly.
-
-Procedures remain useful when the sequence itself matters: database migrations, incident response, or a proven diagnostic workflow. Specify those steps. Otherwise, give the agent a target, constraints, strong tools, and responsibility for verification. Passing checks still leaves humans responsible for review and what ships.
-:::
-
-## [04]{.rule-tag} Scope control {.rule-slide}
-
-[Small diffs beat heroic prompts.]{.lede}
-
-![](media/small-scope.webp){.illustration width="880" height="495" fig-alt="Two-panel illustration: an enormous prompt covering onboarding, billing, analytics, search, SSO, and migrations produces a large diff that is hard to review and reverse. Five small steps, API change, UI update, tests, docs, and deployment configuration, each have a small diff and commit. One concern at a time makes changes reviewable and reversible, with fast feedback. Small diffs beat heroic prompts."}
-
-::: {.notes}
-In brownfield projects, introduce changes in reviewable, reversible chunks.
-
-In brownfield systems, scope control is the difference between useful automation and an unreviewable mess.
-:::
-
-## Scope control: in practice {.smaller}
-
-:::: {.card-grid .card-grid-2}
-
-::: {.card .card-stone}
-[Why]{.eyebrow}
-
-Agents can change a lot of code quickly. Reviewers cannot review a lot of code quickly. **Review capacity is the bottleneck**, not generation speed.
-:::
-
-::: {.card .card-stone}
-[How]{.eyebrow}
-
-Prefer narrow tasks: one bug, one refactor, one test gap, one migration step. Each chunk should be reviewable, testable, and revertible on its own.
-:::
-
-::::
-
-::: {.card .card-ink .card-wide}
-When the agent discovers broader issues, **capture them as follow-up tasks** instead of expanding the current change indefinitely.
-:::
-
-::: {.notes}
-Agents are good at making many changes quickly, but reviewers need changes that are small enough to understand.
-:::
-
-## [05]{.rule-tag} Session hygiene {.rule-slide}
+## [07]{.rule-tag} Session hygiene {.rule-slide}
 
 [Coherent context beats haunted context.]{.lede}
 
 ![](media/session-hygiene.webp){.illustration width="880" height="495" fig-alt="Three-panel illustration: a robot keeps useful context for task A and a related follow-up in the same coherent session, with one task as the default and a reset when confused; parallel tasks A and B run in separate Git worktrees from the same repository; durable conventions, decisions, and lessons move from chat history into AGENTS.md, which a new session consults. A compact handoff contains the goal, constraints, relevant files, ruled-out approaches, and acceptance checks."}
 
 ::: {.source}
-See [Effective context engineering for AI agents](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents) (Anthropic).
+Sources: [Context engineering](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents) (Anthropic) · [Git worktrees](https://git-scm.com/docs/git-worktree).
 :::
 
 ::: {.notes}
@@ -331,14 +465,14 @@ Every correction, abandoned approach, and reversed decision stays in the context
 
 One task per session is a useful default, not an absolute. A closely related follow-up can benefit from the reasoning and discoveries already in context, and restarting has a cost: a handoff can lose an important constraint or a failed hypothesis. Restart when the context stops being coherent, not merely because it is no longer fresh.
 
-Use one Git worktree per parallel task so each task has its own working directory. Keep durable conventions, decisions, and lessons in the repository, for example in `AGENTS.md`, so future sessions can find them without relying on old chat history.
+Use one Git worktree per parallel task so each task has its own working directory. Worktrees isolate edits, not permissions; apply the access limits from Bound the blast radius as well. Keep durable conventions, decisions, and lessons in the repository, for example in `AGENTS.md`, so future sessions can find them without relying on old chat history.
 
 Signs of a haunted session include reviving a rejected approach, confusing earlier and current requirements, repeating the same correction, or continuing after the conversation has outgrown its original task.
 
 Reset with a compact handoff: the goal in one sentence, constraints on what must not change, relevant files to start with, approaches already ruled out, and acceptance checks that show when the work is done.
 :::
 
-## [06]{.rule-tag} Know thy tools {.rule-slide}
+## [08]{.rule-tag} Know thy tools {.rule-slide}
 
 [Sometimes the unlock is a hidden tool affordance.]{.lede}
 
@@ -366,7 +500,7 @@ Sometimes the limiting factor is not the model; it is the tool interface availab
 Agents perform better when they can inspect files, run commands, search the repository, execute tests, and see failures. If a tool is hidden, blocked, or awkward, the agent may appear less capable than it really is.
 :::
 
-## [07]{.rule-tag} Meta-automation {.rule-slide}
+## [09]{.rule-tag} Meta-automation {.rule-slide}
 
 [Automate repeated agent choreography.]{.lede}
 
@@ -375,7 +509,7 @@ Agents perform better when they can inspect files, run commands, search the repo
 ::: {.notes}
 Capture once. Run many times.
 
-Once a useful agent workflow repeats, automate the choreography around it.
+Once a useful agent workflow repeats and improves the whole job, automate the choreography around it.
 :::
 
 ## Meta-automation: in practice {.rule-slide}
@@ -400,7 +534,7 @@ The vulnerability-management workflow is adapted from codex-security.md. Scan fi
 Automate coordination: gathering context, running checks, formatting reports, and repeating the process across repositories. Humans evaluate evidence, make trade-offs, and decide what ships. Run unattended agents only in isolated sandboxes with scoped credentials.
 :::
 
-## [08]{.rule-tag} Be curious. Be humble. Be kind. {.rule-slide}
+## [10]{.rule-tag} Be curious. Be humble. Be kind. {.rule-slide}
 
 [AI is not an excuse to become incompetent or disagreeable.]{.lede}
 
@@ -457,7 +591,7 @@ Pool your team's tips and tricks for agentic coding. Someone has already solved 
 ::: {.card .card-stone}
 [Fix pain points]{.eyebrow}
 
-The best way to upskill is to identify a real pain point (slow tests, unclear setup, flaky workflows) and resolve it.
+Pick a real pain point (slow tests, unclear setup, flaky workflows). Use the simplest effective approach, and measure the whole job.
 :::
 
 ::: {.card .card-stone}
@@ -469,10 +603,14 @@ Task division, coordination, and reviewability matter more when everyone has an 
 ::: {.card .card-stone}
 [Challenge your habits]{.eyebrow}
 
-If you are already set in your ways with coding agents, these tools change monthly. So should your workflow.
+Revisit your workflow as tools change. Keep changes that improve the outcome.
 :::
 
 ::::
+
+::: {.source}
+Simplest-solution principle: [Building effective agents](https://www.anthropic.com/engineering/building-effective-agents) (Anthropic).
+:::
 
 ::: {.notes}
 Code generation is often the easy part. The hard part is planning work in a team: dividing tasks, coordinating changes, preserving quality, and making results reviewable.
@@ -496,7 +634,11 @@ Code generation is often the easy part. The hard part is planning work in a team
 
 - Beck, K. [Augmented coding: beyond the vibes](https://tidyfirst.substack.com/p/augmented-coding-beyond-the-vibes).
 
-- Sutton, R. (2019). [The Bitter Lesson](http://www.incompleteideas.net/IncIdeas/BitterLesson.html).
+- Anthropic. [Demystifying evals for AI agents](https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents).
+
+- OWASP. [Excessive agency](https://genai.owasp.org/llmrisk/llm062025-excessive-agency/) and [Prompt injection](https://genai.owasp.org/llmrisk/llm01-prompt-injection/).
+
+- Git. [git-worktree manual](https://git-scm.com/docs/git-worktree).
 
 - [AGENTS.md](https://agents.md/): a simple, open format for guiding coding agents.
 
