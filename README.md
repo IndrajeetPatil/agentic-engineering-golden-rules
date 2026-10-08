@@ -22,10 +22,12 @@ The slides will be available here once published:<br>
 ## Design
 
 The visual design is inspired by [Mode](https://mode.com/): a deep green
-canvas, cream and lime cards with soft rounded corners, and a large serif
-display face over a clean sans-serif. [Fraunces](https://fonts.google.com/specimen/Fraunces)
-and [Inter](https://fonts.google.com/specimen/Inter) stand in for Mode's
-proprietary typefaces. All illustrations in the deck are AI-generated.
+canvas, cream and lime cards with soft rounded corners, and a large display
+face over a clean sans-serif. Headings use
+[Bricolage Grotesque](https://fonts.google.com/specimen/Bricolage+Grotesque),
+body text uses [Geist](https://fonts.google.com/specimen/Geist), and code uses
+[Geist Mono](https://fonts.google.com/specimen/Geist+Mono). All illustrations
+in the deck are AI-generated.
 
 ## Development
 

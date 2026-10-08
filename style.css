@@ -1,9 +1,9 @@
 /*
  * Design inspired by Mode (https://mode.com/): deep green canvas, cream and
- * lime cards with soft 16px radii, a large serif display face over a clean sans.
- * Fraunces and Inter stand in for Mode's proprietary Grenette and Graphik.
+ * lime cards with soft 16px radii, a large display face over a clean sans.
+ * Bricolage Grotesque, Geist, and Geist Mono are open-licence Google Fonts.
  */
-@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500&family=Inter:wght@400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap");
 
 :root {
   --mode-green: #043f2e;
@@ -13,8 +13,9 @@
   --mode-white: #fcfcfc;
   --mode-muted: #d3dcc6;
   --mode-radius: 16px;
-  --mode-serif: "Fraunces", Georgia, "Times New Roman", serif;
-  --mode-sans: "Inter", "Helvetica Neue", Arial, sans-serif;
+  --mode-display: "Bricolage Grotesque", "Helvetica Neue", Arial, sans-serif;
+  --mode-sans: "Geist", "Helvetica Neue", Arial, sans-serif;
+  --mode-mono: "Geist Mono", ui-monospace, Menlo, monospace;
 
   --r-background-color: var(--mode-green);
   --r-main-color: var(--mode-cream);
@@ -24,7 +25,8 @@
   --r-selection-background-color: var(--mode-lime);
   --r-selection-color: var(--mode-green);
   --r-main-font: var(--mode-sans);
-  --r-heading-font: var(--mode-serif);
+  --r-heading-font: var(--mode-display);
+  --r-code-font: var(--mode-mono);
 }
 
 /* ---------- Canvas and typography ---------- */
@@ -40,7 +42,7 @@
 
 .reveal h1,
 .reveal h2 {
-  font-family: var(--mode-serif);
+  font-family: var(--mode-display);
   font-weight: 400;
   color: var(--mode-cream);
   letter-spacing: -0.02em;
@@ -117,7 +119,7 @@
 
 .reveal .hero-line {
   display: inline-block;
-  font-family: var(--mode-serif);
+  font-family: var(--mode-display);
   font-size: 2.15em;
   line-height: 1.05;
   letter-spacing: -0.03em;
@@ -253,7 +255,7 @@
 
 .reveal .card-title {
   display: block;
-  font-family: var(--mode-serif);
+  font-family: var(--mode-display);
   font-size: 1.5em;
   line-height: 1.15;
   letter-spacing: -0.02em;
@@ -292,7 +294,7 @@
 }
 
 .reveal .card-callout {
-  font-family: var(--mode-serif);
+  font-family: var(--mode-display);
   font-size: 1.05em;
   text-align: center;
   padding: 0.6em 1em;
@@ -336,7 +338,7 @@
 
 .reveal .rule-number {
   display: block;
-  font-family: var(--mode-serif);
+  font-family: var(--mode-display);
   font-size: 2em;
   line-height: 1;
   margin-bottom: 0.4em;
@@ -394,6 +396,11 @@
 .reveal div.sourceCode pre {
   background: transparent;
   border: none;
+}
+
+.reveal code,
+.reveal pre {
+  font-family: var(--mode-mono);
 }
 
 .reveal code {
