@@ -349,8 +349,16 @@
   text-align: center;
 }
 
-.reveal .diagram-card .cell-output-display svg {
-  max-height: 260px;
+/* Quarto wraps Mermaid output in empty paragraphs that pad the card. */
+.reveal .diagram-card p:empty {
+  display: none;
+}
+
+/* Mermaid sizes its SVG inline; cap the height so text cards fit below it. */
+.reveal .diagram-card svg {
+  height: 150px !important;
+  width: auto !important;
+  max-width: 100% !important;
 }
 
 /* ---------- Tables, code, and lists ---------- */
@@ -399,7 +407,8 @@
 }
 
 .reveal code,
-.reveal pre {
+.reveal pre,
+.reveal pre code {
   font-family: var(--mode-mono);
 }
 
