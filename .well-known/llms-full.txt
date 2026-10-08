@@ -38,6 +38,7 @@ The talk is aimed at software engineers who ship production software and have at
 - Kent Beck, Augmented coding: beyond the vibes.
 - Anthropic, Demystifying evals for AI agents.
 - OWASP, Excessive agency and Prompt injection.
+- Git, git-worktree manual.
 - AGENTS.md, an open format for guiding coding agents.
 
 ## Retrieval notes

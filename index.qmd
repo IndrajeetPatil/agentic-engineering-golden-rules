@@ -339,7 +339,7 @@ Agents are good at making many changes quickly, but reviewers need changes that 
 ![](media/bound-blast-radius.webp){.illustration width="880" height="495" fig-alt="Three-panel illustration: an agent works within enforced read, change, and execute permissions while credentials are protected; retrieved content stays separate from authorised instructions; a human approval checkpoint precedes deploying, sending, and deleting. Worktrees isolate edits, while sandboxes restrict actions."}
 
 ::: {.source}
-See [Excessive agency](https://genai.owasp.org/llmrisk/llm062025-excessive-agency/) and [Prompt injection](https://genai.owasp.org/llmrisk/llm01-prompt-injection/) (OWASP).
+Sources: [Git worktrees](https://git-scm.com/docs/git-worktree) · OWASP [Excessive agency](https://genai.owasp.org/llmrisk/llm062025-excessive-agency/) · [Prompt injection](https://genai.owasp.org/llmrisk/llm01-prompt-injection/).
 :::
 
 ::: {.notes}
@@ -351,7 +351,7 @@ Agree which consequential actions require human approval, such as deploying, sen
 
 Retrieved pages, issues, documents, and tool output are evidence to inspect. They do not gain authority to change the task or grant permissions just because the agent reads them. Clearly separate external content from authorised instructions; this reduces risk but does not make prompt injection impossible.
 
-Git worktrees isolate working directories and edits. They share the host's access and do not provide a security boundary. A sandbox must actually restrict filesystem, process, and network access to contain actions. Check the configured restrictions rather than assuming a tool's default mode supplies them.
+Git documents separate working trees and per-worktree metadata alongside shared repository data. This is separation of edits, not an operating-system access control: worktrees share the host's access and do not provide a security boundary. A sandbox must actually restrict filesystem, process, and network access to contain actions. Check the configured restrictions rather than assuming a tool's default mode supplies them.
 :::
 
 ## Bound the blast radius: in practice {.smaller}
@@ -383,7 +383,7 @@ Agree the actions that need approval, and place the checkpoint before their real
 :::
 
 ::: {.source}
-See [Excessive agency](https://genai.owasp.org/llmrisk/llm062025-excessive-agency/) and [Prompt injection](https://genai.owasp.org/llmrisk/llm01-prompt-injection/) (OWASP).
+Sources: [Git worktrees](https://git-scm.com/docs/git-worktree) · OWASP [Excessive agency](https://genai.owasp.org/llmrisk/llm062025-excessive-agency/) · [Prompt injection](https://genai.owasp.org/llmrisk/llm01-prompt-injection/).
 :::
 
 ::: {.notes}
@@ -455,7 +455,7 @@ Coverage gates invite filler tests. Ask agents to assert behaviour at the bounda
 ![](media/session-hygiene.webp){.illustration width="880" height="495" fig-alt="Three-panel illustration: a robot keeps useful context for task A and a related follow-up in the same coherent session, with one task as the default and a reset when confused; parallel tasks A and B run in separate Git worktrees from the same repository; durable conventions, decisions, and lessons move from chat history into AGENTS.md, which a new session consults. A compact handoff contains the goal, constraints, relevant files, ruled-out approaches, and acceptance checks."}
 
 ::: {.source}
-See [Effective context engineering for AI agents](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents) (Anthropic).
+Sources: [Context engineering](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents) (Anthropic) · [Git worktrees](https://git-scm.com/docs/git-worktree).
 :::
 
 ::: {.notes}
@@ -608,6 +608,10 @@ Revisit your workflow as tools change. Keep changes that improve the outcome.
 
 ::::
 
+::: {.source}
+Simplest-solution principle: [Building effective agents](https://www.anthropic.com/engineering/building-effective-agents) (Anthropic).
+:::
+
 ::: {.notes}
 Code generation is often the easy part. The hard part is planning work in a team: dividing tasks, coordinating changes, preserving quality, and making results reviewable.
 :::
@@ -633,6 +637,8 @@ Code generation is often the easy part. The hard part is planning work in a team
 - Anthropic. [Demystifying evals for AI agents](https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents).
 
 - OWASP. [Excessive agency](https://genai.owasp.org/llmrisk/llm062025-excessive-agency/) and [Prompt injection](https://genai.owasp.org/llmrisk/llm01-prompt-injection/).
+
+- Git. [git-worktree manual](https://git-scm.com/docs/git-worktree).
 
 - [AGENTS.md](https://agents.md/): a simple, open format for guiding coding agents.
 
