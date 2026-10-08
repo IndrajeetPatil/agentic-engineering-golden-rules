@@ -184,20 +184,6 @@
   color: var(--deck-muted);
 }
 
-.reveal .section-eyebrow {
-  display: table;
-  margin: 0 auto 1.2em;
-  font-family: var(--deck-sans);
-  font-size: 0.17em;
-  font-style: normal;
-  font-weight: 600;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  color: var(--deck-gold-deep);
-  padding-bottom: 0.9em;
-  border-bottom: 1px solid var(--deck-gold);
-}
-
 /* ---------- Rule slides ---------- */
 
 .reveal .rule-tag {
@@ -369,8 +355,6 @@
 }
 
 .reveal .rule-index strong {
-  /* Lowercase to match the rule section slides. */
-  text-transform: lowercase;
   font-family: var(--deck-display);
   font-variation-settings: "opsz" 28;
   font-style: italic;
