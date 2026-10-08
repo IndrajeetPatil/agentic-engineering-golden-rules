@@ -72,30 +72,20 @@ The illustrations are AI-generated, which is intentional: the topic is hands-on 
 Invite the audience to think about one area of their daily engineering work where they lose time: finding context, writing repetitive code, coordinating changes, or waiting for feedback.
 :::
 
-## Assumptions and expectations
+## Before we start
 
-[What I assume, and what you should expect.]{.lede}
-
-:::: {.card-grid .card-grid-3}
+:::: {.card-grid .card-grid-2}
 
 ::: {.card .card-stone}
-[Assumption]{.eyebrow}
+[Audience]{.eyebrow}
 
 [You ship production software]{.card-title}
 
 Tests, deployment, security, and maintenance matter.
 :::
 
-::: {.card .card-stone}
-[Assumption]{.eyebrow}
-
-[You have used coding agents]{.card-title}
-
-In the IDE or the terminal, however briefly.
-:::
-
 ::: {.card .card-ink}
-[Expectation]{.eyebrow}
+[Caveat]{.eyebrow}
 
 [No panacea]{.card-title}
 
@@ -105,9 +95,7 @@ These are principles that sharpen judgement, not a magic recipe.
 ::::
 
 ::: {.notes}
-Align expectations. Quality gates such as tests, security, deployment, and maintenance are part of the conversation.
-
-People will have different levels of experience with coding agents; even minimal exposure is enough. The aim is to sharpen judgement, not to sell a magic solution.
+Quality gates such as tests, security, deployment, and maintenance are part of the conversation. The aim is to sharpen judgement, not to sell a magic solution.
 :::
 
 ## Golden rules {.smaller}
