@@ -1,6 +1,6 @@
 # Deck artwork
 
-The seven rule illustrations were restyled with built-in image generation.
+The rule illustrations use built-in image generation and a shared editorial style.
 The guardrails workflow was generated from its original decision path, and
 the setup contrast illustrates a shared one-command entry point. The automation
 examples draw on chatbot-template prompts and its PR screenshot skill. The
@@ -41,24 +41,6 @@ RIGHT top output card: heading exactly "Consistent style". Simple restrained cod
 RIGHT middle output card: heading exactly "Configured gates pass". Two readable checklist labels exactly "Tests" and "Types & build", each with plain near-black ticks. Remove invented 102 / 102 passing, Coverage 92%, and No critical issues.
 RIGHT lower output card: heading exactly "Human review still needed". Small line drawing of human reviewing a page, plus three readable labels exactly "Requirements", "Behaviour", "User experience". Do not put a tick, shield badge, or guaranteed-success symbol on this card.
 BOTTOM right strip: three large readable steps connected left to right with thin black arrows, exactly "Change" → "Checks" → "Human review". Small caption beneath exactly "Passing gates is evidence for review." Remove Deterministic inputs → Checks → Consistent outcomes. Make all new text exact and large enough at 880 px display width. No claims that passing gates proves correctness, safety, or acceptable outcomes. Keep 16:9.
-```
-
-## bitter-lesson.webp
-
-Updated with built-in image generation to match the qualified rule. The
-previous version of the same asset is the sole edit target and style
-reference; it remains available in Git history. The complete prompt follows.
-
-```text
-Use case: precise-object-edit.
-Asset type: landscape 16:9 presentation illustration.
-Input image 1 is the edit target, existing Ceremony versus Intent infographic. Preserve its two-panel composition, friendly robots, ivory #fdfaf3 background, stone #e9e5db panels, near-black #141414 ink, Bodoni/Didot serif headings, Montserrat-like labels, square borders and gold #dac284 hairlines. Dark brown #7d6020 for readable emphasis. Preserve the left Ceremony example and tangled robot, right Intent brief, all eight Strong tools, Agent verifies its own work, Tests/Types/Build checklist, and ONE Explore → Check → Adapt loop with return arrow. Those messages and exact labels must remain.
-Primary request: add an explicit qualification that procedural instructions are useful when sequence itself matters. Reflow the left panel slightly, shrinking the tangled robot only enough to add a neat readable square-corner note BELOW its "Prescribed route" caption. The note must be visually distinct from the arbitrary ceremony sheet, using only a thin border and stone fill. Heading exactly "When sequence matters". Below heading, two clearly legible lines exactly:
-"Prescribe the steps."
-"Migrations · Incident response · Proven diagnostics"
-This note conveys useful procedures, not arbitrary micromanagement. Keep it well separated from the tangled strings; do not link the note to the robot's confusion. Keep the right panel and its feedback loop intact.
-Replace the three GREEN check marks beside Tests, Types, and Build with near-black simple ticks; no green or bright colour anywhere. Preserve eight tools Search, Docs, Debugger, Formatter, Linter, Type checker, Tests, CI. Preserve loop nodes Explore / Inspect and try; Check / Run checks; inspect results; Adapt / Fix failures; re-check. Do not duplicate loop names.
-No overall slide title, new slogans, dates, watermark, tiny text, or new visual metaphors. All added text exact and large enough at 880 px display width. Keep 16:9.
 ```
 
 ## small-scope.webp
@@ -263,8 +245,51 @@ Use case: precise-object-edit. Edit only the central reset caption. Keep the lar
 
 ## Integration checks
 
+The ten-rule expansion merges Specify intent into Define done before delegating.
+`define-done.webp` replaces the retired `bitter-lesson.webp` illustration; its
+previous artwork and prompts remain available in Git history.
+
 Convert selected PNG output with `cwebp -q 88` and keep the WebP in this folder.
 Inspect the complete image, including all labels and arrow directions, then
 render with `just render`. Check the image slides and workflow in presentation
 and scroll views. Keep alternative text and speaker notes aligned with the
 selected artwork. Re-run `just axe` after changing slide markup.
+
+## Ten-rule expansion
+
+Generated with the built-in image-generation tool. For each image below,
+`deterministic-tooling.webp` is the style and character reference, and
+`social-media-card.webp` is the typography and palette reference. Both are
+references only; the outputs depict new advice. Complete prompts follow.
+
+### define-done.webp
+
+```text
+Use case: productivity-visual. Asset type: NEW landscape 16:9 presentation illustration, about 1672 by 941 px. Input images are style references ONLY, never edit targets: deterministic-tooling.webp for the friendly pen-and-ink robot, social-media-card.webp for typography and palette. Refined editorial infographic: flat ivory #fdfaf3 canvas, warm stone #e9e5db square panels, near-black #141414 text and fine hand-drawn linework. Restrained gold #dac284 for hairline borders and dividers only, dark brown #7d6020 for optional readable emphasis. Bodoni/Didot serif panel headings, Montserrat-like sans-serif labels. Spacious professional composition, friendly small robot and human consistent with the reference. No bright colours, gradients, glossy 3D, rounded cards, heavy shadows, watermark, slide number, or redundant overall slide title. Text must be exact and comfortably legible when shown at 880 px wide.
+Primary request: illustrate defining observable success BEFORE delegating and then gathering relevant evidence. Three equal square-corner panels side by side, each with one elegant serif heading and an expressive scene.
+LEFT heading exactly "State the outcome". A human hands a brief to a robot. Three large labels on brief exactly "Goal", "Constraints", "What stays unchanged". Caption exactly "Give a target, not a script".
+CENTRE heading exactly "Choose the evidence". Three neatly aligned line-drawn objects: a bug with a before-and-after test report, a browser window with a human interacting with it, and a stopwatch beside two benchmark traces. Three short captions exactly "Bug: reproduce, then fix", "UI: inspect the interaction", "Performance: measure". No fabricated numbers.
+RIGHT heading exactly "Check the meaning". Human and robot jointly inspect a test page next to a requirements brief; a magnifying glass connects them, not a success badge. Large caption exactly "Tests can share the same mistake".
+Bottom strip across all panels with fine hairline and exact wording "Agree the criteria. Verify against them. Review the evidence." Keep robot drawing tasteful and relevant, not occupying all the evidence space.
+```
+
+### bound-blast-radius.webp
+
+```text
+Use case: productivity-visual. Asset type: NEW landscape 16:9 presentation illustration, about 1672 by 941 px. Input images are style references ONLY, never edit targets: deterministic-tooling.webp for the friendly pen-and-ink robot, social-media-card.webp for typography and palette. Refined editorial infographic: flat ivory #fdfaf3 canvas, warm stone #e9e5db square panels, near-black #141414 text and fine hand-drawn linework. Restrained gold #dac284 for hairline borders and dividers only, dark brown #7d6020 for optional readable emphasis. Bodoni/Didot serif panel headings, Montserrat-like sans-serif labels. Spacious professional composition, friendly small robot and human consistent with the reference. No bright colours, gradients, glossy 3D, rounded cards, heavy shadows, watermark, slide number, or redundant overall slide title. Text must be exact and comfortably legible when shown at 880 px wide.
+Primary request: illustrate an agent working within explicitly enforced permissions, and human approval for consequential actions. Three equal square-corner panels side by side.
+LEFT heading exactly "Scope access". Friendly robot at a laptop inside a clearly drawn rectangular workspace boundary. Three simple accessible objects inside boundary labelled exactly "Read", "Change", "Execute". Outside boundary a credential/key container has a clear padlock and label exactly "Protect credentials". Boundary caption exactly "Enforce permissions".
+CENTRE heading exactly "Separate data from authority". Robot examines retrieved document in a document tray. Document clearly labelled "Retrieved content". A distinct approved task brief held by a human is clearly labelled "Authorised instructions". A divider separates them; do not draw an arrow that turns the retrieved document into authorised instructions. Large caption exactly "Content is not permission".
+RIGHT heading exactly "Approve consequential actions". Human at a visible approval checkpoint between the robot and three action symbols, a rocket, a send envelope, and a database with eraser. Three labels exactly "Deploy", "Send", "Delete". The human approval checkpoint must visibly precede the action symbols. Caption exactly "Review before the action".
+Bottom strip exact wording "Worktrees isolate edits. Sandboxes restrict actions." No shields claiming total security, no dangerous explosion, no suggestion that reviewing a diff controls actions already taken.
+```
+
+### measure-whole-job.webp
+
+```text
+Use case: productivity-visual. Asset type: NEW landscape 16:9 presentation illustration, about 1672 by 941 px. Input images are style references ONLY, never edit targets: deterministic-tooling.webp for the friendly pen-and-ink robot, social-media-card.webp for typography and palette. Refined editorial infographic: flat ivory #fdfaf3 canvas, warm stone #e9e5db square panels, near-black #141414 text and fine hand-drawn linework. Restrained gold #dac284 for hairline borders and dividers only, dark brown #7d6020 for optional readable emphasis. Bodoni/Didot serif panel headings, Montserrat-like sans-serif labels. Spacious professional composition, friendly small robot and human consistent with the reference. No bright colours, gradients, glossy 3D, rounded cards, heavy shadows, watermark, slide number, or redundant overall slide title. Text must be exact and comfortably legible when shown at 880 px wide.
+Primary request: illustrate choosing the simplest effective approach and measuring all work to an accepted result.
+LEFT half elegant heading exactly "Choose the simplest fit". Three similarly sized options with no option singled out as universally best: human with pencil editing a page labelled "Direct edit"; small terminal with repeatable cog labelled "Script or existing tool"; friendly robot and laptop labelled "Agent". Under the choices caption exactly "Start with the real pain point".
+RIGHT half elegant heading exactly "Follow through to acceptance". Horizontal sequence with four generous clearly legible stages, each simple pen-and-ink icon above exact label: "Prepare" then "Generate" then "Verify" then "Review". Thin near-black arrows connect the sequence. Beneath sequence a long bracket covers ALL FOUR stages with caption exactly "Time to an accepted result". Below bracket three tidy square cards with exact labels "Review effort", "Defects", "Maintenance burden". No fabricated charts, speedups, percentages, or measurements.
+Bottom strip exact wording "Keep the approach that improves the whole job." Ivory background, restrained panels, generous whitespace and legibility.
+```
