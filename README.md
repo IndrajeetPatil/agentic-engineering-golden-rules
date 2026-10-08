@@ -7,7 +7,7 @@ coding agents to boost productivity without compromising quality.
 
 1. DevEx = AgentEx
 2. Guardrails: fast feedback beats orchestration
-3. The Bitter Lesson: strong models need intent, not ceremony
+3. Specify intent: state outcomes and constraints, not ceremony
 4. Scope control: small, reversible changes
 5. Session hygiene: fresh context beats haunted context
 6. Know thy tools

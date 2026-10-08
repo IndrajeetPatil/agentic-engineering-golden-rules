@@ -125,7 +125,7 @@ Quality gates such as tests, security, deployment, and maintenance are part of t
 ::: {.card}
 [03]{.rule-number}
 
-**The Bitter Lesson**
+**Specify intent**
 :::
 
 ::: {.card}
@@ -250,20 +250,22 @@ Agents will find the shortest path to green, including lowering a threshold or d
 Coverage gates invite filler tests. Ask agents to assert behaviour at the boundaries you own (the outbound request, the streamed output, the logged event), never to execute lines for the sake of coverage.
 :::
 
-## [03]{.rule-tag} The Bitter Lesson {.rule-slide}
+## [03]{.rule-tag} Specify intent {.rule-slide}
 
-[Strong models need intent, not ceremony.]{.lede}
+[State outcomes and constraints; prescribe steps only when the sequence matters.]{.lede}
 
 ![](media/bitter-lesson.webp){.illustration width="880" height="495" fig-alt="Ceremony versus intent. A confused robot follows a prescribed route: open utils.py at line 40, add a try block, add exactly three tests, use single quotes, and do not deviate. An engaged robot receives an outcome and constraints: fix the failing date-parsing test, preserve the public API, keep the diff small, and explain any trade-off. Strong tools include search, docs, debugger, formatter, linter, type checker, tests, and CI. The agent verifies its own work by inspecting test, type, and build results. A single feedback loop shows Explore: inspect and try; Check: run checks and inspect results; Adapt: fix failures and re-check."}
 
 ::: {.source}
-Inspired by Rich Sutton's essay [The Bitter Lesson](http://www.incompleteideas.net/IncIdeas/BitterLesson.html) (2019).
+Inspired by Rich Sutton's essay [The Bitter Lesson](http://www.incompleteideas.net/IncIdeas/BitterLesson.html) (2019), as an analogy rather than evidence.
 :::
 
 ::: {.notes}
 Do not get in the model's way.
 
-The bitter lesson here is that stronger models usually need clearer intent, not more ceremony. Do not get in the model's way by prescribing every implementation step.
+Stronger models usually need clearer intent, not more ceremony. Do not get in the model's way by prescribing every implementation step.
+
+The framing borrows from Rich Sutton's essay The Bitter Lesson, which argues that general methods that scale with search and learning outperform methods built around human domain knowledge. That is an analogy for this advice, not evidence for it: the essay says nothing about how much procedural guidance coding agents need.
 
 Ceremony: "Open utils.py. Find the function on line 40. Add a try block. Then open the test file and add three tests. Use single quotes. Do not deviate from these steps." This over-specifies the route and leaves no room for the model to reason about a better one.
 
@@ -271,7 +273,7 @@ Intent: "Fix the failing date-parsing test without changing the public API. Keep
 
 Strong tools matter, and agents must use them to verify their own work: run the relevant checks, inspect the results, fix failures, and re-check before reporting completion. The Explore, Check, Adapt loop shows this responsibility explicitly.
 
-Specify implementation steps only when they genuinely matter. Otherwise, give the agent a target, constraints, strong tools, and responsibility for verification. Passing checks still leaves humans responsible for review and what ships.
+Procedures remain useful when the sequence itself matters: database migrations, incident response, or a proven diagnostic workflow. Specify those steps. Otherwise, give the agent a target, constraints, strong tools, and responsibility for verification. Passing checks still leaves humans responsible for review and what ships.
 :::
 
 ## [04]{.rule-tag} Scope control {.rule-slide}
