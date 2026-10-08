@@ -2,7 +2,7 @@
 
 > A Quarto RevealJS presentation by Indrajeet Patil about using coding agents to boost productivity without compromising software quality.
 
-This presentation distils eight golden rules for agentic engineering: working with coding agents such as Claude Code and GitHub Copilot CLI on production software. It focuses on the engineering system around the agent (context, guardrails, scope, and team practices) rather than on any single tool.
+This presentation distils golden rules for agentic engineering: working with coding agents such as Claude Code and GitHub Copilot CLI on production software. It focuses on the engineering system around the agent (context, guardrails, scope, and team practices) rather than on any single tool.
 
 ## Primary URL
 

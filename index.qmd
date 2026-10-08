@@ -110,43 +110,7 @@ Align expectations. Quality gates such as tests, security, deployment, and maint
 People will have different levels of experience with coding agents; even minimal exposure is enough. The aim is to sharpen judgement, not to sell a magic solution.
 :::
 
-## Out of scope
-
-[Good debates, but not today.]{.lede}
-
-:::: {.card-grid .card-grid-3}
-
-::: {.card .card-outline}
-[Costs]{.card-title}
-
-Budgeting and return on investment
-:::
-
-::: {.card .card-outline}
-[Careers]{.card-title}
-
-How roles and skills change
-:::
-
-::: {.card .card-outline}
-[Policy]{.card-title}
-
-Approved tools, data handling, and restrictions in your organisation
-:::
-
-::::
-
-::: {.card .card-ink .card-wide}
-[Focus]{.eyebrow}
-
-Leveraging coding agents to boost productivity **without compromising quality**. The quality half matters as much as the speed half.
-:::
-
-::: {.notes}
-Clarify the boundaries early so the discussion stays productive. Costs, career implications, and policy questions are important, but they are not the focus today.
-:::
-
-## Eight golden rules {.smaller}
+## Golden rules {.smaller}
 
 :::: {.card-grid .card-grid-4 .rule-index}
 
@@ -159,31 +123,31 @@ Clarify the boundaries early so the discussion stays productive. Costs, career i
 ::: {.card}
 [02]{.rule-number}
 
-**Guardrails over orchestration**
+**Guardrails**
 :::
 
 ::: {.card}
 [03]{.rule-number}
 
-**Intent over ceremony**
+**The Bitter Lesson**
 :::
 
 ::: {.card}
 [04]{.rule-number}
 
-**Small, reversible scope**
+**Scope control**
 :::
 
 ::: {.card}
 [05]{.rule-number}
 
-**Fresh context over haunted context**
+**Session hygiene**
 :::
 
 ::: {.card}
 [06]{.rule-number}
 
-**Automate the choreography**
+**Meta-automation**
 :::
 
 ::: {.card}
@@ -195,7 +159,7 @@ Clarify the boundaries early so the discussion stays productive. Costs, career i
 ::: {.card}
 [08]{.rule-number}
 
-**Curious, humble, kind**
+**Be curious. Be humble. Be kind.**
 :::
 
 ::::
@@ -294,7 +258,7 @@ Coverage gates invite filler tests. Ask agents to assert behaviour at the bounda
 
 Strong models need intent, not ceremony.
 
-## [03]{.rule-tag} Intent over ceremony {.rule-slide}
+## [03]{.rule-tag} The Bitter Lesson {.rule-slide}
 
 [Do not get in the model's way.]{.lede}
 
@@ -316,7 +280,7 @@ Strong tools matter, and agents must use them to verify their own work: run the 
 Specify implementation steps only when they genuinely matter. Otherwise, give the agent a target, constraints, strong tools, and responsibility for verification. Passing checks still leaves humans responsible for review and what ships.
 :::
 
-# [Rule 04]{.section-eyebrow} Scope Control
+# [Rule 04]{.section-eyebrow} Scope control
 
 Small diffs beat heroic prompts.
 
@@ -356,7 +320,7 @@ When the agent discovers broader issues, **capture them as follow-up tasks** ins
 Agents are good at making many changes quickly, but reviewers need changes that are small enough to understand.
 :::
 
-# [Rule 05]{.section-eyebrow} Session Hygiene
+# [Rule 05]{.section-eyebrow} Session hygiene
 
 Fresh context beats haunted context.
 
@@ -416,7 +380,7 @@ The vulnerability-management workflow is adapted from codex-security.md. Scan fi
 Automate coordination: gathering context, running checks, formatting reports, and repeating the process across repositories. Humans evaluate evidence, make trade-offs, and decide what ships. Run unattended agents only in isolated sandboxes with scoped credentials.
 :::
 
-# [Rule 07]{.section-eyebrow} Know Thy Tools
+# [Rule 07]{.section-eyebrow} Know thy tools
 
 Sometimes the unlock is a hidden tool affordance.
 
@@ -448,11 +412,11 @@ Sometimes the limiting factor is not the model; it is the tool interface availab
 Agents perform better when they can inspect files, run commands, search the repository, execute tests, and see failures. If a tool is hidden, blocked, or awkward, the agent may appear less capable than it really is.
 :::
 
-# [Rule 08]{.section-eyebrow} Be Curious. Be Humble. Be Kind.
+# [Rule 08]{.section-eyebrow} Be curious. Be humble. Be kind.
 
 AI is not an excuse to become incompetent or disagreeable.
 
-## [08]{.rule-tag} Curious, humble, kind {.rule-slide}
+## [08]{.rule-tag} Be curious. Be humble. Be kind. {.rule-slide}
 
 [AI should make us better teammates, not careless or difficult ones.]{.lede}
 
@@ -462,7 +426,7 @@ AI is not an excuse to become incompetent or disagreeable.
 Be curious about what the tools can do, humble about their limits, and kind in how we review agent-generated work and each other's experiments.
 :::
 
-## Curious, humble, kind: in practice {.smaller}
+## Be curious. Be humble. Be kind: in practice {.smaller}
 
 :::: {.card-grid .card-grid-3}
 

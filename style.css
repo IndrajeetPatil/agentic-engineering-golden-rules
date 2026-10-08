@@ -369,6 +369,8 @@
 }
 
 .reveal .rule-index strong {
+  /* Lowercase to match the rule section slides. */
+  text-transform: lowercase;
   font-family: var(--deck-display);
   font-variation-settings: "opsz" 28;
   font-style: italic;
