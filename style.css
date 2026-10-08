@@ -391,16 +391,14 @@
   text-align: center;
 }
 
-/* Quarto wraps Mermaid output in empty paragraphs that pad the card. */
-.reveal .diagram-card p:empty {
-  display: none;
-}
-
-/* Mermaid sizes its SVG inline; cap the height so text cards fit below it. */
-.reveal .diagram-card svg {
-  height: 150px !important;
-  width: auto !important;
-  max-width: 100% !important;
+/* Keep the workflow legible while leaving room for the text cards below. */
+.reveal .diagram-card img.guardrails-workflow {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 260px;
+  object-fit: contain;
+  margin: 0 auto;
 }
 
 /* ---------- Tables, code, and lists ---------- */
@@ -452,6 +450,80 @@
 .reveal div.sourceCode pre {
   background: transparent;
   border: none;
+}
+
+/* Syntax colours from the deck palette (contrast-checked on stone). */
+.reveal div.sourceCode code,
+.reveal div.sourceCode code span {
+  color: var(--deck-ink);
+}
+
+.reveal div.sourceCode code span.co,
+.reveal div.sourceCode code span.do,
+.reveal div.sourceCode code span.cv {
+  color: var(--deck-muted);
+  font-style: italic;
+}
+
+.reveal div.sourceCode code span.dt,
+.reveal div.sourceCode code span.kw,
+.reveal div.sourceCode code span.cf {
+  color: var(--deck-ink);
+  font-weight: 600;
+}
+
+.reveal div.sourceCode code span.fu,
+.reveal div.sourceCode code span.va,
+.reveal div.sourceCode code span.at,
+.reveal div.sourceCode code span.op,
+.reveal div.sourceCode code span.er {
+  color: var(--deck-ink);
+}
+
+.reveal div.sourceCode code span.st,
+.reveal div.sourceCode code span.ch,
+.reveal div.sourceCode code span.ss,
+.reveal div.sourceCode code span.vs,
+.reveal div.sourceCode code span.dv,
+.reveal div.sourceCode code span.fl,
+.reveal div.sourceCode code span.bn {
+  color: var(--deck-gold-deep);
+}
+
+/* Filename header (```{.lang filename="..."}): an ink tab with a gold label. */
+.reveal .code-with-filename {
+  margin: 0 0 0.6em;
+}
+
+.reveal .code-with-filename .code-with-filename-file {
+  background: var(--deck-ink);
+  border: none;
+  border-bottom: 1px solid var(--deck-gold);
+  border-radius: 0;
+  padding: 0.45em 0.9em;
+}
+
+.reveal .code-with-filename .code-with-filename-file pre {
+  margin: 0;
+  padding: 0;
+  background: none;
+  box-shadow: none;
+  font-family: var(--deck-sans);
+  font-size: 0.42em;
+  line-height: 1.4;
+}
+
+/* Keep the filename's real case: filenames are case-sensitive. */
+.reveal .code-with-filename .code-with-filename-file strong {
+  font-family: var(--deck-mono);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--deck-gold);
+}
+
+.reveal .code-with-filename .slides div.sourceCode,
+.reveal .code-with-filename div.sourceCode {
+  margin: 0;
 }
 
 .reveal code,

@@ -21,8 +21,6 @@ format:
     keyboard: true
     touch: true
     help: true
-    mermaid:
-      theme: neutral
     include-in-header: meta-tags.html
     include-after-body: accessibility.html
     link-external-newwindow: true
@@ -210,7 +208,7 @@ If humans hunt for context, agents burn tokens too.
 
 [What makes a codebase easy for humans makes it cheaper and safer for agents.]{.lede}
 
-![](media/devex-agentex.webp){.illustration width="880" height="495" fig-alt="Infographic: humans and coding agents both benefit from a well-designed codebase. Five properties sit around a healthy repository: clear structure (folders, names, boundaries), one-command workflows (setup, format, lint, test), deterministic QA (formatters, linters, types, tests), living documentation (README, conventions, examples), and modular design (small units, clear interfaces). Each brings faster understanding for humans and better navigation or grounding for agents, adding up to speed, quality, and trust."}
+![](media/devex-agentex.webp){.illustration width="880" height="495" fig-alt="Editorial infographic: a human and a coding agent connect to the same well-designed codebase. Five panels identify clear structure (folders, names, boundaries), one-command workflows (setup, format, lint, test), deterministic QA (formatters, linters, types, tests), living documentation (README, conventions, examples), and modular design (small units, clear interfaces). Shared outcomes are speed, quality, and trust."}
 
 ::: {.notes}
 DevEx equals AgentEx: the same things that make a codebase easy for humans also make it easier and cheaper for agents to work in.
@@ -222,42 +220,48 @@ If developers need to hunt through unclear documentation, inconsistent commands,
 
 :::: {.columns}
 
-::: {.column width="50%"}
+::: {.column width="44%"}
 
 ::: {.card .card-stone}
 [Invest in]{.eyebrow}
 
 - A README that explains how to set up, run, and test
 - A short `AGENTS.md`: gotchas, what to read first, and which checks to run
-- **One obvious command** per task: `make setup`, `make qa`
+- **One obvious command** per task: `make setup`, `make qa`, `make hooks`
 - Small modules with clear boundaries
 - Stable scripts instead of tribal knowledge
 :::
 
 :::
 
-::: {.column width="50%"}
+::: {.column width="56%"}
 
-```{.makefile}
-# Makefile: one entry point for humans and agents
+```{.makefile filename="Makefile"}
+# One entry point for humans and agents
 setup:
 	uv sync --frozen
-
+format:
+	uv run ruff format .
 lint:
 	uv run ruff check --fix .
-
 type-check:
 	uv run ty check
-
 test:
-	uv run pytest
-
-qa: lint type-check test security-scan
+	uv run coverage run -m pytest
+	uv run coverage report
+type-coverage:
+	uv run pyrefly coverage check --fail-under 100
+audit:
+	uv run deptry .
+security-scan:
+	uvx checkov --config-file .checkov.yaml
+secret-scan:
+	gitleaks git --redact .
+hooks:
+	prek run --all-files
+qa: format lint type-check test type-coverage \
+    audit security-scan secret-scan
 ```
-
-::: {.card .card-ink}
-These are not documentation chores. They are **leverage** for every human and every agent who touches the repository.
-:::
 
 :::
 
@@ -275,7 +279,7 @@ Fast feedback beats orchestration.
 
 [Use a deterministic harness to keep the agent's non-determinism in check.]{.lede}
 
-![](media/deterministic-tooling.webp){.illustration width="880" height="495" fig-alt="Two-panel illustration. Left, without deterministic tooling: a dizzy robot surrounded by inconsistent code style, flaky tests, broken assumptions, hallucinated APIs, random patches, and failed builds that differ every time. Right, with deterministic tooling: a calm robot strapped into a harness of formatter, linter, type checker, pre-commit, CI, sanitisers, and Valgrind, producing consistent code, passing tests, quality gates, and production-safe output. The caption reads from chaos to disciplined execution: deterministic inputs, checks, and outcomes lead to confident delivery."}
+![](media/deterministic-tooling.webp){.illustration width="880" height="495" fig-alt="Two-panel illustration contrasting a confused robot amid inconsistent style, flaky tests, broken assumptions, hallucinated APIs, and failed builds with a calm robot in a safety harness labelled Formatter, Linter, Type checker, Pre-commit, CI, Sanitisers, and Valgrind. Orderly outputs show consistent code, passing tests, and quality gates. Deterministic inputs and checks lead to consistent outcomes."}
 
 ::: {.notes}
 Guardrails are more important than elaborate orchestration. Fast, deterministic feedback keeps the agent's non-determinism under control.
@@ -285,16 +289,7 @@ Guardrails are more important than elaborate orchestration. Fast, deterministic 
 
 ::: {.card .card-stone .diagram-card}
 
-```{mermaid}
-%%| eval: true
-%%| echo: false
-flowchart LR
-    A[Agent proposes change] --> B{Deterministic checks}
-    B -- fail --> C[Precise error output]
-    C --> A
-    B -- pass --> D[Human review]
-    D --> E[Merge]
-```
+![](media/guardrails-workflow.webp){.guardrails-workflow width="960" height="320" fig-alt="Guardrails workflow: the agent proposes a change, then deterministic checks run. On failure, precise error output returns to the agent for another attempt. On success, the change proceeds to human review, then merge."}
 
 :::
 
@@ -327,6 +322,8 @@ See also [Harness engineering for coding agent users](https://martinfowler.com/a
 ::: {.notes}
 An agent can propose changes quickly, but quality comes from the harness around it: tests, linters, type checks, build commands, security scans, and reproducible local setup.
 
+The workflow sends failed checks back to the agent with precise error output. Passing checks lead to human review before merge.
+
 Coverage gates invite filler tests. Ask agents to assert behaviour at the boundaries you own (the outbound request, the streamed output, the logged event), never to execute lines for the sake of coverage.
 :::
 
@@ -338,7 +335,7 @@ Strong models need intent, not ceremony.
 
 [Say **what** you want. Do not script **how** to achieve it.]{.lede}
 
-![](media/bitter-lesson.webp){.illustration width="880" height="495" fig-alt="Two-panel illustration titled The Bitter Lesson. Left: a stressed robot tangled in red strings attached to brittle, over-specified instructions such as global rules, exact plans, tool-call recipes, code style rules, and fallbacks, producing errors, a messy flow, a jammed terminal, fragile code, and a broken system. Right: a calm robot given a clear goal and strong tools (formatter, linter, tests, type checker, debugger, search, docs, CI), iterating through an exploration and feedback loop to shipped, reliable code. Caption: in software engineering, capable models often do better with clear goals and strong tools than with brittle, over-specified recipes."}
+![](media/bitter-lesson.webp){.illustration width="880" height="495" fig-alt="Two-panel illustration: a robot tangled in brittle recipes, exact plans, tool-call recipes, global rules, fallbacks, and rigid instructions contrasts with a calm robot given a clear goal and strong tools: formatter, linter, tests, type checker, debugger, search, docs, and CI. An Explore, Check, Adapt feedback loop leads to reliable code."}
 
 ::: {.source}
 Inspired by Rich Sutton's essay [The Bitter Lesson](http://www.incompleteideas.net/IncIdeas/BitterLesson.html) (2019).
@@ -390,7 +387,7 @@ Small diffs beat heroic prompts.
 
 [In brownfield projects, introduce changes in reviewable, reversible chunks.]{.lede}
 
-![](media/small-scope.webp){.illustration width="880" height="495" fig-alt="Two-panel illustration. Left: a stressed robot receives one enormous prompt covering onboarding, billing, analytics, search, SSO, migrations, and more; it touches backend, frontend, tests, docs, infrastructure, database, and deployment at once, producing a giant diff that is high risk, hard to review, and hard to roll back. Right: a happy robot breaks the work into five small, focused steps (API change, UI update, tests, docs, and deployment configuration), each with a small diff and its own commit, so every change is one concern at a time, reviewable, reversible, and quick to give feedback. Caption: small diffs beat heroic prompts."}
+![](media/small-scope.webp){.illustration width="880" height="495" fig-alt="Two-panel illustration: an enormous prompt covering onboarding, billing, analytics, search, SSO, and migrations produces a large diff that is hard to review and reverse. Five small steps, API change, UI update, tests, docs, and deployment configuration, each have a small diff and commit. One concern at a time makes changes reviewable and reversible, with fast feedback. Small diffs beat heroic prompts."}
 
 ::: {.notes}
 In brownfield systems, scope control is the difference between useful automation and an unreviewable mess.
@@ -430,7 +427,7 @@ Fresh context beats haunted context.
 
 [Long sessions accumulate stale assumptions. Reset with a compact handoff.]{.lede}
 
-![](media/session-hygiene.webp){.illustration width="880" height="495" fig-alt="Two-panel illustration. Left: a haunted session, where a confused robot sits by a laptop showing a long, contradictory chat history, surrounded by sticky notes reading stale assumptions, too much history, conflicting instructions, and context drift. Centre: a reset arrow. Right: a fresh session that starts from a compact handoff listing the goal, constraints, relevant files, and acceptance checks, and proceeds with a clear plan. Caption: fresh context beats haunted context."}
+![](media/session-hygiene.webp){.illustration width="880" height="495" fig-alt="Two-panel illustration: a confused robot in a haunted session faces stale assumptions, too much history, conflicting instructions, and context drift. A reset leads to a fresh session with a compact handoff listing the goal, constraints, relevant files, and acceptance checks, giving a clear next step. Fresh context beats haunted context."}
 
 ::: {.notes}
 Every correction, abandoned approach, and reversed decision stays in the context window. After enough of them, the agent is reasoning over contradictions.
@@ -484,7 +481,7 @@ Automate repeated agent choreography.
 
 [Capture once. Run many times.]{.lede}
 
-![](media/meta-automation.webp){.illustration width="760" height="507" fig-alt="Diagram of meta-automation: manual, repeated work is captured once and run many times, giving automated execution and consistent outcomes. A table compares four ways to define it. Prompt: best for dependency updates, checks, and configuration changes, when instructions change often. Skill: best for tasks needing domain know-how or multi-step execution, when the same procedure repeats regularly. Slash command: a shortcut for a stable, repeatable sequence you trigger often. Workflow: complex, multi-step processes with logic and branches that capture recurring patterns at scale. A final row shows execution with loops: define an input list, run the automation for each item, collect results, then review and act."}
+![](media/meta-automation.webp){.illustration width="880" height="495" fig-alt="Meta-automation infographic: repeated work is captured once, run many times, and reviewed. Four mechanisms are compared: a prompt for changing instructions, a skill for domain know-how, a slash command for a stable shortcut, and a workflow for steps and branches. A loop processes an input list, runs automation for each item, collects results, and ends with human review."}
 
 ::: {.notes}
 Once a useful agent workflow repeats, automate the choreography around it.
@@ -556,7 +553,7 @@ AI is not an excuse to become incompetent or disagreeable.
 
 [AI should make us better teammates, not careless or difficult ones.]{.lede}
 
-![](media/curious-humble.webp){.illustration width="880" height="495" fig-alt="Four-panel illustration contrasting good and bad habits. Top left, marked good: be curious, have fun, experiment, showing a developer sketching ideas and prototypes with a friendly robot. Top right, marked bad: active deskilling and intellectual lethargy, showing a developer asleep while an agent runs on autopilot. Bottom left, marked good: be humble, be kind, showing a team listening and clarifying shared understanding together. Bottom right, marked bad: delusions of grandeur, showing an engineer, a product manager, and a designer in a stand-off, each claiming their AI assistant can do the others' jobs."}
+![](media/curious-humble.webp){.illustration width="880" height="495" fig-alt="Four-panel editorial illustration: be curious, with a developer experimenting alongside a robot; avoid deskilling, with a disengaged developer leaving the robot unattended; be humble and kind, with a team listening and discussing shared notes; avoid grandiosity, with an engineer, product manager, and designer dismissing one another while pointing to their own assistants."}
 
 ::: {.notes}
 Be curious about what the tools can do, humble about their limits, and kind in how we review agent-generated work and each other's experiments.
