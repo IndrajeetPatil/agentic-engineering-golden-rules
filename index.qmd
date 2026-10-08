@@ -89,7 +89,7 @@ Tests, deployment, security, and maintenance matter.
 
 [Throwaway code]{.card-title}
 
-For proofs of concept, demos, and prototypes, much of this caution is optional. Apply it once the code is no longer throwaway.
+Relax engineering rigour for disposable code; retain safeguards for real data and real actions.
 :::
 
 ::: {.card .card-ink}
@@ -103,7 +103,7 @@ These are principles that sharpen judgement, not a magic recipe.
 ::::
 
 ::: {.notes}
-Quality gates such as tests, security, deployment, and maintenance are part of the conversation. Throwaway proofs of concept, demos, and prototypes can trade rigour for speed; the rules apply once that code starts to matter, which often happens sooner than planned. The aim is to sharpen judgement, not to sell a magic solution.
+Quality gates such as tests, security, deployment, and maintenance are part of the conversation. Throwaway proofs of concept, demos, and prototypes can trade engineering rigour for speed: tests, coverage, and polish can wait until the code starts to matter, which often happens sooner than planned. The consequences of running the code cannot wait. A disposable script can still expose credentials, alter real data, or send something externally, so keep scoped credentials, sandboxes, and confirmation before real actions. The aim is to sharpen judgement, not to sell a magic solution.
 :::
 
 ## Golden rules {.smaller}
