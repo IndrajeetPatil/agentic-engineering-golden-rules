@@ -27,40 +27,38 @@ Redesign image 1 with a central well-designed codebase, a human on the left and 
 
 ## deterministic-tooling.webp
 
+Updated with built-in image generation to match the qualified rule. The
+previous version of the same asset is the sole edit target and style
+reference; it remains available in Git history. The complete prompt follows.
+
 ```text
-Two panels: left title "Without guardrails", a confused line-drawn robot amidst tangled papers labelled "Inconsistent style", "Flaky tests", "Broken assumptions", "Hallucinated APIs", "Failed builds". Right title "With guardrails", the same calm robot wearing an elegant safety harness with seven clearly readable straps labelled "Formatter", "Linter", "Type checker", "Pre-commit", "CI", "Sanitisers", "Valgrind". Neat output panels "Consistent code", "Passing tests", "Quality gates". Footer "Deterministic inputs → Checks → Consistent outcomes". Preserve the harness metaphor; don't imply passing checks alone proves production safety.
+Use case: precise-object-edit.
+Asset type: landscape 16:9 presentation illustration.
+Input image 1 is the edit target: Without guardrails / With guardrails robot harness illustration.
+Keep the two-panel layout, existing confused and calm robot characters, harness metaphor and seven harness labels Formatter, Linter, Type checker, Pre-commit, CI, Sanitisers, Valgrind. Keep the left confusion examples Inconsistent style, Flaky tests, Broken assumptions, Hallucinated APIs, Failed builds. Keep professional pen-and-ink artwork, flat ivory #fdfaf3 canvas, stone #e9e5db panels, near-black #141414 ink, gold #dac284 hairline borders ONLY, dark brown #7d6020 for emphasis, elegant Bodoni/Didot headings and Montserrat-like sans-serif labels. Square corners, no glossy 3D, gradients, bright colours, or watermark.
+Primary request: show that deterministic checks establish configured gates passing, with human review still needed to assess the problem and experience. Change ONLY the three output cards and the bottom strip within the RIGHT panel, with minor reflow to keep them legible; preserve the left panel and harness.
+RIGHT top output card: heading exactly "Consistent style". Simple restrained code-format icon and two short symbolic code lines; no invented metrics.
+RIGHT middle output card: heading exactly "Configured gates pass". Two readable checklist labels exactly "Tests" and "Types & build", each with plain near-black ticks. Remove invented 102 / 102 passing, Coverage 92%, and No critical issues.
+RIGHT lower output card: heading exactly "Human review still needed". Small line drawing of human reviewing a page, plus three readable labels exactly "Requirements", "Behaviour", "User experience". Do not put a tick, shield badge, or guaranteed-success symbol on this card.
+BOTTOM right strip: three large readable steps connected left to right with thin black arrows, exactly "Change" → "Checks" → "Human review". Small caption beneath exactly "Passing gates is evidence for review." Remove Deterministic inputs → Checks → Consistent outcomes. Make all new text exact and large enough at 880 px display width. No claims that passing gates proves correctness, safety, or acceptable outcomes. Keep 16:9.
 ```
 
 ## bitter-lesson.webp
 
-The current revision uses only the previous `bitter-lesson.webp` as its edit
-target and style reference, with the following complete prompt.
+Updated with built-in image generation to match the qualified rule. The
+previous version of the same asset is the sole edit target and style
+reference; it remains available in Git history. The complete prompt follows.
 
 ```text
-Use case: infographic-diagram. Edit image 1, the existing "Intent over ceremony" presentation illustration. Keep its refined editorial visual identity: landscape 16:9, flat ivory #fdfaf3 background, warm stone #e9e5db square panels, near-black #141414 text and pen-and-ink robot drawings, restrained gold #dac284 hairlines and borders, dark brown #7d6020 for occasional text emphasis, elegant Bodoni/Didot serif headings, highly readable Montserrat-like sans-serif labels. Redesign the content and layout to incorporate two concrete prompting examples, strong tools, and explicit agent self-verification. Keep the figures expressive but professional; generous space, crisp projected-slide legibility. No overall slide title, watermark, glossy 3D, bright colours, gradients, tiny simulated code, or decorative clutter.
-
-Two side-by-side panels, left roughly 40% of width, right roughly 60%.
-LEFT heading exactly "Ceremony". Under it one large instruction sheet with five short lines, each clearly legible:
-"Open utils.py at line 40."
-"Add a try block."
-"Add exactly three tests."
-"Use single quotes."
-"Do not deviate."
-Below the sheet, a confused robot tangled in a few fine strings attached to the instruction sheet. Bottom caption exactly "Prescribed route".
-
-RIGHT heading exactly "Intent". At top one spacious brief, with this exact text on separate lines:
-"Fix the failing date-parsing test."
-"Preserve the public API."
-"Keep the diff small."
-"Explain any trade-off."
-Below the brief, show one compact tool tray headed "Strong tools" with readable labels "Search", "Docs", "Debugger", "Formatter", "Linter", "Type checker", "Tests", "CI". Use small restrained line icons if helpful; do not turn this into the largest element.
-Below, a calm, engaged robot actively inspecting check results at a laptop. A clearly visible results sheet next to the robot shows three short checked items: "Tests", "Types", "Build". Above or next to this scene, a prominent readable label exactly "Agent verifies its own work". Make the checking activity as important as the tool tray.
-
-At bottom of RIGHT panel only, ONE feedback loop drawn using three connected nodes in a horizontal row, arrow from first to second to third, and a clear return arrow from third back to first. Each node has its label ONCE, with a short supporting line:
-"Explore" / "Inspect and try"
-"Check" / "Run checks; inspect results"
-"Adapt" / "Fix failures; re-check"
-Do NOT add a second "Explore → Check → Adapt" heading anywhere. The words Explore, Check, and Adapt must each occur exactly once as node labels. Avoid a medal or a claim that checks guarantee reliable code. The central message is: give the model a clear outcome and constraints, strong tools, and responsibility to verify and iterate on its own work, rather than prescribing every implementation step. Text accuracy and legibility are essential.
+Use case: precise-object-edit.
+Asset type: landscape 16:9 presentation illustration.
+Input image 1 is the edit target, existing Ceremony versus Intent infographic. Preserve its two-panel composition, friendly robots, ivory #fdfaf3 background, stone #e9e5db panels, near-black #141414 ink, Bodoni/Didot serif headings, Montserrat-like labels, square borders and gold #dac284 hairlines. Dark brown #7d6020 for readable emphasis. Preserve the left Ceremony example and tangled robot, right Intent brief, all eight Strong tools, Agent verifies its own work, Tests/Types/Build checklist, and ONE Explore → Check → Adapt loop with return arrow. Those messages and exact labels must remain.
+Primary request: add an explicit qualification that procedural instructions are useful when sequence itself matters. Reflow the left panel slightly, shrinking the tangled robot only enough to add a neat readable square-corner note BELOW its "Prescribed route" caption. The note must be visually distinct from the arbitrary ceremony sheet, using only a thin border and stone fill. Heading exactly "When sequence matters". Below heading, two clearly legible lines exactly:
+"Prescribe the steps."
+"Migrations · Incident response · Proven diagnostics"
+This note conveys useful procedures, not arbitrary micromanagement. Keep it well separated from the tangled strings; do not link the note to the robot's confusion. Keep the right panel and its feedback loop intact.
+Replace the three GREEN check marks beside Tests, Types, and Build with near-black simple ticks; no green or bright colour anywhere. Preserve eight tools Search, Docs, Debugger, Formatter, Linter, Type checker, Tests, CI. Preserve loop nodes Explore / Inspect and try; Check / Run checks; inspect results; Adapt / Fix failures; re-check. Do not duplicate loop names.
+No overall slide title, new slogans, dates, watermark, tiny text, or new visual metaphors. All added text exact and large enough at 880 px display width. Keep 16:9.
 ```
 
 ## small-scope.webp
@@ -71,39 +69,19 @@ Two panels: left title "One enormous prompt", stressed line-drawn robot with an 
 
 ## session-hygiene.webp
 
-Redesigned with built-in image generation to fold the practical advice into
-the rule illustration. Inputs: the previous image as the edit target and
-`social-media-card.webp` as the style reference. The final prompt below
-supersedes the original two-panel prompt and its reset-caption correction.
+Updated with built-in image generation to match the qualified rule. The
+previous version of the same asset is the sole edit target and style
+reference; it remains available in Git history. The complete prompt follows.
 
 ```text
 Use case: productivity-visual.
-Asset type: landscape 16:9 editorial illustration for a Quarto slide.
-Input images: image 1 is the existing Session hygiene illustration to redesign; image 2 is the deck typography and palette reference.
-Primary request: redesign image 1 so three practical session-hygiene principles are conveyed visually, keeping the same friendly pen-and-ink robot character, refined ivory/stone palette, and professional editorial style. Make the main advice easy to read at presentation size.
-Style: flat ivory #fdfaf3 background, warm stone #e9e5db square panels, near-black #141414 text and fine line art, gold #dac284 for thin borders and hairline dividers only; dark brown #7d6020 for occasional text emphasis. Bodoni/Didot serif headings, Montserrat-like sans-serif labels. Spacious composition, square corners, no gradients, rounded cards, 3D, bright colours, watermarks, or tiny paragraphs.
-
-Composition: three equal vertical panels across the upper 75 percent, separated by thin gold rules. Each has a large two-line heading and a generous meaningful illustration, with sparse labels. A compact handoff strip spans the lower 20 percent.
-
-LEFT PANEL:
-Heading exactly "One task per session".
-Illustrate a focused happy robot at a laptop working with just one task sheet labelled "Task A", inside one clearly labelled frame "Session A". Beside it, a small fading vignette of an old tangled chat and ghost with a reset arrow pointing towards the clean session. The vignette must remain secondary and not overcrowd the main single-task scene. No extra labels in the vignette.
-Caption exactly "Fresh context. Clear focus."
-
-CENTRE PANEL:
-Heading exactly "One Git worktree per parallel task".
-Draw one repository at the top labelled "Repository", branching into two separate side-by-side workspaces with clear boundaries. Workspace A contains a small robot, a terminal, and task card labelled "Task A"; workspace B contains a second small robot, a terminal, and task card labelled "Task B". Under each workspace show "Worktree A" and "Worktree B" respectively. Make the isolation visually unmistakable, no overlapping files or arrows between worktrees.
-Caption exactly "Separate tasks. Separate working directories."
-
-RIGHT PANEL:
-Heading exactly "Durable knowledge lives in the repository".
-Draw a prominent repository folder labelled "Repository" holding a large legible document named exactly "AGENTS.md". The document has three readable short lines "Conventions", "Decisions", "Lessons". A small chat history scroll at the side sends a clear one-way arrow carrying a useful lesson into AGENTS.md; the scroll then fades away. Show a new happy robot session consulting the repository document, not the old chat history.
-Caption exactly "Keep knowledge beyond the chat."
-
-BOTTOM STRIP:
-Title exactly "Reset with a compact handoff".
-Four equal small labelled fields with simple appropriate line icons, exactly "Goal", "Constraints", "Relevant files", "Acceptance checks". Do not include specific implementation examples or invented code.
-No repeated large slide title or slide number. Render all exact text accurately, with generous spacing and readable sizes. Preserve conceptual continuity with the original haunted-to-fresh illustration while making the three practical principles the dominant content.
+Asset type: landscape 16:9 Quarto presentation illustration.
+Input image 1: edit target, existing session-hygiene illustration. Preserve its robot character, elegant Bodoni/Didot headings, Montserrat-like labels, flat ivory #fdfaf3 and stone #e9e5db palette, near-black #141414 ink, gold #dac284 hairline borders ONLY, dark brown #7d6020 text emphasis, square panels, generous spacing, professional pen-and-ink style. No bright colours, gradients, glossy 3D, watermark, or slide title.
+Primary request: reflect COHERENT context rather than obligatory fresh context, while keeping worktree isolation and durable repository knowledge. Keep the three-panel layout and compact bottom handoff strip. Edit LEFT panel and BOTTOM strip; CENTRE and RIGHT content and message stay unchanged.
+LEFT heading exactly "Keep context coherent". In one workspace labelled "Session A", show the same focused robot consulting an existing notes sheet labelled "Useful context" and a main sheet labelled "Task A", with a small adjacent connected sheet labelled "Related follow-up". Convey that a related follow-up uses the same coherent session. A small secondary haunted/tangled-chat vignette has a reset arrow towards the workspace, but label that arrow exactly "Reset when confused". This vignette must not dominate. Caption exactly "One task by default; related follow-ups can stay." No "Fresh context", no absolute "One task per session".
+CENTRE: preserve heading "One Git worktree per parallel task", repository branching to isolated Worktree A / Task A and Worktree B / Task B, each with friendly robot and terminal. Caption "Separate tasks. Separate working directories."
+RIGHT: preserve heading "Durable knowledge lives in the repository", Repository containing AGENTS.md with "Conventions", "Decisions", "Lessons", useful chat knowledge flowing into the document and robot consulting it. Caption "Keep knowledge beyond the chat."
+BOTTOM: title exactly "Reset with a compact handoff". Five readable fields, with understated line icons: "Goal", "Constraints", "Relevant files", "Ruled-out approaches", "Acceptance checks". Fit all five without tiny text. All text exact, legible at 880 px display width. Keep the image at 16:9.
 ```
 
 ## meta-automation.webp

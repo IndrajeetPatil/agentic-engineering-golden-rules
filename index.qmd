@@ -89,7 +89,7 @@ Tests, deployment, security, and maintenance matter.
 
 [Throwaway code]{.card-title}
 
-For proofs of concept, demos, and prototypes, much of this caution is optional. Apply it once the code is no longer throwaway.
+Relax engineering rigour for disposable code; retain safeguards for real data and real actions.
 :::
 
 ::: {.card .card-ink}
@@ -102,8 +102,12 @@ These are principles that sharpen judgement, not a magic recipe.
 
 ::::
 
+::: {.source}
+On the risks of real actions, see [The lethal trifecta for AI agents](https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/) (Willison) and [Excessive agency](https://genai.owasp.org/llmrisk/llm062025-excessive-agency/) (OWASP).
+:::
+
 ::: {.notes}
-Quality gates such as tests, security, deployment, and maintenance are part of the conversation. Throwaway proofs of concept, demos, and prototypes can trade rigour for speed; the rules apply once that code starts to matter, which often happens sooner than planned. The aim is to sharpen judgement, not to sell a magic solution.
+Quality gates such as tests, security, deployment, and maintenance are part of the conversation. Throwaway proofs of concept, demos, and prototypes can trade engineering rigour for speed: tests, coverage, and polish can wait until the code starts to matter, which often happens sooner than planned. The consequences of running the code cannot wait. A disposable script can still expose credentials, alter real data, or send something externally, so keep scoped credentials, sandboxes, and confirmation before real actions. The aim is to sharpen judgement, not to sell a magic solution.
 :::
 
 ## Golden rules {.smaller}
@@ -125,7 +129,7 @@ Quality gates such as tests, security, deployment, and maintenance are part of t
 ::: {.card}
 [03]{.rule-number}
 
-**The Bitter Lesson**
+**Specify intent**
 :::
 
 ::: {.card}
@@ -196,11 +200,9 @@ The work still happens; the command owns the sequence, checks prerequisites, and
 
 [Fast feedback beats orchestration.]{.lede}
 
-![](media/deterministic-tooling.webp){.illustration width="880" height="495" fig-alt="Two-panel illustration contrasting a confused robot amid inconsistent style, flaky tests, broken assumptions, hallucinated APIs, and failed builds with a calm robot in a safety harness labelled Formatter, Linter, Type checker, Pre-commit, CI, Sanitisers, and Valgrind. Orderly outputs show consistent code, passing tests, and quality gates. Deterministic inputs and checks lead to consistent outcomes."}
+![](media/deterministic-tooling.webp){.illustration width="880" height="495" fig-alt="Two-panel illustration contrasting a confused robot amid inconsistent style, flaky tests, broken assumptions, hallucinated APIs, and failed builds with a calm robot in a safety harness labelled Formatter, Linter, Type checker, Pre-commit, CI, Sanitisers, and Valgrind. Output cards show consistent style and configured gates passing for tests, types, and builds. Human review is still needed to assess requirements, behaviour, and user experience. A change flows through checks to human review; passing gates is evidence for review."}
 
 ::: {.notes}
-Use a deterministic harness to keep the agent's non-determinism in check.
-
 Guardrails are more important than elaborate orchestration. Fast, deterministic feedback keeps the agent's non-determinism under control.
 :::
 
@@ -223,13 +225,13 @@ Formatters, linters, type checkers, tests with coverage gates, Git hooks, and se
 ::: {.card .card-ink}
 [One command]{.eyebrow}
 
-`make qa` says whether the work is acceptable, and CI runs the **same gates**
+`make qa` checks the agreed gates, and CI runs the **same gates**. Review checks whether we solved the right problem.
 :::
 
 ::: {.card .card-stone}
 [Agents optimise for green]{.eyebrow}
 
-Never lower a threshold or disable a check to get there
+Never weaken a check merely to get there. Repairing a wrong gate is deliberate, reviewed work.
 :::
 
 ::::
@@ -243,23 +245,27 @@ An agent can propose changes quickly, but quality comes from the harness around 
 
 The workflow sends failed checks back to the agent with precise error output. Passing checks lead to human review before merge.
 
+Green checks establish less than "the work is acceptable". They show that the configured gates pass, not that the requirements were right, that the tests capture them, or that the user experience works. Review answers those questions.
+
+Agents will find the shortest path to green, including lowering a threshold or disabling a check. Do not weaken a check merely to pass. Sometimes a gate really is wrong, such as a flaky test or a rule that does not fit the code; repairing it is legitimate work, but make it a deliberate, separately reviewed change.
+
 Coverage gates invite filler tests. Ask agents to assert behaviour at the boundaries you own (the outbound request, the streamed output, the logged event), never to execute lines for the sake of coverage.
 :::
 
-## [03]{.rule-tag} The Bitter Lesson {.rule-slide}
+## [03]{.rule-tag} Specify intent {.rule-slide}
 
-[Strong models need intent, not ceremony.]{.lede}
+[State outcomes and constraints; prescribe steps only when the sequence matters.]{.lede}
 
-![](media/bitter-lesson.webp){.illustration width="880" height="495" fig-alt="Ceremony versus intent. A confused robot follows a prescribed route: open utils.py at line 40, add a try block, add exactly three tests, use single quotes, and do not deviate. An engaged robot receives an outcome and constraints: fix the failing date-parsing test, preserve the public API, keep the diff small, and explain any trade-off. Strong tools include search, docs, debugger, formatter, linter, type checker, tests, and CI. The agent verifies its own work by inspecting test, type, and build results. A single feedback loop shows Explore: inspect and try; Check: run checks and inspect results; Adapt: fix failures and re-check."}
+![](media/bitter-lesson.webp){.illustration width="880" height="495" fig-alt="Ceremony versus intent. A confused robot follows a prescribed route: open utils.py at line 40, add a try block, add exactly three tests, use single quotes, and do not deviate. An engaged robot receives an outcome and constraints: fix the failing date-parsing test, preserve the public API, keep the diff small, and explain any trade-off. Strong tools include search, docs, debugger, formatter, linter, type checker, tests, and CI. The agent verifies its own work by inspecting test, type, and build results. A single feedback loop shows Explore: inspect and try; Check: run checks and inspect results; Adapt: fix failures and re-check. A separate note says to prescribe steps when the sequence matters, such as migrations, incident response, and proven diagnostics."}
 
 ::: {.source}
-Inspired by Rich Sutton's essay [The Bitter Lesson](http://www.incompleteideas.net/IncIdeas/BitterLesson.html) (2019).
+Inspired by Rich Sutton's essay [The Bitter Lesson](http://www.incompleteideas.net/IncIdeas/BitterLesson.html) (2019), as an analogy rather than evidence.
 :::
 
 ::: {.notes}
-Do not get in the model's way.
+Stronger models usually need clearer intent, not more ceremony. Do not get in the model's way by prescribing every implementation step.
 
-The bitter lesson here is that stronger models usually need clearer intent, not more ceremony. Do not get in the model's way by prescribing every implementation step.
+The framing borrows from Rich Sutton's essay The Bitter Lesson, which argues that general methods that scale with search and learning outperform methods built around human domain knowledge. That is an analogy for this advice, not evidence for it: the essay says nothing about how much procedural guidance coding agents need.
 
 Ceremony: "Open utils.py. Find the function on line 40. Add a try block. Then open the test file and add three tests. Use single quotes. Do not deviate from these steps." This over-specifies the route and leaves no room for the model to reason about a better one.
 
@@ -267,7 +273,7 @@ Intent: "Fix the failing date-parsing test without changing the public API. Keep
 
 Strong tools matter, and agents must use them to verify their own work: run the relevant checks, inspect the results, fix failures, and re-check before reporting completion. The Explore, Check, Adapt loop shows this responsibility explicitly.
 
-Specify implementation steps only when they genuinely matter. Otherwise, give the agent a target, constraints, strong tools, and responsibility for verification. Passing checks still leaves humans responsible for review and what ships.
+Procedures remain useful when the sequence itself matters: database migrations, incident response, or a proven diagnostic workflow. Specify those steps. Otherwise, give the agent a target, constraints, strong tools, and responsibility for verification. Passing checks still leaves humans responsible for review and what ships.
 :::
 
 ## [04]{.rule-tag} Scope control {.rule-slide}
@@ -310,24 +316,26 @@ Agents are good at making many changes quickly, but reviewers need changes that 
 
 ## [05]{.rule-tag} Session hygiene {.rule-slide}
 
-[Fresh context beats haunted context.]{.lede}
+[Coherent context beats haunted context.]{.lede}
 
-![](media/session-hygiene.webp){.illustration width="880" height="495" fig-alt="Three-panel illustration: one task per session gives a robot fresh context and clear focus; parallel tasks A and B run in separate Git worktrees from the same repository; durable conventions, decisions, and lessons move from chat history into AGENTS.md, which a new session consults. A compact handoff contains the goal, constraints, relevant files, and acceptance checks."}
+![](media/session-hygiene.webp){.illustration width="880" height="495" fig-alt="Three-panel illustration: a robot keeps useful context for task A and a related follow-up in the same coherent session, with one task as the default and a reset when confused; parallel tasks A and B run in separate Git worktrees from the same repository; durable conventions, decisions, and lessons move from chat history into AGENTS.md, which a new session consults. A compact handoff contains the goal, constraints, relevant files, ruled-out approaches, and acceptance checks."}
 
 ::: {.source}
 See [Effective context engineering for AI agents](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents) (Anthropic).
 :::
 
 ::: {.notes}
-Keep sessions focused, parallel tasks isolated, and durable knowledge in the repository.
+Keep sessions coherent, parallel tasks isolated, and durable knowledge in the repository.
 
 Every correction, abandoned approach, and reversed decision stays in the context window. After enough of them, the agent is reasoning over contradictions.
 
-Run one task per session, and use one Git worktree per parallel task so each task has its own working directory. Keep durable conventions, decisions, and lessons in the repository, for example in `AGENTS.md`, so future sessions can find them without relying on old chat history.
+One task per session is a useful default, not an absolute. A closely related follow-up can benefit from the reasoning and discoveries already in context, and restarting has a cost: a handoff can lose an important constraint or a failed hypothesis. Restart when the context stops being coherent, not merely because it is no longer fresh.
+
+Use one Git worktree per parallel task so each task has its own working directory. Keep durable conventions, decisions, and lessons in the repository, for example in `AGENTS.md`, so future sessions can find them without relying on old chat history.
 
 Signs of a haunted session include reviving a rejected approach, confusing earlier and current requirements, repeating the same correction, or continuing after the conversation has outgrown its original task.
 
-Reset with a compact handoff: the goal in one sentence, constraints on what must not change, relevant files to start with, and acceptance checks that show when the work is done.
+Reset with a compact handoff: the goal in one sentence, constraints on what must not change, relevant files to start with, approaches already ruled out, and acceptance checks that show when the work is done.
 :::
 
 ## [06]{.rule-tag} Know thy tools {.rule-slide}
