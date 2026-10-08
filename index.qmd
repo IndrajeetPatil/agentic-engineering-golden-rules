@@ -199,8 +199,6 @@ The work still happens; the command owns the sequence, checks prerequisites, and
 ![](media/deterministic-tooling.webp){.illustration width="880" height="495" fig-alt="Two-panel illustration contrasting a confused robot amid inconsistent style, flaky tests, broken assumptions, hallucinated APIs, and failed builds with a calm robot in a safety harness labelled Formatter, Linter, Type checker, Pre-commit, CI, Sanitisers, and Valgrind. Orderly outputs show consistent code, passing tests, and quality gates. Deterministic inputs and checks lead to consistent outcomes."}
 
 ::: {.notes}
-Use a deterministic harness to keep the agent's non-determinism in check.
-
 Guardrails are more important than elaborate orchestration. Fast, deterministic feedback keeps the agent's non-determinism under control.
 :::
 
@@ -261,8 +259,6 @@ Inspired by Rich Sutton's essay [The Bitter Lesson](http://www.incompleteideas.n
 :::
 
 ::: {.notes}
-Do not get in the model's way.
-
 Stronger models usually need clearer intent, not more ceremony. Do not get in the model's way by prescribing every implementation step.
 
 The framing borrows from Rich Sutton's essay The Bitter Lesson, which argues that general methods that scale with search and learning outperform methods built around human domain knowledge. That is an analogy for this advice, not evidence for it: the essay says nothing about how much procedural guidance coding agents need.
