@@ -183,7 +183,7 @@ Quality gates such as tests, security, deployment, and maintenance are part of t
 ![](media/measure-whole-job.webp){.illustration width="880" height="495" fig-alt="Two-panel illustration: choose among a direct human edit, a script or existing tool, and an agent, starting with a real pain point. Preparation, generation, verification, and review all contribute to time to an accepted result. Also track review effort, defects, and maintenance burden, and keep the approach that improves the whole job."}
 
 ::: {.source}
-Inspired by [Building effective agents](https://www.anthropic.com/engineering/building-effective-agents) (Anthropic); the whole-job measures are practical recommendations for coding work.
+Simplest-solution principle: [Building effective agents](https://www.anthropic.com/engineering/building-effective-agents) (Anthropic). Why measure: in [METR's early-2025 study](https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/), developers felt 20% faster with AI but took 19% longer.
 :::
 
 ::: {.notes}
@@ -192,6 +192,8 @@ Decide whether an agent is useful before deciding how to orchestrate one. A dire
 Anthropic recommends starting with the simplest solution and adding complexity when it demonstrably improves outcomes. This is an application of that principle to day-to-day coding work, not evidence that agents always help or always hurt.
 
 Judge the whole job: time from preparing the task to an accepted result, human review and rework effort, defects discovered after acceptance, and maintenance burden. Generation speed and code volume omit much of this work. Include abandoned attempts and track human review time separately so faster generation does not hide extra work for colleagues.
+
+Perception is not measurement. In METR's randomised study of 16 experienced open-source developers working on 246 real issues, developers expected AI to speed them up by 24% and afterwards believed it had sped them up by 20%, yet tasks with AI allowed took 19% longer. METR describes this as a snapshot of early-2025 tools in one setting, and its February 2026 update reports that measuring later tools reliably is harder still. The lesson is not that agents slow everyone down; it is that felt speed is an unreliable guide.
 
 Compare similar tasks and agreed acceptance criteria. Record enough context to interpret the result: task difficulty, the approach used, and relevant conditions. A one-off anecdote cannot establish a universal productivity gain.
 
@@ -237,7 +239,7 @@ The work still happens; the command owns the sequence, checks prerequisites, and
 ![](media/define-done.webp){.illustration width="880" height="495" fig-alt="Three-panel illustration: a human gives a robot a brief containing the goal, constraints, and what stays unchanged; evidence is chosen to fit the task, reproducing and fixing a bug, inspecting a UI interaction, or measuring performance; a human and robot compare tests with requirements because both can share the same mistake. Agree the criteria, verify against them, and review the evidence."}
 
 ::: {.source}
-See [Demystifying evals for AI agents](https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents) (Anthropic).
+On specifying success and grading outcomes rather than paths, see [Demystifying evals for AI agents](https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents) (Anthropic).
 :::
 
 ::: {.notes}
@@ -283,7 +285,7 @@ Measure before and after under comparable conditions. State the workload and tra
 :::
 
 ::: {.source}
-Verification examples adapted from [Demystifying evals for AI agents](https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents) (Anthropic).
+Bug and UI checks adapted from [Claude Code best practices](https://code.claude.com/docs/en/best-practices) (Anthropic); baselines from [Demystifying evals for AI agents](https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents).
 :::
 
 ::: {.notes}
@@ -328,8 +330,14 @@ Prefer narrow tasks: one bug, one refactor, one test gap, one migration step. Ea
 When the agent discovers broader issues, **capture them as follow-up tasks** instead of expanding the current change indefinitely.
 :::
 
+::: {.source}
+See [Small CLs](https://google.github.io/eng-practices/review/developer/small-cls.html) (Google Engineering Practices).
+:::
+
 ::: {.notes}
 Agents are good at making many changes quickly, but reviewers need changes that are small enough to understand.
+
+Google's code review guide lists why small changes help: they are reviewed more quickly and more thoroughly, are less likely to introduce bugs, waste less work if the direction is wrong, and are simpler to roll back. Those benefits matter more, not less, when an agent can generate a large diff in minutes.
 :::
 
 ## [05]{.rule-tag} Bound the blast radius {.rule-slide}
@@ -455,7 +463,7 @@ Coverage gates invite filler tests. Ask agents to assert behaviour at the bounda
 ![](media/session-hygiene.webp){.illustration width="880" height="495" fig-alt="Three-panel illustration: a robot keeps useful context for task A and a related follow-up in the same coherent session, with one task as the default and a reset when confused; parallel tasks A and B run in separate Git worktrees from the same repository; durable conventions, decisions, and lessons move from chat history into AGENTS.md, which a new session consults. A compact handoff contains the goal, constraints, relevant files, ruled-out approaches, and acceptance checks."}
 
 ::: {.source}
-Sources: [Context engineering](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents) (Anthropic) · [Git worktrees](https://git-scm.com/docs/git-worktree).
+Sources: [Context engineering](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents) and [Claude Code best practices](https://code.claude.com/docs/en/best-practices) (Anthropic) · [Git worktrees](https://git-scm.com/docs/git-worktree).
 :::
 
 ::: {.notes}
@@ -463,11 +471,11 @@ Keep sessions coherent, parallel tasks isolated, and durable knowledge in the re
 
 Every correction, abandoned approach, and reversed decision stays in the context window. After enough of them, the agent is reasoning over contradictions.
 
-One task per session is a useful default, not an absolute. A closely related follow-up can benefit from the reasoning and discoveries already in context, and restarting has a cost: a handoff can lose an important constraint or a failed hypothesis. Restart when the context stops being coherent, not merely because it is no longer fresh.
+One task per session is a useful default, not an absolute. A closely related follow-up can benefit from the reasoning and discoveries already in context, and restarting has a cost: a handoff can lose an important constraint or a failed hypothesis. Length matters as well as coherence: Anthropic describes context rot, where recall of information in the context degrades as the token count grows. Clear or compact between unrelated tasks, and restart when the context stops being coherent or is filling with material the next step does not need.
 
 Use one Git worktree per parallel task so each task has its own working directory. Worktrees isolate edits, not permissions; apply the access limits from Bound the blast radius as well. Keep durable conventions, decisions, and lessons in the repository, for example in `AGENTS.md`, so future sessions can find them without relying on old chat history.
 
-Signs of a haunted session include reviving a rejected approach, confusing earlier and current requirements, repeating the same correction, or continuing after the conversation has outgrown its original task.
+Signs of a haunted session include reviving a rejected approach, confusing earlier and current requirements, repeating the same correction, or continuing after the conversation has outgrown its original task. Claude Code's best practices suggest a concrete threshold: after two failed corrections on the same issue, start fresh with a better prompt.
 
 Reset with a compact handoff: the goal in one sentence, constraints on what must not change, relevant files to start with, approaches already ruled out, and acceptance checks that show when the work is done.
 :::
