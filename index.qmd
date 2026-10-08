@@ -102,6 +102,10 @@ These are principles that sharpen judgement, not a magic recipe.
 
 ::::
 
+::: {.source}
+On the risks of real actions, see [The lethal trifecta for AI agents](https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/) (Willison) and [Excessive agency](https://genai.owasp.org/llmrisk/llm062025-excessive-agency/) (OWASP).
+:::
+
 ::: {.notes}
 Quality gates such as tests, security, deployment, and maintenance are part of the conversation. Throwaway proofs of concept, demos, and prototypes can trade engineering rigour for speed: tests, coverage, and polish can wait until the code starts to matter, which often happens sooner than planned. The consequences of running the code cannot wait. A disposable script can still expose credentials, alter real data, or send something externally, so keep scoped credentials, sandboxes, and confirmation before real actions. The aim is to sharpen judgement, not to sell a magic solution.
 :::
