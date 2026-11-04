@@ -176,6 +176,12 @@ Quality gates such as tests, security, deployment, and maintenance are part of t
 
 ::::
 
+::: {.notes}
+These ten rules provide an end-to-end framework for working effectively with coding agents without sacrificing code quality or team velocity.
+
+They cover the full engineering lifecycle: deciding when to use an agent, preparing the codebase for human and agent ergonomics, defining precise outcomes and boundaries, maintaining rapid deterministic feedback, managing session context, leveraging tool affordances, automating repeatable workflows, and fostering healthy team engineering practices.
+:::
+
 ## [01]{.rule-tag} Measure the whole job {.rule-slide}
 
 [Choose the simplest approach that improves time to an accepted result.]{.lede}
@@ -576,7 +582,21 @@ Review agent-generated work as carefully as human work, and review humans as kin
 **AI does not remove responsibility.** You still own the design, the code, the tests, the security implications, and the communication with your team.
 :::
 
+::: {.notes}
+Put these three attitudes into practice in daily teamwork:
+
+- **Curious:** Experiment with new workflows, test emerging model capabilities, and explore unfamiliar code paths, whilst continuing to strengthen understanding of the underlying languages, frameworks, and architecture.
+- **Humble:** Acknowledge that models produce plausible-sounding errors and hallucinations just as easily as correct code. Treat every suggestion with scepticism, verify assertions independently, and remain open to correcting your own prompts and assumptions.
+- **Kind:** Protect teammates from unreviewed or bloated AI code. Give human colleagues constructive, empathetic feedback, and celebrate learning and experimentation across the team.
+
+Ultimately, automation does not dilute accountability: the engineer who merges the pull request owns the outcome in production.
+:::
+
 # Making it stick
+
+::: {.notes}
+Moving from individual practices to embedding these rules into daily team habits, collaboration, and culture.
+:::
 
 ## Code generation is the easy part {.smaller}
 
@@ -616,6 +636,11 @@ Simplest-solution principle: [Building effective agents](https://www.anthropic.c
 
 ::: {.notes}
 Code generation is often the easy part. The hard part is planning work in a team: dividing tasks, coordinating changes, preserving quality, and making results reviewable.
+
+- **Share:** Encourage the team to pool insights, prompts, and tool discoveries.
+- **Fix pain points:** Target real friction like slow builds, brittle test suites, or unclear setup using the simplest effective solution, measuring the whole job rather than raw lines generated.
+- **Frontload planning:** Break complex problems down before delegating so changes remain small, focused, and reviewable.
+- **Challenge habits:** Revisit workflows periodically as agent capabilities evolve, keeping adjustments that genuinely improve outcomes.
 :::
 
 ## Further reading {.smaller}
@@ -646,6 +671,10 @@ Code generation is often the easy part. The hard part is planning work in a team
 
 :::
 
+::: {.notes}
+These references provide the foundations and deeper explorations for the rules covered in this talk, including prompt and context engineering guides, harness design, evaluation methodologies, and security best practices from Anthropic, Google, OWASP, and practitioners like Simon Willison, Kent Beck, and Martin Fowler.
+:::
+
 # Thank You
 
 Go forth and delegate responsibly.
@@ -666,4 +695,10 @@ Check out my other [slide decks](https://www.indrapatil.com/presentations/) on s
 &nbsp;&nbsp;
 <a class="deck-icon-link" href="mailto:patilindrajeet.science@gmail.com" aria-label="Email"><span class="deck-icon deck-icon-solid-envelope" aria-hidden="true"></span></a>
 
+:::
+
+::: {.notes}
+Thank you for your time. Remember to go forth and delegate responsibly.
+
+I am happy to take questions, discuss specific workflows, or hear how your team is navigating agentic engineering.
 :::
