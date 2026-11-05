@@ -66,11 +66,9 @@ All illustrations in this presentation are AI-generated.
 :::
 
 ::: {.notes}
-This is a practical talk, not a theoretical one. The goal is to explore how agentic software engineering can make us faster while still protecting quality.
+This is a practical talk about using coding agents to improve the whole engineering job while protecting quality. The illustrations are AI-generated, reflecting the hands-on subject of the talk.
 
-The illustrations are AI-generated, which is intentional: the topic is hands-on use of AI as a tool.
-
-Invite the audience to think about one area of their daily engineering work where they lose time: finding context, writing repetitive code, coordinating changes, or waiting for feedback.
+Think about one part of your daily work where you lose time: finding context, repeating an edit, coordinating changes, or waiting for feedback. Keep that example in mind as we work through the rules.
 :::
 
 ## Before we start
@@ -178,9 +176,7 @@ Quality gates such as tests, security, deployment, and maintenance are part of t
 ::::
 
 ::: {.notes}
-These ten rules provide an end-to-end framework for working effectively with coding agents without sacrificing code quality or team velocity.
-
-They cover the full engineering lifecycle: deciding when to use an agent, preparing the codebase for human and agent ergonomics, defining precise outcomes and boundaries, maintaining rapid deterministic feedback, managing session context, leveraging tool affordances, automating repeatable workflows, and fostering healthy team engineering practices.
+The ten rules cover the engineering lifecycle: choosing whether an agent helps, preparing a usable codebase, defining the result, and checking the work. They also cover context management, tools, repeatable automation, and collaboration. The aim is to connect those practices rather than optimise code generation in isolation.
 :::
 
 ## [01]{.rule-tag} Measure the whole job {.rule-slide}
@@ -492,21 +488,11 @@ Official docs: [Claude Code voice](https://code.claude.com/docs/en/voice-dictati
 :::
 
 ::: {.notes}
-These are example affordances that users miss, not an exhaustive feature list or a claim that each capability is exclusive to one product. Official documentation and release notes were checked on 8 October 2026.
+The examples on this slide illustrate capabilities that can be easy to overlook. They reflect official documentation checked in October 2026, so consult the linked documentation for current availability.
 
-Claude Code voice mode is prompt dictation: `/voice` enables speech-to-text input. It requires a Claude.ai sign-in and a local microphone; it is not available with direct API-key or third-party-provider authentication, or in cloud or SSH sessions.
+Claude Code offers voice input for dictating prompts, with the authentication and environment requirements described on the slide. Codex offers built-in image generation for creating and editing assets alongside the code. GitHub Copilot CLI offers computer use in its supported local environments, subject to permissions and policy. These are different affordances, not claims that one product alone can provide a capability.
 
-Codex supports built-in image generation for creating and editing visual assets alongside code, including in the CLI. Describe the desired asset and supply a reference image for an edit; `$imagegen` invokes the skill explicitly. The illustration uses the general product name because this affordance is not limited to the desktop app.
-
-GitHub Copilot CLI computer use entered public preview on 1 October 2026. `/computer on` enables it in local sessions on macOS and Windows, subject to permissions and organisation policy. It can read, click, type, and navigate desktop interfaces. Use a direct API, CLI, MCP, or dedicated browser tool when one fits the task; computer use is useful for GUI-only workflows.
-
-Read the changelog: a release note can remove a bottleneck you have been working around for months. Availability and commands can change, so revisit the linked official docs when updating this slide.
-
-When results are poor, ask whether the agent had the right context, the right tools, and the right feedback.
-
-Sometimes the limiting factor is not the model; it is the tool interface available to the model.
-
-Agents perform better when they can inspect files, run commands, search the repository, execute tests, and see failures. If a tool is hidden, blocked, or awkward, the agent may appear less capable than it really is.
+Choose the tool interface that fits the task. A direct API or command-line tool is useful when it exposes the operation clearly; computer use can help with a workflow available only through a graphical interface. When results disappoint, examine the context, tools, and feedback available to the agent as well as the model itself.
 :::
 
 ## [09]{.rule-tag} Meta-automation {.rule-slide}
@@ -584,13 +570,9 @@ Review agent-generated work as carefully as human work, and review humans as kin
 :::
 
 ::: {.notes}
-Put these three attitudes into practice in daily teamwork:
+Curiosity means trying useful workflows while continuing to understand the underlying system. Humility means checking plausible-looking output and being willing to revise our own assumptions. Kindness means protecting colleagues from unreviewed changes and giving constructive feedback.
 
-- **Curious:** Experiment with new workflows, test emerging model capabilities, and explore unfamiliar code paths, whilst continuing to strengthen understanding of the underlying languages, frameworks, and architecture.
-- **Humble:** Acknowledge that models produce plausible-sounding errors and hallucinations just as easily as correct code. Treat every suggestion with scepticism, verify assertions independently, and remain open to correcting your own prompts and assumptions.
-- **Kind:** Protect teammates from unreviewed or bloated AI code. Give human colleagues constructive, empathetic feedback, and celebrate learning and experimentation across the team.
-
-Ultimately, automation does not dilute accountability: the engineer who merges the pull request owns the outcome in production.
+Automation does not remove accountability. The engineer accepting a change still needs to understand the evidence and take responsibility for what reaches production.
 :::
 
 # Making it stick
@@ -636,12 +618,9 @@ Simplest-solution principle: [Building effective agents](https://www.anthropic.c
 :::
 
 ::: {.notes}
-Code generation is often the easy part. The hard part is planning work in a team: dividing tasks, coordinating changes, preserving quality, and making results reviewable.
+Generating code is only part of delivering a change. A team must also plan the work, coordinate edits, preserve quality, and make the result reviewable.
 
-- **Share:** Encourage the team to pool insights, prompts, and tool discoveries.
-- **Fix pain points:** Target real friction like slow builds, brittle test suites, or unclear setup using the simplest effective solution, measuring the whole job rather than raw lines generated.
-- **Frontload planning:** Break complex problems down before delegating so changes remain small, focused, and reviewable.
-- **Challenge habits:** Revisit workflows periodically as agent capabilities evolve, keeping adjustments that genuinely improve outcomes.
+Share useful discoveries, address real sources of friction, and divide work into changes that can be understood. Revisit the process as the tools evolve, keeping improvements that help the whole team rather than merely increasing the amount of generated code.
 :::
 
 ## Further reading {.smaller}
