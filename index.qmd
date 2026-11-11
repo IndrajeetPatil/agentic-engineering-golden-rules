@@ -212,7 +212,7 @@ Across these examples, the labels change while the responsibilities remain compa
 ::::
 
 ::: {.notes}
-The nine rules begin with preparing a codebase for agents, then improve the shared developer and agent experience. They cover defining outcomes, verifying work, managing context, using tools, automating repeated work, relieving delivery bottlenecks, and keeping humans responsible for what ships.
+The nine rules begin with preparing a codebase for agents and improving the shared developer and agent experience. They then set quality gates, define outcomes, maintain useful context, use tools well, automate repeated work, remove delivery bottlenecks, and build a curious, humble, and kind team culture.
 :::
 
 ## [01]{.rule-tag} Prepare the codebase for agents {.rule-slide}
@@ -265,28 +265,26 @@ The work still happens; the command owns the sequence, checks prerequisites, and
 
 ## [03]{.rule-tag} Set deterministic quality gates {.rule-slide}
 
-[Fast feedback beats orchestration.]{.lede}
+[Let deterministic checks catch what they can, fast.]{.lede}
 
 ![](media/deterministic-tooling.webp){.illustration width="880" height="495" fig-alt="Two-panel illustration contrasting a confused robot amid inconsistent style, flaky tests, broken assumptions, hallucinated APIs, and failed builds with a calm robot in a safety harness labelled Formatter, Linter, Type checker, Pre-commit, CI, Sanitisers, and Valgrind. Output cards show consistent style and configured gates passing for tests, types, and builds. Human review is still needed to assess requirements, behaviour, and user experience. A change flows through checks to human review; passing gates is evidence for review."}
 
 ::: {.notes}
-Set deterministic quality gates that give agents fast feedback and keep non-determinism under control.
+Deterministic checks give agents fast feedback on repeatable requirements. Formatters, linters, type checkers, and tests can catch known classes of mistakes on every change. They cannot decide whether the work meets an unstated requirement or makes sense for users, so people still review the evidence and the work's impact.
 :::
 
 ## Set deterministic quality gates: in practice
 
-![](media/guardrails-workflow.webp){.illustration width="880" height="495" fig-alt="Four-stage Ruff workflow: a coding agent proposes a Python example.py change, Ruff runs `ruff check example.py`, and a pass proceeds to human review and merge. On failure, Ruff reports F841 because greeting is assigned but never used; the error loops back to the agent, which fixes the code by printing greeting."}
+![](media/guardrails-workflow.webp){.illustration width="880" height="495" fig-alt="Ruff feedback loop: a coding agent first defines main() with an unused local greeting variable. Ruff runs `ruff check example.py` and reports F841. The agent adds `print(greeting)` inside main() and reruns Ruff; the passing change proceeds to human review and merge."}
 
 ::: {.source}
 See [Ruff’s F841 rule](https://docs.astral.sh/ruff/rules/unused-variable/).
 :::
 
 ::: {.notes}
-The agent proposes a small Python change. Ruff checks it deterministically and reports F841 when the greeting variable is assigned but never used. The finding loops back to the agent, which fixes the code by printing the variable and reruns the check.
+The agent proposes a small Python change. Inside `main()`, it assigns a greeting but never uses it. Ruff reports F841 for that unused local variable. The finding loops back to the agent, which adds `print(greeting)` inside the function and reruns the check.
 
-A passing check sends the change to human review before merge. The reviewer checks the intended behaviour and whether the fix makes sense; passing a configured check is evidence, not proof.
-
-Passing a configured check is evidence, not proof that the change meets the requirement. Human review still checks the intended behaviour and whether the fix makes sense.
+A passing check sends the change to human review before merge. The reviewer checks the intended behaviour and whether the fix makes sense. A configured check is evidence, not proof that a change meets its requirement; automatic checks cannot take responsibility for what ships.
 :::
 
 ## [04]{.rule-tag} Define done before delegating {.rule-slide}
@@ -374,12 +372,12 @@ When a useful agent workflow repeats, package the instructions or choreography s
 ::: {.notes}
 The examples show four ways of packaging repeated work: a prompt for a dependency update, a skill for collecting PR screenshot evidence, a shortcut for reviewing comments, and a workflow for triaging vulnerability findings.
 
-Automate coordination such as gathering context, running checks, and formatting reports. Keep evaluation of evidence, trade-offs, and decisions about what ships with people.
+Automate coordination such as gathering context, running checks, and formatting reports. People define the policy for any automated merge: only changes that meet explicit, low-risk criteria qualify. Human review remains the route for ambiguous, risky, or exceptional changes, and people remain accountable for the policy and its results.
 :::
 
 ## [08]{.rule-tag} Identify and remove bottlenecks {.rule-slide}
 
-[End-to-end speed is limited by its slowest stage.]{.lede}
+[Speeding up one stage helps only as much as the rest allows.]{.lede}
 
 ![](media/sdlc-bottlenecks.webp){.illustration width="880" height="495" fig-alt="A left-to-right software delivery pipeline shows Plan, Code, Review, Verify, and Release. Coding agents speed up Code and create a large pull-request queue at Review, where a flustered human reviewer is buried in changes. Another queue reaches Verify, where a second flustered human struggles to check behaviour manually."}
 
@@ -388,7 +386,7 @@ Automate coordination such as gathering context, running checks, and formatting 
 :::
 
 ::: {.notes}
-Think about delivery as one connected system: planning, implementation, review, verification, and release. Amdahl’s law describes how the part of a computation that remains unchanged limits the speedup from improving another part. Applied as an analogy to the software lifecycle, faster code production cannot remove delays in review, testing, or release.
+Think about delivery as one connected system: planning, code, review, verification, and release. Amdahl’s law describes how the part of a computation that remains unchanged limits the speedup from improving another part. Applied as an analogy to software delivery, faster code production cannot remove delays in review, testing, or release.
 
 The illustration shows coding agents producing changes faster than people can review them, with another human queue at behaviour verification. These bottlenecks can coexist, and relieving one may expose the other. The next slide shows targeted ways to reduce those waits without weakening quality.
 
@@ -397,16 +395,16 @@ The 2025 DORA research describes AI as an amplifier of existing organizational s
 
 ## Identify and remove bottlenecks: in practice {.rule-slide}
 
-![](media/bottleneck-examples.webp){.illustration width="880" height="495" fig-alt="Three bottleneck examples: slow CI waits on a queue, then uses Rust-based tools Ruff, uv, and ty; a large pull request enters an LLM author and reviewer loop; manual behaviour checks become automated E2E tests."}
+![](media/bottleneck-examples.webp){.illustration width="880" height="495" fig-alt="Three bottleneck examples: slow lint and type checks are improved with Rust-based tools Ruff, uv, and ty; a large pull request is split or stacked into smaller changes before an LLM author and reviewer loop; repeated manual behaviour checks become automated E2E tests."}
 
 ::: {.source}
 Rust-based tools: [Ruff](https://docs.astral.sh/ruff/), [uv](https://docs.astral.sh/uv/), and [ty](https://docs.astral.sh/ty/).
 :::
 
 ::: {.notes}
-Start by finding where work is waiting. In the first example, CI is slow, so the team considers faster Rust-based tools: Ruff for linting and formatting, uv for Python environments and packages, and ty for type checking. Measure the CI workflow before and after to see whether this addresses the delay.
+Start by finding where work is waiting. In the first example, lint and type checks are slow, so the team considers Ruff for linting and formatting, uv for Python environments and packages, and ty for type checking. These tools target those checks; they do not make a slow test suite or build faster. Caching or parallelising work may suit other bottlenecks. Measure the affected step and the full workflow before and after.
 
-The second example shows a large pull request entering a review loop: an LLM reviewer returns findings to the author, which can revise and request another review. Human reviewers still make the decisions about quality and what ships.
+The second example starts by splitting or stacking a large pull request into smaller, reviewable changes. An LLM reviewer can then return findings to the author in a loop. Human reviewers still judge quality and decide what ships, except where the team has explicitly authorised automatic merging for a bounded, low-risk class of change.
 
 The third example replaces repeated manual checks of a user journey with an end-to-end test. These tests can make important behaviour quicker to check, while exploratory testing remains useful for cases the tests do not cover. These are possible responses, not prescriptions; measure the whole delivery flow again because the bottleneck may move.
 :::
@@ -436,7 +434,7 @@ Experiment, prototype, and keep learning the fundamentals the agent is standing 
 ::: {.card .card-stone}
 [Humble]{.card-title}
 
-Agents are confidently wrong. So are we. Verify before you trust, including your own prompt.
+Agents can be confidently wrong. So can we. Verify before you trust, including your own prompt.
 :::
 
 ::: {.card .card-stone}
@@ -466,7 +464,7 @@ David Heinemeier Hansson puts it simply: “It’s more fun to be competent.” 
 # Conclusion
 
 ::: {.notes}
-Together, these practices can turn a repository into a software factory. The broader payoff is faster routine work across nearly every SDLC stage, from planning through release, while quality gates protect the bar.
+Together, these practices can turn a repository into a software factory. They speed up routine work through planning, coding, review, verification, and release while people set direction and own risk boundaries.
 :::
 
 ## A software factory {.smaller}
@@ -476,25 +474,25 @@ Together, these practices can turn a repository into a software factory. The bro
 ![](media/software-factory.webp){.illustration width="880" height="495" fig-align="center" fig-alt="A feature request moves from a developer to a coding agent, which opens a pull request with UI screenshots and a red-and-green code diff. Automated QA gates show example checks for 100% code coverage, 100% type coverage, benchmarks, zero lint issues, zero warnings, Lighthouse performance, accessibility, and SEO, followed by an ellipsis to indicate more checks. An independent reviewer agent sends findings back to the coding agent; after approval, the coding agent merges and the feature appears in a web app."}
 
 ::: {.source}
-Example: [chatbot-template](https://github.com/IndrajeetPatil/chatbot-template/).
+Example: [chatbot-template](https://github.com/IndrajeetPatil/chatbot-template/) · OpenAI, [sandbox security](https://developers.openai.com/api/docs/guides/agents-api/environments/security) and [prompt injections](https://openai.com/safety/prompt-injections/).
 :::
 
 ::: {.notes}
-This is what the rules can add up to. Clear repository guidance and simple local commands give agents a reliable starting point; reusable prompts and skills automate repeat work; checks produce evidence at each step. The public chatbot-template repository shows the flow in practice. Locally, `make qa` runs the project quality suite and `make hooks` runs its pre-commit checks. GitHub Actions runs checks for formatting, linting, types, backend and frontend tests, end-to-end browser tests, security, and other quality gates. The main-branch ruleset requires the `prek`, `test`, `backend`, `frontend`, `e2e`, and `qa` status checks. The inset highlights example gates from this strict harness and uses an ellipsis to show that the list continues; other projects can select checks that fit their needs.
+This is what the rules can add up to. Clear repository guidance and simple local commands give agents a reliable starting point; reusable prompts and skills automate repeat work; checks produce evidence at each step. The public chatbot-template repository shows the flow in practice. Locally, `make qa` runs the project quality suite and `make hooks` runs its pre-commit checks. GitHub Actions runs checks for formatting, linting, types, backend and frontend tests, end-to-end browser tests, security, and other quality gates. The main-branch ruleset requires the `prek`, `test`, `backend`, `frontend`, `e2e`, and `qa` status checks. The inset highlights example gates from this strict harness and uses an ellipsis to show that the list continues; other projects can select checks that fit their needs. These are example thresholds, not proof that the implementation is correct; compare the results with the requirements and inspect the behaviour too.
 
 For frontend changes, the repository's agent instructions require the coding agent to attach screenshots to the pull request. The image shows a red-and-green code diff alongside those screenshots. Browser tests also compare visual snapshots, and CodSpeed reports performance regressions. The pull-request workflow asks for a current-head Codex review, sends findings back through a fix-and-review loop, and lets the coding agent squash-merge once Codex gives a thumbs-up and the required checks pass. Codex approval is part of the repository workflow; it is not one of the GitHub ruleset's required status checks.
 
-For bounded, routine changes, this can remove the need for a person to review every pull request. Mission-critical systems can keep human approval at key steps. People still define the tasks and trusted rules, and step in when a change needs judgement or an exception.
+The team that owns the repository sets the risk boundary and the rules that enforce it. Small, reversible changes such as documentation or formatting updates may qualify for an automatic merge when the task is explicit and every required check passes. The coding and reviewer agents do not set that boundary. People own the policy, monitor its results, and review changes with wider impact, uncertainty, or exceptions; mission-critical systems can require human approval at key steps. Sandboxed work, restricted network access, and scoped credentials limit the impact of mistakes. Repository files and issue text can also contain malicious instructions, so treat them as untrusted input and keep control of consequential actions.
 :::
 
-## Speed up almost the whole SDLC
+## Speed up routine delivery work
 
-[Good agentic practices speed up routine work without lowering the quality bar.]{.lede}
+[People set direction and risk boundaries; agents accelerate routine work.]{.lede}
 
-![](media/sdlc-conclusion.webp){.illustration width="880" height="495" fig-alt="Six stages—Plan, Design, Build, Review, Verify, and Release—connect from left to right. Agent robots assist with routine tasks at each stage; a person sets direction at Plan and applies judgement at Release. A continuous gold line with a checked shield under every stage represents a steady quality bar across the lifecycle."}
+![](media/sdlc-conclusion.webp){.illustration width="880" height="495" fig-alt="Five stages—Plan, Code, Review, Verify, and Release—connect from left to right. Agent robots assist with routine tasks at each stage; a person sets direction at Plan and applies judgement at Release. A continuous gold line with a checked shield under every stage represents a steady quality bar across the lifecycle."}
 
 ::: {.notes}
-This is the conclusion these practices point towards: agents can speed up routine work across nearly every stage of software delivery, from planning and design through implementation, review, verification, and release. Clear tasks, a well-prepared codebase, good tools, automation, and attention to bottlenecks make that speed useful. Quality gates carry through the lifecycle, so faster work does not have to mean lower standards. People still set direction and apply judgement to high-stakes decisions and exceptions.
+These practices can speed up routine work through Plan, Code, Review, Verify, and Release. Clear tasks, a well-prepared codebase, useful tools, automation, and attention to bottlenecks make that speed useful. Quality gates carry through the lifecycle, so faster work does not have to mean lower standards. People set direction, own the risk boundary, and apply judgement to high-stakes decisions and exceptions.
 :::
 
 # Thank You

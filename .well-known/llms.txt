@@ -25,8 +25,8 @@ This presentation distils nine golden rules for agentic engineering: working wit
 - Automate repeated agent work with prompts, skills, shortcuts, and workflows
 - Identify and remove SDLC bottlenecks with targeted quality gates, LLM review loops, and end-to-end tests
 - Team culture and continued engineering competence
-- Software factory example: a feature request flows through coding, strict example QA gates, independent review, and agent-led merge; human approval can stay for high-stakes work
-- Closing takeaway: agentic practices speed up routine work across nearly every SDLC stage while quality gates protect standards
+- Software factory example: repository owners set risk boundaries for agent-led merges, while higher-risk changes receive human review and agent environments use scoped controls
+- Closing takeaway: agents accelerate routine work through Plan, Code, Review, Verify, and Release; people set direction and own risk boundaries
 
 ## Machine-readable companion
 

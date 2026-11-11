@@ -11,21 +11,21 @@ and was retained.
 
 ## guardrails-workflow.webp
 
-The quality-gates practice workflow shows a Python change, Ruff command,
-pass/fail paths, precise F841 feedback, an agent correction, human review, and
-merge. The Python mark, Ruff wordmark, agent, reviewer, and Git branch icons
-make each step easy to scan.
+The quality-gates practice workflow shows an unused local variable inside a
+function, the Ruff command, precise F841 feedback, an agent correction, human
+review, and merge. The Python mark, Ruff wordmark, agent, reviewer, and Git
+branch icons make each step easy to scan.
 
 ```text
 Create a spacious 16:9 landscape diagram in the deck's ivory and warm-stone
 editorial style, with near-black ink, gold hairlines and arrows, serif stage
 headings, monospace code, and simple Python, Ruff, coding-agent, reviewer, and
-Git branch icons. Show four stages left to right: Agent change (example.py;
-greeting = "Hello!"; print("Hello!"), Ruff checks (ruff check example.py),
-Human review (print(greeting)), Merge (Reviewed fix). A pass arrow goes from
-Ruff to human review; a fail arrow goes to an F841 message saying the local
-variable 'greeting' is assigned but never used; a return arrow loops to Agent
-change. Keep text accurate, legible, and sparse. No title or slogan.
+Git branch icons. Show the workflow: Agent change (`def main():` then
+`greeting = "Hello!"`), Ruff checks (`ruff check example.py`), and an F841
+message saying the local variable 'greeting' is assigned but never used. A
+return arrow leads to a corrected agent change (`print(greeting)` inside
+`main()`), followed by a second Ruff check, pass, human review, and merge. Keep
+the code and error accurate, legible, and sparse. No title or slogan.
 ```
 
 ## sdlc-bottlenecks.webp
@@ -56,19 +56,21 @@ gradients, rounded cards, bright colours, logos, or watermark.
 
 ## bottleneck-examples.webp
 
-Three practical responses to queues in software delivery: replace a slow CI
-wait with Rust-based Python tools; use an LLM author/reviewer loop for large
-pull requests; and replace repeated manual behaviour checks with E2E tests.
-The labels name possible interventions, not guaranteed speedups.
+Three practical responses to queues in software delivery: use Rust-based
+Python tools for slow lint and type checks; split or stack large pull requests
+before an LLM author/reviewer loop; and replace repeated manual behaviour
+checks with E2E tests. The labels name possible interventions, not guaranteed
+speedups.
 
 ```text
 Create a three-panel 16:9 landscape presentation illustration in the deck's
 editorial style: flat ivory canvas, warm-stone panels, near-black pen-and-ink
 linework, restrained gold hairlines and arrows, serif headings, and legible
-labels. Panel one: a code-change queue and a clock labelled "Slow CI", followed
-by a friendly robot using Rust-based tools Ruff, uv, and ty. Panel two: a large
-pull request diff moving through a looping LLM Author and Reviewer workflow.
-Panel three: a person manually checking a web journey, then an E2E test
+labels. Panel one: a code-change queue and a clock labelled "Slow lint/type
+checks", followed by a friendly robot using Rust-based tools Ruff, uv, and ty.
+Panel two: a large pull request split or stacked into smaller changes before
+each enters a looping LLM Author and Reviewer workflow. Panel three: a person
+manually checking a web journey, then an E2E test
 automating the same journey to a passing result. Keep the panels balanced,
 text sparse and accurate, with generous whitespace. No overall title or footer.
 ```
@@ -79,8 +81,9 @@ The closing example shows a feature request flowing through coding, a pull
 request with UI screenshots and a red-and-green diff, automated quality gates,
 an independent review loop, and agent-led merge. A magnified inset makes the
 example's strict quality harness concrete and ends with an ellipsis to indicate
-additional checks. The slide notes explain that high-stakes work may keep human
-approval at key steps. It is based on the public chatbot-template repository.
+additional checks. The slide notes explain that repository owners set explicit
+risk boundaries for automatic merges and retain human review for higher-risk
+work. It is based on the public chatbot-template repository.
 
 ```text
 Create a polished 16:9 landscape editorial infographic for a software
@@ -121,10 +124,10 @@ or unrelated panels.
 
 ## sdlc-conclusion.webp
 
-The closing conclusion shows agent support across six SDLC stages, with a
+The closing conclusion shows agent support across five delivery stages, with a
 continuous quality rail and human direction at the beginning and judgement at
 release. It reinforces that strong engineering practices can speed up routine
-work across nearly the whole lifecycle while keeping quality standards intact.
+work while keeping quality standards intact.
 
 ```text
 Create a polished 16:9 landscape editorial illustration for the final
@@ -135,25 +138,23 @@ labels, simple elegant human and friendly robot figures, generous balanced
 whitespace. No dark-filled panels or boxes: panel backgrounds must remain
 light ivory or warm stone.
 
-Show a single clear left-to-right software lifecycle in six spacious stations,
-connected by one continuous gold flow line: “Plan”, “Design”, “Build”,
-“Review”, “Verify”, “Release”. Make the sequence feel brisk and fluid with
-subtle forward motion marks. At each station, a small coding-agent robot
-assists with routine work: organizing a plan, preparing a design sketch,
-writing code, preparing a pull request, running checks, and packaging a release.
-Include one calm human who sets direction at Plan and one who makes a final
-judgement at Release, so the story shows agent acceleration with human oversight
-where it matters.
+Show a single clear left-to-right software lifecycle in five spacious stations,
+connected by one continuous gold flow line: “Plan”, “Code”, “Review”, “Verify”,
+“Release”. Make the sequence feel brisk and fluid with subtle forward motion
+marks. At each station, a small coding-agent robot assists with routine work:
+organizing a plan, writing code, preparing a pull request, running checks, and
+packaging a release. Include one calm human who sets direction at Plan and one
+who makes a final judgement at Release, so the story shows agent acceleration
+with human oversight where it matters.
 
-Under the six stations, draw one straight, steady quality rail passing beneath
+Under the five stations, draw one straight, steady quality rail passing beneath
 every stage, with a small crisp green check or shield marker under each stage
 to show that the quality bar stays consistent from start to finish. Make this
 visual rail elegant and unmistakable, not a separate dark box or dashboard.
 The complete composition should make it clear that routine work moves faster
-across nearly the whole lifecycle while quality remains protected at every
-stage.
+while quality remains protected at every stage.
 
-Use only these six stage labels, spelled exactly as given; no other words,
+Use only these five stage labels, spelled exactly as given; no other words,
 title, subtitle, long explanatory text, footer, logo, gradient, or watermark.
 Ensure the image is balanced and legible when displayed at 880×495 pixels.
 ```
