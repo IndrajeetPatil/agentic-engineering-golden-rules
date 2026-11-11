@@ -16,7 +16,7 @@ slide's tabs. The diagrams show responsibilities, not deployment boundaries.
 All icons are original generated artwork; no third-party logo assets are used.
 The product names identify examples and do not imply endorsement.
 
-Generate the Anthropic diagram with `measure-whole-job.webp` as a style
+Generate the Anthropic diagram with `deterministic-tooling.webp` as a style
 reference, using the prompt below. Generate each other variant as an edit of
 that Anthropic output, preserving the composition, arrows, palette, and generic
 labels. Convert each output with `cwebp -q 90`.
@@ -80,12 +80,6 @@ RIGHT top output card: heading exactly "Consistent style". Simple restrained cod
 RIGHT middle output card: heading exactly "Configured gates pass". Two readable checklist labels exactly "Tests" and "Types & build", each with plain near-black ticks. Remove invented 102 / 102 passing, Coverage 92%, and No critical issues.
 RIGHT lower output card: heading exactly "Human review still needed". Small line drawing of human reviewing a page, plus three readable labels exactly "Requirements", "Behaviour", "User experience". Do not put a tick, shield badge, or guaranteed-success symbol on this card.
 BOTTOM of the RIGHT panel: three large readable steps connected left to right with thin black arrows, exactly "Change" → "Checks" → "Human review". Place the small caption "Passing gates is evidence for review." beneath the process, unboxed and without framing rules. Remove Deterministic inputs → Checks → Consistent outcomes. Make all new text exact and large enough at 880 px display width. No claims that passing gates proves correctness, safety, or acceptable outcomes. Keep 16:9.
-```
-
-## small-scope.webp
-
-```text
-Two panels: left title "One enormous prompt", stressed line-drawn robot with an oversized brief listing "Onboarding", "Billing", "Analytics", "Search", "SSO", "Migrations", connected to many modules; one huge dense diff labelled "Hard to review · Hard to reverse". Right title "Small, focused steps", calm robot next to five orderly numbered cards "API change", "UI update", "Tests", "Docs", "Deploy & config", each with a tiny symbolic diff and commit marker. Supporting labels "One concern", "Reviewable", "Reversible", "Fast feedback". The slide subtitle already states "Small diffs beat heroic prompts"; do not repeat it in the illustration or add a footer slogan. Preserve five-step sequence and giant-versus-small-diff concept, no invented numbers or code.
 ```
 
 ## session-hygiene.webp
@@ -284,7 +278,7 @@ Use case: precise-object-edit. Edit only the central reset caption. Keep the lar
 
 ## Integration checks
 
-The ten-rule expansion merges Specify intent into Define done before delegating.
+Define done before delegating combines task intent with observable acceptance criteria and evidence.
 `define-done.webp` replaces the retired `bitter-lesson.webp` illustration; its
 previous artwork and prompts remain available in Git history.
 
@@ -294,7 +288,7 @@ render with `just render`. Check the image slides and workflow in presentation
 and scroll views. Keep alternative text and speaker notes aligned with the
 selected artwork. Re-run `just axe` after changing slide markup.
 
-## Ten-rule expansion
+## Additional rule illustrations
 
 Generated with the built-in image-generation tool. For each image below,
 `deterministic-tooling.webp` is the style and character reference, and
@@ -321,14 +315,4 @@ LEFT heading exactly "Scope access". Friendly robot at a laptop inside a clearly
 CENTRE heading exactly "Separate data from authority". Robot examines retrieved document in a document tray. Document clearly labelled "Retrieved content". A distinct approved task brief held by a human is clearly labelled "Authorised instructions". A divider separates them; do not draw an arrow that turns the retrieved document into authorised instructions. Large caption exactly "Content is not permission".
 RIGHT heading exactly "Approve consequential actions". Human at a visible approval checkpoint between the robot and three action symbols, a rocket, a send envelope, and a database with eraser. Three labels exactly "Deploy", "Send", "Delete". The human approval checkpoint must visibly precede the action symbols. Caption exactly "Review before the action".
 Below the panels, centre the exact wording "Worktrees isolate edits. Sandboxes restrict actions." as an unboxed caption without horizontal rules, using large, readable type and generous whitespace. No shields claiming total security, no dangerous explosion, no suggestion that reviewing a diff controls actions already taken.
-```
-
-### measure-whole-job.webp
-
-```text
-Use case: productivity-visual. Asset type: NEW landscape 16:9 presentation illustration, about 1672 by 941 px. Input images are style references ONLY, never edit targets: deterministic-tooling.webp for the friendly pen-and-ink robot, social-media-card.webp for typography and palette. Refined editorial infographic: flat ivory #fdfaf3 canvas, warm stone #e9e5db square panels, near-black #141414 text and fine hand-drawn linework. Restrained gold #dac284 for hairline borders and dividers only, dark brown #7d6020 for optional readable emphasis. Bodoni/Didot serif panel headings, Montserrat-like sans-serif labels. Spacious professional composition, friendly small robot and human consistent with the reference. No bright colours, gradients, glossy 3D, rounded cards, heavy shadows, watermark, slide number, or redundant overall slide title. Text must be exact and comfortably legible when shown at 880 px wide.
-Primary request: illustrate choosing the simplest effective approach and measuring all work to an accepted result.
-LEFT half elegant heading exactly "Choose the simplest fit". Three similarly sized options with no option singled out as universally best: human with pencil editing a page labelled "Direct edit"; small terminal with repeatable cog labelled "Script or existing tool"; friendly robot and laptop labelled "Agent". Under the choices caption exactly "Start with the real pain point".
-RIGHT half elegant heading exactly "Follow through to acceptance". Horizontal sequence with four generous clearly legible stages, each simple pen-and-ink icon above exact label: "Prepare" then "Generate" then "Verify" then "Review". Thin near-black arrows connect the sequence. Beneath sequence a long bracket covers ALL FOUR stages with caption exactly "Time to an accepted result". Below bracket three tidy square cards with exact labels "Review effort", "Defects", "Maintenance burden". No fabricated charts, speedups, percentages, or measurements.
-Below the panels, centre the exact wording "Keep the approach that improves the whole job." as an unboxed caption without horizontal rules, using large, readable type and generous whitespace. Ivory background, restrained panels, generous whitespace and legibility.
 ```

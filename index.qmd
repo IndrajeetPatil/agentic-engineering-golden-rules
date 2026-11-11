@@ -29,7 +29,7 @@ execute:
   echo: true
   eval: false
 keywords: ["agentic-engineering", "coding-agents", "software-engineering", "ai-assisted-development"]
-description-meta: "Golden rules for agentic engineering: how to use coding agents to boost productivity without compromising quality. Ten rules covering developer experience, guardrails, acceptance criteria, scoped permissions, reviewable changes, context, tools, automation, whole-job outcomes, and team culture."
+description-meta: "Golden rules for agentic engineering: how to use coding agents to boost productivity without compromising quality. Eight rules covering developer experience, guardrails, acceptance criteria, permissions, context, tools, automation, and team culture."
 license: "CC0 1.0 Universal"
 pagetitle: "Golden Rules for Agentic Engineering"
 author-meta: "Indrajeet Patil"
@@ -66,7 +66,7 @@ All illustrations in this presentation are AI-generated.
 :::
 
 ::: {.notes}
-This is a practical talk about using coding agents to improve the whole engineering job while protecting quality. The illustrations are AI-generated, reflecting the hands-on subject of the talk.
+This is a practical talk about using coding agents to improve software engineering while protecting quality. The illustrations are AI-generated, reflecting the hands-on subject of the talk.
 
 Think about one part of your daily work where you lose time: finding context, repeating an edit, coordinating changes, or waiting for feedback. Keep that example in mind as we work through the rules.
 :::
@@ -162,59 +162,47 @@ Across these examples, the labels change while the responsibilities remain compa
 ::: {.card}
 [01]{.rule-number}
 
-**Measure the whole job**
+**DevEx = AgentEx**
 :::
 
 ::: {.card}
 [02]{.rule-number}
 
-**DevEx = AgentEx**
+**Define done before delegating**
 :::
 
 ::: {.card}
 [03]{.rule-number}
 
-**Define done before delegating**
+**Bound the blast radius**
 :::
 
 ::: {.card}
 [04]{.rule-number}
 
-**Scope control**
+**Guardrails**
 :::
 
 ::: {.card}
 [05]{.rule-number}
 
-**Bound the blast radius**
+**Session hygiene**
 :::
 
 ::: {.card}
 [06]{.rule-number}
 
-**Guardrails**
+**Know thy tools**
 :::
 
 ::: {.card}
 [07]{.rule-number}
 
-**Session hygiene**
-:::
-
-::: {.card}
-[08]{.rule-number}
-
-**Know thy tools**
-:::
-
-::: {.card}
-[09]{.rule-number}
-
 **Meta-automation**
 :::
 
 ::: {.card}
-[10]{.rule-number}
+[08]{.rule-number}
 
 **Be curious. Be humble. Be kind.**
 :::
@@ -222,32 +210,10 @@ Across these examples, the labels change while the responsibilities remain compa
 ::::
 
 ::: {.notes}
-The ten rules cover the engineering lifecycle: choosing whether an agent helps, preparing a usable codebase, defining the result, and checking the work. They also cover context management, tools, repeatable automation, and collaboration. The aim is to connect those practices rather than optimise code generation in isolation.
+The eight rules cover the engineering lifecycle: choosing whether an agent helps, preparing a usable codebase, defining the result, and checking the work. They also cover context management, tools, repeatable automation, and collaboration. The aim is to connect those practices rather than optimise code generation in isolation.
 :::
 
-## [01]{.rule-tag} Measure the whole job {.rule-slide}
-
-[Choose the simplest approach that improves time to an accepted result.]{.lede}
-
-![](media/measure-whole-job.webp){.illustration width="880" height="495" fig-alt="Two-panel illustration: choose among a direct human edit, a script or existing tool, and an agent, starting with a real pain point. Preparation, generation, verification, and review all contribute to time to an accepted result. Also track review effort, defects, and maintenance burden, and keep the approach that improves the whole job."}
-
-::: {.source}
-Simplest-solution principle: [Building effective agents](https://www.anthropic.com/engineering/building-effective-agents) (Anthropic). The whole-job measures are practical recommendations for coding work.
-:::
-
-::: {.notes}
-Decide whether an agent is useful before deciding how to orchestrate one. A direct human edit, an existing tool, or a deterministic script can be the simplest effective answer. Use an agent when its flexibility improves the result enough to justify the extra coordination and verification.
-
-Anthropic recommends starting with the simplest solution and adding complexity when it demonstrably improves outcomes. This is an application of that principle to day-to-day coding work, not evidence that agents always help or always hurt.
-
-Judge the whole job: time from preparing the task to an accepted result, human review and rework effort, defects discovered after acceptance, and maintenance burden. Generation speed and code volume omit much of this work. Include abandoned attempts and track human review time separately so faster generation does not hide extra work for colleagues.
-
-Compare similar tasks and agreed acceptance criteria. Record enough context to interpret the result: task difficulty, the approach used, and relevant conditions. A one-off anecdote cannot establish a universal productivity gain.
-
-Start with a real pain point, try a small change in approach, and keep it when the total outcome improves. Revisit the choice as tools and team practices change.
-:::
-
-## [02]{.rule-tag} DevEx = AgentEx {.rule-slide}
+## [01]{.rule-tag} DevEx = AgentEx {.rule-slide}
 
 [If humans hunt for context, agents burn tokens too.]{.lede}
 
@@ -277,7 +243,7 @@ Capture that procedure in a maintained setup command. Then AGENTS.md can point t
 The work still happens; the command owns the sequence, checks prerequisites, and reports useful errors. Keep the implementation reproducible and the instruction current so neither humans nor agents have to guess the next step.
 :::
 
-## [03]{.rule-tag} Define done before delegating {.rule-slide}
+## [02]{.rule-tag} Define done before delegating {.rule-slide}
 
 [State the outcome, what must stay unchanged, and the evidence that will show it works.]{.lede}
 
@@ -341,49 +307,7 @@ Ask for evidence that a reviewer can inspect: the reproduction and check results
 A second agent can offer another perspective, but agreement between agents is not a substitute for checking the requirement and observable outcome.
 :::
 
-## [04]{.rule-tag} Scope control {.rule-slide}
-
-[Small diffs beat heroic prompts.]{.lede}
-
-![](media/small-scope.webp){.illustration width="880" height="495" fig-alt="Two-panel illustration: an enormous prompt covering onboarding, billing, analytics, search, SSO, and migrations produces a large diff that is hard to review and reverse. Five small steps, API change, UI update, tests, docs, and deployment configuration, each have a small diff and commit. One concern at a time makes changes reviewable and reversible, with fast feedback."}
-
-::: {.notes}
-In brownfield projects, introduce changes in reviewable, reversible chunks. Scope control is the difference between useful automation and an unreviewable mess.
-:::
-
-## Scope control: in practice {.smaller}
-
-:::: {.card-grid .card-grid-2}
-
-::: {.card .card-stone}
-[Why]{.eyebrow}
-
-Agents can produce changes faster than reviewers can assess them. **Keep each change within review capacity.**
-:::
-
-::: {.card .card-stone}
-[How]{.eyebrow}
-
-Prefer narrow tasks: one bug, one refactor, one test gap, one migration step. Each chunk should be reviewable, testable, and revertible on its own.
-:::
-
-::::
-
-::: {.card .card-ink .card-wide}
-When the agent discovers broader issues, **capture them as follow-up tasks** instead of expanding the current change indefinitely.
-:::
-
-::: {.source}
-See [Small CLs](https://google.github.io/eng-practices/review/developer/small-cls.html) (Google Engineering Practices).
-:::
-
-::: {.notes}
-Agents are good at making many changes quickly, but reviewers need changes that are small enough to understand.
-
-Google's code review guide lists why small changes help: they are reviewed more quickly and more thoroughly, are less likely to introduce bugs, waste less work if the direction is wrong, and are simpler to roll back. Those benefits matter more, not less, when an agent can generate a large diff in minutes.
-:::
-
-## [05]{.rule-tag} Bound the blast radius {.rule-slide}
+## [03]{.rule-tag} Bound the blast radius {.rule-slide}
 
 [Limit what the agent can read, change, and execute; agree which actions need approval.]{.lede}
 
@@ -438,12 +362,12 @@ Sources: [Git worktrees](https://git-scm.com/docs/git-worktree) · OWASP [Excess
 :::
 
 ::: {.notes}
-Scope control keeps changes reviewable; bounding the blast radius limits what the agent can affect while making them. Both matter, and a narrow task still needs appropriate permissions.
+Boundaries limit what the agent can affect while it works. Choose the files, tools, commands, and external access the task needs, and keep consequential actions behind the agreed approval checkpoint.
 
 Start by listing necessary reads, writes, commands, and external access. Remove unused tools and credentials. Confirm that the sandbox and downstream systems enforce the agreed limits. Reserve human approval for the agreed consequential actions before they occur.
 :::
 
-## [06]{.rule-tag} Guardrails {.rule-slide}
+## [04]{.rule-tag} Guardrails {.rule-slide}
 
 [Fast feedback beats orchestration.]{.lede}
 
@@ -499,7 +423,7 @@ Agents will find the shortest path to green, including lowering a threshold or d
 Coverage gates invite filler tests. Ask agents to assert behaviour at the boundaries you own (the outbound request, the streamed output, the logged event), never to execute lines for the sake of coverage.
 :::
 
-## [07]{.rule-tag} Session hygiene {.rule-slide}
+## [05]{.rule-tag} Session hygiene {.rule-slide}
 
 [Coherent context beats haunted context.]{.lede}
 
@@ -523,7 +447,7 @@ Signs of a haunted session include reviving a rejected approach, confusing earli
 Reset with a compact handoff: the goal in one sentence, constraints on what must not change, relevant files to start with, approaches already ruled out, and acceptance checks that show when the work is done.
 :::
 
-## [08]{.rule-tag} Know thy tools {.rule-slide}
+## [06]{.rule-tag} Know thy tools {.rule-slide}
 
 [Sometimes the unlock is a hidden tool affordance.]{.lede}
 
@@ -541,7 +465,7 @@ Claude Code offers voice input for dictating prompts, with the authentication an
 Choose the tool interface that fits the task. A direct API or command-line tool is useful when it exposes the operation clearly; computer use can help with a workflow available only through a graphical interface. When results disappoint, examine the context, tools, and feedback available to the agent as well as the model itself.
 :::
 
-## [09]{.rule-tag} Meta-automation {.rule-slide}
+## [07]{.rule-tag} Meta-automation {.rule-slide}
 
 [Automate repeated agent choreography.]{.lede}
 
@@ -550,7 +474,7 @@ Choose the tool interface that fits the task. A direct API or command-line tool 
 ::: {.notes}
 Capture once. Run many times.
 
-Once a useful agent workflow repeats and improves the whole job, automate the choreography around it.
+Once a useful agent workflow repeats, automate the choreography around it.
 :::
 
 ## Meta-automation: in practice {.rule-slide}
@@ -575,7 +499,7 @@ The vulnerability-management workflow is adapted from codex-security.md. Scan fi
 Automate coordination: gathering context, running checks, formatting reports, and repeating the process across repositories. Humans evaluate evidence, make trade-offs, and decide what ships. Run unattended agents only in isolated sandboxes with scoped credentials.
 :::
 
-## [10]{.rule-tag} Be curious. Be humble. Be kind. {.rule-slide}
+## [08]{.rule-tag} Be curious. Be humble. Be kind. {.rule-slide}
 
 [AI is not an excuse to become incompetent or disagreeable.]{.lede}
 
@@ -642,7 +566,7 @@ Pool your team's tips and tricks for agentic coding. Someone has already solved 
 ::: {.card .card-stone}
 [Fix pain points]{.eyebrow}
 
-Pick a real pain point (slow tests, unclear setup, flaky workflows). Use the simplest effective approach, and measure the whole job.
+Pick a real pain point (slow tests, unclear setup, flaky workflows). Choose tools and workflows that fit the problem, and keep humans responsible for the result.
 :::
 
 ::: {.card .card-stone}
