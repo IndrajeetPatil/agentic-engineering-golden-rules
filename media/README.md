@@ -27,7 +27,7 @@ Create a precise explanatory architecture diagram of Anthropic's coding stack. R
 COMPOSITION: left 22% is an illustrated desktop monitor with label "Desktop app" then "Claude Desktop" then small "Code tab". A right-pointing arrow labelled "Task" leads to a large central outlined container occupying middle 55%, labelled at top "Harness · Claude Code", with subtitle "Context · permissions · execution".
 Inside harness a small robot at upper centre with heading "Agent" and subtitle "Model + harness in a loop". Below are two equal stone boxes: LEFT has brain icon heading "LLM" and label "Claude"; RIGHT has terminal and file icons heading "Tools" and label "Read · edit · shell". Connect LLM to Tools with top rightward arrow labelled "Tool call"; connect Tools back to LLM with bottom leftward arrow labelled "Result". Keep arrows and labels non-overlapping. Small caption below pair: "Model requests. Harness executes." These two directional arrows depict tool-calling.
 Rightmost 18% outside harness is a small server building illustration labelled "Model provider" and "Anthropic", linked by a thin two-way line to LLM box routed below harness, with label "Model API". Do NOT imply tools execute inside the model provider. The agent is the working system encompassing model and harness, not a separate model or provider. Desktop is an interface to Claude Code, not the LLM.
-Bottom full-width slim caption separated by a gold hairline exactly "One task → model → tool → result → repeat".
+Place the exact caption "One task → model → tool → result → repeat" centred below the diagram, unboxed and without horizontal rules. Use large, readable type and generous ivory whitespace.
 No vendor logos necessary; use original editorial icons. All text verbatim and spelt correctly. Generous whitespace.
 ```
 
@@ -55,7 +55,7 @@ style prompt followed by the asset-specific instructions below. New artwork
 uses the references specified under Ten-rule expansion.
 
 ```text
-Restyle into a refined editorial infographic matching the supplied slide social-card style: flat ivory #fdfaf3 background, warm stone #e9e5db square panels, near-black #141414 text and fine line illustrations, restrained gold #dac284 hairlines and borders ONLY, dark brown #7d6020 where emphasis needs text. Elegant high-contrast Bodoni/Didot serif headings, legible Montserrat-like sans-serif labels. Spacious, disciplined layout, thin rules, square corners, confident professional composition. No blue, green, purple, red, bright colours, gradients, glossy 3D, rounded UI cards, heavy shadows, or excessive decoration. Keep text clear, large and sparse enough to read when projected. Keep the original conceptual message and visual metaphor; improve hierarchy and clarity. No slide number or redundant large slide title. Landscape 16:9 composition. No watermark.
+Restyle into a refined editorial infographic matching the supplied slide social-card style: flat ivory #fdfaf3 background, warm stone #e9e5db square panels, near-black #141414 text and fine line illustrations, restrained gold #dac284 hairlines and borders ONLY, dark brown #7d6020 where emphasis needs text. Elegant high-contrast Bodoni/Didot serif headings, legible Montserrat-like sans-serif labels. Spacious, disciplined layout, thin rules, square corners, confident professional composition. No blue, green, purple, red, bright colours, gradients, glossy 3D, rounded UI cards, heavy shadows, or excessive decoration. Keep text clear, large and sparse enough to read when projected. Keep the original conceptual message and visual metaphor; improve hierarchy and clarity. No slide number, no redundant large slide title, and no text that repeats the slide title or subtitle verbatim. Do not frame a bottom caption in a box or flank it with horizontal rules. If a bottom caption adds information, set it unboxed in large, readable type with generous whitespace. Landscape 16:9 composition. No watermark.
 ```
 
 ## devex-agentex.webp
@@ -79,13 +79,13 @@ Primary request: show that deterministic checks establish configured gates passi
 RIGHT top output card: heading exactly "Consistent style". Simple restrained code-format icon and two short symbolic code lines; no invented metrics.
 RIGHT middle output card: heading exactly "Configured gates pass". Two readable checklist labels exactly "Tests" and "Types & build", each with plain near-black ticks. Remove invented 102 / 102 passing, Coverage 92%, and No critical issues.
 RIGHT lower output card: heading exactly "Human review still needed". Small line drawing of human reviewing a page, plus three readable labels exactly "Requirements", "Behaviour", "User experience". Do not put a tick, shield badge, or guaranteed-success symbol on this card.
-BOTTOM right strip: three large readable steps connected left to right with thin black arrows, exactly "Change" → "Checks" → "Human review". Small caption beneath exactly "Passing gates is evidence for review." Remove Deterministic inputs → Checks → Consistent outcomes. Make all new text exact and large enough at 880 px display width. No claims that passing gates proves correctness, safety, or acceptable outcomes. Keep 16:9.
+BOTTOM of the RIGHT panel: three large readable steps connected left to right with thin black arrows, exactly "Change" → "Checks" → "Human review". Place the small caption "Passing gates is evidence for review." beneath the process, unboxed and without framing rules. Remove Deterministic inputs → Checks → Consistent outcomes. Make all new text exact and large enough at 880 px display width. No claims that passing gates proves correctness, safety, or acceptable outcomes. Keep 16:9.
 ```
 
 ## small-scope.webp
 
 ```text
-Two panels: left title "One enormous prompt", stressed line-drawn robot with an oversized brief listing "Onboarding", "Billing", "Analytics", "Search", "SSO", "Migrations", connected to many modules; one huge dense diff labelled "Hard to review · Hard to reverse". Right title "Small, focused steps", calm robot next to five orderly numbered cards "API change", "UI update", "Tests", "Docs", "Deploy & config", each with a tiny symbolic diff and commit marker. Supporting labels "One concern", "Reviewable", "Reversible", "Fast feedback". Footer "Small diffs beat heroic prompts". Preserve five-step sequence and giant-versus-small-diff concept, no invented numbers or code.
+Two panels: left title "One enormous prompt", stressed line-drawn robot with an oversized brief listing "Onboarding", "Billing", "Analytics", "Search", "SSO", "Migrations", connected to many modules; one huge dense diff labelled "Hard to review · Hard to reverse". Right title "Small, focused steps", calm robot next to five orderly numbered cards "API change", "UI update", "Tests", "Docs", "Deploy & config", each with a tiny symbolic diff and commit marker. Supporting labels "One concern", "Reviewable", "Reversible", "Fast feedback". The slide subtitle already states "Small diffs beat heroic prompts"; do not repeat it in the illustration or add a footer slogan. Preserve five-step sequence and giant-versus-small-diff concept, no invented numbers or code.
 ```
 
 ## session-hygiene.webp
@@ -184,7 +184,7 @@ The diamond's "no" branch leads to "Record reason".
 Separate the two branches clearly; do not allow no to flow into Fix or Draft PR. Use neat ivory/stone nodes with black text and black arrows, no crossings. The decision label can wrap to two lines. Put Draft PR after Verify only. Avoid implying findings are trusted automatically or changes merge automatically.
 Small caption exactly "Steps, decisions, and evidence"
 
-Along the bottom, one slim full-width footer with a restrained human-review line icon and the exact text "Humans review evidence and decide what ships". Keep the footer separate from the flowchart. No additional headings, slogans, invented numbers, CVE IDs, or text.
+Below the panels, place the exact text "Humans review evidence and decide what ships" with a restrained human-review line icon. Keep this caption unboxed and free of horizontal rules, with generous whitespace. No additional headings, slogans, invented numbers, CVE IDs, or text.
 ```
 
 ## know-thy-tools.webp
@@ -236,7 +236,7 @@ Small legible scope note exactly "Public preview · macOS / Windows".
 
 BOTTOM:
 A generous clearly visible ellipsis "…" on the right outside the panels, expressing that these three examples are not exhaustive.
-A thin full-width footer line with a small release-note document icon and exact text "Read the changelog. Discover what your tools can do."
+A small release-note document icon and the exact text "Read the changelog. Discover what your tools can do." sit below the panels as an unboxed caption without horizontal rules.
 No "Know thy tools" repeated inside the illustration, no slide number, no dates, no claims that these features are exclusive to these tools, no extra capabilities or marketing slogans. All text exact, legible, and well spaced for projection.
 ```
 
@@ -255,7 +255,7 @@ Edit this presentation illustration with exactly three changes:
 1. Remove the small line "Claude.ai sign-in + local microphone" beneath /voice in the left panel; leave clean matching ivory space.
 2. Remove the small line "Public preview · macOS / Windows" beneath /computer on in the right panel; leave clean matching ivory space.
 3. Remove the small "Desktop app" label and its vertical separator to the right of "Codex" in the centre panel. Centre the word "Codex" above "Built-in image generation".
-Keep every other element unchanged: the title "Example affordances that users miss", the three product names and capabilities, all illustration scenes, captions, /voice, /computer on, centre example prompt, ellipsis, footer, panel geometry, canvas dimensions, ivory/stone palette, fine gold borders, typography, and friendly line art. Do not replace the removed labels with new text or caveats.
+Keep every other element unchanged: the title "Example affordances that users miss", the three product names and capabilities, all illustration scenes, captions, /voice, /computer on, centre example prompt, ellipsis, unboxed footer caption, panel geometry, canvas dimensions, ivory/stone palette, fine gold borders, typography, and friendly line art. Do not replace the removed labels with new text or caveats.
 ```
 
 ### know-thy-tools alignment
@@ -267,7 +267,7 @@ Use case: precise-object-edit.
 Edit this existing presentation illustration only for alignment and column heading sizes.
 For EACH of the three bordered columns, align all contents to that column's horizontal centre: product name, feature subtitle, illustration scene as a whole, caption, and command/example box. In the centre column, centre "Create a matching illustration" within its box; remove the small decorative sparkle in that box if it interferes with centred text.
 Reduce all three product-name titles and all three feature subtitles to about 85 percent of their present font sizes. Use one consistent product-name size across all columns, and one consistent feature-subtitle size across all columns. Keep their elegant serif styles and upright versus italic distinction. Put all product names on the same baseline and all feature subtitles on the same baseline; "GitHub Copilot CLI" and "Built-in image generation" should fit comfortably on one line at the smaller size. Maintain generous side margins and consistent spacing. Align the three captions to one baseline and the three command/example boxes to one baseline.
-Keep the top main title exactly "Example affordances that users miss" at its current size and position. Preserve all wording verbatim: "Claude Code", "Voice dictation", "Speak your prompt", "/voice"; "Codex", "Built-in image generation", "Generate and edit visual assets", "Create a matching illustration"; "GitHub Copilot CLI", "Computer use", "Work in GUI-only desktop apps", "/computer on". Preserve the three illustration narratives, friendly robots and humans, ellipsis outside the panels, footer wording, canvas dimensions, ivory/stone palette, and fine gold borders. Do not add availability caveats, a Desktop app label, logos, dates, or new text. Change only horizontal alignment, consistent vertical alignment, and the requested column heading sizes.
+Keep the top main title exactly "Example affordances that users miss" at its current size and position. Preserve all wording verbatim: "Claude Code", "Voice dictation", "Speak your prompt", "/voice"; "Codex", "Built-in image generation", "Generate and edit visual assets", "Create a matching illustration"; "GitHub Copilot CLI", "Computer use", "Work in GUI-only desktop apps", "/computer on". Preserve the three illustration narratives, friendly robots and humans, ellipsis outside the panels, unboxed footer caption, canvas dimensions, ivory/stone palette, and fine gold borders. Do not add availability caveats, a Desktop app label, logos, dates, or new text. Change only horizontal alignment, consistent vertical alignment, and the requested column heading sizes.
 ```
 
 ### curious-humble
@@ -309,7 +309,7 @@ Primary request: illustrate defining observable success BEFORE delegating and th
 LEFT heading exactly "State the outcome". A human hands a brief to a robot. Three large labels on brief exactly "Goal", "Constraints", "What stays unchanged". Caption exactly "Give a target, not a script".
 CENTRE heading exactly "Choose the evidence". Three neatly aligned line-drawn objects: a bug with a before-and-after test report, a browser window with a human interacting with it, and a stopwatch beside two benchmark traces. Three short captions exactly "Bug: reproduce, then fix", "UI: inspect the interaction", "Performance: measure". No fabricated numbers.
 RIGHT heading exactly "Check the meaning". Human and robot jointly inspect a test page next to a requirements brief; a magnifying glass connects them, not a success badge. Large caption exactly "Tests can share the same mistake".
-Bottom strip across all panels with fine hairline and exact wording "Agree the criteria. Verify against them. Review the evidence." Keep robot drawing tasteful and relevant, not occupying all the evidence space.
+Below the panels, centre the exact wording "Agree the criteria. Verify against them. Review the evidence." as an unboxed caption without horizontal rules, using large, readable type and generous whitespace. Keep robot drawing tasteful and relevant, not occupying all the evidence space.
 ```
 
 ### bound-blast-radius.webp
@@ -320,7 +320,7 @@ Primary request: illustrate an agent working within explicitly enforced permissi
 LEFT heading exactly "Scope access". Friendly robot at a laptop inside a clearly drawn rectangular workspace boundary. Three simple accessible objects inside boundary labelled exactly "Read", "Change", "Execute". Outside boundary a credential/key container has a clear padlock and label exactly "Protect credentials". Boundary caption exactly "Enforce permissions".
 CENTRE heading exactly "Separate data from authority". Robot examines retrieved document in a document tray. Document clearly labelled "Retrieved content". A distinct approved task brief held by a human is clearly labelled "Authorised instructions". A divider separates them; do not draw an arrow that turns the retrieved document into authorised instructions. Large caption exactly "Content is not permission".
 RIGHT heading exactly "Approve consequential actions". Human at a visible approval checkpoint between the robot and three action symbols, a rocket, a send envelope, and a database with eraser. Three labels exactly "Deploy", "Send", "Delete". The human approval checkpoint must visibly precede the action symbols. Caption exactly "Review before the action".
-Bottom strip exact wording "Worktrees isolate edits. Sandboxes restrict actions." No shields claiming total security, no dangerous explosion, no suggestion that reviewing a diff controls actions already taken.
+Below the panels, centre the exact wording "Worktrees isolate edits. Sandboxes restrict actions." as an unboxed caption without horizontal rules, using large, readable type and generous whitespace. No shields claiming total security, no dangerous explosion, no suggestion that reviewing a diff controls actions already taken.
 ```
 
 ### measure-whole-job.webp
@@ -330,5 +330,5 @@ Use case: productivity-visual. Asset type: NEW landscape 16:9 presentation illus
 Primary request: illustrate choosing the simplest effective approach and measuring all work to an accepted result.
 LEFT half elegant heading exactly "Choose the simplest fit". Three similarly sized options with no option singled out as universally best: human with pencil editing a page labelled "Direct edit"; small terminal with repeatable cog labelled "Script or existing tool"; friendly robot and laptop labelled "Agent". Under the choices caption exactly "Start with the real pain point".
 RIGHT half elegant heading exactly "Follow through to acceptance". Horizontal sequence with four generous clearly legible stages, each simple pen-and-ink icon above exact label: "Prepare" then "Generate" then "Verify" then "Review". Thin near-black arrows connect the sequence. Beneath sequence a long bracket covers ALL FOUR stages with caption exactly "Time to an accepted result". Below bracket three tidy square cards with exact labels "Review effort", "Defects", "Maintenance burden". No fabricated charts, speedups, percentages, or measurements.
-Bottom strip exact wording "Keep the approach that improves the whole job." Ivory background, restrained panels, generous whitespace and legibility.
+Below the panels, centre the exact wording "Keep the approach that improves the whole job." as an unboxed caption without horizontal rules, using large, readable type and generous whitespace. Ivory background, restrained panels, generous whitespace and legibility.
 ```
