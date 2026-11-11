@@ -463,10 +463,10 @@ Curiosity means trying useful workflows while continuing to understand the under
 David Heinemeier Hansson puts it simply: “It’s more fun to be competent.” Keep building competence as the tools change: understand the system, verify the work, and stay curious while giving colleagues kind, constructive feedback.
 :::
 
-# All for what?
+# Conclusion
 
 ::: {.notes}
-Together, these practices can turn a repository into a software factory: routine changes move from a scoped task through implementation, verification, review, and merge with little hands-on intervention.
+Together, these practices can turn a repository into a software factory. The broader payoff is faster routine work across nearly every SDLC stage, from planning through release, while quality gates protect the bar.
 :::
 
 ## A software factory {.smaller}
