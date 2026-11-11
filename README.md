@@ -2,7 +2,7 @@
 
 [![Build and Deploy Presentation](https://github.com/IndrajeetPatil/agentic-engineering-golden-rules/actions/workflows/build-presentation.yaml/badge.svg)](https://github.com/IndrajeetPatil/agentic-engineering-golden-rules/actions/workflows/build-presentation.yaml)
 
-This presentation distils eight golden rules for agentic engineering: using
+This presentation distils nine golden rules for agentic engineering: using
 coding agents to boost productivity without compromising quality.
 
 1. Prepare the codebase for agents
@@ -12,7 +12,8 @@ coding agents to boost productivity without compromising quality.
 5. Maintain session hygiene
 6. Know thy tools
 7. Automate repeated agent work
-8. Be curious. Be humble. Be kind.
+8. Identify and remove bottlenecks
+9. Be curious. Be humble. Be kind.
 
 Before the rules, a three-tab diagram maps the LLM, agent, tool-calling loop,
 harness, desktop interface, and model provider across Anthropic, OpenAI, and

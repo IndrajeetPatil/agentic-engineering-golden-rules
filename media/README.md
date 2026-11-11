@@ -30,6 +30,26 @@ legible example beneath it:
 Keep pass/fail labels outside the boxes unchanged. Add no other content.
 ```
 
+## sdlc-bottlenecks.webp
+
+The SDLC pipeline illustrates how accelerating implementation can expose
+review or verification as the next constraint. It is used on rule 08, “Identify
+and remove bottlenecks”. The graphic frames Amdahl’s law as an analogy for
+end-to-end delivery and pairs with concrete examples on the practice slide.
+
+```text
+Create a new 16:9 landscape presentation illustration in the deck's editorial
+style: flat ivory canvas, square warm-stone panels, near-black pen-and-ink
+linework, restrained gold hairline borders and arrows, Bodoni-like serif
+headings, legible Montserrat-like labels, and a small friendly robot. Show a
+left-to-right software delivery pipeline: Plan, Code, Review, Verify, Release.
+Coding agents speed up Code, creating a visible queue at Review. A compact
+Author/Reviewer agent loop responds to findings and resubmits a change. Show a
+smaller queue at Verify to suggest that the limiting stage can move downstream.
+Use sparse readable labels, generous spacing, and no overall slide title,
+footer caption, gradients, rounded cards, bright colours, or watermark.
+```
+
 ## Agentic stack diagrams
 
 `agentic-stack-anthropic.webp`, `agentic-stack-openai.webp`, and
@@ -146,9 +166,7 @@ Composition: two equal side-by-side panels. At LEFT, heading exactly "Manual set
 
 ## meta-automation-examples.webp
 
-Use `meta-automation.webp` only as a style reference. The dependency prompt,
-screenshot skill, and security triage are adapted from chatbot-template;
-`/address-review` is an illustrative shortcut to its saved review prompt.
+The examples use generic, illustrative workflows for recurring agent work.
 
 ```text
 Use case: infographic-diagram.

@@ -29,7 +29,7 @@ execute:
   echo: true
   eval: false
 keywords: ["agentic-engineering", "coding-agents", "software-engineering", "ai-assisted-development"]
-description-meta: "Golden rules for agentic engineering: how to use coding agents to boost productivity without compromising quality. Eight rules covering codebase readiness, developer experience, deterministic quality gates, acceptance criteria, context, tools, automation, and team culture."
+description-meta: "Golden rules for agentic engineering: how to use coding agents to boost productivity without compromising quality. Nine rules covering codebase readiness, developer experience, deterministic quality gates, acceptance criteria, context, tools, automation, delivery bottlenecks, and team culture."
 license: "CC0 1.0 Universal"
 pagetitle: "Golden Rules for Agentic Engineering"
 author-meta: "Indrajeet Patil"
@@ -200,13 +200,19 @@ Across these examples, the labels change while the responsibilities remain compa
 ::: {.card}
 [08]{.rule-number}
 
+**Identify and remove bottlenecks**
+:::
+
+::: {.card}
+[09]{.rule-number}
+
 **Be curious. Be humble. Be kind.**
 :::
 
 ::::
 
 ::: {.notes}
-The eight rules begin with preparing a codebase for agents, then improve the shared developer and agent experience. They cover defining outcomes, verifying work, managing context, using tools, automating repeated tasks, and keeping humans responsible for what ships.
+The nine rules begin with preparing a codebase for agents, then improve the shared developer and agent experience. They cover defining outcomes, verifying work, managing context, using tools, automating repeated work, relieving delivery bottlenecks, and keeping humans responsible for what ships.
 :::
 
 ## [01]{.rule-tag} Prepare the codebase for agents {.rule-slide}
@@ -379,37 +385,97 @@ Choose the tool interface that fits the task. A direct API or command-line tool 
 
 ## [07]{.rule-tag} Automate repeated agent work {.rule-slide}
 
-[Capture once. Run many times.]{.lede}
+[Capture recurring workflows once, then run them consistently.]{.lede}
 
-![](media/meta-automation.webp){.illustration width="880" height="495" fig-alt="Meta-automation infographic: repeated work is captured once, run many times, and reviewed. Four mechanisms are compared: a prompt for changing instructions, a skill for domain know-how, a slash command for a stable shortcut, and a workflow for steps and branches. A loop processes an input list, runs automation for each item, collects results, and ends with human review."}
+![](media/meta-automation.webp){.illustration width="880" height="495" fig-alt="An infographic contrasts repeated work with automation: capture a useful process once, run it across an input list, collect results, then review them. Prompt, skill, slash command, and workflow are shown as distinct ways to package recurring agent work."}
 
 ::: {.notes}
-Once a useful agent workflow repeats, automate the choreography around it.
+When a useful agent workflow repeats, package the instructions or choreography so it can be run consistently. Prompts capture task instructions, skills package reusable know-how, slash commands offer shortcuts, and workflows coordinate steps and branches. These mechanisms can also be composed.
 :::
 
 ## Automate repeated agent work: in practice {.rule-slide}
 
-[Prompts, skills, shortcuts, and workflows turn repeated work into reusable automation.]{.lede}
+[Choose the smallest reusable mechanism that fits the work.]{.lede}
 
-![](media/meta-automation-examples.webp){.illustration width="880" height="495" fig-alt="Four concrete automation examples. Prompt: update-deps.md instructs an agent to refresh dependencies, fix compatibility breaks, run QA, and prepare a draft PR. Skill: frontend-pr-screenshot packages how to preview the app, capture a screenshot, and attach it to a PR. Slash command: an illustrative /address-review shortcut invokes a saved prompt to read review threads, make warranted fixes, and reply. Workflow: vulnerability management goes from scan to triage, then asks whether a finding is worth fixing. Yes leads to fix, verify, and draft PR; no leads to recording the reason. Humans review evidence and decide what ships."}
+![](media/meta-automation-examples.webp){.illustration width="880" height="495" fig-alt="Four examples of packaged automation: a dependency update prompt, a PR screenshot skill, an illustrative review shortcut, and a vulnerability triage workflow. The workflow investigates a finding, fixes and verifies warranted changes, or records why no fix is needed; people review the evidence and decide what ships."}
+
+::: {.notes}
+The examples show four ways of packaging repeated work: a prompt for a dependency update, a skill for collecting PR screenshot evidence, a shortcut for reviewing comments, and a workflow for triaging vulnerability findings.
+
+Automate coordination such as gathering context, running checks, and formatting reports. Keep evaluation of evidence, trade-offs, and decisions about what ships with people.
+:::
+
+## [08]{.rule-tag} Identify and remove bottlenecks {.rule-slide}
+
+[Improve the stage that limits end-to-end delivery.]{.lede}
+
+![](media/sdlc-bottlenecks.webp){.illustration width="880" height="495" fig-alt="A left-to-right software delivery pipeline shows Plan, Code, Review, Verify, and Release. Coding agents speed up Code, but work piles up at Review. In a small loop, an Author agent responds to findings from a Reviewer agent and submits the change again; a smaller queue at Verify shows how the limiting stage can move downstream."}
 
 ::: {.source}
-Examples adapted from [chatbot-template prompts](https://github.com/IndrajeetPatil/chatbot-template/tree/main/.github/prompts) and its [PR screenshot skill](https://github.com/IndrajeetPatil/chatbot-template/blob/main/.agents/skills/frontend-pr-screenshot/SKILL.md).
+Amdahl, [“Validity of the single processor approach to achieving large scale computing capabilities”](https://doi.org/10.1145/1465482.1465560) (1967) · DORA, [State of AI-assisted Software Development](https://dora.dev/research/2025/dora-report/) (2025).
 :::
 
 ::: {.notes}
-These are examples of different ways to package automation, not four mutually exclusive systems. A slash command can invoke a prompt or a skill; a workflow can compose both.
+Think about delivery as one connected system: planning, implementation, review, verification, and release. Amdahl’s law describes how the part of a computation that remains unchanged limits the speedup from improving another part. Applied as an analogy to the software lifecycle, faster code production cannot remove delays in review, testing, or release.
 
-The dependency-update prompt in chatbot-template refreshes dependencies, fixes compatibility breaks, runs the project's quality gates, and prepares a draft PR. The screenshot skill packages the steps for previewing the app, capturing its appearance, and attaching evidence to a PR.
+The illustration shows coding agents producing changes faster than review can absorb them. Relieve that constraint and verification may become the next queue. The useful question is where work is waiting now, and what targeted change will reduce that wait without weakening quality.
 
-The /address-review command is an illustrative shortcut to the repository's address-review.md prompt, not a claim that this checkout installs that slash command. Review comments need evaluation; make warranted fixes, verify them, and reply. Resolve only addressed comments or those confirmed to need no change.
-
-The vulnerability-management workflow is adapted from codex-security.md. Scan findings are claims to investigate. Triage checks reachability, existing mitigations, and regression risk before deciding whether a fix is warranted. Confirmed findings with a focused, safe fix proceed to remediation, verification, and a draft PR. Other findings get a recorded reason; no code changes means no PR. Verification includes checking that the vulnerability is resolved and running relevant regression checks. Failed verification returns to the fix step.
-
-Automate coordination: gathering context, running checks, formatting reports, and repeating the process across repositories. Humans evaluate evidence, make trade-offs, and decide what ships.
+The 2025 DORA research describes AI as an amplifier of existing organizational strengths and weaknesses. That supports improving the surrounding delivery system alongside agent capability. After relieving one bottleneck, measure again: constraints move, and the next improvement should follow the new evidence.
 :::
 
-## [08]{.rule-tag} Be curious. Be humble. Be kind. {.rule-slide}
+## Identify and remove bottlenecks: in practice {.rule-slide}
+
+[Match the intervention to the stage where work is waiting.]{.lede}
+
+:::: {.card-grid .card-grid-3}
+
+::: {.card .card-stone .card-tall}
+[Constraint]{.eyebrow}
+
+**Quality enforcement**
+
+Checks are inconsistent or depend on scarce reviewer time.
+
+[Add deterministic quality gates]{.card-title}
+
+Run formatting, linting, type checks, and fast tests automatically on each change.
+:::
+
+::: {.card .card-stone .card-tall}
+[Constraint]{.eyebrow}
+
+**Large PR review**
+
+Changes wait while a reviewer works through a large diff.
+
+[Add an LLM review loop]{.card-title}
+
+An independent reviewer agent reports findings; the author agent fixes them and requests another review. Keep human review for decisions and what ships.
+:::
+
+::: {.card .card-stone .card-tall}
+[Constraint]{.eyebrow}
+
+**Behaviour verification**
+
+People must repeatedly check whether a user path still works.
+
+[Add task-specific E2E tests]{.card-title}
+
+Automate critical end-to-end paths and run them with each change; retain exploratory checks for behaviour the tests do not cover.
+:::
+
+::::
+
+::: {.notes}
+Start by locating the queue or repeated wait, then choose a response that addresses that specific constraint.
+
+If enforcing quality is the delay, run deterministic gates on every change so routine issues are found quickly and consistently. If large changes are waiting for review, a second LLM-based reviewer can inspect the diff, return findings to the author agent, and check the revision in a loop. This can increase review capacity, but it does not make the reviewer infallible or replace human judgement. If behaviour is difficult or slow to check, add end-to-end tests for important user paths and run them as part of the normal change flow; tests should complement, not claim to exhaust, exploratory verification.
+
+These are options, not universal prescriptions. Observe where work actually waits, improve that stage, and measure the full delivery flow again. The bottleneck may move to the next stage.
+:::
+
+## [09]{.rule-tag} Be curious. Be humble. Be kind. {.rule-slide}
 
 [AI is not an excuse to become incompetent or disagreeable.]{.lede}
 
@@ -526,6 +592,10 @@ Share useful discoveries, address real sources of friction, and divide work into
 - Lopopolo, R. [Harness engineering: leveraging Codex in an agent-first world](https://openai.com/index/harness-engineering/). OpenAI.
 
 - Beck, K. [Augmented coding: beyond the vibes](https://tidyfirst.substack.com/p/augmented-coding-beyond-the-vibes).
+
+- Amdahl, G. M. [“Validity of the single processor approach to achieving large scale computing capabilities”](https://doi.org/10.1145/1465482.1465560).
+
+- DORA. [State of AI-assisted Software Development](https://dora.dev/research/2025/dora-report/).
 
 - Anthropic. [Demystifying evals for AI agents](https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents).
 
