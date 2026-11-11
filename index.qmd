@@ -463,52 +463,28 @@ Curiosity means trying useful workflows while continuing to understand the under
 David Heinemeier Hansson puts it simply: “It’s more fun to be competent.” Keep building competence as the tools change: understand the system, verify the work, and stay curious while giving colleagues kind, constructive feedback.
 :::
 
-# Making it stick
+# All for what?
 
 ::: {.notes}
-Moving from individual practices to embedding these rules into daily team habits, collaboration, and culture.
+Together, these practices can turn a repository into a software factory: routine changes move from a scoped task through implementation, verification, review, and merge with little hands-on intervention.
 :::
 
-## Make the practices team habits {.smaller}
+## A software factory {.smaller}
 
-[Share what works, fix friction, plan clearly, and adapt together.]{.lede}
+[A repository where routine changes flow from task to merge with little human input.]{.lede}
 
-:::: {.card-grid .card-grid-2}
-
-::: {.card .card-stone}
-[Share]{.eyebrow}
-
-Pool your team's tips and tricks for agentic coding. Someone has already solved your annoyance.
-:::
-
-::: {.card .card-stone}
-[Fix pain points]{.eyebrow}
-
-Pick a real pain point (slow tests, unclear setup, flaky workflows). Choose tools and workflows that fit the problem, and keep humans responsible for the result.
-:::
-
-::: {.card .card-stone}
-[Frontload planning]{.eyebrow}
-
-Task division, coordination, and reviewability matter more when everyone has an agent.
-:::
-
-::: {.card .card-stone}
-[Challenge your habits]{.eyebrow}
-
-Revisit your workflow as tools change. Keep changes that improve the outcome.
-:::
-
-::::
+![](media/software-factory.webp){.illustration width="880" height="495" fig-align="center" fig-alt="A four-stage software factory: a coding agent opens a pull request with UI screenshots; local quality gates run make qa and make hooks, alongside required CI checks; a Codex reviewer loops findings back to the coding agent and gives a thumbs-up; the coding agent squashes and merges after review and checks pass."}
 
 ::: {.source}
-Simplest-solution principle: [Building effective agents](https://www.anthropic.com/engineering/building-effective-agents) (Anthropic).
+Example: [chatbot-template](https://github.com/IndrajeetPatil/chatbot-template/).
 :::
 
 ::: {.notes}
-Agent-assisted changes depend on a team that plans the work, coordinates edits, preserves quality, and makes the result reviewable.
+This is what the rules can add up to. Clear repository guidance and simple local commands give agents a reliable starting point; reusable prompts and skills automate repeat work; checks produce evidence at each step. The public chatbot-template repository shows the flow in practice. Locally, `make qa` runs the project quality suite and `make hooks` runs its pre-commit checks. GitHub Actions runs checks for formatting, linting, types, backend and frontend tests, end-to-end browser tests, security, and other quality gates. The main-branch ruleset requires the `prek`, `test`, `backend`, `frontend`, `e2e`, and `qa` status checks.
 
-Share useful discoveries, address real sources of friction, and divide work into changes that can be understood. Revisit the process as the tools evolve, keeping improvements that help the whole team rather than merely increasing the amount of generated code.
+For frontend changes, the repository's agent instructions require the coding agent to attach screenshots to the pull request. Browser tests also compare visual snapshots, and CodSpeed reports performance regressions. The pull-request workflow asks for a current-head Codex review, sends findings back through a fix-and-review loop, and lets the coding agent squash-merge once Codex gives a thumbs-up and the required checks pass. Codex approval is part of the repository workflow; it is not one of the GitHub ruleset's required status checks.
+
+For bounded, routine changes, this can remove the need for a person to review every pull request. People still define the tasks and trusted rules, and step in when a change needs judgement or an exception.
 :::
 
 ## Further reading {.smaller}
