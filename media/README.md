@@ -75,25 +75,43 @@ text sparse and accurate, with generous whitespace. No overall title or footer.
 
 ## software-factory.webp
 
-The closing example shows a coding agent creating a pull request with UI
-screenshots, local and required CI gates, Codex review with a findings loop,
-and agent-led squash merge after all checks pass. It is based on the public
-chatbot-template repository.
+The closing example shows a feature request flowing through coding, a pull
+request with UI screenshots, automated quality gates, an independent review
+loop, and agent-led merge. A magnified inset makes the example's strict quality
+harness concrete, while the slide notes explain that high-stakes work may keep
+human approval at key steps. It is based on the public chatbot-template
+repository.
 
 ```text
-Create a 16:9 landscape teaching illustration in the deck's warm ivory and
-stone palette, near-black pen-and-ink linework, restrained gold borders and
-arrows, and friendly coding robots. Show a left-to-right autonomous software
-factory with four connected stations. Build PR: a coding agent creates a pull
-request with browser screenshot thumbnails; label "UI PR screenshots". Quality
-gates: two checked lanes labelled "Local", "make qa + hooks", "CI", and
-"required checks". Codex review: an independent robot reviewer studies a diff;
-a findings card loops back to the coding agent; a thumbs-up passes forward;
-label "findings loop to agent". Agent merges: a coding agent completes a Git
-branch merge after green check marks; label "squash after green". Use exactly
-these station headings: "Build PR", "Quality gates", "Codex review", "Agent
-merges". Keep the composition readable and balanced, with ample whitespace.
-No overall title, footer, logo, gradient, or watermark.
+Create a polished 16:9 landscape editorial infographic for a software
+engineering presentation, with warm ivory canvas, warm stone panels,
+near-black pen-and-ink linework, restrained deep-gold hairlines and arrows,
+refined serif headings, and clear sans-serif labels. Crisp high contrast,
+readable at 880×495 pixels, generous whitespace, consistent visual weight.
+
+Show one clear left-to-right causal flow across the upper half: developer
+submits a card labelled “Feature request” → a coding agent works in a repository
+→ a pull request appears with two tiny browser screenshot thumbnails labelled
+“UI screenshots” → automated QA gates → an independent reviewer agent checks
+the diff. A small “Findings” arrow loops from reviewer back to coding agent.
+From the reviewer, a clear forward arrow labelled with a green check leads to
+the coding agent merging; at far right, show the completed feature running in
+a small web app. Keep every other arrow flowing left-to-right. No human should
+appear at review or verification.
+
+In the lower half, add a prominent, clean zoom-in inset attached to the
+automated QA stage by a fine gold leader line and magnifier cue. Inset heading
+exactly “QUALITY HARNESS”; subheading exactly “example gates”. Inside, show
+exactly eight large, neatly aligned checklist items in two columns: “100% code
+coverage”; “100% type coverage”; “Benchmarks”; “0 lint issues”; “0 warnings”;
+“Lighthouse performance”; “Accessibility”; “SEO”. Use one restrained check
+icon per item. Spelling must be exact. The callout should look like a compact
+quality checklist and feel strict, not like a dashboard. Make the entire image
+a single coherent infographic.
+
+No overall title, no footer, no disclaimer or other added text, no logos, no
+gradients, no watermark. Do not show a human review stage, queues, bottlenecks,
+or unrelated panels.
 ```
 
 ## Agentic stack diagrams

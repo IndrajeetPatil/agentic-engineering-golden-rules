@@ -471,20 +471,20 @@ Together, these practices can turn a repository into a software factory: routine
 
 ## A software factory {.smaller}
 
-[A repository where routine changes flow from task to merge with little human input.]{.lede}
+[Routine requests flow to verified merges; people approve high-stakes work.]{.lede}
 
-![](media/software-factory.webp){.illustration width="880" height="495" fig-align="center" fig-alt="A four-stage software factory: a coding agent opens a pull request with UI screenshots; local quality gates run make qa and make hooks, alongside required CI checks; a Codex reviewer loops findings back to the coding agent and gives a thumbs-up; the coding agent squashes and merges after review and checks pass."}
+![](media/software-factory.webp){.illustration width="880" height="495" fig-align="center" fig-alt="A feature request moves from a developer to a coding agent, which opens a pull request with UI screenshots. Automated QA gates show example checks for 100% code coverage, 100% type coverage, benchmarks, zero lint issues, zero warnings, Lighthouse performance, accessibility, and SEO. An independent reviewer agent sends findings back to the coding agent; after approval, the coding agent merges and the feature appears in a web app."}
 
 ::: {.source}
 Example: [chatbot-template](https://github.com/IndrajeetPatil/chatbot-template/).
 :::
 
 ::: {.notes}
-This is what the rules can add up to. Clear repository guidance and simple local commands give agents a reliable starting point; reusable prompts and skills automate repeat work; checks produce evidence at each step. The public chatbot-template repository shows the flow in practice. Locally, `make qa` runs the project quality suite and `make hooks` runs its pre-commit checks. GitHub Actions runs checks for formatting, linting, types, backend and frontend tests, end-to-end browser tests, security, and other quality gates. The main-branch ruleset requires the `prek`, `test`, `backend`, `frontend`, `e2e`, and `qa` status checks.
+This is what the rules can add up to. Clear repository guidance and simple local commands give agents a reliable starting point; reusable prompts and skills automate repeat work; checks produce evidence at each step. The public chatbot-template repository shows the flow in practice. Locally, `make qa` runs the project quality suite and `make hooks` runs its pre-commit checks. GitHub Actions runs checks for formatting, linting, types, backend and frontend tests, end-to-end browser tests, security, and other quality gates. The main-branch ruleset requires the `prek`, `test`, `backend`, `frontend`, `e2e`, and `qa` status checks. The inset highlights example gates from this strict harness; other projects can select checks that fit their needs.
 
 For frontend changes, the repository's agent instructions require the coding agent to attach screenshots to the pull request. Browser tests also compare visual snapshots, and CodSpeed reports performance regressions. The pull-request workflow asks for a current-head Codex review, sends findings back through a fix-and-review loop, and lets the coding agent squash-merge once Codex gives a thumbs-up and the required checks pass. Codex approval is part of the repository workflow; it is not one of the GitHub ruleset's required status checks.
 
-For bounded, routine changes, this can remove the need for a person to review every pull request. People still define the tasks and trusted rules, and step in when a change needs judgement or an exception.
+For bounded, routine changes, this can remove the need for a person to review every pull request. Mission-critical systems can keep human approval at key steps. People still define the tasks and trusted rules, and step in when a change needs judgement or an exception.
 :::
 
 # Thank You

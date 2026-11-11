@@ -25,7 +25,7 @@ This presentation distils nine golden rules for agentic engineering: working wit
 - Automate repeated agent work with prompts, skills, shortcuts, and workflows
 - Identify and remove SDLC bottlenecks with targeted quality gates, LLM review loops, and end-to-end tests
 - Team culture and continued engineering competence
-- Software factory example: local quality commands, required CI checks, frontend PR screenshots, Codex review, and agent-led squash merge in a public template repository
+- Software factory example: a feature request flows through coding, strict example QA gates, independent review, and agent-led merge; human approval can stay for high-stakes work
 
 ## Machine-readable companion
 
