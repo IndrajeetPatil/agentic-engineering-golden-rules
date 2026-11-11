@@ -68,14 +68,19 @@ just axe       # Preview with the axe accessibility checker enabled
   slide and the rule slide.
 - **Images.** Illustrations use the `.illustration` class (the gold hairline
   frame). Images are WebP; convert new PNG or JPEG assets with `cwebp`. The
+  illustration panels use light ivory or warm-stone fills; use dark ink for
+  text and linework, not dark panel backgrounds. The
   artwork must not repeat the slide title or subtitle verbatim. Keep any
   necessary bottom caption unboxed and free of flanking horizontal rules, at a
-  readable size. The
-  guardrails workflow is a WebP inside a `.card-stone` with `.diagram-card`,
-  which caps its height; preserve its pass, fail, retry, and human-review paths
-  in the artwork, alternative text, and speaker notes.
+  readable size. Use a concise subtitle for the key takeaway and let the
+  illustration carry examples and flow; avoid explanatory copy inside the
+  artwork when the visual is self-explanatory. The quality-gates example uses
+  code blocks and a generated feedback-loop illustration; preserve its fail,
+  fix, retry, pass, and human-review steps in the image and speaker notes.
 - **Sources.** Every factual claim or borrowed idea has a `.source` div at the
-  bottom of its slide.
+  bottom of its slide. Keep references succinct: hyperlink a short concept,
+  author, or organisation label instead of spelling out a paper title unless
+  the full title is necessary.
 - **Speaker notes.** Most slides carry `::: {.notes}` blocks; keep them in sync
   when changing slide content.
 - **Spoken notes.** The read-aloud control speaks the `.notes` content. Write
@@ -88,8 +93,9 @@ just axe       # Preview with the axe accessibility checker enabled
   `style.css`; no icon font or Quarto icon extension. When adding one, add only
   its mask data, preserve the source licence attribution, and keep an
   accessible label where the icon conveys meaning.
-- **Mermaid.** Keep diagrams as Mermaid source; do not replace them with
-  pre-rendered SVGs to shrink the bundle.
+- **Diagrams.** Use the built-in image-generation tool for diagram artwork.
+  Keep the labels and flow accurate, with equivalent detail in alternative
+  text and speaker notes.
 - **No code execution.** The front matter sets `execute: eval: false`; code
   blocks are display-only. Do not enable `eval: true` unless the deck genuinely
   needs computed output.

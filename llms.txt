@@ -2,7 +2,7 @@
 
 > A Quarto RevealJS presentation by Indrajeet Patil about using coding agents to boost productivity without compromising software quality.
 
-This presentation distils ten golden rules for agentic engineering: working with coding agents such as Claude Code and GitHub Copilot CLI on production software. It focuses on the engineering system around the agent (context, verification, permissions, scope, outcomes, and team practices) rather than on any single tool.
+This presentation distils nine golden rules for agentic engineering: working with coding agents such as Claude Code and GitHub Copilot CLI on production software. It focuses on the engineering system around the agent (codebase readiness, developer experience, context, verification, tools, workflow automation, delivery flow, and team practices) rather than on any single tool.
 
 ## Primary URL
 
@@ -16,16 +16,17 @@ This presentation distils ten golden rules for agentic engineering: working with
 
 - Agentic engineering and coding agents
 - LLM, agent, harness, tool-calling, desktop interface, and model provider: Anthropic, OpenAI, and GitHub Copilot examples
-- Developer experience as agent experience
-- Deterministic guardrails and fast feedback loops
+- Codebase preparation and improving patterns before introducing agents
+- Improve developer experience for humans and agents
+- Set deterministic quality gates and fast feedback loops
 - Observable acceptance criteria, unchanged behaviour, and task-appropriate evidence
-- Scoped permissions, protected credentials, approval boundaries, and untrusted content
-- Scope control and reviewable, reversible changes
-- Session hygiene and context management
+- Maintain session hygiene and manage context
 - Tool affordances that coding agents offer
-- Meta-automation with prompts, skills, slash commands, and workflows
-- Whole-job outcomes and choosing whether to use an agent
-- Team culture and responsibility when using AI
+- Automate repeated agent work with prompts, skills, shortcuts, and workflows
+- Identify and remove SDLC bottlenecks with targeted quality gates, LLM review loops, and end-to-end tests
+- Team culture and continued engineering competence
+- Software factory example: repository owners set risk boundaries for agent-led merges, while higher-risk changes receive human review and agent environments use scoped controls
+- Closing takeaway: agents accelerate routine work through Plan, Code, Review, Verify, and Release; people set direction and own risk boundaries
 
 ## Machine-readable companion
 

@@ -2,19 +2,18 @@
 
 [![Build and Deploy Presentation](https://github.com/IndrajeetPatil/agentic-engineering-golden-rules/actions/workflows/build-presentation.yaml/badge.svg)](https://github.com/IndrajeetPatil/agentic-engineering-golden-rules/actions/workflows/build-presentation.yaml)
 
-This presentation distils ten golden rules for agentic engineering: using
+This presentation distils nine golden rules for agentic engineering: using
 coding agents to boost productivity without compromising quality.
 
-1. Measure the whole job
-2. DevEx = AgentEx
-3. Define done before delegating
-4. Scope control
-5. Bound the blast radius
-6. Guardrails
-7. Session hygiene
-8. Know thy tools
-9. Meta-automation
-10. Be curious. Be humble. Be kind.
+1. Prepare the codebase for agents
+2. Improve developer experience
+3. Set deterministic quality gates
+4. Define done before delegating
+5. Maintain session hygiene
+6. Know thy tools
+7. Automate repeated agent work
+8. Identify and remove bottlenecks
+9. Be curious. Be humble. Be kind.
 
 Before the rules, a three-tab diagram maps the LLM, agent, tool-calling loop,
 harness, desktop interface, and model provider across Anthropic, OpenAI, and
@@ -36,9 +35,10 @@ high-contrast [Bodoni Moda](https://fonts.google.com/specimen/Bodoni+Moda)
 headings, and small tracked [Montserrat](https://fonts.google.com/specimen/Montserrat)
 labels, the same typefaces the site uses. All illustrations in the deck are
 AI-generated and use the same ivory, stone, ink, and gold palette. The
-guardrails workflow is also a WebP illustration, with its decision path
-described in alternative text and speaker notes. See [media/README.md](media/README.md)
-for the illustration prompts and regeneration guidance.
+quality-gates example pairs code with a generated Ruff feedback-loop
+illustration. See
+[media/README.md](media/README.md) for illustration prompts and regeneration
+guidance.
 
 ## Development
 

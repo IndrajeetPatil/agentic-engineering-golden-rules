@@ -1,12 +1,163 @@
 # Deck artwork
 
-The rule illustrations use built-in image generation and a shared editorial style.
-The guardrails workflow was generated from its original decision path, and
-the setup contrast illustrates a shared one-command entry point. The automation
-examples draw on chatbot-template prompts and its PR screenshot skill. The
-tool-affordance examples were checked against current official docs. Final
-assets are WebP; the social card is the deck's typography and palette reference.
-The social card already matched the theme and was retained.
+The rule illustrations use built-in image generation and a shared editorial
+style. The quality-gates practice example uses a generated Ruff F841 feedback
+loop; the setup contrast illustrates a shared
+one-command entry point. The automation examples demonstrate dependency
+updates and PR screenshot workflows. The tool-affordance examples were checked against
+current official docs. Final assets are WebP; the social card is the deck's
+typography and palette reference. The social card already matched the theme
+and was retained.
+
+## guardrails-workflow.webp
+
+The quality-gates practice workflow shows an unused local variable inside a
+function, the Ruff command, precise F841 feedback, an agent correction, human
+review, and merge. The Python mark, Ruff wordmark, agent, reviewer, and Git
+branch icons make each step easy to scan.
+
+```text
+Create a spacious 16:9 landscape diagram in the deck's ivory and warm-stone
+editorial style, with near-black ink, gold hairlines and arrows, serif stage
+headings, monospace code, and simple Python, Ruff, coding-agent, reviewer, and
+Git branch icons. Show the workflow: Agent change (`def main():` then
+`greeting = "Hello!"`), Ruff checks (`ruff check example.py`), and an F841
+message saying the local variable 'greeting' is assigned but never used. A
+return arrow leads to a corrected agent change (`print(greeting)` inside
+`main()`), followed by a second Ruff check, pass, human review, and merge. Keep
+the code and error accurate, legible, and sparse. No title or slogan.
+```
+
+## sdlc-bottlenecks.webp
+
+The SDLC pipeline illustrates coding agents accelerating implementation while
+human queues build at both Review and Verify. It is used on rule 08, “Identify
+and remove bottlenecks”. The slide subtitle states the Amdahl’s law takeaway;
+the illustration lets the pipeline and queues carry the explanation, and the
+following practice slide shows possible interventions.
+
+```text
+Create a 16:9 landscape presentation illustration in the deck's editorial
+style: flat ivory canvas, square warm-stone panels, near-black pen-and-ink
+linework, restrained gold borders and arrows, serif headings, legible labels.
+Show a left-to-right pipeline labelled Plan, Code, Review, Verify, Release.
+Keep a human at Plan and coding-agent robots quickly producing code at Code.
+Show a growing pull-request queue at Review and one clearly human reviewer,
+visibly flustered and overwhelmed by the backlog. Show a second growing queue
+at Verify and a second clearly human person, visibly flustered while manually
+checking browser behaviour and tests. The two queues coexist to show that more
+coding capacity can leave Review and Verify overloaded. Finish with a Release
+rocket. Centre the pipeline vertically with balanced, generous whitespace
+above and below. Let the pipeline and people convey the problem without
+explanatory headline panels or extra text. This is only the problem state; do
+not show an author/reviewer agent loop, automation, or any remedy. No footer,
+gradients, rounded cards, bright colours, logos, or watermark.
+```
+
+## bottleneck-examples.webp
+
+Three practical responses to queues in software delivery: use Rust-based
+Python tools for slow lint and type checks; split or stack large pull requests
+before an LLM author/reviewer loop; and replace repeated manual behaviour
+checks with E2E tests. The labels name possible interventions, not guaranteed
+speedups.
+
+```text
+Create a three-panel 16:9 landscape presentation illustration in the deck's
+editorial style: flat ivory canvas, warm-stone panels, near-black pen-and-ink
+linework, restrained gold hairlines and arrows, serif headings, and legible
+labels. Panel one: a code-change queue and a clock labelled "Slow lint/type
+checks", followed by a friendly robot using Rust-based tools Ruff, uv, and ty.
+Panel two: a large pull request split or stacked into smaller changes before
+each enters a looping LLM Author and Reviewer workflow. Panel three: a person
+manually checking a web journey, then an E2E test
+automating the same journey to a passing result. Keep the panels balanced,
+text sparse and accurate, with generous whitespace. No overall title or footer.
+```
+
+## software-factory.webp
+
+The closing example shows a feature request flowing through coding, a pull
+request with UI screenshots and a red-and-green diff, automated quality gates,
+an independent review loop, and agent-led merge. A magnified inset makes the
+example's strict quality harness concrete and ends with an ellipsis to indicate
+additional checks. The slide notes explain that repository owners set explicit
+risk boundaries for automatic merges and retain human review for higher-risk
+work. It is based on the public chatbot-template repository.
+
+```text
+Create a polished 16:9 landscape editorial infographic for a software
+engineering presentation, with warm ivory canvas, warm stone panels,
+near-black pen-and-ink linework, restrained deep-gold hairlines and arrows,
+refined serif headings, and clear sans-serif labels. Crisp high contrast,
+readable at 880×495 pixels, generous whitespace, consistent visual weight.
+
+Show one clear left-to-right causal flow across the upper half: developer
+submits a card labelled “Feature request” → a coding agent works in a repository
+→ a pull request appears with two tiny browser screenshot thumbnails labelled
+“UI screenshots” and a small unified code diff → automated QA gates → an
+independent reviewer agent checks the diff. A small “Findings” arrow loops
+from reviewer back to coding agent.
+From the reviewer, a clear forward arrow labelled with a green check leads to
+the coding agent merging; at far right, show the completed feature running in
+a small web app. Keep every other arrow flowing left-to-right. No human should
+appear at review or verification. In the pull-request station, include a
+compact unified code diff with pale red removed lines and pale green added
+lines, using familiar minus and plus signs.
+
+In the lower half, add a prominent, clean zoom-in inset attached to the
+automated QA stage by a fine gold leader line and magnifier cue. Inset heading
+exactly “QUALITY HARNESS”; subheading exactly “example gates”. Inside, show
+exactly eight large, neatly aligned checklist items in two columns: “100% code
+coverage”; “100% type coverage”; “Benchmarks”; “0 lint issues”; “0 warnings”;
+“Lighthouse performance”; “Accessibility”; “SEO”. Use one restrained check
+icon per item. Add a small, centred “… and more” below the checks to show the
+list continues. Spelling must be exact. Keep all panel fills light ivory or
+warm stone; use dark ink for text and linework, never dark-filled boxes. The
+callout should look like a compact quality checklist and feel strict, not like
+a dashboard. Make the entire image a single coherent infographic.
+
+No overall title, no footer, no disclaimer or other added text, no logos, no
+gradients, no watermark. Do not show a human review stage, queues, bottlenecks,
+or unrelated panels.
+```
+
+## sdlc-conclusion.webp
+
+The closing conclusion shows agent support across five delivery stages, with a
+continuous quality rail and human direction at the beginning and judgement at
+release. It reinforces that strong engineering practices can speed up routine
+work while keeping quality standards intact.
+
+```text
+Create a polished 16:9 landscape editorial illustration for the final
+conclusion slide of a software engineering presentation. Flat warm ivory
+canvas; light warm-stone panels only; near-black pen-and-ink linework;
+restrained gold arrows and hairlines; small green check marks. Refined serif
+labels, simple elegant human and friendly robot figures, generous balanced
+whitespace. No dark-filled panels or boxes: panel backgrounds must remain
+light ivory or warm stone.
+
+Show a single clear left-to-right software lifecycle in five spacious stations,
+connected by one continuous gold flow line: “Plan”, “Code”, “Review”, “Verify”,
+“Release”. Make the sequence feel brisk and fluid with subtle forward motion
+marks. At each station, a small coding-agent robot assists with routine work:
+organizing a plan, writing code, preparing a pull request, running checks, and
+packaging a release. Include one calm human who sets direction at Plan and one
+who makes a final judgement at Release, so the story shows agent acceleration
+with human oversight where it matters.
+
+Under the five stations, draw one straight, steady quality rail passing beneath
+every stage, with a small crisp green check or shield marker under each stage
+to show that the quality bar stays consistent from start to finish. Make this
+visual rail elegant and unmistakable, not a separate dark box or dashboard.
+The complete composition should make it clear that routine work moves faster
+while quality remains protected at every stage.
+
+Use only these five stage labels, spelled exactly as given; no other words,
+title, subtitle, long explanatory text, footer, logo, gradient, or watermark.
+Ensure the image is balanced and legible when displayed at 880×495 pixels.
+```
 
 ## Agentic stack diagrams
 
@@ -16,7 +167,7 @@ slide's tabs. The diagrams show responsibilities, not deployment boundaries.
 All icons are original generated artwork; no third-party logo assets are used.
 The product names identify examples and do not imply endorsement.
 
-Generate the Anthropic diagram with `measure-whole-job.webp` as a style
+Generate the Anthropic diagram with `deterministic-tooling.webp` as a style
 reference, using the prompt below. Generate each other variant as an edit of
 that Anthropic output, preserving the composition, arrows, palette, and generic
 labels. Convert each output with `cwebp -q 90`.
@@ -52,7 +203,7 @@ For existing rule artwork being restyled, supply the previous version as
 image 1 (edit target) and `social-media-card.webp` as image 2 (style reference).
 Previous versions remain available through Git history. Apply this shared
 style prompt followed by the asset-specific instructions below. New artwork
-uses the references specified under Ten-rule expansion.
+uses the references specified under Additional rule illustrations.
 
 ```text
 Restyle into a refined editorial infographic matching the supplied slide social-card style: flat ivory #fdfaf3 background, warm stone #e9e5db square panels, near-black #141414 text and fine line illustrations, restrained gold #dac284 hairlines and borders ONLY, dark brown #7d6020 where emphasis needs text. Elegant high-contrast Bodoni/Didot serif headings, legible Montserrat-like sans-serif labels. Spacious, disciplined layout, thin rules, square corners, confident professional composition. No blue, green, purple, red, bright colours, gradients, glossy 3D, rounded UI cards, heavy shadows, or excessive decoration. Keep text clear, large and sparse enough to read when projected. Keep the original conceptual message and visual metaphor; improve hierarchy and clarity. No slide number, no redundant large slide title, and no text that repeats the slide title or subtitle verbatim. Do not frame a bottom caption in a box or flank it with horizontal rules. If a bottom caption adds information, set it unboxed in large, readable type with generous whitespace. Landscape 16:9 composition. No watermark.
@@ -80,12 +231,6 @@ RIGHT top output card: heading exactly "Consistent style". Simple restrained cod
 RIGHT middle output card: heading exactly "Configured gates pass". Two readable checklist labels exactly "Tests" and "Types & build", each with plain near-black ticks. Remove invented 102 / 102 passing, Coverage 92%, and No critical issues.
 RIGHT lower output card: heading exactly "Human review still needed". Small line drawing of human reviewing a page, plus three readable labels exactly "Requirements", "Behaviour", "User experience". Do not put a tick, shield badge, or guaranteed-success symbol on this card.
 BOTTOM of the RIGHT panel: three large readable steps connected left to right with thin black arrows, exactly "Change" → "Checks" → "Human review". Place the small caption "Passing gates is evidence for review." beneath the process, unboxed and without framing rules. Remove Deterministic inputs → Checks → Consistent outcomes. Make all new text exact and large enough at 880 px display width. No claims that passing gates proves correctness, safety, or acceptable outcomes. Keep 16:9.
-```
-
-## small-scope.webp
-
-```text
-Two panels: left title "One enormous prompt", stressed line-drawn robot with an oversized brief listing "Onboarding", "Billing", "Analytics", "Search", "SSO", "Migrations", connected to many modules; one huge dense diff labelled "Hard to review · Hard to reverse". Right title "Small, focused steps", calm robot next to five orderly numbered cards "API change", "UI update", "Tests", "Docs", "Deploy & config", each with a tiny symbolic diff and commit marker. Supporting labels "One concern", "Reviewable", "Reversible", "Fast feedback". The slide subtitle already states "Small diffs beat heroic prompts"; do not repeat it in the illustration or add a footer slogan. Preserve five-step sequence and giant-versus-small-diff concept, no invented numbers or code.
 ```
 
 ## session-hygiene.webp
@@ -117,30 +262,20 @@ Redesign the information graphic into a readable landscape layout. Top elegant p
 Preserve a 2×2 illustration comparing helpful and unhelpful working habits. Top left "Be curious": engaged developer sketching prototypes with a friendly line-drawn robot. Top right "Avoid deskilling": disengaged developer reclining while robot runs unattended at screen. Bottom left "Be humble. Be kind.": diverse team listens and discusses around a table with shared notes. Bottom right "Avoid grandiosity": engineer, product manager, and designer each pointing at their own assistant and dismissing one another. Use refined pen-and-ink editorial figures, expressive restrained faces, ivory and stone panels with fine gold divider rules; no cartoon emoji or neon. Small text labels in bottom-right "Engineer", "Product manager", "Designer". Avoid racial stereotypes; convey disagreement calmly. No speech bubbles or extra paragraphs.
 ```
 
-## guardrails-workflow.webp
-
-Supply only `social-media-card.webp` as the style reference.
-
-```text
-Use case: infographic-diagram. Asset type: wide, low-height presentation workflow diagram. The supplied image is only a reference for typography, colour, and visual restraint. Create a brand-new exquisitely clear diagram for deterministic guardrails in agentic engineering. Ivory #fdfaf3 background, warm stone #e9e5db square nodes, near-black #141414 text and arrows, fine gold #dac284 borders. High-contrast Bodoni-like serif node headings and Montserrat-like sans-serif branch labels. Very wide landscape aspect ratio approximately 3:1; use the entire width, with large readable labels and minimal vertical whitespace, no overall title. Main horizontal path left to right is four nodes labelled exactly "Agent proposes change", "Deterministic checks", "Human review", "Merge". Break long node labels over two lines. Use a square/rectangular checks node, no diamond. Arrow from agent to checks; arrow from checks to review labelled exactly "pass"; arrow from review to merge. Below the first two nodes, a fifth smaller node labelled exactly "Precise error output". Downward arrow from checks to error labelled exactly "fail", then a return arrow from error back to "Agent proposes change", entering the agent node from below. Direction matters: failure goes checks → error → agent; success goes checks → review → merge. Clearly visible thin black arrows and ample separation, no crossings. No icons, ornaments, shadows, rounded corners, gradients, extra text, or watermark. Do not remove the human review step or connect failure to merge.
-```
-
 ## one-command-setup.webp
 
 Both supplied images are style references: `devex-agentex.webp` and
 `social-media-card.webp`. Generate a new image with the following prompt.
 
 ```text
-Use case: productivity-visual. Asset type: two-panel presentation illustration for "DevEx = AgentEx: in practice". The supplied images are STYLE REFERENCES only: image 1 is another illustration in this deck; image 2 is the deck title card. Create a NEW landscape 16:9 illustration matching their elegant ivory, stone, near-black, and restrained gold editorial style, crisp pen-and-ink linework, Bodoni/Didot-like serif headings, readable Montserrat-like sans-serif body text, square panels with fine gold border rules, no bright colours, no glossy 3D, no gradients, no watermark.
+Use case: productivity-visual. Asset type: two-panel presentation illustration for "Improve developer experience: in practice". The supplied images are STYLE REFERENCES only: image 1 is another illustration in this deck; image 2 is the deck title card. Create a NEW landscape 16:9 illustration matching their elegant ivory, stone, near-black, and restrained gold editorial style, crisp pen-and-ink linework, Bodoni/Didot-like serif headings, readable Montserrat-like sans-serif body text, square panels with fine gold border rules, no bright colours, no glossy 3D, no gradients, no watermark.
 Primary message: a detailed manual project-setup procedure is confusing for both a human developer and a coding agent; encapsulating that procedure in make setup gives both the same simple, reliable entry point.
 Composition: two equal side-by-side panels. At LEFT, heading exactly "Manual setup". A large project instruction sheet labelled exactly "Project setup" shows this detailed numbered checklist in readable dark text: "1. Install the required runtime", "2. Create a virtual environment", "3. Install project dependencies", "4. Configure environment variables", "5. Install the Git hooks", "6. Start the local services", "7. Apply database migrations", "8. Load development fixtures", "9. Check tool versions", "10. Verify the setup". Below or beside the sheet, a human developer and a friendly small robot coding agent BOTH visibly look confused and overwhelmed: furrowed brows, puzzled expressions, a few subtle question marks. At RIGHT, heading exactly "One command". Show ONE clean document labelled exactly "AGENTS.md". That document has only ONE instruction, exactly "run `make setup`". Render make setup in very legible monospace, with the lowercase word run before it; the backticks may be literal Markdown characters because this is a Markdown instruction file. No other instructions, code, checklist, or labels inside the right document. Below or beside it, the SAME human developer and the SAME robot BOTH visibly happy, relaxed, and confident, smiling with a small celebratory thumbs-up gesture. Make the contrast between both pairs of expressions unmistakable, while retaining professional editorial restraint. Keep all four characters large enough to read from the back of a room. Warm stone panels on flat ivory #fdfaf3; near-black #141414 text; gold #dac284 for fine borders and separators and dark brown #7d6020 for occasional emphasis. Text must be accurate and clear. Do not add Makefile source code, terminal code blocks, additional commands, overall slide title, or a footer slogan.
 ```
 
 ## meta-automation-examples.webp
 
-Use `meta-automation.webp` only as a style reference. The dependency prompt,
-screenshot skill, and security triage are adapted from chatbot-template;
-`/address-review` is an illustrative shortcut to its saved review prompt.
+The examples use generic, illustrative workflows for recurring agent work.
 
 ```text
 Use case: infographic-diagram.
@@ -189,7 +324,7 @@ Below the panels, place the exact text "Humans review evidence and decide what s
 
 ## know-thy-tools.webp
 
-Created with built-in image generation. The Session hygiene illustration
+Created with built-in image generation. The Maintain session hygiene illustration
 and social card were supplied as style references, not edit targets.
 Official docs and release notes were checked on 8 October 2026:
 [Claude Code voice dictation](https://code.claude.com/docs/en/voice-dictation),
@@ -202,7 +337,7 @@ examples, not an exhaustive or exclusive feature comparison.
 ```text
 Use case: productivity-visual.
 Asset type: landscape 16:9 illustration for the "Know thy tools" slide in an engineering presentation.
-Input images: image 1 is a style and character reference ONLY (Session hygiene); image 2 is a typography and palette reference ONLY (social card). Create NEW content, do not reproduce their wording or subjects.
+Input images: image 1 is a style and character reference ONLY (Maintain session hygiene); image 2 is a typography and palette reference ONLY (social card). Create NEW content, do not reproduce their wording or subjects.
 Primary request: an elegant, memorable illustration of three example tool affordances users miss: Claude Code voice dictation, Codex built-in image generation, and GitHub Copilot CLI computer use. Exactly one capability per product, plus an ellipsis suggesting more to discover. Illustrate meaningful actions, not a feature table.
 
 Style: refined pen-and-ink editorial illustration. Flat ivory #fdfaf3 canvas, warm stone #e9e5db square panels, near-black #141414 text and linework. Restrained gold #dac284 for thin borders and dividers only, dark brown #7d6020 for readable occasional emphasis text. Bodoni/Didot high-contrast serif headings and Montserrat-like sans-serif body. Spacious layout with square corners. Friendly small robot consistent with image 1. No official product logos, bright colours, gradients, glossy 3D, tiny paragraphs, or watermarks.
@@ -284,7 +419,7 @@ Use case: precise-object-edit. Edit only the central reset caption. Keep the lar
 
 ## Integration checks
 
-The ten-rule expansion merges Specify intent into Define done before delegating.
+Define done before delegating combines task intent with observable acceptance criteria and evidence.
 `define-done.webp` replaces the retired `bitter-lesson.webp` illustration; its
 previous artwork and prompts remain available in Git history.
 
@@ -294,12 +429,33 @@ render with `just render`. Check the image slides and workflow in presentation
 and scroll views. Keep alternative text and speaker notes aligned with the
 selected artwork. Re-run `just axe` after changing slide markup.
 
-## Ten-rule expansion
+## Additional rule illustrations
 
 Generated with the built-in image-generation tool. For each image below,
 `deterministic-tooling.webp` is the style and character reference, and
 `social-media-card.webp` is the typography and palette reference. Both are
 references only; the outputs depict new advice. Complete prompts follow.
+
+### prepare-codebase-for-agents.webp
+
+```text
+Use case: productivity-visual.
+Asset type: NEW landscape 16:9 editorial illustration for a Quarto presentation slide about preparing a codebase before introducing coding agents.
+Input image 1 is a style and character reference ONLY (the deck's friendly pen-and-ink robot and illustration craft). Input image 2 is a typography and palette reference ONLY (the title card). Create new artwork; do not copy their composition or wording.
+
+Primary request: show that a coding agent amplifies the patterns it finds in a repository, so people should improve and clarify those patterns before scaling agent use. Make the causal point immediately legible: inconsistent conventions, duplication, shortcuts, and weak checks get repeated; clear conventions, coherent modules, and reliable checks give the agent a sound pattern to follow. Show human preparation first, then agent work.
+
+Composition: two spacious square-corner panels side by side on a flat ivory canvas, each with one elegant serif heading. LEFT panel: a messy codebase as a tangled but recognisable map of modules, duplicated code pages, inconsistent naming, and a weak test sheet with gaps. A friendly robot follows and copies those visible patterns, producing a larger tangled map and more repeated pages. Use a few large, readable labels exactly: "Inconsistent patterns", "Duplicated code", "Weak checks". Make the echo/repetition causal and visible; no scary or destructive imagery.
+RIGHT panel: a human prepares a codebase before handing it to the same friendly robot: clear module boundaries, one consistent example pattern, concise repository guidance, and reliable checks. The robot follows that example to produce matching, orderly modules. Use a few large, readable labels exactly: "Clear conventions", "Coherent modules", "Reliable checks". Human preparation must visibly happen before the robot extends the pattern.
+
+A simple restrained arrow or bridge between the two panels can show the choice to prepare before adding more agent work. Keep the bottom area as clean ivory space, without a caption or horizontal rule.
+
+Style: match the supplied deck references: refined editorial pen-and-ink infographic, ivory #fdfaf3 canvas, warm stone #e9e5db square-corner panels, near-black #141414 linework and text, restrained gold #dac284 for thin borders and dividers only, dark brown #7d6020 for readable emphasis. Bodoni/Didot-like serif headings and legible Montserrat-like sans-serif labels. Friendly small robot consistent with reference image 1. Spacious professional balance and clear visual hierarchy. Large exact labels readable when shown at 880 pixels wide.
+
+Avoid: repeating the slide title or subtitle in the image, tiny paragraphs, fabricated metrics, code snippets, logos, bright colours, green ticks, gradients, glossy 3D, rounded cards, heavy shadows, extra slogans, watermarks, slide numbers, or claims that agents automatically repair technical debt. Keep the point qualified: agents tend to reproduce the patterns their repository exposes, so prepare those patterns first.
+```
+
+Final built-in image edit: remove the bottom caption and balance the ivory margins above and below the panels. Preserve all other artwork.
 
 ### define-done.webp
 
@@ -309,26 +465,5 @@ Primary request: illustrate defining observable success BEFORE delegating and th
 LEFT heading exactly "State the outcome". A human hands a brief to a robot. Three large labels on brief exactly "Goal", "Constraints", "What stays unchanged". Caption exactly "Give a target, not a script".
 CENTRE heading exactly "Choose the evidence". Three neatly aligned line-drawn objects: a bug with a before-and-after test report, a browser window with a human interacting with it, and a stopwatch beside two benchmark traces. Three short captions exactly "Bug: reproduce, then fix", "UI: inspect the interaction", "Performance: measure". No fabricated numbers.
 RIGHT heading exactly "Check the meaning". Human and robot jointly inspect a test page next to a requirements brief; a magnifying glass connects them, not a success badge. Large caption exactly "Tests can share the same mistake".
-Below the panels, centre the exact wording "Agree the criteria. Verify against them. Review the evidence." as an unboxed caption without horizontal rules, using large, readable type and generous whitespace. Keep robot drawing tasteful and relevant, not occupying all the evidence space.
-```
-
-### bound-blast-radius.webp
-
-```text
-Use case: productivity-visual. Asset type: NEW landscape 16:9 presentation illustration, about 1672 by 941 px. Input images are style references ONLY, never edit targets: deterministic-tooling.webp for the friendly pen-and-ink robot, social-media-card.webp for typography and palette. Refined editorial infographic: flat ivory #fdfaf3 canvas, warm stone #e9e5db square panels, near-black #141414 text and fine hand-drawn linework. Restrained gold #dac284 for hairline borders and dividers only, dark brown #7d6020 for optional readable emphasis. Bodoni/Didot serif panel headings, Montserrat-like sans-serif labels. Spacious professional composition, friendly small robot and human consistent with the reference. No bright colours, gradients, glossy 3D, rounded cards, heavy shadows, watermark, slide number, or redundant overall slide title. Text must be exact and comfortably legible when shown at 880 px wide.
-Primary request: illustrate an agent working within explicitly enforced permissions, and human approval for consequential actions. Three equal square-corner panels side by side.
-LEFT heading exactly "Scope access". Friendly robot at a laptop inside a clearly drawn rectangular workspace boundary. Three simple accessible objects inside boundary labelled exactly "Read", "Change", "Execute". Outside boundary a credential/key container has a clear padlock and label exactly "Protect credentials". Boundary caption exactly "Enforce permissions".
-CENTRE heading exactly "Separate data from authority". Robot examines retrieved document in a document tray. Document clearly labelled "Retrieved content". A distinct approved task brief held by a human is clearly labelled "Authorised instructions". A divider separates them; do not draw an arrow that turns the retrieved document into authorised instructions. Large caption exactly "Content is not permission".
-RIGHT heading exactly "Approve consequential actions". Human at a visible approval checkpoint between the robot and three action symbols, a rocket, a send envelope, and a database with eraser. Three labels exactly "Deploy", "Send", "Delete". The human approval checkpoint must visibly precede the action symbols. Caption exactly "Review before the action".
-Below the panels, centre the exact wording "Worktrees isolate edits. Sandboxes restrict actions." as an unboxed caption without horizontal rules, using large, readable type and generous whitespace. No shields claiming total security, no dangerous explosion, no suggestion that reviewing a diff controls actions already taken.
-```
-
-### measure-whole-job.webp
-
-```text
-Use case: productivity-visual. Asset type: NEW landscape 16:9 presentation illustration, about 1672 by 941 px. Input images are style references ONLY, never edit targets: deterministic-tooling.webp for the friendly pen-and-ink robot, social-media-card.webp for typography and palette. Refined editorial infographic: flat ivory #fdfaf3 canvas, warm stone #e9e5db square panels, near-black #141414 text and fine hand-drawn linework. Restrained gold #dac284 for hairline borders and dividers only, dark brown #7d6020 for optional readable emphasis. Bodoni/Didot serif panel headings, Montserrat-like sans-serif labels. Spacious professional composition, friendly small robot and human consistent with the reference. No bright colours, gradients, glossy 3D, rounded cards, heavy shadows, watermark, slide number, or redundant overall slide title. Text must be exact and comfortably legible when shown at 880 px wide.
-Primary request: illustrate choosing the simplest effective approach and measuring all work to an accepted result.
-LEFT half elegant heading exactly "Choose the simplest fit". Three similarly sized options with no option singled out as universally best: human with pencil editing a page labelled "Direct edit"; small terminal with repeatable cog labelled "Script or existing tool"; friendly robot and laptop labelled "Agent". Under the choices caption exactly "Start with the real pain point".
-RIGHT half elegant heading exactly "Follow through to acceptance". Horizontal sequence with four generous clearly legible stages, each simple pen-and-ink icon above exact label: "Prepare" then "Generate" then "Verify" then "Review". Thin near-black arrows connect the sequence. Beneath sequence a long bracket covers ALL FOUR stages with caption exactly "Time to an accepted result". Below bracket three tidy square cards with exact labels "Review effort", "Defects", "Maintenance burden". No fabricated charts, speedups, percentages, or measurements.
-Below the panels, centre the exact wording "Keep the approach that improves the whole job." as an unboxed caption without horizontal rules, using large, readable type and generous whitespace. Ivory background, restrained panels, generous whitespace and legibility.
+Do not add an overall caption below the panels. Centre the three-panel composition vertically with equal ivory margins above and below it. Keep robot drawing tasteful and relevant, not occupying all the evidence space.
 ```

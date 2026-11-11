@@ -29,7 +29,7 @@ execute:
   echo: true
   eval: false
 keywords: ["agentic-engineering", "coding-agents", "software-engineering", "ai-assisted-development"]
-description-meta: "Golden rules for agentic engineering: how to use coding agents to boost productivity without compromising quality. Ten rules covering developer experience, guardrails, acceptance criteria, scoped permissions, reviewable changes, context, tools, automation, whole-job outcomes, and team culture."
+description-meta: "Golden rules for agentic engineering: how to use coding agents to boost productivity without compromising quality. Nine rules covering codebase readiness, developer experience, deterministic quality gates, acceptance criteria, context, tools, automation, delivery bottlenecks, and team culture."
 license: "CC0 1.0 Universal"
 pagetitle: "Golden Rules for Agentic Engineering"
 author-meta: "Indrajeet Patil"
@@ -66,7 +66,7 @@ All illustrations in this presentation are AI-generated.
 :::
 
 ::: {.notes}
-This is a practical talk about using coding agents to improve the whole engineering job while protecting quality. The illustrations are AI-generated, reflecting the hands-on subject of the talk.
+This is a practical talk about using coding agents to improve software engineering while protecting quality. The illustrations are AI-generated, reflecting the hands-on subject of the talk.
 
 Think about one part of your daily work where you lose time: finding context, repeating an edit, coordinating changes, or waiting for feedback. Keep that example in mind as we work through the rules.
 :::
@@ -88,7 +88,7 @@ Tests, deployment, security, and maintenance matter.
 
 [Throwaway code]{.card-title}
 
-Relax engineering rigour for disposable code; retain safeguards for real data and real actions.
+Prototype code can defer tests and polish; production code needs a higher bar.
 :::
 
 ::: {.card .card-ink}
@@ -101,12 +101,8 @@ These are principles that sharpen judgement, not a magic recipe.
 
 ::::
 
-::: {.source}
-On the risks of real actions, see [The lethal trifecta for AI agents](https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/) (Willison) and [Excessive agency](https://genai.owasp.org/llmrisk/llm062025-excessive-agency/) (OWASP).
-:::
-
 ::: {.notes}
-Quality gates such as tests, security, deployment, and maintenance are part of the conversation. Throwaway proofs of concept, demos, and prototypes can trade engineering rigour for speed: tests, coverage, and polish can wait until the code starts to matter, which often happens sooner than planned. The consequences of running the code cannot wait. A disposable script can still expose credentials, alter real data, or send something externally, so keep scoped credentials, sandboxes, and approval before the agreed consequential actions. The aim is to sharpen judgement, not to sell a magic solution.
+Engineering rigour depends on the work. Throwaway proofs of concept, demos, and prototypes can defer tests, coverage, and polish; production software needs reliable checks and maintenance. Reassess the work as its purpose changes. The aim is to sharpen judgement, not to sell a magic solution.
 :::
 
 ## The agentic stack {.rule-slide #agentic-stack}
@@ -162,59 +158,53 @@ Across these examples, the labels change while the responsibilities remain compa
 ::: {.card}
 [01]{.rule-number}
 
-**Measure the whole job**
+**Prepare the codebase for agents**
 :::
 
 ::: {.card}
 [02]{.rule-number}
 
-**DevEx = AgentEx**
+**Improve developer experience**
 :::
 
 ::: {.card}
 [03]{.rule-number}
 
-**Define done before delegating**
+**Set deterministic quality gates**
 :::
 
 ::: {.card}
 [04]{.rule-number}
 
-**Scope control**
+**Define done before delegating**
 :::
 
 ::: {.card}
 [05]{.rule-number}
 
-**Bound the blast radius**
+**Maintain session hygiene**
 :::
 
 ::: {.card}
 [06]{.rule-number}
 
-**Guardrails**
+**Know thy tools**
 :::
 
 ::: {.card}
 [07]{.rule-number}
 
-**Session hygiene**
+**Automate repeated agent work**
 :::
 
 ::: {.card}
 [08]{.rule-number}
 
-**Know thy tools**
+**Identify and remove bottlenecks**
 :::
 
 ::: {.card}
 [09]{.rule-number}
-
-**Meta-automation**
-:::
-
-::: {.card}
-[10]{.rule-number}
 
 **Be curious. Be humble. Be kind.**
 :::
@@ -222,32 +212,28 @@ Across these examples, the labels change while the responsibilities remain compa
 ::::
 
 ::: {.notes}
-The ten rules cover the engineering lifecycle: choosing whether an agent helps, preparing a usable codebase, defining the result, and checking the work. They also cover context management, tools, repeatable automation, and collaboration. The aim is to connect those practices rather than optimise code generation in isolation.
+The nine rules begin with preparing a codebase for agents and improving the shared developer and agent experience. They then set quality gates, define outcomes, maintain useful context, use tools well, automate repeated work, remove delivery bottlenecks, and build a curious, humble, and kind team culture.
 :::
 
-## [01]{.rule-tag} Measure the whole job {.rule-slide}
+## [01]{.rule-tag} Prepare the codebase for agents {.rule-slide}
 
-[Choose the simplest approach that improves time to an accepted result.]{.lede}
+[Improve the patterns agents will inherit and repeat.]{.lede}
 
-![](media/measure-whole-job.webp){.illustration width="880" height="495" fig-alt="Two-panel illustration: choose among a direct human edit, a script or existing tool, and an agent, starting with a real pain point. Preparation, generation, verification, and review all contribute to time to an accepted result. Also track review effort, defects, and maintenance burden, and keep the approach that improves the whole job."}
+![](media/prepare-codebase-for-agents.webp){.illustration width="880" height="495" fig-alt="Two-panel illustration: on the left, an agent copies inconsistent naming, duplicated code, and weak checks, multiplying a tangled codebase. On the right, a person prepares clear conventions, coherent modules, and reliable checks before an agent extends the same orderly module pattern."}
 
 ::: {.source}
-Simplest-solution principle: [Building effective agents](https://www.anthropic.com/engineering/building-effective-agents) (Anthropic). The whole-job measures are practical recommendations for coding work.
+Source: OpenAI, [Harness engineering](https://openai.com/index/harness-engineering/).
 :::
 
 ::: {.notes}
-Decide whether an agent is useful before deciding how to orchestrate one. A direct human edit, an existing tool, or a deterministic script can be the simplest effective answer. Use an agent when its flexibility improves the result enough to justify the extra coordination and verification.
+Before inviting agents into day-to-day work, take stock of the patterns a repository teaches by example. Agents often follow existing structure and conventions. OpenAI describes Codex agents reproducing existing patterns, including uneven or suboptimal ones. If duplication, unclear boundaries, and weak checks are common, generated changes can reinforce those conditions.
 
-Anthropic recommends starting with the simplest solution and adding complexity when it demonstrably improves outcomes. This is an application of that principle to day-to-day coding work, not evidence that agents always help or always hurt.
+Prepare deliberately: pay down high-impact debt, make sound patterns easy to discover, document setup and conventions, and establish checks that surface mistakes. This does not require a codebase-wide rewrite; prioritise issues that block safe, reviewable work.
 
-Judge the whole job: time from preparing the task to an accepted result, human review and rework effort, defects discovered after acceptance, and maintenance burden. Generation speed and code volume omit much of this work. Include abandoned attempts and track human review time separately so faster generation does not hide extra work for colleagues.
-
-Compare similar tasks and agreed acceptance criteria. Record enough context to interpret the result: task difficulty, the approach used, and relevant conditions. A one-off anecdote cannot establish a universal productivity gain.
-
-Start with a real pain point, try a small change in approach, and keep it when the total outcome improves. Revisit the choice as tools and team practices change.
+Once the repository has a sound example to follow, improving developer experience makes those paths and tools easier for agents to use with less context hunting. The next rule connects DevEx to AgentEx.
 :::
 
-## [02]{.rule-tag} DevEx = AgentEx {.rule-slide}
+## [02]{.rule-tag} Improve developer experience {.rule-slide}
 
 [If humans hunt for context, agents burn tokens too.]{.lede}
 
@@ -259,7 +245,7 @@ DevEx equals AgentEx: what makes a codebase easy for humans makes it cheaper and
 If developers need to hunt through unclear documentation, inconsistent commands, or hidden conventions, agents will struggle too. They burn tokens, make assumptions, or ask for more context.
 :::
 
-## DevEx = AgentEx: in practice {.rule-slide}
+## Improve developer experience: in practice {.rule-slide}
 
 [One setup command. The same starting point for humans and agents.]{.lede}
 
@@ -277,7 +263,31 @@ Capture that procedure in a maintained setup command. Then AGENTS.md can point t
 The work still happens; the command owns the sequence, checks prerequisites, and reports useful errors. Keep the implementation reproducible and the instruction current so neither humans nor agents have to guess the next step.
 :::
 
-## [03]{.rule-tag} Define done before delegating {.rule-slide}
+## [03]{.rule-tag} Set deterministic quality gates {.rule-slide}
+
+[Let deterministic checks catch what they can, fast.]{.lede}
+
+![](media/deterministic-tooling.webp){.illustration width="880" height="495" fig-alt="Two-panel illustration contrasting a confused robot amid inconsistent style, flaky tests, broken assumptions, hallucinated APIs, and failed builds with a calm robot in a safety harness labelled Formatter, Linter, Type checker, Pre-commit, CI, Sanitisers, and Valgrind. Output cards show consistent style and configured gates passing for tests, types, and builds. Human review is still needed to assess requirements, behaviour, and user experience. A change flows through checks to human review; passing gates is evidence for review."}
+
+::: {.notes}
+Deterministic checks give agents fast feedback on repeatable requirements. Formatters, linters, type checkers, and tests can catch known classes of mistakes on every change. They cannot decide whether the work meets an unstated requirement or makes sense for users, so people still review the evidence and the work's impact.
+:::
+
+## Set deterministic quality gates: in practice
+
+![](media/guardrails-workflow.webp){.illustration width="880" height="495" fig-alt="Ruff feedback loop: a coding agent first defines main() with an unused local greeting variable. Ruff runs `ruff check example.py` and reports F841. The agent adds `print(greeting)` inside main() and reruns Ruff; the passing change proceeds to human review and merge."}
+
+::: {.source}
+See [Ruff’s F841 rule](https://docs.astral.sh/ruff/rules/unused-variable/).
+:::
+
+::: {.notes}
+The agent proposes a small Python change. Inside `main()`, it assigns a greeting but never uses it. Ruff reports F841 for that unused local variable. The finding loops back to the agent, which adds `print(greeting)` inside the function and reruns the check.
+
+A passing check sends the change to human review before merge. The reviewer checks the intended behaviour and whether the fix makes sense. A configured check is evidence, not proof that a change meets its requirement; automatic checks cannot take responsibility for what ships.
+:::
+
+## [04]{.rule-tag} Define done before delegating {.rule-slide}
 
 [State the outcome, what must stay unchanged, and the evidence that will show it works.]{.lede}
 
@@ -296,210 +306,12 @@ Choose evidence that addresses the task. A bug needs a reproduction and a change
 
 When the agent writes both implementation and tests, both can encode the same misunderstanding. Compare the assertions with the agreed criteria, include relevant unchanged behaviour, and inspect the actual result. More tests or higher coverage alone do not settle the question.
 
-Agents must verify their own work: run relevant checks, inspect results, fix failures, and re-check before reporting completion. Hand over evidence tied to the criteria, including any unresolved limitations. Guardrails provide fast feedback; this rule asks whether the evidence proves the intended outcome.
+Agents must verify their own work: run relevant checks, inspect results, fix failures, and re-check before reporting completion. Hand over evidence tied to the criteria, including any unresolved limitations. Quality gates provide fast feedback; this rule asks whether the evidence proves the intended outcome.
 
 Prescribe steps when their order matters, such as migrations, incident response, or a proven diagnostic workflow. Otherwise, specify the outcome and constraints, provide strong tools, and retain human review of what ships.
 :::
 
-## Define done before delegating: in practice {.smaller}
-
-:::: {.card-grid .card-grid-3}
-
-::: {.card .card-stone}
-[Bug fix]{.eyebrow}
-
-Reproduce the failure. Show the same case succeeding after the fix, and check relevant unchanged behaviour.
-:::
-
-::: {.card .card-outline}
-[UI change]{.eyebrow}
-
-Inspect the rendered interaction, including relevant keyboard and responsive states. A build alone cannot show this.
-:::
-
-::: {.card .card-stone}
-[Performance]{.eyebrow}
-
-Measure before and after under comparable conditions. State the workload and trade-offs.
-:::
-
-::::
-
-::: {.card .card-ink .card-wide}
-**Check the meaning of the tests.** Implementation and assertions can agree with each other while missing the requirement.
-:::
-
-::: {.source}
-Bug and UI checks adapted from [Claude Code best practices](https://code.claude.com/docs/en/best-practices) (Anthropic).
-:::
-
-::: {.notes}
-Define the expected result before the implementation. Keep the acceptance criteria independent of the agent's chosen solution.
-
-Ask for evidence that a reviewer can inspect: the reproduction and check results for a bug, the rendered interaction for a UI change, and before-and-after measurements for performance work. Check both the requested change and the behaviour that must remain unchanged.
-
-A second agent can offer another perspective, but agreement between agents is not a substitute for checking the requirement and observable outcome.
-:::
-
-## [04]{.rule-tag} Scope control {.rule-slide}
-
-[Small diffs beat heroic prompts.]{.lede}
-
-![](media/small-scope.webp){.illustration width="880" height="495" fig-alt="Two-panel illustration: an enormous prompt covering onboarding, billing, analytics, search, SSO, and migrations produces a large diff that is hard to review and reverse. Five small steps, API change, UI update, tests, docs, and deployment configuration, each have a small diff and commit. One concern at a time makes changes reviewable and reversible, with fast feedback."}
-
-::: {.notes}
-In brownfield projects, introduce changes in reviewable, reversible chunks. Scope control is the difference between useful automation and an unreviewable mess.
-:::
-
-## Scope control: in practice {.smaller}
-
-:::: {.card-grid .card-grid-2}
-
-::: {.card .card-stone}
-[Why]{.eyebrow}
-
-Agents can produce changes faster than reviewers can assess them. **Keep each change within review capacity.**
-:::
-
-::: {.card .card-stone}
-[How]{.eyebrow}
-
-Prefer narrow tasks: one bug, one refactor, one test gap, one migration step. Each chunk should be reviewable, testable, and revertible on its own.
-:::
-
-::::
-
-::: {.card .card-ink .card-wide}
-When the agent discovers broader issues, **capture them as follow-up tasks** instead of expanding the current change indefinitely.
-:::
-
-::: {.source}
-See [Small CLs](https://google.github.io/eng-practices/review/developer/small-cls.html) (Google Engineering Practices).
-:::
-
-::: {.notes}
-Agents are good at making many changes quickly, but reviewers need changes that are small enough to understand.
-
-Google's code review guide lists why small changes help: they are reviewed more quickly and more thoroughly, are less likely to introduce bugs, waste less work if the direction is wrong, and are simpler to roll back. Those benefits matter more, not less, when an agent can generate a large diff in minutes.
-:::
-
-## [05]{.rule-tag} Bound the blast radius {.rule-slide}
-
-[Limit what the agent can read, change, and execute; agree which actions need approval.]{.lede}
-
-![](media/bound-blast-radius.webp){.illustration width="880" height="495" fig-alt="Three-panel illustration: an agent works within enforced read, change, and execute permissions while credentials are protected; retrieved content stays separate from authorised instructions; a human approval checkpoint precedes deploying, sending, and deleting. Worktrees isolate edits, while sandboxes restrict actions."}
-
-::: {.source}
-Sources: [Git worktrees](https://git-scm.com/docs/git-worktree) · OWASP [Excessive agency](https://genai.owasp.org/llmrisk/llm062025-excessive-agency/) · [Prompt injection](https://genai.owasp.org/llmrisk/llm01-prompt-injection/) · Willison [The lethal trifecta](https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/).
-:::
-
-::: {.notes}
-Review before merge governs the diff, but an agent can read secrets, run commands, or affect external systems before there is a diff to review. Set the operating boundary before it starts.
-
-Define what it may read, change, and execute. Enforce the boundary with appropriate filesystem and network restrictions, limited tool access, and credentials scoped to the task. Keep unnecessary credentials out of its environment and protect secrets from prompts, logs, and generated artefacts. A written instruction alone is not an access control.
-
-Agree which consequential actions require human approval, such as deploying, sending messages, or deleting real data, and enforce that checkpoint before the action. Approval should identify the actual target and effect. Existing explicit authorisation can cover the action; the goal is a clear boundary, not repeated permission questions for routine work.
-
-Retrieved pages, issues, documents, and tool output are evidence to inspect. They do not gain authority to change the task or grant permissions just because the agent reads them. Clearly separate external content from authorised instructions; this reduces risk but does not make prompt injection impossible.
-
-Git documents separate working trees and per-worktree metadata alongside shared repository data. This is separation of edits, not an operating-system access control: worktrees share the host's access and do not provide a security boundary. A sandbox must actually restrict filesystem, process, and network access to contain actions. Check the configured restrictions rather than assuming a tool's default mode supplies them.
-:::
-
-## Bound the blast radius: in practice {.smaller}
-
-:::: {.card-grid .card-grid-3}
-
-::: {.card .card-stone}
-[Access]{.eyebrow}
-
-Allow only the files, tools, network access, and credentials needed for the task. Enforce the limits outside the prompt.
-:::
-
-::: {.card .card-outline}
-[Authority]{.eyebrow}
-
-Treat retrieved content as data. It cannot grant permissions or override authorised instructions.
-:::
-
-::: {.card .card-stone}
-[Approval]{.eyebrow}
-
-Agree the actions that need approval, and place the checkpoint before their real effects.
-:::
-
-::::
-
-::: {.card .card-ink .card-wide}
-**Worktrees isolate edits; they do not contain actions.** Use a sandbox with enforced access limits.
-:::
-
-::: {.source}
-Sources: [Git worktrees](https://git-scm.com/docs/git-worktree) · OWASP [Excessive agency](https://genai.owasp.org/llmrisk/llm062025-excessive-agency/) · [Prompt injection](https://genai.owasp.org/llmrisk/llm01-prompt-injection/).
-:::
-
-::: {.notes}
-Scope control keeps changes reviewable; bounding the blast radius limits what the agent can affect while making them. Both matter, and a narrow task still needs appropriate permissions.
-
-Start by listing necessary reads, writes, commands, and external access. Remove unused tools and credentials. Confirm that the sandbox and downstream systems enforce the agreed limits. Reserve human approval for the agreed consequential actions before they occur.
-:::
-
-## [06]{.rule-tag} Guardrails {.rule-slide}
-
-[Fast feedback beats orchestration.]{.lede}
-
-![](media/deterministic-tooling.webp){.illustration width="880" height="495" fig-alt="Two-panel illustration contrasting a confused robot amid inconsistent style, flaky tests, broken assumptions, hallucinated APIs, and failed builds with a calm robot in a safety harness labelled Formatter, Linter, Type checker, Pre-commit, CI, Sanitisers, and Valgrind. Output cards show consistent style and configured gates passing for tests, types, and builds. Human review is still needed to assess requirements, behaviour, and user experience. A change flows through checks to human review; passing gates is evidence for review."}
-
-::: {.notes}
-Guardrails are more important than elaborate orchestration. Fast, deterministic feedback keeps the agent's non-determinism under control.
-:::
-
-## Guardrails: in practice {.smaller}
-
-::: {.card .card-stone .diagram-card}
-
-![](media/guardrails-workflow.webp){.guardrails-workflow width="960" height="320" fig-alt="Guardrails workflow: the agent proposes a change, then deterministic checks run. On failure, precise error output returns to the agent for another attempt. On success, the change proceeds to human review, then merge."}
-
-:::
-
-:::: {.card-grid .card-grid-3}
-
-::: {.card .card-outline}
-[The harness]{.eyebrow}
-
-Formatters, linters, type checkers, behaviour-focused tests, Git hooks, and security scans
-:::
-
-::: {.card .card-ink}
-[One command]{.eyebrow}
-
-`make qa` checks the agreed gates, and CI runs the **same gates**. Review checks whether we solved the right problem.
-:::
-
-::: {.card .card-stone}
-[Agents optimise for green]{.eyebrow}
-
-Never weaken a check merely to get there. Repairing a wrong gate is deliberate, reviewed work.
-:::
-
-::::
-
-::: {.source}
-See also [Harness engineering for coding agent users](https://martinfowler.com/articles/harness-engineering.html) (Böckeler, martinfowler.com).
-:::
-
-::: {.notes}
-An agent can propose changes quickly, but quality comes from the harness around it: tests, linters, type checks, build commands, security scans, and reproducible local setup.
-
-The workflow sends failed checks back to the agent with precise error output. Passing checks lead to human review before merge.
-
-Green checks establish less than "the work is acceptable". They show that the configured gates pass, not that the requirements were right, that the tests capture them, or that the user experience works. Review answers those questions.
-
-Agents will find the shortest path to green, including lowering a threshold or disabling a check. Do not weaken a check merely to pass. Sometimes a gate really is wrong, such as a flaky test or a rule that does not fit the code; repairing it is legitimate work, but make it a deliberate, separately reviewed change.
-
-Coverage gates invite filler tests. Ask agents to assert behaviour at the boundaries you own (the outbound request, the streamed output, the logged event), never to execute lines for the sake of coverage.
-:::
-
-## [07]{.rule-tag} Session hygiene {.rule-slide}
+## [05]{.rule-tag} Maintain session hygiene {.rule-slide}
 
 [Coherent context beats haunted context.]{.lede}
 
@@ -516,14 +328,14 @@ Every correction, abandoned approach, and reversed decision stays in the context
 
 One task per session is a useful default, not an absolute. A closely related follow-up can benefit from the reasoning and discoveries already in context, and restarting has a cost: a handoff can lose an important constraint or a failed hypothesis. Length matters as well as coherence: Anthropic describes context rot, where recall of information in the context degrades as the token count grows. Clear context between unrelated tasks; compact only when continuing related work whose decisions are worth keeping. Restart when the context stops being coherent or is filling with material the next step does not need.
 
-Use one Git worktree per parallel task so each task has its own working directory. Worktrees isolate edits, not permissions; apply the access limits from Bound the blast radius as well. Keep durable conventions, decisions, and lessons in the repository, for example in `AGENTS.md`, so future sessions can find them without relying on old chat history.
+Use one Git worktree per parallel task so each task has its own working directory. Keep durable conventions, decisions, and lessons in the repository, for example in `AGENTS.md`, so future sessions can find them without relying on old chat history.
 
 Signs of a haunted session include reviving a rejected approach, confusing earlier and current requirements, repeating the same correction, or continuing after the conversation has outgrown its original task. Claude Code's best practices suggest a concrete threshold: after two failed corrections on the same issue, start fresh with a better prompt.
 
 Reset with a compact handoff: the goal in one sentence, constraints on what must not change, relevant files to start with, approaches already ruled out, and acceptance checks that show when the work is done.
 :::
 
-## [08]{.rule-tag} Know thy tools {.rule-slide}
+## [06]{.rule-tag} Know thy tools {.rule-slide}
 
 [Sometimes the unlock is a hidden tool affordance.]{.lede}
 
@@ -541,41 +353,67 @@ Claude Code offers voice input for dictating prompts, with the authentication an
 Choose the tool interface that fits the task. A direct API or command-line tool is useful when it exposes the operation clearly; computer use can help with a workflow available only through a graphical interface. When results disappoint, examine the context, tools, and feedback available to the agent as well as the model itself.
 :::
 
-## [09]{.rule-tag} Meta-automation {.rule-slide}
+## [07]{.rule-tag} Automate repeated agent work {.rule-slide}
 
-[Automate repeated agent choreography.]{.lede}
+[Capture recurring workflows once, then run them consistently.]{.lede}
 
-![](media/meta-automation.webp){.illustration width="880" height="495" fig-alt="Meta-automation infographic: repeated work is captured once, run many times, and reviewed. Four mechanisms are compared: a prompt for changing instructions, a skill for domain know-how, a slash command for a stable shortcut, and a workflow for steps and branches. A loop processes an input list, runs automation for each item, collects results, and ends with human review."}
+![](media/meta-automation.webp){.illustration width="880" height="495" fig-alt="An infographic contrasts repeated work with automation: capture a useful process once, run it across an input list, collect results, then review them. Prompt, skill, slash command, and workflow are shown as distinct ways to package recurring agent work."}
 
 ::: {.notes}
-Capture once. Run many times.
-
-Once a useful agent workflow repeats and improves the whole job, automate the choreography around it.
+When a useful agent workflow repeats, package the instructions or choreography so it can be run consistently. Prompts capture task instructions, skills package reusable know-how, slash commands offer shortcuts, and workflows coordinate steps and branches. These mechanisms can also be composed.
 :::
 
-## Meta-automation: in practice {.rule-slide}
+## Automate repeated agent work: in practice {.rule-slide}
 
-[Prompts, skills, shortcuts, and workflows turn repeated work into reusable automation.]{.lede}
+[Choose the smallest reusable mechanism that fits the work.]{.lede}
 
-![](media/meta-automation-examples.webp){.illustration width="880" height="495" fig-alt="Four concrete automation examples. Prompt: update-deps.md instructs an agent to refresh dependencies, fix compatibility breaks, run QA, and prepare a draft PR. Skill: frontend-pr-screenshot packages how to preview the app, capture a screenshot, and attach it to a PR. Slash command: an illustrative /address-review shortcut invokes a saved prompt to read review threads, make warranted fixes, and reply. Workflow: vulnerability management goes from scan to triage, then asks whether a finding is worth fixing. Yes leads to fix, verify, and draft PR; no leads to recording the reason. Humans review evidence and decide what ships."}
+![](media/meta-automation-examples.webp){.illustration width="880" height="495" fig-alt="Four examples of packaged automation: a dependency update prompt, a PR screenshot skill, an illustrative review shortcut, and a vulnerability triage workflow. The workflow investigates a finding, fixes and verifies warranted changes, or records why no fix is needed; people review the evidence and decide what ships."}
 
 ::: {.source}
-Examples adapted from [chatbot-template prompts](https://github.com/IndrajeetPatil/chatbot-template/tree/main/.github/prompts) and its [PR screenshot skill](https://github.com/IndrajeetPatil/chatbot-template/blob/main/.agents/skills/frontend-pr-screenshot/SKILL.md).
+Examples: [public prompt library](https://github.com/IndrajeetPatil/chatbot-template/tree/main/.github/prompts) · [PR screenshot skill](https://github.com/IndrajeetPatil/chatbot-template/blob/main/.agents/skills/frontend-pr-screenshot/SKILL.md).
 :::
 
 ::: {.notes}
-These are examples of different ways to package automation, not four mutually exclusive systems. A slash command can invoke a prompt or a skill; a workflow can compose both.
+The dependency-update prompt, review shortcut, and vulnerability-triage workflow are adapted from the public prompt library. The screenshot example follows its PR screenshot skill. The review shortcut is illustrative; this deck does not install it. The vulnerability example shows a generic triage decision: investigate a finding, fix and verify it when warranted, or record why no fix is needed.
 
-The dependency-update prompt in chatbot-template refreshes dependencies, fixes compatibility breaks, runs the project's quality gates, and prepares a draft PR. The screenshot skill packages the steps for previewing the app, capturing its appearance, and attaching evidence to a PR.
-
-The /address-review command is an illustrative shortcut to the repository's address-review.md prompt, not a claim that this checkout installs that slash command. Review comments need evaluation; make warranted fixes, verify them, and reply. Resolve only addressed comments or those confirmed to need no change.
-
-The vulnerability-management workflow is adapted from codex-security.md. Scan findings are claims to investigate. Triage checks reachability, existing mitigations, and regression risk before deciding whether a fix is warranted. Confirmed findings with a focused, safe fix proceed to remediation, verification, and a draft PR. Other findings get a recorded reason; no code changes means no PR. Verification includes checking that the vulnerability is resolved and running relevant regression checks. Failed verification returns to the fix step.
-
-Automate coordination: gathering context, running checks, formatting reports, and repeating the process across repositories. Humans evaluate evidence, make trade-offs, and decide what ships. Run unattended agents only in isolated sandboxes with scoped credentials.
+Automate coordination such as gathering context, running checks, and formatting reports. People define the policy for any automated merge: only changes that meet explicit, low-risk criteria qualify. Human review remains the route for ambiguous, risky, or exceptional changes, and people remain accountable for the policy and its results.
 :::
 
-## [10]{.rule-tag} Be curious. Be humble. Be kind. {.rule-slide}
+## [08]{.rule-tag} Identify and remove bottlenecks {.rule-slide}
+
+[Speeding up one stage helps only as much as the rest allows.]{.lede}
+
+![](media/sdlc-bottlenecks.webp){.illustration width="880" height="495" fig-alt="A left-to-right software delivery pipeline shows Plan, Code, Review, Verify, and Release. Coding agents speed up Code and create a large pull-request queue at Review, where a flustered human reviewer is buried in changes. Another queue reaches Verify, where a second flustered human struggles to check behaviour manually."}
+
+::: {.source}
+[Amdahl’s law (1967)](https://doi.org/10.1145/1465482.1465560) · [DORA (2025)](https://dora.dev/research/2025/dora-report/).
+:::
+
+::: {.notes}
+Think about delivery as one connected system: planning, code, review, verification, and release. Amdahl’s law describes how the part of a computation that remains unchanged limits the speedup from improving another part. Applied as an analogy to software delivery, faster code production cannot remove delays in review, testing, or release.
+
+The illustration shows coding agents producing changes faster than people can review them, with another human queue at behaviour verification. These bottlenecks can coexist, and relieving one may expose the other. The next slide shows targeted ways to reduce those waits without weakening quality.
+
+The 2025 DORA research describes AI as an amplifier of existing organizational strengths and weaknesses. That supports improving the surrounding delivery system alongside agent capability. After relieving one bottleneck, measure again: constraints move, and the next improvement should follow the new evidence.
+:::
+
+## Identify and remove bottlenecks: in practice {.rule-slide}
+
+![](media/bottleneck-examples.webp){.illustration width="880" height="495" fig-alt="Three bottleneck examples: slow lint and type checks are improved with Rust-based tools Ruff, uv, and ty; a large pull request is split or stacked into smaller changes before an LLM author and reviewer loop; repeated manual behaviour checks become automated E2E tests."}
+
+::: {.source}
+Rust-based tools: [Ruff](https://docs.astral.sh/ruff/), [uv](https://docs.astral.sh/uv/), and [ty](https://docs.astral.sh/ty/).
+:::
+
+::: {.notes}
+Start by finding where work is waiting. In the first example, lint and type checks are slow, so the team considers Ruff for linting and formatting, uv for Python environments and packages, and ty for type checking. These tools target those checks; they do not make a slow test suite or build faster. Caching or parallelising work may suit other bottlenecks. Measure the affected step and the full workflow before and after.
+
+The second example starts by splitting or stacking a large pull request into smaller, reviewable changes. An LLM reviewer can then return findings to the author in a loop. Human reviewers still judge quality and decide what ships, except where the team has explicitly authorised automatic merging for a bounded, low-risk class of change.
+
+The third example replaces repeated manual checks of a user journey with an end-to-end test. These tests can make important behaviour quicker to check, while exploratory testing remains useful for cases the tests do not cover. These are possible responses, not prescriptions; measure the whole delivery flow again because the bottleneck may move.
+:::
+
+## [09]{.rule-tag} Be curious. Be humble. Be kind. {.rule-slide}
 
 [AI is not an excuse to become incompetent or disagreeable.]{.lede}
 
@@ -600,105 +438,65 @@ Experiment, prototype, and keep learning the fundamentals the agent is standing 
 ::: {.card .card-stone}
 [Humble]{.card-title}
 
-Agents are confidently wrong. So are we. Verify before you trust, including your own prompt.
+Agents can be confidently wrong. So can we. Verify before you trust, including your own prompt.
 :::
 
 ::: {.card .card-stone}
 [Kind]{.card-title}
 
-Review agent-generated work as carefully as human work, and review humans as kindly as ever.
+Listen generously, offer respectful and actionable feedback, and make room for teammates to learn.
 :::
 
 ::::
 
-::: {.card .card-ink .card-wide}
-**AI does not remove responsibility.** You still own the design, the code, the tests, the security implications, and the communication with your team.
+::: {.pull-quote}
+[“It’s more fun to be competent”]{.pull-quote-text}
+
+[DHH]{.pull-quote-attribution}
 :::
-
-::: {.notes}
-Curiosity means trying useful workflows while continuing to understand the underlying system. Humility means checking plausible-looking output and being willing to revise our own assumptions. Kindness means protecting colleagues from unreviewed changes and giving constructive feedback.
-
-Automation does not remove accountability. The engineer accepting a change still needs to understand the evidence and take responsibility for what reaches production.
-:::
-
-# Making it stick
-
-::: {.notes}
-Moving from individual practices to embedding these rules into daily team habits, collaboration, and culture.
-:::
-
-## Code generation is the easy part {.smaller}
-
-[Everything around it needs planning, especially in teams.]{.lede}
-
-:::: {.card-grid .card-grid-2}
-
-::: {.card .card-stone}
-[Share]{.eyebrow}
-
-Pool your team's tips and tricks for agentic coding. Someone has already solved your annoyance.
-:::
-
-::: {.card .card-stone}
-[Fix pain points]{.eyebrow}
-
-Pick a real pain point (slow tests, unclear setup, flaky workflows). Use the simplest effective approach, and measure the whole job.
-:::
-
-::: {.card .card-stone}
-[Frontload planning]{.eyebrow}
-
-Task division, coordination, and reviewability matter more when everyone has an agent.
-:::
-
-::: {.card .card-stone}
-[Challenge your habits]{.eyebrow}
-
-Revisit your workflow as tools change. Keep changes that improve the outcome.
-:::
-
-::::
 
 ::: {.source}
-Simplest-solution principle: [Building effective agents](https://www.anthropic.com/engineering/building-effective-agents) (Anthropic).
+Quote: DHH, [Opening Keynote, Rails World 2024](https://www.rubyevents.org/talks/opening-keynote-rails-world-2024).
 :::
 
 ::: {.notes}
-Generating code is only part of delivering a change. A team must also plan the work, coordinate edits, preserve quality, and make the result reviewable.
+Curiosity means trying useful workflows while continuing to understand the underlying system. Humility means checking plausible-looking output and being willing to revise our own assumptions. Kindness is about how we treat one another: listen generously, be respectful when we disagree, and give feedback that helps colleagues learn.
 
-Share useful discoveries, address real sources of friction, and divide work into changes that can be understood. Revisit the process as the tools evolve, keeping improvements that help the whole team rather than merely increasing the amount of generated code.
+David Heinemeier Hansson puts it simply: “It’s more fun to be competent.” Keep building competence as the tools change: understand the system, verify the work, and stay curious while giving colleagues kind, constructive feedback.
 :::
 
-## Further reading {.smaller}
+# Conclusion
 
-::: {.reading-list}
+::: {.notes}
+Together, these practices can turn a repository into a software factory. They speed up routine work through planning, coding, review, verification, and release while people set direction and own risk boundaries.
+:::
 
-- Willison, S. [Agentic Engineering Patterns](https://simonwillison.net/guides/agentic-engineering-patterns/).
+## A software factory {.smaller}
 
-- Anthropic. [Building effective agents](https://www.anthropic.com/engineering/building-effective-agents).
+[Routine requests flow to verified merges; people approve high-stakes work.]{.lede}
 
-- Anthropic. [Effective context engineering for AI agents](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents).
+![](media/software-factory.webp){.illustration width="880" height="495" fig-align="center" fig-alt="A feature request moves from a developer to a coding agent, which opens a pull request with UI screenshots and a red-and-green code diff. Automated QA gates show example checks for 100% code coverage, 100% type coverage, benchmarks, zero lint issues, zero warnings, Lighthouse performance, accessibility, and SEO, followed by an ellipsis to indicate more checks. An independent reviewer agent sends findings back to the coding agent; after approval, the coding agent merges and the feature appears in a web app."}
 
-- Anthropic. [Claude Code best practices](https://code.claude.com/docs/en/best-practices).
-
-- Böckeler, B. [Harness engineering for coding agent users](https://martinfowler.com/articles/harness-engineering.html). martinfowler.com.
-
-- Lopopolo, R. [Harness engineering: leveraging Codex in an agent-first world](https://openai.com/index/harness-engineering/). OpenAI.
-
-- Beck, K. [Augmented coding: beyond the vibes](https://tidyfirst.substack.com/p/augmented-coding-beyond-the-vibes).
-
-- Anthropic. [Demystifying evals for AI agents](https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents).
-
-- OWASP. [Excessive agency](https://genai.owasp.org/llmrisk/llm062025-excessive-agency/) and [Prompt injection](https://genai.owasp.org/llmrisk/llm01-prompt-injection/).
-
-- Git. [git-worktree manual](https://git-scm.com/docs/git-worktree).
-
-- [AGENTS.md](https://agents.md/): a simple, open format for guiding coding agents.
-
+::: {.source}
+Example: [chatbot-template](https://github.com/IndrajeetPatil/chatbot-template/) · OpenAI, [sandbox security](https://developers.openai.com/api/docs/guides/agents-api/environments/security) and [prompt injections](https://openai.com/safety/prompt-injections/).
 :::
 
 ::: {.notes}
-These references provide the foundations and deeper explorations for the rules covered in this talk, including prompt and context engineering guides, harness design, evaluation methodologies, and security best practices from Anthropic, Google, OWASP, and practitioners like Simon Willison, Kent Beck, and Martin Fowler.
+This is what the rules can add up to. Clear repository guidance and simple local commands give agents a reliable starting point; reusable prompts and skills automate repeat work; checks produce evidence at each step. The public chatbot-template repository shows the flow in practice. Locally, `make qa` runs the project quality suite and `make hooks` runs its pre-commit checks. GitHub Actions runs checks for formatting, linting, types, backend and frontend tests, end-to-end browser tests, security, and other quality gates. The main-branch ruleset requires the `prek`, `test`, `backend`, `frontend`, `e2e`, and `qa` status checks. The inset highlights example gates from this strict harness and uses an ellipsis to show that the list continues; other projects can select checks that fit their needs. These are example thresholds, not proof that the implementation is correct; compare the results with the requirements and inspect the behaviour too.
+
+For frontend changes, the repository's agent instructions require the coding agent to attach screenshots to the pull request. The image shows a red-and-green code diff alongside those screenshots. Browser tests also compare visual snapshots, and CodSpeed reports performance regressions. The pull-request workflow asks for a current-head Codex review, sends findings back through a fix-and-review loop, and lets the coding agent squash-merge once Codex gives a thumbs-up and the required checks pass. Codex approval is part of the repository workflow; it is not one of the GitHub ruleset's required status checks.
+
+The team that owns the repository sets the risk boundary and the rules that enforce it. Small, reversible changes such as documentation or formatting updates may qualify for an automatic merge when the task is explicit and every required check passes. The coding and reviewer agents do not set that boundary. People own the policy, monitor its results, and review changes with wider impact, uncertainty, or exceptions; mission-critical systems can require human approval at key steps. Sandboxed work, restricted network access, and scoped credentials limit the impact of mistakes. Repository files and issue text can also contain malicious instructions, so treat them as untrusted input and keep control of consequential actions.
+:::
+
+## Speed up routine delivery work
+
+[People set direction and risk boundaries; agents accelerate routine work.]{.lede}
+
+![](media/sdlc-conclusion.webp){.illustration width="880" height="495" fig-alt="Five stages—Plan, Code, Review, Verify, and Release—connect from left to right. Agent robots assist with routine tasks at each stage; a person sets direction at Plan and applies judgement at Release. A continuous gold line with a checked shield under every stage represents a steady quality bar across the lifecycle."}
+
+::: {.notes}
+These practices can speed up routine work through Plan, Code, Review, Verify, and Release. Clear tasks, a well-prepared codebase, useful tools, automation, and attention to bottlenecks make that speed useful. Quality gates carry through the lifecycle, so faster work does not have to mean lower standards. People set direction, own the risk boundary, and apply judgement to high-stakes decisions and exceptions.
 :::
 
 # Thank You
