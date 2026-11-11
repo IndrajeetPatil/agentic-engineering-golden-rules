@@ -448,7 +448,7 @@ Listen generously, offer respectful and actionable feedback, and make room for t
 ::::
 
 ::: {.pull-quote}
-[“It’s more fun to be competent”](https://www.rubyevents.org/talks/opening-keynote-rails-world-2024){.pull-quote-text}
+[“It’s more fun to be competent”]{.pull-quote-text}
 
 [DHH]{.pull-quote-attribution}
 :::

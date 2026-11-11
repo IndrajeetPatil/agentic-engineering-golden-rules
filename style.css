@@ -351,9 +351,9 @@
 }
 
 .reveal .pull-quote {
-  max-width: 28em;
-  margin: 0.8em auto 0.2em;
-  padding-top: 0.45em;
+  max-width: 32em;
+  margin: 1.25em auto 0.2em;
+  padding-top: 0.65em;
   border-top: 1px solid var(--deck-gold);
   text-align: center;
 }
@@ -364,17 +364,14 @@
 
 .reveal .pull-quote-text {
   font-family: var(--deck-display);
-  font-size: 1.3em;
+  font-size: 1.8em;
   font-style: italic;
-  line-height: 1.2;
-  text-decoration: underline;
-  text-decoration-color: var(--deck-gold-deep);
-  text-underline-offset: 0.12em;
+  line-height: 1.15;
 }
 
 .reveal .pull-quote-attribution {
   display: block;
-  margin-top: 0.35em;
+  margin-top: 0.5em;
   color: var(--deck-muted);
   font-size: 0.55em;
   letter-spacing: 0.16em;
