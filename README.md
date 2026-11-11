@@ -7,7 +7,7 @@ coding agents to boost productivity without compromising quality.
 
 1. Prepare the codebase for agents
 2. DevEx = AgentEx
-3. Quality gates
+3. Deterministic quality gates
 4. Define done before delegating
 5. Bound the blast radius
 6. Session hygiene

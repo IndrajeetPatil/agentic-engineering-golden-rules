@@ -18,7 +18,7 @@ This presentation distils nine golden rules for agentic engineering: working wit
 - LLM, agent, harness, tool-calling, desktop interface, and model provider: Anthropic, OpenAI, and GitHub Copilot examples
 - Codebase preparation and improving patterns before introducing agents
 - Developer experience as agent experience
-- Quality gates and fast feedback loops
+- Deterministic quality gates and fast feedback loops
 - Observable acceptance criteria, unchanged behaviour, and task-appropriate evidence
 - Enforced permissions, protected credentials, approval boundaries, and blast-radius limits
 - Session hygiene and context management

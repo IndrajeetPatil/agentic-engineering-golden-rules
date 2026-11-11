@@ -29,7 +29,7 @@ execute:
   echo: true
   eval: false
 keywords: ["agentic-engineering", "coding-agents", "software-engineering", "ai-assisted-development"]
-description-meta: "Golden rules for agentic engineering: how to use coding agents to boost productivity without compromising quality. Nine rules covering codebase readiness, developer experience, quality gates, acceptance criteria, permissions, context, tools, automation, and team culture."
+description-meta: "Golden rules for agentic engineering: how to use coding agents to boost productivity without compromising quality. Nine rules covering codebase readiness, developer experience, deterministic quality gates, acceptance criteria, permissions, context, tools, automation, and team culture."
 license: "CC0 1.0 Universal"
 pagetitle: "Golden Rules for Agentic Engineering"
 author-meta: "Indrajeet Patil"
@@ -174,7 +174,7 @@ Across these examples, the labels change while the responsibilities remain compa
 ::: {.card}
 [03]{.rule-number}
 
-**Quality gates**
+**Deterministic quality gates**
 :::
 
 ::: {.card}
@@ -267,17 +267,17 @@ Capture that procedure in a maintained setup command. Then AGENTS.md can point t
 The work still happens; the command owns the sequence, checks prerequisites, and reports useful errors. Keep the implementation reproducible and the instruction current so neither humans nor agents have to guess the next step.
 :::
 
-## [03]{.rule-tag} Quality gates {.rule-slide}
+## [03]{.rule-tag} Deterministic quality gates {.rule-slide}
 
 [Fast feedback beats orchestration.]{.lede}
 
 ![](media/deterministic-tooling.webp){.illustration width="880" height="495" fig-alt="Two-panel illustration contrasting a confused robot amid inconsistent style, flaky tests, broken assumptions, hallucinated APIs, and failed builds with a calm robot in a safety harness labelled Formatter, Linter, Type checker, Pre-commit, CI, Sanitisers, and Valgrind. Output cards show consistent style and configured gates passing for tests, types, and builds. Human review is still needed to assess requirements, behaviour, and user experience. A change flows through checks to human review; passing gates is evidence for review."}
 
 ::: {.notes}
-Quality gates give agents fast, deterministic feedback and keep their non-determinism under control.
+Deterministic quality gates give agents fast feedback and keep their non-determinism under control.
 :::
 
-## Quality gates: in practice {.smaller}
+## Deterministic quality gates: in practice {.smaller}
 
 ::: {.card .card-stone .diagram-card}
 
