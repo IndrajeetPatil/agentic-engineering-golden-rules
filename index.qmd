@@ -397,54 +397,18 @@ The 2025 DORA research describes AI as an amplifier of existing organizational s
 
 ## Identify and remove bottlenecks: in practice {.rule-slide}
 
-[Match the intervention to the stage where work is waiting.]{.lede}
+![](media/bottleneck-examples.webp){.illustration width="880" height="495" fig-alt="Three bottleneck examples: slow CI waits on a queue, then uses Rust-based tools Ruff, uv, and ty; a large pull request enters an LLM author and reviewer loop; manual behaviour checks become automated E2E tests."}
 
-:::: {.card-grid .card-grid-3}
-
-::: {.card .card-stone .card-tall}
-[Constraint]{.eyebrow}
-
-**Quality enforcement**
-
-Checks are inconsistent or depend on scarce reviewer time.
-
-[Add deterministic quality gates]{.card-title}
-
-Run formatting, linting, type checks, and fast tests automatically on each change.
+::: {.source}
+Rust-based tools: [Ruff](https://docs.astral.sh/ruff/), [uv](https://docs.astral.sh/uv/), and [ty](https://docs.astral.sh/ty/).
 :::
-
-::: {.card .card-stone .card-tall}
-[Constraint]{.eyebrow}
-
-**Large PR review**
-
-Changes wait while a reviewer works through a large diff.
-
-[Add an LLM review loop]{.card-title}
-
-An independent reviewer agent reports findings; the author agent fixes them and requests another review. Keep human review for decisions and what ships.
-:::
-
-::: {.card .card-stone .card-tall}
-[Constraint]{.eyebrow}
-
-**Behaviour verification**
-
-People must repeatedly check whether a user path still works.
-
-[Add task-specific E2E tests]{.card-title}
-
-Automate critical end-to-end paths and run them with each change; retain exploratory checks for behaviour the tests do not cover.
-:::
-
-::::
 
 ::: {.notes}
-Start by locating the queue or repeated wait, then choose a response that addresses that specific constraint.
+Start by finding where work is waiting. In the first example, CI is slow, so the team considers faster Rust-based tools: Ruff for linting and formatting, uv for Python environments and packages, and ty for type checking. Measure the CI workflow before and after to see whether this addresses the delay.
 
-If enforcing quality is the delay, run deterministic gates on every change so routine issues are found quickly and consistently. If large changes are waiting for review, a second LLM-based reviewer can inspect the diff, return findings to the author agent, and check the revision in a loop. This can increase review capacity, but it does not make the reviewer infallible or replace human judgement. If behaviour is difficult or slow to check, add end-to-end tests for important user paths and run them as part of the normal change flow; tests should complement, not claim to exhaust, exploratory verification.
+The second example shows a large pull request entering a review loop: an LLM reviewer returns findings to the author, which can revise and request another review. Human reviewers still make the decisions about quality and what ships.
 
-These are options, not universal prescriptions. Observe where work actually waits, improve that stage, and measure the full delivery flow again. The bottleneck may move to the next stage.
+The third example replaces repeated manual checks of a user journey with an end-to-end test. These tests can make important behaviour quicker to check, while exploratory testing remains useful for cases the tests do not cover. These are possible responses, not prescriptions; measure the whole delivery flow again because the bottleneck may move.
 :::
 
 ## [09]{.rule-tag} Be curious. Be humble. Be kind. {.rule-slide}

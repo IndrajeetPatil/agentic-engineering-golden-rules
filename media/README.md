@@ -48,6 +48,25 @@ Use sparse readable labels, generous spacing, and no overall slide title,
 footer caption, gradients, rounded cards, bright colours, or watermark.
 ```
 
+## bottleneck-examples.webp
+
+Three practical responses to queues in software delivery: replace a slow CI
+wait with Rust-based Python tools; use an LLM author/reviewer loop for large
+pull requests; and replace repeated manual behaviour checks with E2E tests.
+The labels name possible interventions, not guaranteed speedups.
+
+```text
+Create a three-panel 16:9 landscape presentation illustration in the deck's
+editorial style: flat ivory canvas, warm-stone panels, near-black pen-and-ink
+linework, restrained gold hairlines and arrows, serif headings, and legible
+labels. Panel one: a code-change queue and a clock labelled "Slow CI", followed
+by a friendly robot using Rust-based tools Ruff, uv, and ty. Panel two: a large
+pull request diff moving through a looping LLM Author and Reviewer workflow.
+Panel three: a person manually checking a web journey, then an E2E test
+automating the same journey to a passing result. Keep the panels balanced,
+text sparse and accurate, with generous whitespace. No overall title or footer.
+```
+
 ## Agentic stack diagrams
 
 `agentic-stack-anthropic.webp`, `agentic-stack-openai.webp`, and
