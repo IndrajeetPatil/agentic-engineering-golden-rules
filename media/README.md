@@ -30,22 +30,28 @@ change. Keep text accurate, legible, and sparse. No title or slogan.
 
 ## sdlc-bottlenecks.webp
 
-The SDLC pipeline illustrates how accelerating implementation can expose
-review or verification as the next constraint. It is used on rule 08, “Identify
+The SDLC pipeline illustrates coding agents accelerating implementation while
+human queues build at both Review and Verify. It is used on rule 08, “Identify
 and remove bottlenecks”. The graphic frames Amdahl’s law as an analogy for
-end-to-end delivery and pairs with concrete examples on the practice slide.
+end-to-end delivery; the following practice slide shows possible interventions.
 
 ```text
-Create a new 16:9 landscape presentation illustration in the deck's editorial
+Create a 16:9 landscape presentation illustration in the deck's editorial
 style: flat ivory canvas, square warm-stone panels, near-black pen-and-ink
-linework, restrained gold hairline borders and arrows, Bodoni-like serif
-headings, legible Montserrat-like labels, and a small friendly robot. Show a
-left-to-right software delivery pipeline: Plan, Code, Review, Verify, Release.
-Coding agents speed up Code, creating a visible queue at Review. A compact
-Author/Reviewer agent loop responds to findings and resubmits a change. Show a
-smaller queue at Verify to suggest that the limiting stage can move downstream.
-Use sparse readable labels, generous spacing, and no overall slide title,
-footer caption, gradients, rounded cards, bright colours, or watermark.
+linework, restrained gold borders and arrows, serif headings, legible labels.
+Add three spacious text panels across the top: "Software delivery is an
+end-to-end system.", "Speeding up one stage cannot remove waiting elsewhere.",
+and "The limiting stage can move." Under them show a left-to-right pipeline
+labelled Plan, Code, Review, Verify, Release. Keep a human at Plan and coding
+agent robots quickly producing code at Code. Show a growing pull-request queue
+at Review and one clearly human reviewer, visibly flustered and overwhelmed by
+the backlog. Show a second growing queue at Verify and a second clearly human
+person, visibly flustered while manually checking browser behaviour and tests.
+The two queues coexist to show that more coding capacity can leave Review and
+Verify overloaded. Finish with a Release rocket. This is only the problem state;
+do not show an author/reviewer agent loop, automation, or any remedy. Keep text
+accurate, balanced, and readable, with generous spacing. No footer, gradients,
+rounded cards, bright colours, logos, or watermark.
 ```
 
 ## bottleneck-examples.webp

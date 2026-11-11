@@ -381,7 +381,7 @@ Automate coordination such as gathering context, running checks, and formatting 
 
 [Improve the stage that limits end-to-end delivery.]{.lede}
 
-![](media/sdlc-bottlenecks.webp){.illustration width="880" height="495" fig-alt="A left-to-right software delivery pipeline shows Plan, Code, Review, Verify, and Release. Coding agents speed up Code, but work piles up at Review. In a small loop, an Author agent responds to findings from a Reviewer agent and submits the change again; a smaller queue at Verify shows how the limiting stage can move downstream."}
+![](media/sdlc-bottlenecks.webp){.illustration width="880" height="495" fig-alt="A left-to-right software delivery pipeline shows Plan, Code, Review, Verify, and Release. Coding agents speed up Code and create a large pull-request queue at Review, where a flustered human reviewer is buried in changes. Another queue reaches Verify, where a second flustered human struggles to check behaviour manually."}
 
 ::: {.source}
 Amdahl, [“Validity of the single processor approach to achieving large scale computing capabilities”](https://doi.org/10.1145/1465482.1465560) (1967) · DORA, [State of AI-assisted Software Development](https://dora.dev/research/2025/dora-report/) (2025).
@@ -390,7 +390,7 @@ Amdahl, [“Validity of the single processor approach to achieving large scale c
 ::: {.notes}
 Think about delivery as one connected system: planning, implementation, review, verification, and release. Amdahl’s law describes how the part of a computation that remains unchanged limits the speedup from improving another part. Applied as an analogy to the software lifecycle, faster code production cannot remove delays in review, testing, or release.
 
-The illustration shows coding agents producing changes faster than review can absorb them. Relieve that constraint and verification may become the next queue. The useful question is where work is waiting now, and what targeted change will reduce that wait without weakening quality.
+The illustration shows coding agents producing changes faster than people can review them, with another human queue at behaviour verification. These bottlenecks can coexist, and relieving one may expose the other. The next slide shows targeted ways to reduce those waits without weakening quality.
 
 The 2025 DORA research describes AI as an amplifier of existing organizational strengths and weaknesses. That supports improving the surrounding delivery system alongside agent capability. After relieving one bottleneck, measure again: constraints move, and the next improvement should follow the new evidence.
 :::
