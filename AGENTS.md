@@ -8,6 +8,7 @@ GitHub Pages.
 
 ```text
 index.qmd            # All slide content (the only file you usually need to edit)
+DESIGN.md            # Visual design tokens, typography, and styling rules
 _quarto.yml          # Quarto project config (output dir, resources list)
 _quarto-a11y.yml     # Opt-in profile enabling the axe accessibility checker (`just axe`)
 accessibility.html   # Compatibility fixes supplementing the a11y extension
@@ -42,23 +43,16 @@ just axe       # Preview with the axe accessibility checker enabled
   (`:::`), columns (`.columns` / `.column`), raw HTML blocks (`{=html}`), and
   the `{.smaller}` class for dense slides. Follow the layout patterns of
   neighbouring slides.
-- **Rossini-inspired design.** The visual design follows
-  [Rossini Caviar](https://rossinicaviar.com/): an ivory page (`#fdfaf3`),
-  stone panels (`#e9e5db`), near-black ink (`#141414`), and gold (`#dac284`)
-  used only for hairlines and borders, never for text on light backgrounds
-  (use `--deck-gold-deep` instead). Headings use Bodoni Moda at a fixed 28pt
-  optical size; body text and tracked uppercase labels use Montserrat. Boxed
-  text panels (cards, table cards, and code blocks) have softly rounded
-  corners set by `--deck-radius`; use that token rather than ad hoc radii, and
-  keep hairline rules, tabs, and illustration frames square. Colours live as custom properties under `:root` in `style.css`;
-  do not hard-code new colours in `index.qmd`. Keep the theme `simple` and the
-  format `revealjs`.
-- **Card classes.** Lay out content with the classes in `style.css` rather than
-  inline styles: `.card` plus one of `.card-stone`, `.card-ink`, or
-  `.card-outline`; `.card-grid` with `.card-grid-2`, `.card-grid-3`, or
-  `.card-grid-4`; `.eyebrow` for small uppercase labels; `.lede` for the
-  sentence under a heading; and `.source` for citations. New widgets follow
-  the naming patterns already in `style.css`.
+- **Design specification.** The visual design follows [DESIGN.md](DESIGN.md).
+  Always respect this document when creating or modifying slides, components,
+  styling, colours, and typography. Lay out content with the classes in
+  `style.css` rather than inline styles: `.card` plus one of `.card-stone`,
+  `.card-ink`, or `.card-outline`; `.card-grid` with `.card-grid-2`,
+  `.card-grid-3`, or `.card-grid-4`; `.eyebrow` for small uppercase labels;
+  `.lede` for the sentence under a heading; and `.source` for citations.
+  New widgets follow the naming patterns already in `style.css`. Colours live
+  as custom properties under `:root` in `style.css`; do not hard-code new
+  colours in `index.qmd`. Keep the theme `simple` and the format `revealjs`.
 - **Spelling and punctuation.** Use British spelling in prose (colour, licence,
   catalogue, artefact) and the Oxford comma in lists of three or more. Leave
   code, identifiers, file names, URLs, quotations, and proper names (`license`
