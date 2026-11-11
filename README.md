@@ -16,6 +16,11 @@ coding agents to boost productivity without compromising quality.
 9. Meta-automation
 10. Be curious. Be humble. Be kind.
 
+Before the rules, a three-tab diagram maps the LLM, agent, tool-calling loop,
+harness, desktop interface, and model provider across Anthropic, OpenAI, and
+GitHub Copilot. The Copilot example uses Claude to distinguish the model
+developer from the service providing access.
+
 The slides can be seen here:<br>
 <https://www.indrapatil.com/agentic-engineering-golden-rules/>
 
@@ -76,9 +81,10 @@ underlines, reduced motion, and screen-reader announcements. Run `just install`
 again after `just clean`, which removes installed extensions.
 
 The `accessibility.html` helper still handles scrollable code, slide-menu focus,
-and vertical-slide semantics. It also carries tabset keyboard handling, which is
-shared verbatim across decks and stays inert here because this deck has no
-tabsets. The extension's slide-menu patch and accessibility settings panel are disabled:
+and vertical-slide semantics. It also handles keyboard navigation and focus for
+the stack diagram’s three tabs; use Left and Right arrows to switch tabs without
+changing slides. The extension's slide-menu patch and accessibility settings
+panel are disabled:
 version 0.2.3 introduces ARIA and contrast failures in those components.
 
 Use `just axe` to preview with the accessibility report. Check slides, fragments,

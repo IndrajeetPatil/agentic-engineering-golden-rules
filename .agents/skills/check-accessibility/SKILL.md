@@ -34,6 +34,6 @@ description: >
 - Version 0.2.3's slide-menu patch and settings menu introduce axe failures on
   this deck, so both are disabled in `index.qmd`.
 - Keep `accessibility.html` for code scrolling, menu focus, and vertical-slide
-  semantics. This deck has no tabsets, but `accessibility.html` still ships
-  the shared tabset keyboard handling: the file is copied verbatim across decks
+  semantics. The stack diagram uses tabsets; `accessibility.html` ships
+  their shared keyboard handling: the file is copied verbatim across decks
   and kept in sync by hand, so never trim it locally.

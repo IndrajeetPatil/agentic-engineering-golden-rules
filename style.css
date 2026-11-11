@@ -216,6 +216,55 @@
   margin: 0.2em auto 0;
 }
 
+/* ---------- Agentic stack tabset ---------- */
+
+.reveal .stack-tabs {
+  text-align: center;
+}
+
+.reveal .stack-tabs .panel-tabset-tabby {
+  display: flex;
+  justify-content: center;
+  gap: 0.4em;
+  margin: 0;
+  border-bottom: 1px solid var(--deck-gold);
+  font-size: 0.5em;
+}
+
+.reveal .stack-tabs .panel-tabset-tabby a {
+  padding: 0.5em 1.1em;
+  border: 1px solid transparent;
+  border-radius: 0;
+  color: var(--deck-ink);
+  text-decoration: none;
+}
+
+.reveal .stack-tabs .panel-tabset-tabby a[aria-selected="true"] {
+  background: var(--deck-stone);
+  border-color: var(--deck-gold);
+  border-bottom-color: var(--deck-ink);
+  font-weight: 600;
+}
+
+.reveal .stack-tabs .panel-tabset-tabby a:focus-visible {
+  outline: 2px solid var(--deck-ink);
+  outline-offset: 2px;
+}
+
+.reveal .stack-tabs .illustration {
+  width: 880px;
+  max-height: 440px;
+  object-fit: contain;
+}
+
+.reveal .stack-tabs p {
+  margin: 0;
+}
+
+.reveal .stack-tabs .source {
+  margin-top: 0.4em;
+}
+
 /* ---------- Cards ---------- */
 
 .reveal .card {
