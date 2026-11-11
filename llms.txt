@@ -23,7 +23,7 @@ This presentation distils eight golden rules for agentic engineering: working wi
 - Maintain session hygiene and manage context
 - Tool affordances that coding agents offer
 - Automate repeated agent work with prompts, skills, slash commands, and workflows
-- Team culture and responsibility when using AI
+- Team culture and the whiteboard defense for customer-facing work
 
 ## Machine-readable companion
 

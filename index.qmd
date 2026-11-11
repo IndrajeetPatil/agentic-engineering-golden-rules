@@ -446,13 +446,19 @@ Review agent-generated work as carefully as human work, and review humans as kin
 ::::
 
 ::: {.card .card-ink .card-wide}
-**AI does not remove responsibility.** You still own the design, the code, the tests, the security implications, and the communication with your team.
+“[But if you're shipping customer-facing work, you can't be shipping things you don't understand at a high level.](https://x.com/mitchellh/status/2100249348345057389)”
+
+— Mitchell Hashimoto
+:::
+
+::: {.source}
+Quote: Mitchell Hashimoto, [“The whiteboard defense” on X](https://x.com/mitchellh/status/2100249348345057389).
 :::
 
 ::: {.notes}
 Curiosity means trying useful workflows while continuing to understand the underlying system. Humility means checking plausible-looking output and being willing to revise our own assumptions. Kindness means protecting colleagues from unreviewed changes and giving constructive feedback.
 
-Automation does not remove accountability. The engineer accepting a change still needs to understand the evidence and take responsibility for what reaches production.
+Hashimoto calls this the whiteboard defense: understand customer-facing systems well enough to explain how they work and defend their design decisions.
 :::
 
 # Making it stick
@@ -524,6 +530,8 @@ Share useful discoveries, address real sources of friction, and divide work into
 - Anthropic. [Demystifying evals for AI agents](https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents).
 
 - Git. [git-worktree manual](https://git-scm.com/docs/git-worktree).
+
+- Hashimoto, M. [“The whiteboard defense” on X](https://x.com/mitchellh/status/2100249348345057389).
 
 - [AGENTS.md](https://agents.md/): a simple, open format for guiding coding agents.
 
