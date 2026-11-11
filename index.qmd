@@ -29,7 +29,7 @@ execute:
   echo: true
   eval: false
 keywords: ["agentic-engineering", "coding-agents", "software-engineering", "ai-assisted-development"]
-description-meta: "Golden rules for agentic engineering: how to use coding agents to boost productivity without compromising quality. Nine rules covering codebase readiness, developer experience, deterministic quality gates, acceptance criteria, context, tools, automation, delivery bottlenecks, and team culture."
+description-meta: "Golden rules for agentic engineering: how to use coding agents to boost productivity without compromising quality. Ten rules covering codebase readiness, developer experience, deterministic quality gates, acceptance criteria, context, tools, model change, automation, delivery bottlenecks, and team culture."
 license: "CC0 1.0 Universal"
 pagetitle: "Golden Rules for Agentic Engineering"
 author-meta: "Indrajeet Patil"
@@ -62,11 +62,11 @@ jupyter: python3
 
 ::: {.hero-source}
 Source code for these slides can be found [on GitHub](https://github.com/IndrajeetPatil/agentic-engineering-golden-rules/).
-All illustrations in this presentation are AI-generated.
+Illustrations combine AI-generated artwork with a hand-drawn maintenance diagram.
 :::
 
 ::: {.notes}
-This is a practical talk about using coding agents to improve software engineering while protecting quality. The illustrations are AI-generated, reflecting the hands-on subject of the talk.
+This is a practical talk about using coding agents to improve software engineering while protecting quality. The illustrations combine AI-generated artwork with a hand-drawn maintenance diagram.
 
 Think about one part of your daily work where you lose time: finding context, repeating an edit, coordinating changes, or waiting for feedback. Keep that example in mind as we work through the rules.
 :::
@@ -194,17 +194,23 @@ Across these examples, the labels change while the responsibilities remain compa
 ::: {.card}
 [07]{.rule-number}
 
-**Automate repeated agent work**
+**Keep pace with changing models**
 :::
 
 ::: {.card}
 [08]{.rule-number}
 
-**Identify and remove bottlenecks**
+**Automate repeated agent work**
 :::
 
 ::: {.card}
 [09]{.rule-number}
+
+**Identify and remove bottlenecks**
+:::
+
+::: {.card}
+[10]{.rule-number}
 
 **Be curious. Be humble. Be kind.**
 :::
@@ -212,7 +218,7 @@ Across these examples, the labels change while the responsibilities remain compa
 ::::
 
 ::: {.notes}
-The nine rules begin with preparing a codebase for agents and improving the shared developer and agent experience. They then set quality gates, define outcomes, maintain useful context, use tools well, automate repeated work, remove delivery bottlenecks, and build a curious, humble, and kind team culture.
+The ten rules begin with preparing a codebase for agents and improving the shared developer and agent experience. They then set quality gates, define outcomes, maintain useful context, use tools well, keep guidance current as models change, automate repeated work, remove delivery bottlenecks, and build a curious, humble, and kind team culture.
 :::
 
 ## [01]{.rule-tag} Prepare the codebase for agents {.rule-slide}
@@ -353,7 +359,19 @@ Claude Code offers voice input for dictating prompts, with the authentication an
 Choose the tool interface that fits the task. A direct API or command-line tool is useful when it exposes the operation clearly; computer use can help with a workflow available only through a graphical interface. When results disappoint, examine the context, tools, and feedback available to the agent as well as the model itself.
 :::
 
-## [07]{.rule-tag} Automate repeated agent work {.rule-slide}
+## [07]{.rule-tag} Keep pace with changing models {.rule-slide}
+
+[When models change, revisit the prompts, guidance, and checks they depend on.]{.lede}
+
+![](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4ODAgNDk1Ij4KPHJlY3Qgd2lkdGg9Ijg4MCIgaGVpZ2h0PSI0OTUiIGZpbGw9IiNmZGZhZjMiLz4KPHJlY3QgeD0iMSIgeT0iMSIgd2lkdGg9Ijg3OCIgaGVpZ2h0PSI0OTMiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2RhYzI4NCIgc3Ryb2tlLXdpZHRoPSIyIi8+Cjx0ZXh0IHg9IjQyIiB5PSI1MCIgZmlsbD0iIzdkNjAyMCIgZm9udC1mYW1pbHk9Ik1vbnRzZXJyYXQsQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCIgZm9udC13ZWlnaHQ9IjYwMCIgbGV0dGVyLXNwYWNpbmc9IjMiPkEgQ0hBTkdJTkcgTU9ERUwgSVMgQSBNQUlOVEVOQU5DRSBTSUdOQUw8L3RleHQ+CjxnIGZvbnQtZmFtaWx5PSJNb250c2VycmF0LEFyaWFsLHNhbnMtc2VyaWYiIGZpbGw9IiMxNDE0MTQiPgogIDxyZWN0IHg9IjQyIiB5PSI5NSIgd2lkdGg9IjIwNiIgaGVpZ2h0PSIxNTUiIHJ4PSI4IiBmaWxsPSIjZTllNWRiIi8+CiAgPGNpcmNsZSBjeD0iMTQ1IiBjeT0iMTQ1IiByPSIzMCIgZmlsbD0iI2ZkZmFmMyIgc3Ryb2tlPSIjN2Q2MDIwIiBzdHJva2Utd2lkdGg9IjIiLz4KICA8cGF0aCBkPSJNMTQ1IDEyM3YxMG0wIDI0djEwbS0yMi0yMmgxMG0yNCAwaDEwbS0zOC0xNSA3IDdtMTggMTggNyA3bTAtMzItNyA3bS0xOCAxOC03IDciIHN0cm9rZT0iIzdkNjAyMCIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KICA8dGV4dCB4PSIxNDUiIHk9IjIwNSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSIxNyIgZm9udC13ZWlnaHQ9IjYwMCI+TW9kZWwgYmVoYXZpb3VyIHNoaWZ0czwvdGV4dD4KICA8cGF0aCBkPSJNMjYwIDE3Mmg0OG0tMTAtMTAgMTAgMTAtMTAgMTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzdkNjAyMCIgc3Ryb2tlLXdpZHRoPSIzIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KICA8cmVjdCB4PSIzMjAiIHk9Ijg4IiB3aWR0aD0iMzA4IiBoZWlnaHQ9IjE5NyIgcng9IjgiIGZpbGw9IiNmZGZhZjMiIHN0cm9rZT0iI2RhYzI4NCIgc3Ryb2tlLXdpZHRoPSIyIi8+CiAgPHRleHQgeD0iNDc0IiB5PSIxMTgiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iMTQiIGZvbnQtd2VpZ2h0PSI2MDAiIGxldHRlci1zcGFjaW5nPSIyIiBmaWxsPSIjN2Q2MDIwIj5SRVZJRVcgVEhFIFdIT0xFIFNZU1RFTTwvdGV4dD4KICA8cmVjdCB4PSIzNDMiIHk9IjEzNyIgd2lkdGg9IjEyMiIgaGVpZ2h0PSI0OSIgcng9IjUiIGZpbGw9IiNlOWU1ZGIiLz48dGV4dCB4PSI0MDQiIHk9IjE2NyIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSIxNiI+U291cmNlIGNvZGU8L3RleHQ+CiAgPHJlY3QgeD0iNDgyIiB5PSIxMzciIHdpZHRoPSIxMjIiIGhlaWdodD0iNDkiIHJ4PSI1IiBmaWxsPSIjZTllNWRiIi8+PHRleHQgeD0iNTQzIiB5PSIxNjciIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iMTYiPlRlc3RzPC90ZXh0PgogIDxyZWN0IHg9IjM0MyIgeT0iMTk4IiB3aWR0aD0iMTIyIiBoZWlnaHQ9IjQ5IiByeD0iNSIgZmlsbD0iI2U5ZTVkYiIvPjx0ZXh0IHg9IjQwNCIgeT0iMjI4IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjE2Ij5Eb2N1bWVudGF0aW9uPC90ZXh0PgogIDxyZWN0IHg9IjQ4MiIgeT0iMTk4IiB3aWR0aD0iMTIyIiBoZWlnaHQ9IjQ5IiByeD0iNSIgZmlsbD0iI2U5ZTVkYiIvPjx0ZXh0IHg9IjU0MyIgeT0iMjE5IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjE1Ij5Qcm9tcHRzICs8L3RleHQ+PHRleHQgeD0iNTQzIiB5PSIyMzgiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iMTUiPkFHRU5UUy5tZDwvdGV4dD4KICA8cGF0aCBkPSJNNjQwIDE3Mmg0OG0tMTAtMTAgMTAgMTAtMTAgMTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzdkNjAyMCIgc3Ryb2tlLXdpZHRoPSIzIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KICA8cmVjdCB4PSI3MDAiIHk9Ijk1IiB3aWR0aD0iMTM4IiBoZWlnaHQ9IjE1NSIgcng9IjgiIGZpbGw9IiMxNDE0MTQiLz4KICA8Y2lyY2xlIGN4PSI3NjkiIGN5PSIxNDMiIHI9IjI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNkYWMyODQiIHN0cm9rZS13aWR0aD0iMiIvPgogIDxwYXRoIGQ9Ik03ODYgMTYxbDE0IDE0bS0zMS0zMmExMCAxMCAwIDEgMCAyMCAwIDEwIDEwIDAgMSAwLTIwIDAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2RhYzI4NCIgc3Ryb2tlLXdpZHRoPSIzIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KICA8dGV4dCB4PSI3NjkiIHk9IjIwNSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSIxNiIgZmlsbD0iI2ZkZmFmMyI+U3BvdCB3aGF0IGlzPC90ZXh0Pjx0ZXh0IHg9Ijc2OSIgeT0iMjI2IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjE2IiBmaWxsPSIjZmRmYWYzIj5ub3cgb3V0IG9mIGRhdGU8L3RleHQ+CjwvZz4KPHBhdGggZD0iTTc2OSAyNjV2NDVIMTA3di0yM20wIDAtMTAgMTBtMTAtMTAgMTAgMTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzdkNjAyMCIgc3Ryb2tlLXdpZHRoPSIyLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8ZyBmb250LWZhbWlseT0iTW9udHNlcnJhdCxBcmlhbCxzYW5zLXNlcmlmIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj4KIDxjaXJjbGUgY3g9IjEwNyIgY3k9IjM1NSIgcj0iMzAiIGZpbGw9IiNlOWU1ZGIiIHN0cm9rZT0iI2RhYzI4NCIgc3Ryb2tlLXdpZHRoPSIyIi8+PHRleHQgeD0iMTA3IiB5PSIzNjEiIGZpbGw9IiMxNDE0MTQiIGZvbnQtc2l6ZT0iMTQiIGZvbnQtd2VpZ2h0PSI2MDAiPk5PVElDRTwvdGV4dD4KIDxwYXRoIGQ9Ik0xNDUgMzU1aDgzbS05LTggOSA4LTkgOCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjN2Q2MDIwIiBzdHJva2Utd2lkdGg9IjIuNSIvPgogPGNpcmNsZSBjeD0iMjY3IiBjeT0iMzU1IiByPSIzMCIgZmlsbD0iI2U5ZTVkYiIgc3Ryb2tlPSIjZGFjMjg0IiBzdHJva2Utd2lkdGg9IjIiLz48dGV4dCB4PSIyNjciIHk9IjM2MSIgZmlsbD0iIzE0MTQxNCIgZm9udC1zaXplPSIxNCIgZm9udC13ZWlnaHQ9IjYwMCI+UkVWSUVXPC90ZXh0PgogPHBhdGggZD0iTTMwNSAzNTVoODNtLTktOCA5IDgtOSA4IiBmaWxsPSJub25lIiBzdHJva2U9IiM3ZDYwMjAiIHN0cm9rZS13aWR0aD0iMi41Ii8+CiA8Y2lyY2xlIGN4PSI0MjciIGN5PSIzNTUiIHI9IjMwIiBmaWxsPSIjZTllNWRiIiBzdHJva2U9IiNkYWMyODQiIHN0cm9rZS13aWR0aD0iMiIvPjx0ZXh0IHg9IjQyNyIgeT0iMzYxIiBmaWxsPSIjMTQxNDE0IiBmb250LXNpemU9IjE0IiBmb250LXdlaWdodD0iNjAwIj5VUERBVEU8L3RleHQ+CiA8cGF0aCBkPSJNNDY1IDM1NWg4M20tOS04IDkgOC05IDgiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzdkNjAyMCIgc3Ryb2tlLXdpZHRoPSIyLjUiLz4KIDxjaXJjbGUgY3g9IjU4NyIgY3k9IjM1NSIgcj0iMzAiIGZpbGw9IiNlOWU1ZGIiIHN0cm9rZT0iI2RhYzI4NCIgc3Ryb2tlLXdpZHRoPSIyIi8+PHRleHQgeD0iNTg3IiB5PSIzNjEiIGZpbGw9IiMxNDE0MTQiIGZvbnQtc2l6ZT0iMTQiIGZvbnQtd2VpZ2h0PSI2MDAiPlZFUklGWTwvdGV4dD4KIDxwYXRoIGQ9Ik02MjUgMzU1aDgzbS05LTggOSA4LTkgOCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjN2Q2MDIwIiBzdHJva2Utd2lkdGg9IjIuNSIvPgogPGNpcmNsZSBjeD0iNzQ3IiBjeT0iMzU1IiByPSIzMCIgZmlsbD0iIzE0MTQxNCIgc3Ryb2tlPSIjZGFjMjg0IiBzdHJva2Utd2lkdGg9IjIiLz48dGV4dCB4PSI3NDciIHk9IjM2MSIgZmlsbD0iI2ZkZmFmMyIgZm9udC1zaXplPSIxMyIgZm9udC13ZWlnaHQ9IjYwMCI+Q09OVElOVUU8L3RleHQ+CiA8dGV4dCB4PSI0NDAiIHk9IjQzMyIgZmlsbD0iIzVjNTc0ZCIgZm9udC1zaXplPSIxNiIgZm9udC1zdHlsZT0iaXRhbGljIj5LZWVwIGR1cmFibGUgZ3VpZGFuY2UgY2xvc2UgdG8gdGhlIGNvZGUgaXQgaGVscHMgc2hhcGUuPC90ZXh0Pgo8L2c+CjxwYXRoIGQ9Ik03NDcgMzk0djI5SDEwN3YtMzgiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2RhYzI4NCIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1kYXNoYXJyYXk9IjQgNiIvPgo8L3N2Zz4=){.illustration width="880" height="495" fig-alt="A continuous maintenance loop links changing models to the software system around them. Source code, tests, documentation, prompts, and AGENTS.md guidance move through review, targeted updates, and verification before returning to everyday agent work. A person checks whether changed model behaviour makes any part of the system stale."}
+
+::: {.notes}
+Models change, and the behaviour an agent relied on can shift with them. Keep the whole working system current: source code, tests, and documentation need the same ongoing care as prompts and repository guidance such as `AGENTS.md`.
+
+When a model or its behaviour changes, look for guidance that is now misleading, missing checks, and workflows that need a revised prompt. Update only what the change calls for, then run the relevant tests and inspect the result. Record durable advice in the repository so future sessions can find it. Treat model updates as a reason to review the system, not as a reason to rewrite everything.
+:::
+
+## [08]{.rule-tag} Automate repeated agent work {.rule-slide}
 
 [Capture recurring workflows once, then run them consistently.]{.lede}
 
@@ -379,7 +397,7 @@ The dependency-update prompt, review shortcut, and vulnerability-triage workflow
 Automate coordination such as gathering context, running checks, and formatting reports. People define the policy for any automated merge: only changes that meet explicit, low-risk criteria qualify. Human review remains the route for ambiguous, risky, or exceptional changes, and people remain accountable for the policy and its results.
 :::
 
-## [08]{.rule-tag} Identify and remove bottlenecks {.rule-slide}
+## [09]{.rule-tag} Identify and remove bottlenecks {.rule-slide}
 
 [Speeding up one stage helps only as much as the rest allows.]{.lede}
 
@@ -413,7 +431,7 @@ The second example starts by splitting or stacking a large pull request into sma
 The third example replaces repeated manual checks of a user journey with an end-to-end test. These tests can make important behaviour quicker to check, while exploratory testing remains useful for cases the tests do not cover. These are possible responses, not prescriptions; measure the whole delivery flow again because the bottleneck may move.
 :::
 
-## [09]{.rule-tag} Be curious. Be humble. Be kind. {.rule-slide}
+## [10]{.rule-tag} Be curious. Be humble. Be kind. {.rule-slide}
 
 [AI is not an excuse to become incompetent or disagreeable.]{.lede}
 
