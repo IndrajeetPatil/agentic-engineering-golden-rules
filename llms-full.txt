@@ -39,7 +39,7 @@ The closing example uses the public [chatbot-template](https://github.com/Indraj
 - Anthropic, Effective context engineering for AI agents.
 - Anthropic, Claude Code best practices.
 - Anthropic, Demystifying evals for AI agents.
-- Amdahl, “Validity of the single processor approach to achieving large scale computing capabilities” (1967).
+- Amdahl’s law (1967).
 - DORA, State of AI-assisted Software Development (2025).
 - Git, git-worktree manual.
 - David Heinemeier Hansson, Opening Keynote, Rails World 2024.

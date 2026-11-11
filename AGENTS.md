@@ -70,11 +70,15 @@ just axe       # Preview with the axe accessibility checker enabled
   frame). Images are WebP; convert new PNG or JPEG assets with `cwebp`. The
   artwork must not repeat the slide title or subtitle verbatim. Keep any
   necessary bottom caption unboxed and free of flanking horizontal rules, at a
-  readable size. The quality-gates example uses code blocks and a generated
-  feedback-loop illustration; preserve its fail, fix, retry, pass, and
-  human-review steps in the image and speaker notes.
+  readable size. Use a concise subtitle for the key takeaway and let the
+  illustration carry examples and flow; avoid explanatory copy inside the
+  artwork when the visual is self-explanatory. The quality-gates example uses
+  code blocks and a generated feedback-loop illustration; preserve its fail,
+  fix, retry, pass, and human-review steps in the image and speaker notes.
 - **Sources.** Every factual claim or borrowed idea has a `.source` div at the
-  bottom of its slide.
+  bottom of its slide. Keep references succinct: hyperlink a short concept,
+  author, or organisation label instead of spelling out a paper title unless
+  the full title is necessary.
 - **Speaker notes.** Most slides carry `::: {.notes}` blocks; keep them in sync
   when changing slide content.
 - **Spoken notes.** The read-aloud control speaks the `.notes` content. Write

@@ -379,12 +379,12 @@ Automate coordination such as gathering context, running checks, and formatting 
 
 ## [08]{.rule-tag} Identify and remove bottlenecks {.rule-slide}
 
-[Improve the stage that limits end-to-end delivery.]{.lede}
+[End-to-end speed is limited by its slowest stage.]{.lede}
 
 ![](media/sdlc-bottlenecks.webp){.illustration width="880" height="495" fig-alt="A left-to-right software delivery pipeline shows Plan, Code, Review, Verify, and Release. Coding agents speed up Code and create a large pull-request queue at Review, where a flustered human reviewer is buried in changes. Another queue reaches Verify, where a second flustered human struggles to check behaviour manually."}
 
 ::: {.source}
-Amdahl, [“Validity of the single processor approach to achieving large scale computing capabilities”](https://doi.org/10.1145/1465482.1465560) (1967) · DORA, [State of AI-assisted Software Development](https://dora.dev/research/2025/dora-report/) (2025).
+[Amdahl’s law (1967)](https://doi.org/10.1145/1465482.1465560) · [DORA (2025)](https://dora.dev/research/2025/dora-report/).
 :::
 
 ::: {.notes}
