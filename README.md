@@ -6,12 +6,12 @@ This presentation distils eight golden rules for agentic engineering: using
 coding agents to boost productivity without compromising quality.
 
 1. Prepare the codebase for agents
-2. DevEx = AgentEx
-3. Deterministic quality gates
+2. Improve developer experience
+3. Set deterministic quality gates
 4. Define done before delegating
-5. Session hygiene
+5. Maintain session hygiene
 6. Know thy tools
-7. Meta-automation
+7. Automate repeated agent work
 8. Be curious. Be humble. Be kind.
 
 Before the rules, a three-tab diagram maps the LLM, agent, tool-calling loop,

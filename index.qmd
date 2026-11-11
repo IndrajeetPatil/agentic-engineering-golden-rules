@@ -164,13 +164,13 @@ Across these examples, the labels change while the responsibilities remain compa
 ::: {.card}
 [02]{.rule-number}
 
-**DevEx = AgentEx**
+**Improve developer experience**
 :::
 
 ::: {.card}
 [03]{.rule-number}
 
-**Deterministic quality gates**
+**Set deterministic quality gates**
 :::
 
 ::: {.card}
@@ -182,7 +182,7 @@ Across these examples, the labels change while the responsibilities remain compa
 ::: {.card}
 [05]{.rule-number}
 
-**Session hygiene**
+**Maintain session hygiene**
 :::
 
 ::: {.card}
@@ -194,7 +194,7 @@ Across these examples, the labels change while the responsibilities remain compa
 ::: {.card}
 [07]{.rule-number}
 
-**Meta-automation**
+**Automate repeated agent work**
 :::
 
 ::: {.card}
@@ -227,7 +227,7 @@ Prepare deliberately: pay down high-impact debt, make sound patterns easy to dis
 Once the repository has a sound example to follow, improving developer experience makes those paths and tools easier for agents to use with less context hunting. The next rule connects DevEx to AgentEx.
 :::
 
-## [02]{.rule-tag} DevEx = AgentEx {.rule-slide}
+## [02]{.rule-tag} Improve developer experience {.rule-slide}
 
 [If humans hunt for context, agents burn tokens too.]{.lede}
 
@@ -239,7 +239,7 @@ DevEx equals AgentEx: what makes a codebase easy for humans makes it cheaper and
 If developers need to hunt through unclear documentation, inconsistent commands, or hidden conventions, agents will struggle too. They burn tokens, make assumptions, or ask for more context.
 :::
 
-## DevEx = AgentEx: in practice {.rule-slide}
+## Improve developer experience: in practice {.rule-slide}
 
 [One setup command. The same starting point for humans and agents.]{.lede}
 
@@ -257,17 +257,17 @@ Capture that procedure in a maintained setup command. Then AGENTS.md can point t
 The work still happens; the command owns the sequence, checks prerequisites, and reports useful errors. Keep the implementation reproducible and the instruction current so neither humans nor agents have to guess the next step.
 :::
 
-## [03]{.rule-tag} Deterministic quality gates {.rule-slide}
+## [03]{.rule-tag} Set deterministic quality gates {.rule-slide}
 
 [Fast feedback beats orchestration.]{.lede}
 
 ![](media/deterministic-tooling.webp){.illustration width="880" height="495" fig-alt="Two-panel illustration contrasting a confused robot amid inconsistent style, flaky tests, broken assumptions, hallucinated APIs, and failed builds with a calm robot in a safety harness labelled Formatter, Linter, Type checker, Pre-commit, CI, Sanitisers, and Valgrind. Output cards show consistent style and configured gates passing for tests, types, and builds. Human review is still needed to assess requirements, behaviour, and user experience. A change flows through checks to human review; passing gates is evidence for review."}
 
 ::: {.notes}
-Deterministic quality gates give agents fast feedback and keep their non-determinism under control.
+Set deterministic quality gates that give agents fast feedback and keep non-determinism under control.
 :::
 
-## Deterministic quality gates: in practice {.smaller}
+## Set deterministic quality gates: in practice {.smaller}
 
 :::: {.columns .ruff-example}
 
@@ -335,7 +335,7 @@ Agents must verify their own work: run relevant checks, inspect results, fix fai
 Prescribe steps when their order matters, such as migrations, incident response, or a proven diagnostic workflow. Otherwise, specify the outcome and constraints, provide strong tools, and retain human review of what ships.
 :::
 
-## [05]{.rule-tag} Session hygiene {.rule-slide}
+## [05]{.rule-tag} Maintain session hygiene {.rule-slide}
 
 [Coherent context beats haunted context.]{.lede}
 
@@ -377,19 +377,17 @@ Claude Code offers voice input for dictating prompts, with the authentication an
 Choose the tool interface that fits the task. A direct API or command-line tool is useful when it exposes the operation clearly; computer use can help with a workflow available only through a graphical interface. When results disappoint, examine the context, tools, and feedback available to the agent as well as the model itself.
 :::
 
-## [07]{.rule-tag} Meta-automation {.rule-slide}
+## [07]{.rule-tag} Automate repeated agent work {.rule-slide}
 
-[Automate repeated agent choreography.]{.lede}
+[Capture once. Run many times.]{.lede}
 
 ![](media/meta-automation.webp){.illustration width="880" height="495" fig-alt="Meta-automation infographic: repeated work is captured once, run many times, and reviewed. Four mechanisms are compared: a prompt for changing instructions, a skill for domain know-how, a slash command for a stable shortcut, and a workflow for steps and branches. A loop processes an input list, runs automation for each item, collects results, and ends with human review."}
 
 ::: {.notes}
-Capture once. Run many times.
-
 Once a useful agent workflow repeats, automate the choreography around it.
 :::
 
-## Meta-automation: in practice {.rule-slide}
+## Automate repeated agent work: in practice {.rule-slide}
 
 [Prompts, skills, shortcuts, and workflows turn repeated work into reusable automation.]{.lede}
 
