@@ -68,6 +68,9 @@ just axe       # Preview with the axe accessibility checker enabled
   slide and the rule slide.
 - **Images.** Illustrations use the `.illustration` class (the gold hairline
   frame). Images are WebP; convert new PNG or JPEG assets with `cwebp`. The
+  artwork must not repeat the slide title or subtitle verbatim. Keep any
+  necessary bottom caption unboxed and free of flanking horizontal rules, at a
+  readable size. The
   guardrails workflow is a WebP inside a `.card-stone` with `.diagram-card`,
   which caps its height; preserve its pass, fail, retry, and human-review paths
   in the artwork, alternative text, and speaker notes.
