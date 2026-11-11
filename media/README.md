@@ -52,7 +52,7 @@ For existing rule artwork being restyled, supply the previous version as
 image 1 (edit target) and `social-media-card.webp` as image 2 (style reference).
 Previous versions remain available through Git history. Apply this shared
 style prompt followed by the asset-specific instructions below. New artwork
-uses the references specified under Ten-rule expansion.
+uses the references specified under Additional rule illustrations.
 
 ```text
 Restyle into a refined editorial infographic matching the supplied slide social-card style: flat ivory #fdfaf3 background, warm stone #e9e5db square panels, near-black #141414 text and fine line illustrations, restrained gold #dac284 hairlines and borders ONLY, dark brown #7d6020 where emphasis needs text. Elegant high-contrast Bodoni/Didot serif headings, legible Montserrat-like sans-serif labels. Spacious, disciplined layout, thin rules, square corners, confident professional composition. No blue, green, purple, red, bright colours, gradients, glossy 3D, rounded UI cards, heavy shadows, or excessive decoration. Keep text clear, large and sparse enough to read when projected. Keep the original conceptual message and visual metaphor; improve hierarchy and clarity. No slide number, no redundant large slide title, and no text that repeats the slide title or subtitle verbatim. Do not frame a bottom caption in a box or flank it with horizontal rules. If a bottom caption adds information, set it unboxed in large, readable type with generous whitespace. Landscape 16:9 composition. No watermark.
@@ -294,6 +294,27 @@ Generated with the built-in image-generation tool. For each image below,
 `deterministic-tooling.webp` is the style and character reference, and
 `social-media-card.webp` is the typography and palette reference. Both are
 references only; the outputs depict new advice. Complete prompts follow.
+
+### prepare-codebase-for-agents.webp
+
+```text
+Use case: productivity-visual.
+Asset type: NEW landscape 16:9 editorial illustration for a Quarto presentation slide about preparing a codebase before introducing coding agents.
+Input image 1 is a style and character reference ONLY (the deck's friendly pen-and-ink robot and illustration craft). Input image 2 is a typography and palette reference ONLY (the title card). Create new artwork; do not copy their composition or wording.
+
+Primary request: show that a coding agent amplifies the patterns it finds in a repository, so people should improve and clarify those patterns before scaling agent use. Make the causal point immediately legible: inconsistent conventions, duplication, shortcuts, and weak checks get repeated; clear conventions, coherent modules, and reliable checks give the agent a sound pattern to follow. Show human preparation first, then agent work.
+
+Composition: two spacious square-corner panels side by side on a flat ivory canvas, each with one elegant serif heading. LEFT panel: a messy codebase as a tangled but recognisable map of modules, duplicated code pages, inconsistent naming, and a weak test sheet with gaps. A friendly robot follows and copies those visible patterns, producing a larger tangled map and more repeated pages. Use a few large, readable labels exactly: "Inconsistent patterns", "Duplicated code", "Weak checks". Make the echo/repetition causal and visible; no scary or destructive imagery.
+RIGHT panel: a human prepares a codebase before handing it to the same friendly robot: clear module boundaries, one consistent example pattern, concise repository guidance, and reliable checks. The robot follows that example to produce matching, orderly modules. Use a few large, readable labels exactly: "Clear conventions", "Coherent modules", "Reliable checks". Human preparation must visibly happen before the robot extends the pattern.
+
+A simple restrained arrow or bridge between the two panels can show the choice to prepare before adding more agent work. Bottom caption, unboxed with generous whitespace and no horizontal rules near it, exactly: "The repository teaches by example."
+
+Style: match the supplied deck references: refined editorial pen-and-ink infographic, ivory #fdfaf3 canvas, warm stone #e9e5db square-corner panels, near-black #141414 linework and text, restrained gold #dac284 for thin borders and dividers only, dark brown #7d6020 for readable emphasis. Bodoni/Didot-like serif headings and legible Montserrat-like sans-serif labels. Friendly small robot consistent with reference image 1. Spacious professional balance and clear visual hierarchy. Large exact labels readable when shown at 880 pixels wide.
+
+Avoid: repeating the slide title or subtitle in the image, tiny paragraphs, fabricated metrics, code snippets, logos, bright colours, green ticks, gradients, glossy 3D, rounded cards, heavy shadows, extra slogans, watermarks, slide numbers, or claims that agents automatically repair technical debt. Keep the point qualified: agents tend to reproduce the patterns their repository exposes, so prepare those patterns first.
+```
+
+Final built-in image edit: remove the thin horizontal gold line below the bottom caption. Preserve the caption and all other artwork.
 
 ### define-done.webp
 
