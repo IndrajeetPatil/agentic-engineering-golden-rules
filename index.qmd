@@ -101,10 +101,6 @@ These are principles that sharpen judgement, not a magic recipe.
 
 ::::
 
-::: {.source}
-On the risks of real actions, see [The lethal trifecta for AI agents](https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/) (Willison) and [Excessive agency](https://genai.owasp.org/llmrisk/llm062025-excessive-agency/) (OWASP).
-:::
-
 ::: {.notes}
 Quality gates such as tests, security, deployment, and maintenance are part of the conversation. Throwaway proofs of concept, demos, and prototypes can trade engineering rigour for speed: tests, coverage, and polish can wait until the code starts to matter, which often happens sooner than planned. The consequences of running the code cannot wait. A disposable script can still expose credentials, alter real data, or send something externally, so keep scoped credentials, sandboxes, and approval before the agreed consequential actions. The aim is to sharpen judgement, not to sell a magic solution.
 :::
@@ -345,7 +341,7 @@ A second agent can offer another perspective, but agreement between agents is no
 
 [Small diffs beat heroic prompts.]{.lede}
 
-![](media/small-scope.webp){.illustration width="880" height="495" fig-alt="Two-panel illustration: an enormous prompt covering onboarding, billing, analytics, search, SSO, and migrations produces a large diff that is hard to review and reverse. Five small steps, API change, UI update, tests, docs, and deployment configuration, each have a small diff and commit. One concern at a time makes changes reviewable and reversible, with fast feedback. Small diffs beat heroic prompts."}
+![](media/small-scope.webp){.illustration width="880" height="495" fig-alt="Two-panel illustration: an enormous prompt covering onboarding, billing, analytics, search, SSO, and migrations produces a large diff that is hard to review and reverse. Five small steps, API change, UI update, tests, docs, and deployment configuration, each have a small diff and commit. One concern at a time makes changes reviewable and reversible, with fast feedback."}
 
 ::: {.notes}
 In brownfield projects, introduce changes in reviewable, reversible chunks. Scope control is the difference between useful automation and an unreviewable mess.
@@ -390,7 +386,7 @@ Google's code review guide lists why small changes help: they are reviewed more 
 ![](media/bound-blast-radius.webp){.illustration width="880" height="495" fig-alt="Three-panel illustration: an agent works within enforced read, change, and execute permissions while credentials are protected; retrieved content stays separate from authorised instructions; a human approval checkpoint precedes deploying, sending, and deleting. Worktrees isolate edits, while sandboxes restrict actions."}
 
 ::: {.source}
-Sources: [Git worktrees](https://git-scm.com/docs/git-worktree) · OWASP [Excessive agency](https://genai.owasp.org/llmrisk/llm062025-excessive-agency/) · [Prompt injection](https://genai.owasp.org/llmrisk/llm01-prompt-injection/).
+Sources: [Git worktrees](https://git-scm.com/docs/git-worktree) · OWASP [Excessive agency](https://genai.owasp.org/llmrisk/llm062025-excessive-agency/) · [Prompt injection](https://genai.owasp.org/llmrisk/llm01-prompt-injection/) · Willison [The lethal trifecta](https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/).
 :::
 
 ::: {.notes}
