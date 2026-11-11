@@ -369,8 +369,12 @@ When a useful agent workflow repeats, package the instructions or choreography s
 
 ![](media/meta-automation-examples.webp){.illustration width="880" height="495" fig-alt="Four examples of packaged automation: a dependency update prompt, a PR screenshot skill, an illustrative review shortcut, and a vulnerability triage workflow. The workflow investigates a finding, fixes and verifies warranted changes, or records why no fix is needed; people review the evidence and decide what ships."}
 
+::: {.source}
+Examples: [public prompt library](https://github.com/IndrajeetPatil/chatbot-template/tree/main/.github/prompts) · [PR screenshot skill](https://github.com/IndrajeetPatil/chatbot-template/blob/main/.agents/skills/frontend-pr-screenshot/SKILL.md).
+:::
+
 ::: {.notes}
-The examples show four ways of packaging repeated work: a prompt for a dependency update, a skill for collecting PR screenshot evidence, a shortcut for reviewing comments, and a workflow for triaging vulnerability findings.
+The dependency-update prompt, review shortcut, and vulnerability-triage workflow are adapted from the public prompt library. The screenshot example follows its PR screenshot skill. The review shortcut is illustrative; this deck does not install it. The vulnerability example shows a generic triage decision: investigate a finding, fix and verify it when warranted, or record why no fix is needed.
 
 Automate coordination such as gathering context, running checks, and formatting reports. People define the policy for any automated merge: only changes that meet explicit, low-risk criteria qualify. Human review remains the route for ambiguous, risky, or exceptional changes, and people remain accountable for the policy and its results.
 :::
