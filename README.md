@@ -16,6 +16,11 @@ coding agents to boost productivity without compromising quality.
 9. Meta-automation
 10. Be curious. Be humble. Be kind.
 
+Before the rules, a three-tab diagram maps the LLM, agent, tool-calling loop,
+harness, desktop interface, and model provider across Anthropic, OpenAI, and
+GitHub Copilot. The Copilot example uses Claude to distinguish the model
+developer from the service providing access.
+
 The slides can be seen here:<br>
 <https://www.indrapatil.com/agentic-engineering-golden-rules/>
 
