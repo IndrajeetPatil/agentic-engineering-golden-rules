@@ -307,7 +307,7 @@ Style: match the supplied deck references: refined editorial pen-and-ink infogra
 Avoid: repeating the slide title or subtitle in the image, tiny paragraphs, fabricated metrics, code snippets, logos, bright colours, green ticks, gradients, glossy 3D, rounded cards, heavy shadows, extra slogans, watermarks, slide numbers, or claims that agents automatically repair technical debt. Keep the point qualified: agents tend to reproduce the patterns their repository exposes, so prepare those patterns first.
 ```
 
-Final built-in image edit: remove the bottom caption and leave clean ivory space. Preserve all other artwork.
+Final built-in image edit: remove the bottom caption and balance the ivory margins above and below the panels. Preserve all other artwork.
 
 ### define-done.webp
 
