@@ -119,6 +119,45 @@ gradients, no watermark. Do not show a human review stage, queues, bottlenecks,
 or unrelated panels.
 ```
 
+## sdlc-conclusion.webp
+
+The closing conclusion shows agent support across six SDLC stages, with a
+continuous quality rail and human direction at the beginning and judgement at
+release. It reinforces that strong engineering practices can speed up routine
+work across nearly the whole lifecycle while keeping quality standards intact.
+
+```text
+Create a polished 16:9 landscape editorial illustration for the final
+conclusion slide of a software engineering presentation. Flat warm ivory
+canvas; light warm-stone panels only; near-black pen-and-ink linework;
+restrained gold arrows and hairlines; small green check marks. Refined serif
+labels, simple elegant human and friendly robot figures, generous balanced
+whitespace. No dark-filled panels or boxes: panel backgrounds must remain
+light ivory or warm stone.
+
+Show a single clear left-to-right software lifecycle in six spacious stations,
+connected by one continuous gold flow line: “Plan”, “Design”, “Build”,
+“Review”, “Verify”, “Release”. Make the sequence feel brisk and fluid with
+subtle forward motion marks. At each station, a small coding-agent robot
+assists with routine work: organizing a plan, preparing a design sketch,
+writing code, preparing a pull request, running checks, and packaging a release.
+Include one calm human who sets direction at Plan and one who makes a final
+judgement at Release, so the story shows agent acceleration with human oversight
+where it matters.
+
+Under the six stations, draw one straight, steady quality rail passing beneath
+every stage, with a small crisp green check or shield marker under each stage
+to show that the quality bar stays consistent from start to finish. Make this
+visual rail elegant and unmistakable, not a separate dark box or dashboard.
+The complete composition should make it clear that routine work moves faster
+across nearly the whole lifecycle while quality remains protected at every
+stage.
+
+Use only these six stage labels, spelled exactly as given; no other words,
+title, subtitle, long explanatory text, footer, logo, gradient, or watermark.
+Ensure the image is balanced and legible when displayed at 880×495 pixels.
+```
+
 ## Agentic stack diagrams
 
 `agentic-stack-anthropic.webp`, `agentic-stack-openai.webp`, and

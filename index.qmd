@@ -487,6 +487,16 @@ For frontend changes, the repository's agent instructions require the coding age
 For bounded, routine changes, this can remove the need for a person to review every pull request. Mission-critical systems can keep human approval at key steps. People still define the tasks and trusted rules, and step in when a change needs judgement or an exception.
 :::
 
+## Speed up almost the whole SDLC
+
+[Good agentic practices speed up routine work without lowering the quality bar.]{.lede}
+
+![](media/sdlc-conclusion.webp){.illustration width="880" height="495" fig-alt="Six stages—Plan, Design, Build, Review, Verify, and Release—connect from left to right. Agent robots assist with routine tasks at each stage; a person sets direction at Plan and applies judgement at Release. A continuous gold line with a checked shield under every stage represents a steady quality bar across the lifecycle."}
+
+::: {.notes}
+This is the conclusion these practices point towards: agents can speed up routine work across nearly every stage of software delivery, from planning and design through implementation, review, verification, and release. Clear tasks, a well-prepared codebase, good tools, automation, and attention to bottlenecks make that speed useful. Quality gates carry through the lifecycle, so faster work does not have to mean lower standards. People still set direction and apply judgement to high-stakes decisions and exceptions.
+:::
+
 # Thank You
 
 Go forth and delegate responsibly.

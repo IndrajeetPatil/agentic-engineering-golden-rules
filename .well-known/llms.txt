@@ -26,6 +26,7 @@ This presentation distils nine golden rules for agentic engineering: working wit
 - Identify and remove SDLC bottlenecks with targeted quality gates, LLM review loops, and end-to-end tests
 - Team culture and continued engineering competence
 - Software factory example: a feature request flows through coding, strict example QA gates, independent review, and agent-led merge; human approval can stay for high-stakes work
+- Closing takeaway: agentic practices speed up routine work across nearly every SDLC stage while quality gates protect standards
 
 ## Machine-readable companion
 
