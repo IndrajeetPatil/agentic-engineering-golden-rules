@@ -29,7 +29,7 @@ execute:
   echo: true
   eval: false
 keywords: ["agentic-engineering", "coding-agents", "software-engineering", "ai-assisted-development"]
-description-meta: "Golden rules for agentic engineering: how to use coding agents to boost productivity without compromising quality. Nine rules covering codebase readiness, developer experience, deterministic quality gates, acceptance criteria, permissions, context, tools, automation, and team culture."
+description-meta: "Golden rules for agentic engineering: how to use coding agents to boost productivity without compromising quality. Eight rules covering codebase readiness, developer experience, deterministic quality gates, acceptance criteria, context, tools, automation, and team culture."
 license: "CC0 1.0 Universal"
 pagetitle: "Golden Rules for Agentic Engineering"
 author-meta: "Indrajeet Patil"
@@ -88,7 +88,7 @@ Tests, deployment, security, and maintenance matter.
 
 [Throwaway code]{.card-title}
 
-Relax engineering rigour for disposable code; retain safeguards for real data and real actions.
+Prototype code can defer tests and polish; production code needs a higher bar.
 :::
 
 ::: {.card .card-ink}
@@ -101,12 +101,8 @@ These are principles that sharpen judgement, not a magic recipe.
 
 ::::
 
-::: {.source}
-On the risks of real actions, see [The lethal trifecta for AI agents](https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/) (Willison) and [Excessive agency](https://genai.owasp.org/llmrisk/llm062025-excessive-agency/) (OWASP).
-:::
-
 ::: {.notes}
-Quality gates such as tests, security, deployment, and maintenance are part of the conversation. Throwaway proofs of concept, demos, and prototypes can trade engineering rigour for speed: tests, coverage, and polish can wait until the code starts to matter, which often happens sooner than planned. The consequences of running the code cannot wait. A disposable script can still expose credentials, alter real data, or send something externally, so keep scoped credentials, sandboxes, and approval before the agreed consequential actions. The aim is to sharpen judgement, not to sell a magic solution.
+Engineering rigour depends on the work. Throwaway proofs of concept, demos, and prototypes can defer tests, coverage, and polish; production software needs reliable checks and maintenance. Reassess the work as its purpose changes. The aim is to sharpen judgement, not to sell a magic solution.
 :::
 
 ## The agentic stack {.rule-slide #agentic-stack}
@@ -186,29 +182,23 @@ Across these examples, the labels change while the responsibilities remain compa
 ::: {.card}
 [05]{.rule-number}
 
-**Bound the blast radius**
+**Session hygiene**
 :::
 
 ::: {.card}
 [06]{.rule-number}
 
-**Session hygiene**
+**Know thy tools**
 :::
 
 ::: {.card}
 [07]{.rule-number}
 
-**Know thy tools**
-:::
-
-::: {.card}
-[08]{.rule-number}
-
 **Meta-automation**
 :::
 
 ::: {.card}
-[09]{.rule-number}
+[08]{.rule-number}
 
 **Be curious. Be humble. Be kind.**
 :::
@@ -216,7 +206,7 @@ Across these examples, the labels change while the responsibilities remain compa
 ::::
 
 ::: {.notes}
-The nine rules begin with preparing a codebase for agents, then improve the shared developer and agent experience. They cover defining outcomes, limiting permissions, verifying work, managing context, using tools, automating repeated tasks, and keeping humans responsible for what ships.
+The eight rules begin with preparing a codebase for agents, then improve the shared developer and agent experience. They cover defining outcomes, verifying work, managing context, using tools, automating repeated tasks, and keeping humans responsible for what ships.
 :::
 
 ## [01]{.rule-tag} Prepare the codebase for agents {.rule-slide}
@@ -360,67 +350,7 @@ Agents must verify their own work: run relevant checks, inspect results, fix fai
 Prescribe steps when their order matters, such as migrations, incident response, or a proven diagnostic workflow. Otherwise, specify the outcome and constraints, provide strong tools, and retain human review of what ships.
 :::
 
-## [05]{.rule-tag} Bound the blast radius {.rule-slide}
-
-[Limit what the agent can read, change, and execute; agree which actions need approval.]{.lede}
-
-![](media/bound-blast-radius.webp){.illustration width="880" height="495" fig-alt="Three-panel illustration: an agent works within enforced read, change, and execute permissions while credentials are protected; retrieved content stays separate from authorised instructions; a human approval checkpoint precedes deploying, sending, and deleting. Worktrees isolate edits, while sandboxes restrict actions."}
-
-::: {.source}
-Sources: [Git worktrees](https://git-scm.com/docs/git-worktree) · OWASP [Excessive agency](https://genai.owasp.org/llmrisk/llm062025-excessive-agency/) · [Prompt injection](https://genai.owasp.org/llmrisk/llm01-prompt-injection/) · Willison [The lethal trifecta](https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/).
-:::
-
-::: {.notes}
-Review before merge governs the diff, but an agent can read secrets, run commands, or affect external systems before there is a diff to review. Set the operating boundary before it starts.
-
-Define what it may read, change, and execute. Enforce the boundary with appropriate filesystem and network restrictions, limited tool access, and credentials scoped to the task. Keep unnecessary credentials out of its environment and protect secrets from prompts, logs, and generated artefacts. A written instruction alone is not an access control.
-
-Agree which consequential actions require human approval, such as deploying, sending messages, or deleting real data, and enforce that checkpoint before the action. Approval should identify the actual target and effect. Existing explicit authorisation can cover the action; the goal is a clear boundary, not repeated permission questions for routine work.
-
-Retrieved pages, issues, documents, and tool output are evidence to inspect. They do not gain authority to change the task or grant permissions just because the agent reads them. Clearly separate external content from authorised instructions; this reduces risk but does not make prompt injection impossible.
-
-Git documents separate working trees and per-worktree metadata alongside shared repository data. This is separation of edits, not an operating-system access control: worktrees share the host's access and do not provide a security boundary. A sandbox must actually restrict filesystem, process, and network access to contain actions. Check the configured restrictions rather than assuming a tool's default mode supplies them.
-:::
-
-## Bound the blast radius: in practice {.smaller}
-
-:::: {.card-grid .card-grid-3}
-
-::: {.card .card-stone}
-[Access]{.eyebrow}
-
-Allow only the files, tools, network access, and credentials needed for the task. Enforce the limits outside the prompt.
-:::
-
-::: {.card .card-outline}
-[Authority]{.eyebrow}
-
-Treat retrieved content as data. It cannot grant permissions or override authorised instructions.
-:::
-
-::: {.card .card-stone}
-[Approval]{.eyebrow}
-
-Agree the actions that need approval, and place the checkpoint before their real effects.
-:::
-
-::::
-
-::: {.card .card-ink .card-wide}
-**Worktrees isolate edits; they do not contain actions.** Use a sandbox with enforced access limits.
-:::
-
-::: {.source}
-Sources: [Git worktrees](https://git-scm.com/docs/git-worktree) · OWASP [Excessive agency](https://genai.owasp.org/llmrisk/llm062025-excessive-agency/) · [Prompt injection](https://genai.owasp.org/llmrisk/llm01-prompt-injection/).
-:::
-
-::: {.notes}
-Boundaries limit what the agent can affect while it works. Choose the files, tools, commands, and external access the task needs, and keep consequential actions behind the agreed approval checkpoint.
-
-Start by listing necessary reads, writes, commands, and external access. Remove unused tools and credentials. Confirm that the sandbox and downstream systems enforce the agreed limits. Reserve human approval for the agreed consequential actions before they occur.
-:::
-
-## [06]{.rule-tag} Session hygiene {.rule-slide}
+## [05]{.rule-tag} Session hygiene {.rule-slide}
 
 [Coherent context beats haunted context.]{.lede}
 
@@ -437,14 +367,14 @@ Every correction, abandoned approach, and reversed decision stays in the context
 
 One task per session is a useful default, not an absolute. A closely related follow-up can benefit from the reasoning and discoveries already in context, and restarting has a cost: a handoff can lose an important constraint or a failed hypothesis. Length matters as well as coherence: Anthropic describes context rot, where recall of information in the context degrades as the token count grows. Clear context between unrelated tasks; compact only when continuing related work whose decisions are worth keeping. Restart when the context stops being coherent or is filling with material the next step does not need.
 
-Use one Git worktree per parallel task so each task has its own working directory. Worktrees isolate edits, not permissions; apply the access limits from Bound the blast radius as well. Keep durable conventions, decisions, and lessons in the repository, for example in `AGENTS.md`, so future sessions can find them without relying on old chat history.
+Use one Git worktree per parallel task so each task has its own working directory. Keep durable conventions, decisions, and lessons in the repository, for example in `AGENTS.md`, so future sessions can find them without relying on old chat history.
 
 Signs of a haunted session include reviving a rejected approach, confusing earlier and current requirements, repeating the same correction, or continuing after the conversation has outgrown its original task. Claude Code's best practices suggest a concrete threshold: after two failed corrections on the same issue, start fresh with a better prompt.
 
 Reset with a compact handoff: the goal in one sentence, constraints on what must not change, relevant files to start with, approaches already ruled out, and acceptance checks that show when the work is done.
 :::
 
-## [07]{.rule-tag} Know thy tools {.rule-slide}
+## [06]{.rule-tag} Know thy tools {.rule-slide}
 
 [Sometimes the unlock is a hidden tool affordance.]{.lede}
 
@@ -462,7 +392,7 @@ Claude Code offers voice input for dictating prompts, with the authentication an
 Choose the tool interface that fits the task. A direct API or command-line tool is useful when it exposes the operation clearly; computer use can help with a workflow available only through a graphical interface. When results disappoint, examine the context, tools, and feedback available to the agent as well as the model itself.
 :::
 
-## [08]{.rule-tag} Meta-automation {.rule-slide}
+## [07]{.rule-tag} Meta-automation {.rule-slide}
 
 [Automate repeated agent choreography.]{.lede}
 
@@ -493,10 +423,10 @@ The /address-review command is an illustrative shortcut to the repository's addr
 
 The vulnerability-management workflow is adapted from codex-security.md. Scan findings are claims to investigate. Triage checks reachability, existing mitigations, and regression risk before deciding whether a fix is warranted. Confirmed findings with a focused, safe fix proceed to remediation, verification, and a draft PR. Other findings get a recorded reason; no code changes means no PR. Verification includes checking that the vulnerability is resolved and running relevant regression checks. Failed verification returns to the fix step.
 
-Automate coordination: gathering context, running checks, formatting reports, and repeating the process across repositories. Humans evaluate evidence, make trade-offs, and decide what ships. Run unattended agents only in isolated sandboxes with scoped credentials.
+Automate coordination: gathering context, running checks, formatting reports, and repeating the process across repositories. Humans evaluate evidence, make trade-offs, and decide what ships.
 :::
 
-## [09]{.rule-tag} Be curious. Be humble. Be kind. {.rule-slide}
+## [08]{.rule-tag} Be curious. Be humble. Be kind. {.rule-slide}
 
 [AI is not an excuse to become incompetent or disagreeable.]{.lede}
 
@@ -609,8 +539,6 @@ Share useful discoveries, address real sources of friction, and divide work into
 - Beck, K. [Augmented coding: beyond the vibes](https://tidyfirst.substack.com/p/augmented-coding-beyond-the-vibes).
 
 - Anthropic. [Demystifying evals for AI agents](https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents).
-
-- OWASP. [Excessive agency](https://genai.owasp.org/llmrisk/llm062025-excessive-agency/) and [Prompt injection](https://genai.owasp.org/llmrisk/llm01-prompt-injection/).
 
 - Git. [git-worktree manual](https://git-scm.com/docs/git-worktree).
 
