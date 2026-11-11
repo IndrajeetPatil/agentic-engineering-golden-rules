@@ -416,21 +416,6 @@
   margin-bottom: 0.4em;
 }
 
-.reveal .diagram-card {
-  padding: 0.4em 0.6em;
-  text-align: center;
-}
-
-/* Keep the workflow legible while leaving room for the text cards below. */
-.reveal .diagram-card img.guardrails-workflow {
-  display: block;
-  width: 100%;
-  height: auto;
-  max-height: 260px;
-  object-fit: contain;
-  margin: 0 auto;
-}
-
 /* ---------- Tables, code, and lists ---------- */
 
 .reveal .table-card {

@@ -1,12 +1,13 @@
 # Deck artwork
 
-The rule illustrations use built-in image generation and a shared editorial style.
-The guardrails workflow was generated from its original decision path, and
-the setup contrast illustrates a shared one-command entry point. The automation
-examples draw on chatbot-template prompts and its PR screenshot skill. The
-tool-affordance examples were checked against current official docs. Final
-assets are WebP; the social card is the deck's typography and palette reference.
-The social card already matched the theme and was retained.
+The rule illustrations use built-in image generation and a shared editorial
+style. The quality-gates practice example uses editable code blocks and a
+Mermaid feedback loop; the setup contrast illustrates a shared one-command
+entry point. The automation examples demonstrate dependency updates and PR
+screenshot workflows. The tool-affordance examples were checked against
+current official docs. Final assets are WebP; the social card is the deck's
+typography and palette reference. The social card already matched the theme
+and was retained.
 
 ## Agentic stack diagrams
 
@@ -109,14 +110,6 @@ Redesign the information graphic into a readable landscape layout. Top elegant p
 
 ```text
 Preserve a 2×2 illustration comparing helpful and unhelpful working habits. Top left "Be curious": engaged developer sketching prototypes with a friendly line-drawn robot. Top right "Avoid deskilling": disengaged developer reclining while robot runs unattended at screen. Bottom left "Be humble. Be kind.": diverse team listens and discusses around a table with shared notes. Bottom right "Avoid grandiosity": engineer, product manager, and designer each pointing at their own assistant and dismissing one another. Use refined pen-and-ink editorial figures, expressive restrained faces, ivory and stone panels with fine gold divider rules; no cartoon emoji or neon. Small text labels in bottom-right "Engineer", "Product manager", "Designer". Avoid racial stereotypes; convey disagreement calmly. No speech bubbles or extra paragraphs.
-```
-
-## guardrails-workflow.webp
-
-Supply only `social-media-card.webp` as the style reference.
-
-```text
-Use case: infographic-diagram. Asset type: wide, low-height presentation workflow diagram. The supplied image is only a reference for typography, colour, and visual restraint. Create a brand-new exquisitely clear diagram for deterministic guardrails in agentic engineering. Ivory #fdfaf3 background, warm stone #e9e5db square nodes, near-black #141414 text and arrows, fine gold #dac284 borders. High-contrast Bodoni-like serif node headings and Montserrat-like sans-serif branch labels. Very wide landscape aspect ratio approximately 3:1; use the entire width, with large readable labels and minimal vertical whitespace, no overall title. Main horizontal path left to right is four nodes labelled exactly "Agent proposes change", "Deterministic checks", "Human review", "Merge". Break long node labels over two lines. Use a square/rectangular checks node, no diamond. Arrow from agent to checks; arrow from checks to review labelled exactly "pass"; arrow from review to merge. Below the first two nodes, a fifth smaller node labelled exactly "Precise error output". Downward arrow from checks to error labelled exactly "fail", then a return arrow from error back to "Agent proposes change", entering the agent node from below. Direction matters: failure goes checks → error → agent; success goes checks → review → merge. Clearly visible thin black arrows and ample separation, no crossings. No icons, ornaments, shadows, rounded corners, gradients, extra text, or watermark. Do not remove the human review step or connect failure to merge.
 ```
 
 ## one-command-setup.webp

@@ -70,10 +70,9 @@ just axe       # Preview with the axe accessibility checker enabled
   frame). Images are WebP; convert new PNG or JPEG assets with `cwebp`. The
   artwork must not repeat the slide title or subtitle verbatim. Keep any
   necessary bottom caption unboxed and free of flanking horizontal rules, at a
-  readable size. The
-  guardrails workflow is a WebP inside a `.card-stone` with `.diagram-card`,
-  which caps its height; preserve its pass, fail, retry, and human-review paths
-  in the artwork, alternative text, and speaker notes.
+  readable size. The quality-gates example uses code blocks and Mermaid;
+  preserve its fail, fix, retry, pass, and human-review steps in the diagram and
+  speaker notes.
 - **Sources.** Every factual claim or borrowed idea has a `.source` div at the
   bottom of its slide.
 - **Speaker notes.** Most slides carry `::: {.notes}` blocks; keep them in sync

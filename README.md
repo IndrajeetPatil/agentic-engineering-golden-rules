@@ -35,9 +35,9 @@ high-contrast [Bodoni Moda](https://fonts.google.com/specimen/Bodoni+Moda)
 headings, and small tracked [Montserrat](https://fonts.google.com/specimen/Montserrat)
 labels, the same typefaces the site uses. All illustrations in the deck are
 AI-generated and use the same ivory, stone, ink, and gold palette. The
-guardrails workflow is also a WebP illustration, with its decision path
-described in alternative text and speaker notes. See [media/README.md](media/README.md)
-for the illustration prompts and regeneration guidance.
+quality-gates example pairs code with an editable Mermaid feedback loop. See
+[media/README.md](media/README.md) for illustration prompts and regeneration
+guidance.
 
 ## Development
 
