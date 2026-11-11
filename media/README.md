@@ -76,11 +76,11 @@ text sparse and accurate, with generous whitespace. No overall title or footer.
 ## software-factory.webp
 
 The closing example shows a feature request flowing through coding, a pull
-request with UI screenshots, automated quality gates, an independent review
-loop, and agent-led merge. A magnified inset makes the example's strict quality
-harness concrete, while the slide notes explain that high-stakes work may keep
-human approval at key steps. It is based on the public chatbot-template
-repository.
+request with UI screenshots and a red-and-green diff, automated quality gates,
+an independent review loop, and agent-led merge. A magnified inset makes the
+example's strict quality harness concrete and ends with an ellipsis to indicate
+additional checks. The slide notes explain that high-stakes work may keep human
+approval at key steps. It is based on the public chatbot-template repository.
 
 ```text
 Create a polished 16:9 landscape editorial infographic for a software
@@ -92,12 +92,15 @@ readable at 880×495 pixels, generous whitespace, consistent visual weight.
 Show one clear left-to-right causal flow across the upper half: developer
 submits a card labelled “Feature request” → a coding agent works in a repository
 → a pull request appears with two tiny browser screenshot thumbnails labelled
-“UI screenshots” → automated QA gates → an independent reviewer agent checks
-the diff. A small “Findings” arrow loops from reviewer back to coding agent.
+“UI screenshots” and a small unified code diff → automated QA gates → an
+independent reviewer agent checks the diff. A small “Findings” arrow loops
+from reviewer back to coding agent.
 From the reviewer, a clear forward arrow labelled with a green check leads to
 the coding agent merging; at far right, show the completed feature running in
 a small web app. Keep every other arrow flowing left-to-right. No human should
-appear at review or verification.
+appear at review or verification. In the pull-request station, include a
+compact unified code diff with pale red removed lines and pale green added
+lines, using familiar minus and plus signs.
 
 In the lower half, add a prominent, clean zoom-in inset attached to the
 automated QA stage by a fine gold leader line and magnifier cue. Inset heading
@@ -105,9 +108,11 @@ exactly “QUALITY HARNESS”; subheading exactly “example gates”. Inside, s
 exactly eight large, neatly aligned checklist items in two columns: “100% code
 coverage”; “100% type coverage”; “Benchmarks”; “0 lint issues”; “0 warnings”;
 “Lighthouse performance”; “Accessibility”; “SEO”. Use one restrained check
-icon per item. Spelling must be exact. The callout should look like a compact
-quality checklist and feel strict, not like a dashboard. Make the entire image
-a single coherent infographic.
+icon per item. Add a small, centred “… and more” below the checks to show the
+list continues. Spelling must be exact. Keep all panel fills light ivory or
+warm stone; use dark ink for text and linework, never dark-filled boxes. The
+callout should look like a compact quality checklist and feel strict, not like
+a dashboard. Make the entire image a single coherent infographic.
 
 No overall title, no footer, no disclaimer or other added text, no logos, no
 gradients, no watermark. Do not show a human review stage, queues, bottlenecks,

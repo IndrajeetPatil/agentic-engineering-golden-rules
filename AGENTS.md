@@ -68,6 +68,8 @@ just axe       # Preview with the axe accessibility checker enabled
   slide and the rule slide.
 - **Images.** Illustrations use the `.illustration` class (the gold hairline
   frame). Images are WebP; convert new PNG or JPEG assets with `cwebp`. The
+  illustration panels use light ivory or warm-stone fills; use dark ink for
+  text and linework, not dark panel backgrounds. The
   artwork must not repeat the slide title or subtitle verbatim. Keep any
   necessary bottom caption unboxed and free of flanking horizontal rules, at a
   readable size. Use a concise subtitle for the key takeaway and let the
