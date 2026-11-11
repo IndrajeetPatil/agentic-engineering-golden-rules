@@ -307,14 +307,14 @@ Primary request: show that a coding agent amplifies the patterns it finds in a r
 Composition: two spacious square-corner panels side by side on a flat ivory canvas, each with one elegant serif heading. LEFT panel: a messy codebase as a tangled but recognisable map of modules, duplicated code pages, inconsistent naming, and a weak test sheet with gaps. A friendly robot follows and copies those visible patterns, producing a larger tangled map and more repeated pages. Use a few large, readable labels exactly: "Inconsistent patterns", "Duplicated code", "Weak checks". Make the echo/repetition causal and visible; no scary or destructive imagery.
 RIGHT panel: a human prepares a codebase before handing it to the same friendly robot: clear module boundaries, one consistent example pattern, concise repository guidance, and reliable checks. The robot follows that example to produce matching, orderly modules. Use a few large, readable labels exactly: "Clear conventions", "Coherent modules", "Reliable checks". Human preparation must visibly happen before the robot extends the pattern.
 
-A simple restrained arrow or bridge between the two panels can show the choice to prepare before adding more agent work. Bottom caption, unboxed with generous whitespace and no horizontal rules near it, exactly: "The repository teaches by example."
+A simple restrained arrow or bridge between the two panels can show the choice to prepare before adding more agent work. Keep the bottom area as clean ivory space, without a caption or horizontal rule.
 
 Style: match the supplied deck references: refined editorial pen-and-ink infographic, ivory #fdfaf3 canvas, warm stone #e9e5db square-corner panels, near-black #141414 linework and text, restrained gold #dac284 for thin borders and dividers only, dark brown #7d6020 for readable emphasis. Bodoni/Didot-like serif headings and legible Montserrat-like sans-serif labels. Friendly small robot consistent with reference image 1. Spacious professional balance and clear visual hierarchy. Large exact labels readable when shown at 880 pixels wide.
 
 Avoid: repeating the slide title or subtitle in the image, tiny paragraphs, fabricated metrics, code snippets, logos, bright colours, green ticks, gradients, glossy 3D, rounded cards, heavy shadows, extra slogans, watermarks, slide numbers, or claims that agents automatically repair technical debt. Keep the point qualified: agents tend to reproduce the patterns their repository exposes, so prepare those patterns first.
 ```
 
-Final built-in image edit: remove the thin horizontal gold line below the bottom caption. Preserve the caption and all other artwork.
+Final built-in image edit: remove the bottom caption and leave clean ivory space. Preserve all other artwork.
 
 ### define-done.webp
 

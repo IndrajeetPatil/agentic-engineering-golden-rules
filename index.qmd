@@ -223,10 +223,10 @@ The nine rules begin with preparing a codebase for agents, then improve the shar
 
 [Improve the patterns agents will inherit and repeat.]{.lede}
 
-![](media/prepare-codebase-for-agents.webp){.illustration width="880" height="495" fig-alt="Two-panel illustration: on the left, an agent copies inconsistent naming, duplicated code, and weak checks, multiplying a tangled codebase. On the right, a person prepares clear conventions, coherent modules, and reliable checks before an agent extends the same orderly module pattern. The caption reads, The repository teaches by example."}
+![](media/prepare-codebase-for-agents.webp){.illustration width="880" height="495" fig-alt="Two-panel illustration: on the left, an agent copies inconsistent naming, duplicated code, and weak checks, multiplying a tangled codebase. On the right, a person prepares clear conventions, coherent modules, and reliable checks before an agent extends the same orderly module pattern."}
 
 ::: {.source}
-See OpenAI's account of agents reproducing existing, including uneven or suboptimal, repository patterns in [Harness engineering: leveraging Codex in an agent-first world](https://openai.com/index/harness-engineering/).
+Source: OpenAI, [Harness engineering](https://openai.com/index/harness-engineering/).
 :::
 
 ::: {.notes}
