@@ -27,7 +27,7 @@ A single tabbed slide introduces the same responsibility diagram for Anthropic, 
 6. Know thy tools. Sometimes the unlock is a hidden tool affordance. Example affordances that users miss include Claude Code voice dictation, Codex built-in image generation, and GitHub Copilot CLI computer use. Read the changelog; these examples are not exhaustive. Official docs were checked on 8 October 2026. When results are poor, check whether the agent had the right context, tools, and feedback.
 7. Automate repeated agent work. Capture effective recurring workflows in prompts, skills, slash commands, and multi-step workflows. Choose the smallest reusable mechanism that fits the work; automate coordination and retain human evaluation of evidence, trade-offs, and decisions about what ships.
 8. Identify and remove bottlenecks. Apply Amdahl’s law as an analogy across the SDLC: accelerating implementation alone cannot remove time spent waiting for review, verification, or release. Locate the current queue, choose a targeted intervention, and measure the full flow again because the constraint can move. Examples include deterministic quality gates for inconsistent quality enforcement, an LLM reviewer loop for large PRs, and task-specific end-to-end tests for slow behaviour checks. The reviewer loop adds capacity; it does not replace human judgement.
-9. Be curious. Be humble. Be kind. Mitchell Hashimoto’s whiteboard defense says people shipping customer-facing work should understand it well enough to explain how it works and defend their design decisions.
+9. Be curious. Be humble. Be kind. DHH’s “It’s more fun to be competent” line encourages engineers to keep understanding their systems and building their skills as tools change.
 
 ## References discussed
 
@@ -43,7 +43,7 @@ A single tabbed slide introduces the same responsibility diagram for Anthropic, 
 - Amdahl, “Validity of the single processor approach to achieving large scale computing capabilities” (1967).
 - DORA, State of AI-assisted Software Development (2025).
 - Git, git-worktree manual.
-- Mitchell Hashimoto, “The whiteboard defense” on X.
+- David Heinemeier Hansson, Opening Keynote, Rails World 2024.
 - AGENTS.md, an open format for guiding coding agents.
 
 ## Retrieval notes

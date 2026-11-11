@@ -512,19 +512,19 @@ Review agent-generated work as carefully as human work, and review humans as kin
 ::::
 
 ::: {.card .card-ink .card-wide}
-“[But if you're shipping customer-facing work, you can't be shipping things you don't understand at a high level.](https://x.com/mitchellh/status/2100249348345057389)”
+“[It’s more fun to be competent.](https://www.rubyevents.org/talks/opening-keynote-rails-world-2024)”
 
-— Mitchell Hashimoto
+— DHH
 :::
 
 ::: {.source}
-Quote: Mitchell Hashimoto, [“The whiteboard defense” on X](https://x.com/mitchellh/status/2100249348345057389).
+Quote: DHH, [Opening Keynote, Rails World 2024](https://www.rubyevents.org/talks/opening-keynote-rails-world-2024).
 :::
 
 ::: {.notes}
 Curiosity means trying useful workflows while continuing to understand the underlying system. Humility means checking plausible-looking output and being willing to revise our own assumptions. Kindness means protecting colleagues from unreviewed changes and giving constructive feedback.
 
-Hashimoto calls this the whiteboard defense: understand customer-facing systems well enough to explain how they work and defend their design decisions.
+David Heinemeier Hansson puts it simply: “It’s more fun to be competent.” Keep building competence as the tools change: understand the system, verify the work, and stay curious while giving colleagues kind, constructive feedback.
 :::
 
 # Making it stick
@@ -601,7 +601,7 @@ Share useful discoveries, address real sources of friction, and divide work into
 
 - Git. [git-worktree manual](https://git-scm.com/docs/git-worktree).
 
-- Hashimoto, M. [“The whiteboard defense” on X](https://x.com/mitchellh/status/2100249348345057389).
+- Heinemeier Hansson, D. [Opening Keynote, Rails World 2024](https://www.rubyevents.org/talks/opening-keynote-rails-world-2024).
 
 - [AGENTS.md](https://agents.md/): a simple, open format for guiding coding agents.
 
