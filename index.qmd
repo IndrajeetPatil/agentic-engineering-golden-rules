@@ -273,46 +273,18 @@ The work still happens; the command owns the sequence, checks prerequisites, and
 Set deterministic quality gates that give agents fast feedback and keep non-determinism under control.
 :::
 
-## Set deterministic quality gates: in practice {.smaller}
+## Set deterministic quality gates: in practice
 
-:::: {.columns .ruff-example}
-
-::: {.column}
-[Before Ruff]{.eyebrow}
-
-```{.python filename="example.py"}
-def greet(name: str) -> None:
-    greeting = f"Hello, {name}!"
-    print("Hello!")
-```
-
-Ruff reports **F841** at `example.py:2:5`: Local variable `greeting` is assigned to but never used.
-:::
-
-::: {.column}
-[After the agent fix]{.eyebrow}
-
-```{.python filename="example.py"}
-def greet(name: str) -> None:
-    greeting = f"Hello, {name}!"
-    print(greeting)
-```
-
-Ruff passes: **All checks passed!**
-:::
-
-::::
-
-![](media/guardrails-workflow.webp){.illustration width="880" fig-alt="Five-box Ruff workflow: the agent proposes a Python change, Ruff reports F841 because greeting is unused, the agent fixes it with print(greeting), passing checks proceed to human review, and the reviewed fix is merged."}
+![](media/guardrails-workflow.webp){.illustration width="880" height="495" fig-alt="Four-stage Ruff workflow: a coding agent proposes a Python example.py change, Ruff runs `ruff check example.py`, and a pass proceeds to human review and merge. On failure, Ruff reports F841 because greeting is assigned but never used; the error loops back to the agent, which fixes the code by printing greeting."}
 
 ::: {.source}
 See [Ruff’s F841 rule](https://docs.astral.sh/ruff/rules/unused-variable/).
 :::
 
 ::: {.notes}
-This small example shows the feedback loop. The first version computes a greeting but prints a hard-coded string. Ruff reports F841 because the local variable is unused.
+The agent proposes a small Python change. Ruff checks it deterministically and reports F841 when the greeting variable is assigned but never used. The finding loops back to the agent, which fixes the code by printing the variable and reruns the check.
 
-The agent reads the finding and fixes the code by printing the computed greeting. It reruns Ruff, sees that the check passes, and hands the change to human review. It does not silence the rule or delete the useful assignment just to make the check green.
+A passing check sends the change to human review before merge. The reviewer checks the intended behaviour and whether the fix makes sense; passing a configured check is evidence, not proof.
 
 Passing a configured check is evidence, not proof that the change meets the requirement. Human review still checks the intended behaviour and whether the fix makes sense.
 :::

@@ -1,8 +1,8 @@
 # Deck artwork
 
 The rule illustrations use built-in image generation and a shared editorial
-style. The quality-gates practice example pairs editable code blocks with a
-generated Ruff feedback loop; the setup contrast illustrates a shared
+style. The quality-gates practice example uses a generated Ruff F841 feedback
+loop; the setup contrast illustrates a shared
 one-command entry point. The automation examples demonstrate dependency
 updates and PR screenshot workflows. The tool-affordance examples were checked against
 current official docs. Final assets are WebP; the social card is the deck's
@@ -11,23 +11,21 @@ and was retained.
 
 ## guardrails-workflow.webp
 
-Reintroduced as the quality-gates practice workflow. The edited artwork keeps
-its original layout and pass/fail paths; the boxes now include the Ruff F841
-example, command, error, correction, review, and merge.
+The quality-gates practice workflow shows a Python change, Ruff command,
+pass/fail paths, precise F841 feedback, an agent correction, human review, and
+merge. The Python mark, Ruff wordmark, agent, reviewer, and Git branch icons
+make each step easy to scan.
 
 ```text
-Edit the existing wide workflow image. Keep the original 2172×724 canvas,
-ivory background, gold square-corner boxes, box positions and sizes, arrows,
-pass/fail labels, layout, whitespace, and typography style. Change only the
-text inside the five boxes. Keep each stage heading in place and add a concise,
-legible example beneath it:
-1. Agent proposes change: example.py; greeting = "Hello!"; print("Hello!")
-2. Deterministic checks: ruff check example.py
-3. Human review: Confirm the fix: print(greeting)
-4. Merge: Merge the reviewed fix
-5. Precise error output: F841: Local variable 'greeting' is assigned to but
-   never used.
-Keep pass/fail labels outside the boxes unchanged. Add no other content.
+Create a spacious 16:9 landscape diagram in the deck's ivory and warm-stone
+editorial style, with near-black ink, gold hairlines and arrows, serif stage
+headings, monospace code, and simple Python, Ruff, coding-agent, reviewer, and
+Git branch icons. Show four stages left to right: Agent change (example.py;
+greeting = "Hello!"; print("Hello!"), Ruff checks (ruff check example.py),
+Human review (print(greeting)), Merge (Reviewed fix). A pass arrow goes from
+Ruff to human review; a fail arrow goes to an F841 message saying the local
+variable 'greeting' is assigned but never used; a return arrow loops to Agent
+change. Keep text accurate, legible, and sparse. No title or slogan.
 ```
 
 ## sdlc-bottlenecks.webp
