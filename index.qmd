@@ -487,42 +487,6 @@ For frontend changes, the repository's agent instructions require the coding age
 For bounded, routine changes, this can remove the need for a person to review every pull request. People still define the tasks and trusted rules, and step in when a change needs judgement or an exception.
 :::
 
-## Further reading {.smaller}
-
-::: {.reading-list}
-
-- Willison, S. [Agentic Engineering Patterns](https://simonwillison.net/guides/agentic-engineering-patterns/).
-
-- Anthropic. [Building effective agents](https://www.anthropic.com/engineering/building-effective-agents).
-
-- Anthropic. [Effective context engineering for AI agents](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents).
-
-- Anthropic. [Claude Code best practices](https://code.claude.com/docs/en/best-practices).
-
-- Böckeler, B. [Harness engineering for coding agent users](https://martinfowler.com/articles/harness-engineering.html). martinfowler.com.
-
-- Lopopolo, R. [Harness engineering: leveraging Codex in an agent-first world](https://openai.com/index/harness-engineering/). OpenAI.
-
-- Beck, K. [Augmented coding: beyond the vibes](https://tidyfirst.substack.com/p/augmented-coding-beyond-the-vibes).
-
-- Amdahl, G. M. [“Validity of the single processor approach to achieving large scale computing capabilities”](https://doi.org/10.1145/1465482.1465560).
-
-- DORA. [State of AI-assisted Software Development](https://dora.dev/research/2025/dora-report/).
-
-- Anthropic. [Demystifying evals for AI agents](https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents).
-
-- Git. [git-worktree manual](https://git-scm.com/docs/git-worktree).
-
-- Heinemeier Hansson, D. [Opening Keynote, Rails World 2024](https://www.rubyevents.org/talks/opening-keynote-rails-world-2024).
-
-- [AGENTS.md](https://agents.md/): a simple, open format for guiding coding agents.
-
-:::
-
-::: {.notes}
-These references provide the foundations and deeper explorations for the rules covered in this talk, including prompt and context engineering guides, harness design, evaluation methodologies, and security best practices from Anthropic, Google, OWASP, and practitioners like Simon Willison, Kent Beck, and Martin Fowler.
-:::
-
 # Thank You
 
 Go forth and delegate responsibly.

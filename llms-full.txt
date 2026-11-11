@@ -36,13 +36,8 @@ The closing example uses the public [chatbot-template](https://github.com/Indraj
 ## References discussed
 
 - OpenAI, Harness engineering: leveraging Codex in an agent-first world.
-- Simon Willison, Agentic Engineering Patterns.
-- Anthropic, Building effective agents.
 - Anthropic, Effective context engineering for AI agents.
 - Anthropic, Claude Code best practices.
-- Birgitta Böckeler, Harness engineering for coding agent users (martinfowler.com).
-- Ryan Lopopolo, Harness engineering: leveraging Codex in an agent-first world (OpenAI).
-- Kent Beck, Augmented coding: beyond the vibes.
 - Anthropic, Demystifying evals for AI agents.
 - Amdahl, “Validity of the single processor approach to achieving large scale computing capabilities” (1967).
 - DORA, State of AI-assisted Software Development (2025).
