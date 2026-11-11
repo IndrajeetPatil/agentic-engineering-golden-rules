@@ -511,10 +511,10 @@ Review agent-generated work as carefully as human work, and review humans as kin
 
 ::::
 
-::: {.card .card-ink .card-wide}
-“[It’s more fun to be competent.](https://www.rubyevents.org/talks/opening-keynote-rails-world-2024)”
+::: {.pull-quote}
+[“It’s more fun to be competent”](https://www.rubyevents.org/talks/opening-keynote-rails-world-2024){.pull-quote-text}
 
-— DHH
+[DHH]{.pull-quote-attribution}
 :::
 
 ::: {.source}

@@ -350,6 +350,37 @@
   margin-top: 0.8em;
 }
 
+.reveal .pull-quote {
+  max-width: 28em;
+  margin: 0.8em auto 0.2em;
+  padding-top: 0.45em;
+  border-top: 1px solid var(--deck-gold);
+  text-align: center;
+}
+
+.reveal .pull-quote p {
+  margin: 0.15em 0;
+}
+
+.reveal .pull-quote-text {
+  font-family: var(--deck-display);
+  font-size: 1.3em;
+  font-style: italic;
+  line-height: 1.2;
+  text-decoration: underline;
+  text-decoration-color: var(--deck-gold-deep);
+  text-underline-offset: 0.12em;
+}
+
+.reveal .pull-quote-attribution {
+  display: block;
+  margin-top: 0.35em;
+  color: var(--deck-muted);
+  font-size: 0.55em;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
 .reveal .card-tall {
   min-height: 9em;
 }
