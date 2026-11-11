@@ -478,7 +478,7 @@ Agents are confidently wrong. So are we. Verify before you trust, including your
 ::: {.card .card-stone}
 [Kind]{.card-title}
 
-Review agent-generated work as carefully as human work, and review humans as kindly as ever.
+Listen generously, offer respectful and actionable feedback, and make room for teammates to learn.
 :::
 
 ::::
@@ -494,7 +494,7 @@ Quote: DHH, [Opening Keynote, Rails World 2024](https://www.rubyevents.org/talks
 :::
 
 ::: {.notes}
-Curiosity means trying useful workflows while continuing to understand the underlying system. Humility means checking plausible-looking output and being willing to revise our own assumptions. Kindness means protecting colleagues from unreviewed changes and giving constructive feedback.
+Curiosity means trying useful workflows while continuing to understand the underlying system. Humility means checking plausible-looking output and being willing to revise our own assumptions. Kindness is about how we treat one another: listen generously, be respectful when we disagree, and give feedback that helps colleagues learn.
 
 David Heinemeier Hansson puts it simply: “It’s more fun to be competent.” Keep building competence as the tools change: understand the system, verify the work, and stay curious while giving colleagues kind, constructive feedback.
 :::
