@@ -47,8 +47,10 @@ just axe       # Preview with the axe accessibility checker enabled
   stone panels (`#e9e5db`), near-black ink (`#141414`), and gold (`#dac284`)
   used only for hairlines and borders, never for text on light backgrounds
   (use `--deck-gold-deep` instead). Headings use Bodoni Moda at a fixed 28pt
-  optical size; body text and tracked uppercase labels use Montserrat. Corners
-  are square. Colours live as custom properties under `:root` in `style.css`;
+  optical size; body text and tracked uppercase labels use Montserrat. Boxed
+  text panels (cards, table cards, and code blocks) have softly rounded
+  corners set by `--deck-radius`; use that token rather than ad hoc radii, and
+  keep hairline rules, tabs, and illustration frames square. Colours live as custom properties under `:root` in `style.css`;
   do not hard-code new colours in `index.qmd`. Keep the theme `simple` and the
   format `revealjs`.
 - **Card classes.** Lay out content with the classes in `style.css` rather than
