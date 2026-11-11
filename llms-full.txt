@@ -10,7 +10,7 @@ Language: English
 
 ## Summary
 
-This slide deck presents nine golden rules for agentic engineering: using coding agents to boost productivity without compromising quality. Its central claim is that code generation is the easy part. Quality comes from the engineering system around the agent: a codebase that is easy to navigate, a deterministic harness that gives fast feedback, observable acceptance criteria, prepared codebase patterns, clean context, useful tools, repeatable automation, end-to-end flow improvements, and a team culture that keeps humans responsible for what ships.
+This slide deck presents nine golden rules for agentic engineering: using coding agents to boost productivity without compromising quality. Quality depends on the engineering system around the agent: a codebase that is easy to navigate, a deterministic harness that gives fast feedback, observable acceptance criteria, prepared codebase patterns, clean context, useful tools, repeatable automation, end-to-end flow improvements, and a team culture that keeps humans responsible for what ships.
 
 The talk is aimed at software engineers who ship production software and have at least some experience with coding agents such as Claude Code or GitHub Copilot CLI.
 

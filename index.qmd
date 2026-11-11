@@ -469,9 +469,9 @@ David Heinemeier Hansson puts it simply: “It’s more fun to be competent.” 
 Moving from individual practices to embedding these rules into daily team habits, collaboration, and culture.
 :::
 
-## Code generation is the easy part {.smaller}
+## Make the practices team habits {.smaller}
 
-[Everything around it needs planning, especially in teams.]{.lede}
+[Share what works, fix friction, plan clearly, and adapt together.]{.lede}
 
 :::: {.card-grid .card-grid-2}
 
@@ -506,7 +506,7 @@ Simplest-solution principle: [Building effective agents](https://www.anthropic.c
 :::
 
 ::: {.notes}
-Generating code is only part of delivering a change. A team must also plan the work, coordinate edits, preserve quality, and make the result reviewable.
+Agent-assisted changes depend on a team that plans the work, coordinates edits, preserves quality, and makes the result reviewable.
 
 Share useful discoveries, address real sources of friction, and divide work into changes that can be understood. Revisit the process as the tools evolve, keeping improvements that help the whole team rather than merely increasing the amount of generated code.
 :::
