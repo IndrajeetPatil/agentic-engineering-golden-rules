@@ -317,7 +317,7 @@ Primary request: illustrate defining observable success BEFORE delegating and th
 LEFT heading exactly "State the outcome". A human hands a brief to a robot. Three large labels on brief exactly "Goal", "Constraints", "What stays unchanged". Caption exactly "Give a target, not a script".
 CENTRE heading exactly "Choose the evidence". Three neatly aligned line-drawn objects: a bug with a before-and-after test report, a browser window with a human interacting with it, and a stopwatch beside two benchmark traces. Three short captions exactly "Bug: reproduce, then fix", "UI: inspect the interaction", "Performance: measure". No fabricated numbers.
 RIGHT heading exactly "Check the meaning". Human and robot jointly inspect a test page next to a requirements brief; a magnifying glass connects them, not a success badge. Large caption exactly "Tests can share the same mistake".
-Below the panels, centre the exact wording "Agree the criteria. Verify against them. Review the evidence." as an unboxed caption without horizontal rules, using large, readable type and generous whitespace. Keep robot drawing tasteful and relevant, not occupying all the evidence space.
+Do not add an overall caption below the panels. Centre the three-panel composition vertically with equal ivory margins above and below it. Keep robot drawing tasteful and relevant, not occupying all the evidence space.
 ```
 
 ### bound-blast-radius.webp
