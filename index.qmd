@@ -360,46 +360,6 @@ Agents must verify their own work: run relevant checks, inspect results, fix fai
 Prescribe steps when their order matters, such as migrations, incident response, or a proven diagnostic workflow. Otherwise, specify the outcome and constraints, provide strong tools, and retain human review of what ships.
 :::
 
-## Define done before delegating: in practice {.smaller}
-
-:::: {.card-grid .card-grid-3}
-
-::: {.card .card-stone}
-[Bug fix]{.eyebrow}
-
-Reproduce the failure. Show the same case succeeding after the fix, and check relevant unchanged behaviour.
-:::
-
-::: {.card .card-outline}
-[UI change]{.eyebrow}
-
-Inspect the rendered interaction, including relevant keyboard and responsive states. A build alone cannot show this.
-:::
-
-::: {.card .card-stone}
-[Performance]{.eyebrow}
-
-Measure before and after under comparable conditions. State the workload and trade-offs.
-:::
-
-::::
-
-::: {.card .card-ink .card-wide}
-**Check the meaning of the tests.** Implementation and assertions can agree with each other while missing the requirement.
-:::
-
-::: {.source}
-Bug and UI checks adapted from [Claude Code best practices](https://code.claude.com/docs/en/best-practices) (Anthropic).
-:::
-
-::: {.notes}
-Define the expected result before the implementation. Keep the acceptance criteria independent of the agent's chosen solution.
-
-Ask for evidence that a reviewer can inspect: the reproduction and check results for a bug, the rendered interaction for a UI change, and before-and-after measurements for performance work. Check both the requested change and the behaviour that must remain unchanged.
-
-A second agent can offer another perspective, but agreement between agents is not a substitute for checking the requirement and observable outcome.
-:::
-
 ## [05]{.rule-tag} Bound the blast radius {.rule-slide}
 
 [Limit what the agent can read, change, and execute; agree which actions need approval.]{.lede}
