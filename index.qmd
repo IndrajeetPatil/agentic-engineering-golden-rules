@@ -297,7 +297,7 @@ Ruff passes: **All checks passed!**
 
 ::::
 
-![](media/ruff-feedback-loop.webp){.illustration width="880" fig-alt="Ruff feedback loop: an agent edits code and runs ruff check. The F841 finding reports an unused greeting variable; the agent uses it and reruns the check. A passing result proceeds to human review and merge."}
+![](media/guardrails-workflow.webp){.illustration width="880" fig-alt="Five-box Ruff workflow: the agent proposes a Python change, Ruff reports F841 because greeting is unused, the agent fixes it with print(greeting), passing checks proceed to human review, and the reviewed fix is merged."}
 
 ::: {.source}
 See [Ruff’s F841 rule](https://docs.astral.sh/ruff/rules/unused-variable/).

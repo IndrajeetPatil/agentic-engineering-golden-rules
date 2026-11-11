@@ -9,24 +9,25 @@ current official docs. Final assets are WebP; the social card is the deck's
 typography and palette reference. The social card already matched the theme
 and was retained.
 
-## ruff-feedback-loop.webp
+## guardrails-workflow.webp
 
-Generated with the built-in image-generation tool as a wide infographic. It
-shows the agent edit, Ruff check, F841 fix-and-retry loop, passing result,
-human review, and merge. The code examples and alternative text carry the
-technical details.
+Reintroduced as the quality-gates practice workflow. The edited artwork keeps
+its original layout and pass/fail paths; the boxes now include the Ruff F841
+example, command, error, correction, review, and merge.
 
 ```text
-Create an ultra-wide horizontal editorial infographic showing this exact
-feedback loop: a friendly coding robot edits a code page and runs Ruff; an
-F841 finding leads to the robot using the greeting variable, then rerunning
-Ruff; a passing result proceeds to human review and merge. Label the steps
-exactly "Agent edit", "ruff check", "F841", "Use greeting", "Pass", "Human
-review", and "Merge". Make the retry loop and pass path unambiguous, with no
-crossing arrows. Match the deck's flat ivory canvas, square warm-stone nodes,
-near-black pen-and-ink linework, restrained gold arrows, dark-brown emphasis,
-and friendly robot. Keep the layout vertically compact for a slide beneath
-code examples. Add no other wording, code, title, caption, or decoration.
+Edit the existing wide workflow image. Keep the original 2172×724 canvas,
+ivory background, gold square-corner boxes, box positions and sizes, arrows,
+pass/fail labels, layout, whitespace, and typography style. Change only the
+text inside the five boxes. Keep each stage heading in place and add a concise,
+legible example beneath it:
+1. Agent proposes change: example.py; greeting = "Hello!"; print("Hello!")
+2. Deterministic checks: ruff check example.py
+3. Human review: Confirm the fix: print(greeting)
+4. Merge: Merge the reviewed fix
+5. Precise error output: F841: Local variable 'greeting' is assigned to but
+   never used.
+Keep pass/fail labels outside the boxes unchanged. Add no other content.
 ```
 
 ## Agentic stack diagrams
