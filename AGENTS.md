@@ -70,9 +70,9 @@ just axe       # Preview with the axe accessibility checker enabled
   frame). Images are WebP; convert new PNG or JPEG assets with `cwebp`. The
   artwork must not repeat the slide title or subtitle verbatim. Keep any
   necessary bottom caption unboxed and free of flanking horizontal rules, at a
-  readable size. The quality-gates example uses code blocks and Mermaid;
-  preserve its fail, fix, retry, pass, and human-review steps in the diagram and
-  speaker notes.
+  readable size. The quality-gates example uses code blocks and a generated
+  feedback-loop illustration; preserve its fail, fix, retry, pass, and
+  human-review steps in the image and speaker notes.
 - **Sources.** Every factual claim or borrowed idea has a `.source` div at the
   bottom of its slide.
 - **Speaker notes.** Most slides carry `::: {.notes}` blocks; keep them in sync
@@ -87,8 +87,9 @@ just axe       # Preview with the axe accessibility checker enabled
   `style.css`; no icon font or Quarto icon extension. When adding one, add only
   its mask data, preserve the source licence attribution, and keep an
   accessible label where the icon conveys meaning.
-- **Mermaid.** Keep diagrams as Mermaid source; do not replace them with
-  pre-rendered SVGs to shrink the bundle.
+- **Diagrams.** Use the built-in image-generation tool for diagram artwork.
+  Keep the labels and flow accurate, with equivalent detail in alternative
+  text and speaker notes.
 - **No code execution.** The front matter sets `execute: eval: false`; code
   blocks are display-only. Do not enable `eval: true` unless the deck genuinely
   needs computed output.

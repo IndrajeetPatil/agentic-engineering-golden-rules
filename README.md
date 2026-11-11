@@ -34,7 +34,8 @@ high-contrast [Bodoni Moda](https://fonts.google.com/specimen/Bodoni+Moda)
 headings, and small tracked [Montserrat](https://fonts.google.com/specimen/Montserrat)
 labels, the same typefaces the site uses. All illustrations in the deck are
 AI-generated and use the same ivory, stone, ink, and gold palette. The
-quality-gates example pairs code with an editable Mermaid feedback loop. See
+quality-gates example pairs code with a generated Ruff feedback-loop
+illustration. See
 [media/README.md](media/README.md) for illustration prompts and regeneration
 guidance.
 

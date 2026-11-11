@@ -297,22 +297,7 @@ Ruff passes: **All checks passed!**
 
 ::::
 
-```{mermaid}
-%%| eval: true
-%%| echo: false
-flowchart LR
-accTitle: Ruff feedback loop
-accDescr: Ruff reports F841 for an unused greeting variable. The agent uses the variable, reruns Ruff, and passing checks proceed to human review and merge.
-    agent["Agent changes example.py"] --> check["ruff check"]
-    check -- "F841: unused greeting" --> fix["Agent uses greeting"]
-    fix --> check
-    check -- "pass" --> review["Human review"]
-    review --> merge["Merge"]
-    classDef workflow fill:#e9e5db,stroke:#dac284,color:#141414,stroke-width:1px
-    classDef feedback fill:#fdfaf3,stroke:#7d6020,color:#141414,stroke-width:1px
-    class agent,check,review,merge workflow
-    class fix feedback
-```
+![](media/ruff-feedback-loop.webp){.illustration width="880" fig-alt="Ruff feedback loop: an agent edits code and runs ruff check. The F841 finding reports an unused greeting variable; the agent uses it and reruns the check. A passing result proceeds to human review and merge."}
 
 ::: {.source}
 See [Ruff’s F841 rule](https://docs.astral.sh/ruff/rules/unused-variable/).

@@ -607,11 +607,6 @@
   border: 0;
 }
 
-/* Mermaid's default blue edge labels are too light on their grey backing. */
-.reveal svg .edgeLabel p {
-  color: #1a1a1a !important;
-}
-
 /* Lightweight SVG masks using Font Awesome Free 6.7.2 paths. Icons: CC BY 4.0; https://fontawesome.com/license/free */
 
 .deck-icon {

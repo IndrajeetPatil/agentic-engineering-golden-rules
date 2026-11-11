@@ -1,13 +1,33 @@
 # Deck artwork
 
 The rule illustrations use built-in image generation and a shared editorial
-style. The quality-gates practice example uses editable code blocks and a
-Mermaid feedback loop; the setup contrast illustrates a shared one-command
-entry point. The automation examples demonstrate dependency updates and PR
-screenshot workflows. The tool-affordance examples were checked against
+style. The quality-gates practice example pairs editable code blocks with a
+generated Ruff feedback loop; the setup contrast illustrates a shared
+one-command entry point. The automation examples demonstrate dependency
+updates and PR screenshot workflows. The tool-affordance examples were checked against
 current official docs. Final assets are WebP; the social card is the deck's
 typography and palette reference. The social card already matched the theme
 and was retained.
+
+## ruff-feedback-loop.webp
+
+Generated with the built-in image-generation tool as a wide infographic. It
+shows the agent edit, Ruff check, F841 fix-and-retry loop, passing result,
+human review, and merge. The code examples and alternative text carry the
+technical details.
+
+```text
+Create an ultra-wide horizontal editorial infographic showing this exact
+feedback loop: a friendly coding robot edits a code page and runs Ruff; an
+F841 finding leads to the robot using the greeting variable, then rerunning
+Ruff; a passing result proceeds to human review and merge. Label the steps
+exactly "Agent edit", "ruff check", "F841", "Use greeting", "Pass", "Human
+review", and "Merge". Make the retry loop and pass path unambiguous, with no
+crossing arrows. Match the deck's flat ivory canvas, square warm-stone nodes,
+near-black pen-and-ink linework, restrained gold arrows, dark-brown emphasis,
+and friendly robot. Keep the layout vertically compact for a slide beneath
+code examples. Add no other wording, code, title, caption, or decoration.
+```
 
 ## Agentic stack diagrams
 
