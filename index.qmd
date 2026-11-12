@@ -363,16 +363,16 @@ Choose the tool interface that fits the task. A direct API or command-line tool 
 
 [Keep the agent harness current as models and codebases change.]{.lede}
 
-![](media/model-change-maintenance.webp){.illustration width="880" height="495" fig-alt="Two-panel illustration: on the left, a changed LLM prompts a person and robot to cross out stale prompt instructions, update prompt and skill cards, and verify them. On the right, a source-code diff makes repository guidance stale; a person erases obsolete AGENTS.md advice and rewrites it while the robot checks tests."}
+![](media/model-change-maintenance.webp){.illustration width="880" height="313" fig-alt="Three framed panels show how instructions can shrink as tools change. LLM Changes shows a person and robot updating prompts and skills after a model change. Source Changes replaces read, parse, and write steps with helper.process(); a person removes obsolete AGENTS.md instructions. CLI Changes replaces tool plan, tool build, and tool deploy with one tool ship command; a person shortens a SKILL.md checklist to that command. Both updated instruction sheets contain fewer steps."}
 
 ::: {.source}
 Source: Anthropic, [Model deprecations](https://docs.anthropic.com/en/docs/about-claude/model-deprecations).
 :::
 
 ::: {.notes}
-The field moves quickly, and the agent harness needs maintenance too. When frontier models or their interfaces change, review prompts and skills for assumptions or instructions that no longer fit, update the relevant parts, and verify them with suitable evaluations or tests.
+The field moves quickly, and the agent harness needs maintenance too. When models, source code, or command-line tools change, look for a simpler way to complete the task. A source change may add a helper that replaces several operations; a CLI may combine a sequence of commands into one. Update `AGENTS.md` and `SKILL.md` to remove superseded steps and keep the useful guidance concise. This makes skills easier to maintain as the tools change.
 
-Codebases change as well. Keep the harness in step by removing `AGENTS.md` advice that no longer matches the source, adding useful new conventions, and checking affected tests and documentation. Update what changed and keep durable guidance close to the repository, rather than letting it accumulate without review.
+The examples show two forms of simplification: a source helper replacing read, parse, and write steps, and a single CLI command replacing a three-command sequence. The goal is to keep agent instructions short and current, not to preserve procedural detail after the tools make it unnecessary.
 :::
 
 ## [08]{.rule-tag} Automate repeated agent work {.rule-slide}
@@ -487,7 +487,9 @@ Curiosity means trying useful workflows while continuing to understand the under
 David Heinemeier Hansson puts it simply: “It’s more fun to be competent.” Keep building competence as the tools change: understand the system, verify the work, and stay curious while giving colleagues kind, constructive feedback.
 :::
 
-# Conclusion
+# The Reward
+
+Build a steady flow of verified work, freeing people to focus on direction and judgement.
 
 ::: {.notes}
 Together, these practices can turn a repository into a software factory. They speed up routine work through planning, coding, review, verification, and release while people set direction and own risk boundaries.
@@ -509,6 +511,12 @@ This is what the rules can add up to. Clear repository guidance and simple local
 For frontend changes, the repository's agent instructions require the coding agent to attach screenshots to the pull request. The image shows a red-and-green code diff alongside those screenshots. Browser tests also compare visual snapshots, and CodSpeed reports performance regressions. The pull-request workflow asks for a current-head Codex review, sends findings back through a fix-and-review loop, and lets the coding agent squash-merge once Codex gives a thumbs-up and the required checks pass. Codex approval is part of the repository workflow; it is not one of the GitHub ruleset's required status checks.
 
 The team that owns the repository sets the risk boundary and the rules that enforce it. Small, reversible changes such as documentation or formatting updates may qualify for an automatic merge when the task is explicit and every required check passes. The coding and reviewer agents do not set that boundary. People own the policy, monitor its results, and review changes with wider impact, uncertainty, or exceptions; mission-critical systems can require human approval at key steps. Sandboxed work, restricted network access, and scoped credentials limit the impact of mistakes. Repository files and issue text can also contain malicious instructions, so treat them as untrusted input and keep control of consequential actions.
+:::
+
+# Conclusion
+
+::: {.notes}
+The software factory shows how these practices can help routine work move through delivery. The final view brings the flow together, with people setting direction and applying judgement while quality checks carry through each stage.
 :::
 
 ## Speed up routine delivery work
