@@ -61,6 +61,10 @@ not show an author/reviewer agent loop, automation, or any remedy. No footer,
 gradients, rounded cards, bright colours, logos, or watermark.
 ```
 
+Final built-in image edit: brighten the panels toward ivory, reduce brown fill
+and heavy shadows, and use refined gold borders and arrows. Preserve the stage
+labels, delivery queues, overwhelmed human reviewers, coding agents, and rocket.
+
 ## bottleneck-examples.webp
 
 Three practical responses to queues in software delivery: use Rust-based
@@ -81,6 +85,9 @@ manually checking a web journey, then an E2E test
 automating the same journey to a passing result. Keep the panels balanced,
 text sparse and accurate, with generous whitespace. No overall title or footer.
 ```
+
+Final built-in image edit: brighten the panels toward ivory, reduce the dense
+brown cast and heavy shading, and retain all three example flows and labels.
 
 ## software-factory.webp
 
@@ -121,7 +128,7 @@ automated QA stage by a fine gold leader line and magnifier cue. Inset heading
 exactly “QUALITY HARNESS”; subheading exactly “example gates”. Inside, show
 exactly eight large, neatly aligned checklist items in two columns: “100% code
 coverage”; “100% type coverage”; “Benchmarks”; “0 lint issues”; “0 warnings”;
-“Lighthouse performance”; “Accessibility”; “SEO”. Use one restrained
+“Mutation testing”; “Accessibility”; “SEO”. Use one restrained
 deep-gold check icon per item. Add a small, centred “… and more” below the
 checks to show the list continues. Spelling must be exact. Keep all panel fills light ivory or
 warm stone; use dark ink for text and linework, never dark-filled boxes. The
@@ -132,6 +139,10 @@ No overall title, no footer, no disclaimer or other added text, no logos, no
 gradients, no watermark. Do not show a human review stage, queues, bottlenecks,
 or unrelated panels.
 ```
+
+Final built-in image edit: replace the performance gate with “Mutation testing”,
+keep “Benchmarks” as a separate gate, and preserve the airy light panels and
+restrained gold accents.
 
 ## sdlc-conclusion.webp
 
