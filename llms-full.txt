@@ -20,7 +20,7 @@ A single tabbed slide introduces the same responsibility diagram for Anthropic, 
 
 ## Common artefacts
 
-The deck's glossary covers files that can guide coding agents in a codebase: `AGENTS.md` for shared repository guidance; `.agents/skills/<skill-name>/SKILL.md` and related scripts, templates, or examples for reusable skills; `DESIGN.md` for project design decisions; `.github/prompts/<prompt-name>.md` for reusable task prompts; and `.github/instructions/<name>.instructions.md` for path-specific guidance. These are examples, and conventions vary by tool and repository.
+The deck's glossary covers files that can guide coding agents in a codebase: `AGENTS.md` for shared repository guidance; `.agents/skills/<skill-name>/SKILL.md` and related scripts, templates, or examples for reusable skills; `DESIGN.md` for project design decisions; `.github/prompts/<prompt-name>.prompt.md` for reusable GitHub Copilot task prompts; and `.github/instructions/<name>.instructions.md` for path-specific GitHub Copilot guidance. These are examples, and conventions vary by tool and repository.
 
 ## The golden rules
 1. Prepare the codebase for agents. Agents tend to reproduce patterns the repository exposes, including uneven or suboptimal ones. Pay down high-impact technical debt, make sound conventions easy to find, and establish reliable checks before scaling agent work; this helps prevent existing problems from being repeated in new changes.

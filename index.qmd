@@ -159,10 +159,14 @@ Across these examples, the labels change while the responsibilities remain compa
 
 ## Common artefacts
 
-![](media/common-artefacts.webp){.illustration width="880" height="495" fig-alt="Glossary of files used to guide coding agents in a repository: AGENTS.md for shared repository guidance; .agents/skills/<skill-name>/SKILL.md for reusable skill instructions; related skill assets such as scripts, templates, and examples; DESIGN.md for project design decisions; .github/prompts/<prompt-name>.md for reusable task prompts; and .github/instructions/<name>.instructions.md for path-specific guidance. A friendly coding agent consults a repository index beside the glossary cards. These are examples; repositories use different conventions."}
+![](media/common-artefacts.webp){.illustration width="840" height="473" fig-alt="Glossary of files used to guide coding agents in a repository: AGENTS.md for shared repository guidance; .agents/skills/<skill-name>/SKILL.md for reusable skill instructions; related skill assets such as scripts, templates, and examples; DESIGN.md for project design decisions; .github/prompts/<prompt-name>.prompt.md for reusable task prompts; and .github/instructions/<name>.instructions.md for path-specific guidance. A friendly coding agent consults a repository index beside the glossary cards. These are examples; repositories use different conventions."}
+
+::: {.source}
+[Codex skill paths](https://developers.openai.com/api/reference/cli) · [GitHub prompt files](https://docs.github.com/en/copilot/concepts/prompting-and-context/prompt-files) · [GitHub custom instructions](https://docs.github.com/en/copilot/concepts/prompting-and-context/custom-instructions)
+:::
 
 ::: {.notes}
-These examples are specifically about files that can guide coding agents while they work in a codebase. AGENTS.md carries shared repository instructions. A skill lives under .agents/skills with its own SKILL.md and may include supporting scripts, templates, or examples. DESIGN.md gives agents project-specific design decisions to follow. Files under .github/prompts can provide reusable task prompts, while .github/instructions can apply guidance to particular paths. The exact conventions vary by tool and repository; keep instructions close to the work they describe.
+These examples are specifically about files that can guide coding agents while they work in a codebase. AGENTS.md carries shared repository instructions. A skill lives under .agents/skills with its own SKILL.md and may include supporting scripts, templates, or examples. DESIGN.md gives agents project-specific design decisions to follow. GitHub Copilot repository prompt files use the .prompt.md suffix; path-specific instructions use .instructions.md. The exact conventions vary by tool and repository; keep instructions close to the work they describe.
 :::
 
 ## Golden rules {.smaller}
