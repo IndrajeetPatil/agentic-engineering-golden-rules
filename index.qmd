@@ -71,7 +71,7 @@ This is a practical talk about using coding agents to improve software engineeri
 Think about one part of your daily work where you lose time: finding context, repeating an edit, coordinating changes, or waiting for feedback. Keep that example in mind as we work through the rules.
 :::
 
-## Before we start {.bookmark-slide}
+# Before we start
 
 ::: {.notes}
 Before we start, let us set expectations for this talk: we are focusing on production software, while recognising that prototypes can call for a lighter process.
@@ -102,7 +102,7 @@ Prototype code can defer tests and polish; production code needs a higher bar.
 
 [No panacea]{.card-title}
 
-These are principles that sharpen judgement, not a magic recipe.
+These rules sharpen judgement; they are not a magic recipe.
 :::
 
 ::::
@@ -162,14 +162,22 @@ Across these examples, the labels change while the responsibilities remain compa
 ![](media/common-artefacts.webp){.illustration width="840" height="473" fig-alt="Four equal cards in a symmetrical grid show common coding-agent files: AGENTS.md for repository guidance; .agents/skills/<skill-name>/SKILL.md for reusable workflow instructions, with related scripts, references, templates, and assets in the same panel; DESIGN.md for project design decisions; and .github/prompts/<prompt-name>.prompt.md for reusable focused GitHub Copilot tasks."}
 
 ::: {.source}
-[Codex AGENTS.md](https://developers.openai.com/cookbook/examples/codex/iterating-development-workflows-with-codex) · [Codex skill paths](https://developers.openai.com/api/reference/cli) · [Skill assets](https://developers.openai.com/plugins/concepts/skills) · [GitHub prompt files](https://docs.github.com/en/copilot/concepts/prompting-and-context/prompt-files)
+[Codex AGENTS.md](https://developers.openai.com/cookbook/examples/codex/iterating-development-workflows-with-codex) · [Google Labs DESIGN.md](https://github.com/google-labs-code/design.md) · [GitHub prompt files](https://docs.github.com/en/copilot/concepts/prompting-and-context/prompt-files)
 :::
 
 ::: {.notes}
 These four examples are files that can guide coding agents while they work in a codebase. AGENTS.md carries repository instructions. A skill lives under .agents/skills with its own SKILL.md and may keep related scripts, references, templates, and assets beside it. DESIGN.md records project design decisions for agents to follow. GitHub Copilot prompt files use the .prompt.md suffix. These conventions vary by tool; use the files that help agents work in your codebase.
 :::
 
-## Golden rules {.smaller}
+# Golden rules
+
+Ten rules for using coding agents to boost productivity without compromising quality.
+
+::: {.notes}
+The next ten rules offer practical ways to use coding agents productively while protecting software quality.
+:::
+
+## The ten rules {.smaller}
 
 :::: {.card-grid .card-grid-2 .rule-index}
 
