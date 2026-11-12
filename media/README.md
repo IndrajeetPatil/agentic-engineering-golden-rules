@@ -14,20 +14,25 @@ and was retained.
 ## guardrails-workflow.webp
 
 The quality-gates practice workflow shows an unused local variable inside a
-function, the Ruff command, precise F841 feedback, an agent correction, human
-review, and merge. The Python mark, Ruff wordmark, agent, reviewer, and Git
-branch icons make each step easy to scan.
+function, the Ruff command, precise F841 feedback, an agent correction that
+replaces the unused assignment with a direct print, human review, and merge.
+The finding arrow returns to the corrected agent change. Code samples are
+unboxed within their stage panels. The Python mark, Ruff wordmark, agent,
+reviewer, and Git branch icons make each step easy to scan.
 
 ```text
 Create a spacious 16:9 landscape diagram in the deck's ivory and warm-stone
 editorial style, with near-black ink, gold hairlines and arrows, serif stage
 headings, monospace code, and simple Python, Ruff, coding-agent, reviewer, and
-Git branch icons. Show the workflow: Agent change (`def main():` then
-`greeting = "Hello!"`), Ruff checks (`ruff check example.py`), and an F841
-message saying the local variable 'greeting' is assigned but never used. A
-return arrow leads to a corrected agent change (`print(greeting)` inside
-`main()`), followed by a second Ruff check, pass, human review, and merge. Keep
-the code and error accurate, legible, and sparse. No title or slogan.
+Git branch icons. Use only ivory (#fdfaf3), warm stone (#e9e5db), near-black
+ink (#141414), and restrained gold (#dac284) for hairlines and arrows. Show
+the workflow: Agent change (`def main():` then `greeting = "Hello!"`), Ruff
+checks (`ruff check example.py`), and an F841 message saying the local variable
+'greeting' is assigned but never used. A return arrow leads from the finding
+to a corrected agent change (`def main():` then `print("Hello!")`), followed
+by a second Ruff check, pass, human review, and merge. Keep code samples
+unboxed inside their stage panels. Keep the code and error accurate, legible,
+and sparse. No title or slogan.
 ```
 
 ## sdlc-bottlenecks.webp
