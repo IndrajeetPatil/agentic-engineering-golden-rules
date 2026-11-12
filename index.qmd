@@ -281,14 +281,14 @@ With a prepared codebase and clear shared workflows, deterministic checks make r
 
 ## Quality gates in practice
 
-![](media/guardrails-workflow.webp){.illustration width="880" height="495" fig-alt="Ruff feedback loop: a coding agent first defines main() with an unused local greeting variable. Ruff runs `ruff check example.py` and reports F841. The agent adds `print(greeting)` inside main() and reruns Ruff; the passing change proceeds to human review and merge."}
+![](media/guardrails-workflow.webp){.illustration width="880" height="495" fig-alt="Ruff feedback loop: a coding agent defines main() with an unused local greeting variable. Ruff runs `ruff check example.py` and reports F841. The finding points back to the agent, which replaces the assignment with `print(\"Hello!\")` and reruns Ruff. The passing change proceeds to human review and merge."}
 
 ::: {.source}
 See [Ruff’s F841 rule](https://docs.astral.sh/ruff/rules/unused-variable/).
 :::
 
 ::: {.notes}
-The agent proposes a small Python change. Inside `main()`, it assigns a greeting but never uses it. Ruff reports F841 for that unused local variable. The finding loops back to the agent, which adds `print(greeting)` inside the function and reruns the check.
+The agent proposes a small Python change. Inside `main()`, it assigns a greeting but never uses it. Ruff reports F841 for that unused local variable. The finding loops back to the agent, which replaces the unused assignment with `print("Hello!")` and reruns the check.
 
 A passing check sends the change to human review before merge. The reviewer checks the intended behaviour and whether the fix makes sense. A configured check is evidence, not proof that a change meets its requirement; automatic checks cannot take responsibility for what ships.
 :::
