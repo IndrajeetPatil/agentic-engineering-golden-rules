@@ -361,18 +361,18 @@ Choose the tool interface that fits the task. A direct API or command-line tool 
 
 ## [07]{.rule-tag} Keep pace with changing models {.rule-slide}
 
-[When models change, revisit the prompts, guidance, and checks they depend on.]{.lede}
+[LLM changes call for prompt and skill updates; source changes can make AGENTS.md stale.]{.lede}
 
-![](media/model-change-maintenance.webp){.illustration width="880" height="495" fig-alt="A continuous maintenance loop links changing models to the software system around them. Source code, tests, documentation, prompts, and AGENTS.md guidance move through review, targeted updates, and verification before returning to everyday agent work. A person checks whether changed model behaviour makes any part of the system stale."}
+![](media/model-change-maintenance.webp){.illustration width="880" height="495" fig-alt="Two-panel illustration: on the left, a changed LLM prompts a person and robot to cross out stale prompt instructions, update prompt and skill cards, and verify them. On the right, a source-code diff makes repository guidance stale; a person erases obsolete AGENTS.md advice and rewrites it while the robot checks tests."}
 
 ::: {.source}
 Source: Anthropic, [Model deprecations](https://docs.anthropic.com/en/docs/about-claude/model-deprecations).
 :::
 
 ::: {.notes}
-Models change, and the behaviour an agent relied on can shift with them. Keep the whole working system current: source code, tests, and documentation need the same ongoing care as prompts and repository guidance such as `AGENTS.md`.
+Treat agent guidance as working material that needs routine maintenance. When an LLM changes, review prompts and skills for assumptions or instructions that no longer fit, update the relevant parts, and verify them with the right evaluations or tests.
 
-When a model or its behaviour changes, look for guidance that is now misleading, missing checks, and workflows that need a revised prompt. Update only what the change calls for, then run the relevant tests and inspect the result. Record durable advice in the repository so future sessions can find it. Treat model updates as a reason to review the system, not as a reason to rewrite everything.
+Source changes can make repository guidance stale too. Remove AGENTS.md advice that no longer matches the code, add useful new conventions, and check the affected tests and documentation. Update what changed and keep durable guidance close to the repository, rather than letting it accumulate without review.
 :::
 
 ## [08]{.rule-tag} Automate repeated agent work {.rule-slide}
