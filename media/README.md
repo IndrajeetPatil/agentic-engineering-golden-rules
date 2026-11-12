@@ -267,10 +267,11 @@ Redesign the information graphic into a readable landscape layout. Top elegant p
 
 ## model-change-maintenance.webp
 
-The illustration shows two maintenance loops: model changes prompt review of
-prompts and skills, while source changes prompt cleanup of stale `AGENTS.md`
-guidance and verification through tests. Keep both loops visible and use the
-shared reference style above.
+The illustration shows why the agent harness must keep pace with a changing
+field and codebase: model or interface changes prompt review of prompts and
+skills, while source changes prompt cleanup of stale `AGENTS.md` guidance and
+verification through tests. Keep both loops visible and use the shared
+reference style above.
 
 ```text
 Create a landscape 16:9 presentation illustration in the deck's shared
