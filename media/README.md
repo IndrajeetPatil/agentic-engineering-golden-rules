@@ -198,18 +198,22 @@ labels. Convert each output with `cwebp -q 90`.
 ```text
 Use case: infographic-diagram. Asset type: new landscape 16:9 teaching illustration for a Quarto slide, about 1800x1000. Reference image is style only, not an edit target.
 Create a precise explanatory architecture diagram of Anthropic's coding stack. Refined editorial style matching reference: flat ivory #fdfaf3 canvas, stone #e9e5db square panels, near-black #141414 pen-and-ink linework and text, gold #dac284 thin borders only. Bodoni/Didot serif headings and clear Montserrat-like labels. No bright colours, gradients, rounded cards, shadows, watermark, or overall slide title. Sparse large text readable when projected at 880px. Friendly small robot, thin directional arrows.
-COMPOSITION: left 22% is an illustrated desktop monitor with label "Desktop app" then "Claude Desktop" then small "Code tab". A right-pointing arrow labelled "Task" leads to a large central outlined container occupying middle 55%, labelled at top "Harness · Claude Code", with subtitle "Context · permissions · execution".
+COMPOSITION: left 22% is an illustrated desktop monitor with label "Desktop app" and application name "Claude Desktop". A right-pointing arrow labelled "Task" leads to a large central outlined container occupying middle 55%, labelled at top "Harness · Claude Code", with subtitle "Context · permissions · execution".
 Inside harness a small robot at upper centre with heading "Agent" and subtitle "Model + harness in a loop". Below are two equal stone boxes: LEFT has brain icon heading "LLM" and label "Claude"; RIGHT has terminal and file icons heading "Tools" and label "Read · edit · shell". Connect LLM to Tools with top rightward arrow labelled "Tool call"; connect Tools back to LLM with bottom leftward arrow labelled "Result". Keep arrows and labels non-overlapping. Small caption below pair: "Model requests. Harness executes." These two directional arrows depict tool-calling.
 Rightmost 18% outside harness is a small server building illustration labelled "Model provider" and "Anthropic", linked by a thin two-way line to LLM box routed below harness, with label "Model API". Do NOT imply tools execute inside the model provider. The agent is the working system encompassing model and harness, not a separate model or provider. Desktop is an interface to Claude Code, not the LLM.
-Place the exact caption "One task → model → tool → result → repeat" centred below the diagram, unboxed and without horizontal rules. Use large, readable type and generous ivory whitespace.
+Place the exact caption "Task → model → tool → result → repeat" centred below the diagram, unboxed and without horizontal rules. Use large, readable type and generous ivory whitespace.
 No vendor logos necessary; use original editorial icons. All text verbatim and spelt correctly. Generous whitespace.
 ```
 
 | Variant | Vendor-specific labels |
 | --- | --- |
-| Anthropic | Claude Desktop / Code tab; Harness · Claude Code; LLM · Claude; Model provider · Anthropic; Model API |
-| OpenAI | ChatGPT desktop / Codex workspace; Harness · Codex; LLM · GPT; Model provider · OpenAI; Model API |
-| GitHub Copilot | VS Code / Copilot interface; Harness · Copilot; LLM · Claude; Model developer · Anthropic, Access via GitHub Copilot; Model access via Copilot |
+| Anthropic | Claude Desktop; Harness · Claude Code; LLM · Claude; Model provider · Anthropic; Model API |
+| OpenAI | ChatGPT desktop; Harness · Codex; LLM · GPT; Model provider · OpenAI; Model API |
+| GitHub Copilot | GitHub Copilot App; Harness · Copilot; LLM · Claude; Model developer · Anthropic, Access via GitHub Copilot; Model access via Copilot |
+
+The desktop-app panel names the application only. Do not add secondary
+interface labels such as a tab, workspace, or interface name. Each diagram
+uses the same bottom caption: “Task → model → tool → result → repeat”.
 
 The Copilot example deliberately uses Claude: selecting an Anthropic model
 does not switch the Copilot harness to Claude Code. Sources are the official
@@ -217,8 +221,11 @@ does not switch the Copilot harness to Claude Code. Sources are the official
 [Claude Desktop](https://code.claude.com/docs/en/desktop),
 [Codex harness](https://developers.openai.com/blog/codex-as-a-platform),
 [ChatGPT desktop](https://learn.chatgpt.com/docs/app), and
-[Copilot harness](https://code.visualstudio.com/docs/agents/concepts/agent-harnesses)
+[GitHub Copilot App](https://docs.github.com/en/copilot/concepts/copilot-surfaces/github-copilot-app)
 documentation.
+
+Final built-in image edit: label the desktop application “GitHub Copilot App”.
+Preserve the shared composition, light palette, and all other diagram labels.
 
 ## Shared style prompt
 
