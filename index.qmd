@@ -218,7 +218,7 @@ Across these examples, the labels change while the responsibilities remain compa
 ::::
 
 ::: {.notes}
-The ten rules begin with preparing a codebase for agents and improving the shared developer and agent experience. They then set quality gates, define outcomes, maintain useful context, use tools well, keep guidance current as models change, automate repeated work, remove delivery bottlenecks, and build a curious, humble, and kind team culture.
+The ten rules begin with preparing a codebase for agents, improving the shared developer and agent experience, and setting deterministic quality gates. They then define outcomes, maintain useful context, use tools well, keep guidance current as models change, automate repeated work, remove delivery bottlenecks, and build a curious, humble, and kind team culture.
 :::
 
 ## [01]{.rule-tag} Prepare the codebase for agents {.rule-slide}
@@ -236,7 +236,7 @@ Before inviting agents into day-to-day work, take stock of the patterns a reposi
 
 Prepare deliberately: pay down high-impact debt, make sound patterns easy to discover, document setup and conventions, and establish checks that surface mistakes. This does not require a codebase-wide rewrite; prioritise issues that block safe, reviewable work.
 
-Once the repository has a sound example to follow, improving developer experience makes those paths and tools easier for agents to use with less context hunting. The next rule connects DevEx to AgentEx.
+This foundation leads directly to the next two rules. First, improve developer experience so people and agents can find and follow the repository's sound patterns and workflows. Then make those expectations repeatable with deterministic quality gates and fast feedback.
 :::
 
 ## [02]{.rule-tag} Improve developer experience {.rule-slide}
@@ -246,9 +246,9 @@ Once the repository has a sound example to follow, improving developer experienc
 ![](media/devex-agentex.webp){.illustration width="880" height="495" fig-alt="Editorial infographic: a human and a coding agent connect to the same well-designed codebase. Five panels identify clear structure (folders, names, boundaries), one-command workflows (setup, format, lint, test), deterministic QA (formatters, linters, types, tests), living documentation (README, conventions, examples), and modular design (small units, clear interfaces). Shared outcomes are speed, quality, and trust."}
 
 ::: {.notes}
-DevEx equals AgentEx: what makes a codebase easy for humans makes it cheaper and safer for agents to work in.
+With a sound codebase in place, DevEx equals AgentEx: what makes the repository easy for humans makes it cheaper and safer for agents to work in.
 
-If developers need to hunt through unclear documentation, inconsistent commands, or hidden conventions, agents will struggle too. They burn tokens, make assumptions, or ask for more context.
+If developers need to hunt through unclear documentation, inconsistent commands, or hidden conventions, agents will struggle too. They burn tokens, make assumptions, or ask for more context. The next rule makes the quality expectations in those shared workflows repeatable with deterministic checks and fast feedback.
 :::
 
 ## Improve developer experience: in practice {.rule-slide}
@@ -276,10 +276,10 @@ The work still happens; the command owns the sequence, checks prerequisites, and
 ![](media/deterministic-tooling.webp){.illustration width="880" height="495" fig-alt="Two-panel illustration contrasting a confused robot amid inconsistent style, flaky tests, broken assumptions, hallucinated APIs, and failed builds with a calm robot in a safety harness labelled Formatter, Linter, Type checker, Pre-commit, CI, Sanitisers, and Valgrind. Output cards show consistent style and configured gates passing for tests, types, and builds. Human review is still needed to assess requirements, behaviour, and user experience. A change flows through checks to human review; passing gates is evidence for review."}
 
 ::: {.notes}
-Deterministic checks give agents fast feedback on repeatable requirements. Formatters, linters, type checkers, and tests can catch known classes of mistakes on every change. They cannot decide whether the work meets an unstated requirement or makes sense for users, so people still review the evidence and the work's impact.
+With a prepared codebase and clear shared workflows, deterministic checks make repeatable quality expectations concrete. Formatters, linters, type checkers, and tests give agents fast feedback and catch known classes of mistakes on every change. They cannot decide whether the work meets an unstated requirement or makes sense for users, so people still review the evidence and the work's impact.
 :::
 
-## Set deterministic quality gates: in practice
+## Quality gates in practice
 
 ![](media/guardrails-workflow.webp){.illustration width="880" height="495" fig-alt="Ruff feedback loop: a coding agent first defines main() with an unused local greeting variable. Ruff runs `ruff check example.py` and reports F841. The agent adds `print(greeting)` inside main() and reruns Ruff; the passing change proceeds to human review and merge."}
 
