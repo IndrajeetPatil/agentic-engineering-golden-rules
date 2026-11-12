@@ -29,7 +29,7 @@ execute:
   echo: true
   eval: false
 keywords: ["agentic-engineering", "coding-agents", "software-engineering", "ai-assisted-development"]
-description-meta: "Golden rules for agentic engineering: how to use coding agents to boost productivity without compromising quality. Ten rules covering codebase readiness, developer experience, deterministic quality gates, acceptance criteria, context, tools, model change, automation, delivery bottlenecks, and team culture."
+description-meta: "Golden rules for agentic engineering: how to use coding agents to boost productivity without compromising quality. Ten rules covering codebase readiness, developer experience, deterministic quality gates, acceptance criteria, context, tools, agent harness maintenance as models and codebases change, automation, delivery bottlenecks, and team culture."
 license: "CC0 1.0 Universal"
 pagetitle: "Golden Rules for Agentic Engineering"
 author-meta: "Indrajeet Patil"
@@ -194,7 +194,7 @@ Across these examples, the labels change while the responsibilities remain compa
 ::: {.card}
 [07]{.rule-number}
 
-**Keep pace with changing models**
+**Keep pace with a fast-moving field**
 :::
 
 ::: {.card}
@@ -359,9 +359,9 @@ Claude Code offers voice input for dictating prompts, with the authentication an
 Choose the tool interface that fits the task. A direct API or command-line tool is useful when it exposes the operation clearly; computer use can help with a workflow available only through a graphical interface. When results disappoint, examine the context, tools, and feedback available to the agent as well as the model itself.
 :::
 
-## [07]{.rule-tag} Keep pace with changing models {.rule-slide}
+## [07]{.rule-tag} Keep pace with a fast-moving field {.rule-slide}
 
-[LLM changes call for prompt and skill updates; source changes can make AGENTS.md stale.]{.lede}
+[Keep the agent harness current as models and codebases change.]{.lede}
 
 ![](media/model-change-maintenance.webp){.illustration width="880" height="495" fig-alt="Two-panel illustration: on the left, a changed LLM prompts a person and robot to cross out stale prompt instructions, update prompt and skill cards, and verify them. On the right, a source-code diff makes repository guidance stale; a person erases obsolete AGENTS.md advice and rewrites it while the robot checks tests."}
 
@@ -370,9 +370,9 @@ Source: Anthropic, [Model deprecations](https://docs.anthropic.com/en/docs/about
 :::
 
 ::: {.notes}
-Treat agent guidance as working material that needs routine maintenance. When an LLM changes, review prompts and skills for assumptions or instructions that no longer fit, update the relevant parts, and verify them with the right evaluations or tests.
+The field moves quickly, and the agent harness needs maintenance too. When frontier models or their interfaces change, review prompts and skills for assumptions or instructions that no longer fit, update the relevant parts, and verify them with suitable evaluations or tests.
 
-Source changes can make repository guidance stale too. Remove AGENTS.md advice that no longer matches the code, add useful new conventions, and check the affected tests and documentation. Update what changed and keep durable guidance close to the repository, rather than letting it accumulate without review.
+Codebases change as well. Keep the harness in step by removing `AGENTS.md` advice that no longer matches the source, adding useful new conventions, and checking affected tests and documentation. Update what changed and keep durable guidance close to the repository, rather than letting it accumulate without review.
 :::
 
 ## [08]{.rule-tag} Automate repeated agent work {.rule-slide}
