@@ -4,10 +4,11 @@ The rule illustrations use built-in image generation and a shared editorial
 style. `devex-agentex.webp`, `one-command-setup.webp`, `session-hygiene.webp`,
 and `know-thy-tools.webp` are the visual references for new and restyled art.
 The quality-gates practice example uses a generated Ruff F841 feedback
-loop; the setup contrast illustrates a shared
-one-command entry point. The automation examples demonstrate dependency
-updates and PR screenshot workflows. The tool-affordance examples were checked against
-current official docs. Final assets are WebP; the social card is the deck's
+loop. Context rot and its management are shown in a paired illustration
+sequence. The setup contrast illustrates a shared one-command entry point.
+The automation examples demonstrate dependency updates and PR screenshot
+workflows. The tool-affordance examples were checked against current official
+docs. Final assets are WebP; the social card is the deck's
 typography and palette reference. The social card already matched the theme
 and was retained.
 
@@ -104,56 +105,25 @@ brown cast and heavy shading, and retain all three example flows and labels.
 
 The closing example shows a feature request flowing through coding, a pull
 request with UI screenshots and a red-and-green diff, automated quality gates,
-an independent review loop, and agent-led merge. A magnified inset makes the
-example's strict quality harness concrete and ends with an ellipsis to indicate
-additional checks. The slide notes explain that repository owners set explicit
-risk boundaries for automatic merges and retain human review for higher-risk
-work. It is based on the public chatbot-template repository.
+an independent review loop, and agent-led merge. The magnified checklist names
+17 checks included in `make qa`, set in smaller type to retain a light, spacious
+composition. An ellipsis indicates that the repository's checks continue. The
+slide notes distinguish these gates from the wider CI workflow and explain
+that checks provide evidence for human judgement.
 
-```text
-Create a polished 16:9 landscape editorial infographic for a software
-engineering presentation, with warm ivory canvas, warm stone panels,
-near-black pen-and-ink linework, restrained deep-gold hairlines and arrows,
-refined serif headings, and clear sans-serif labels. Crisp high contrast,
-readable at 880×495 pixels, generous whitespace, consistent visual weight.
-Use square-cornered light ivory or warm-stone panels, fine near-black ink
-outlines, and restrained gold accents. Green and red are reserved for the
-meaningful added and removed lines in the code diff; use gold for quality
-checks and workflow markers.
+The inset labels are File naming, Backend format, Config format, Markdown
+format, Backend lint, Markdown lint, Spell check, Workflow lint, Link check,
+Type check, API schema, Dependency audit, Backend tests, Mutation tests, Type
+coverage, Frontend QA, and Security scan.
 
-Show one clear left-to-right causal flow across the upper half: developer
-submits a card labelled “Feature request” → a coding agent works in a repository
-→ a pull request appears with two tiny browser screenshot thumbnails labelled
-“UI screenshots” and a small unified code diff → automated QA gates → an
-independent reviewer agent checks the diff. A small “Findings” arrow loops
-from reviewer back to coding agent.
-From the reviewer, a clear forward arrow labelled with a deep-gold check leads
-to the coding agent merging; at far right, show the completed feature running in
-a small web app. Keep every other arrow flowing left-to-right. No human should
-appear at review or verification. In the pull-request station, include a
-compact unified code diff with pale red removed lines and pale green added
-lines, using familiar minus and plus signs.
+## context-rot.webp
 
-In the lower half, add a prominent, clean zoom-in inset attached to the
-automated QA stage by a fine gold leader line and magnifier cue. Inset heading
-exactly “QUALITY HARNESS”; subheading exactly “example gates”. Inside, show
-exactly eight large, neatly aligned checklist items in two columns: “100% code
-coverage”; “100% type coverage”; “Benchmarks”; “0 lint issues”; “0 warnings”;
-“Mutation testing”; “Accessibility”; “SEO”. Use one restrained
-deep-gold check icon per item. Add a small, centred “… and more” below the
-checks to show the list continues. Spelling must be exact. Keep all panel fills light ivory or
-warm stone; use dark ink for text and linework, never dark-filled boxes. The
-callout should look like a compact quality checklist and feel strict, not like
-a dashboard. Make the entire image a single coherent infographic.
-
-No overall title, no footer, no disclaimer or other added text, no logos, no
-gradients, no watermark. Do not show a human review stage, queues, bottlenecks,
-or unrelated panels.
-```
-
-Final built-in image edit: replace the performance gate with “Mutation testing”,
-keep “Benchmarks” as a separate gate, and preserve the airy light panels and
-restrained gold accents.
+The first session-hygiene slide illustrates how stale assumptions, repeated
+corrections, and contradictory instructions accumulate as context grows, then
+lead an agent to miss a current requirement or revive a rejected approach. A
+battery gauge represents usable context draining from 100% as recall degrades.
+Its companion `session-hygiene.webp` shows focused related work, isolated
+parallel tasks, and durable repository knowledge as ways to keep context useful.
 
 ## sdlc-conclusion.webp
 
@@ -278,20 +248,11 @@ BOTTOM of the RIGHT panel: three large readable steps connected left to right wi
 
 ## session-hygiene.webp
 
-Updated with built-in image generation to match the qualified rule. The
-previous version of the same asset is the sole edit target and style
-reference; it remains available in Git history. The complete prompt follows.
-
-```text
-Use case: productivity-visual.
-Asset type: landscape 16:9 Quarto presentation illustration.
-Input image 1: edit target, existing session-hygiene illustration. Preserve its robot character, elegant Bodoni/Didot headings, Montserrat-like labels, flat ivory #fdfaf3 and stone #e9e5db palette, near-black #141414 ink, gold #dac284 hairline borders ONLY, dark brown #7d6020 text emphasis, square panels, generous spacing, professional pen-and-ink style. No bright colours, gradients, glossy 3D, watermark, or slide title.
-Primary request: reflect COHERENT context rather than obligatory fresh context, while keeping worktree isolation and durable repository knowledge. Keep the three-panel layout and compact bottom handoff strip. Edit LEFT panel and BOTTOM strip; CENTRE and RIGHT content and message stay unchanged.
-LEFT heading exactly "Keep context coherent". In one workspace labelled "Session A", show the same focused robot consulting an existing notes sheet labelled "Useful context" and a main sheet labelled "Task A", with a small adjacent connected sheet labelled "Related follow-up". Convey that a related follow-up uses the same coherent session. A small secondary haunted/tangled-chat vignette has a reset arrow towards the workspace, but label that arrow exactly "Reset when confused". This vignette must not dominate. Caption exactly "One task by default; related follow-ups can stay." No "Fresh context", no absolute "One task per session".
-CENTRE: preserve heading "One Git worktree per parallel task", repository branching to isolated Worktree A / Task A and Worktree B / Task B, each with friendly robot and terminal. Caption "Separate tasks. Separate working directories."
-RIGHT: preserve heading "Durable knowledge lives in the repository", Repository containing AGENTS.md with "Conventions", "Decisions", "Lessons", useful chat knowledge flowing into the document and robot consulting it. Caption "Keep knowledge beyond the chat."
-BOTTOM: title exactly "Reset with a compact handoff". Five readable fields, with understated line icons: "Goal", "Constraints", "Relevant files", "Ruled-out approaches", "Acceptance checks". Fit all five without tiny text. All text exact, legible at 880 px display width. Keep the image at 16:9.
-```
+The second session-hygiene slide shows three ways to manage context: keep a
+focused task coherent with a related follow-up, isolate parallel work in
+separate Git worktrees, and save durable conventions, decisions, and lessons
+in `AGENTS.md` for future sessions. Each panel connects the practice to less
+noise and better recall.
 
 ## meta-automation.webp
 
@@ -479,12 +440,6 @@ Keep the top main title exactly "Example affordances that users miss" at its cur
 
 ```text
 Use case: precise-object-edit. Edit only the lower-right panel headline of this presentation illustration. Replace BOTH existing headline lines ("Delusions of grandeur." and the smaller subtitle beneath it) with a SINGLE elegant line reading exactly "Avoid grandiosity" centred above the three colleagues. Remove the subtitle completely; leave clean ivory space. Keep all other text, characters, linework, panels, typography, colours, canvas dimensions, and composition unchanged. No extra text.
-```
-
-### session-hygiene
-
-```text
-Use case: precise-object-edit. Edit only the central reset caption. Keep the large word "Reset" and its circular-arrow icon. Remove the two small words "ENDLESS CONTINUATION" below "Reset", leaving clean ivory space in their place. Preserve the rest of this illustration exactly, including all other labels, characters, panels, palette, typography, canvas dimensions, and layout.
 ```
 
 ## Integration checks

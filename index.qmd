@@ -79,7 +79,7 @@ Before we start, let us set expectations for this talk: we are focusing on produ
 
 ## Managing expectations
 
-:::: {.card-grid .card-grid-3}
+:::: {.card-grid .card-grid-2}
 
 ::: {.card .card-stone}
 [Audience]{.eyebrow}
@@ -87,14 +87,6 @@ Before we start, let us set expectations for this talk: we are focusing on produ
 [You ship production software]{.card-title}
 
 Tests, deployment, security, and maintenance matter.
-:::
-
-::: {.card .card-outline}
-[Exception]{.eyebrow}
-
-[Throwaway code]{.card-title}
-
-Prototype code can defer tests and polish; production code needs a higher bar.
 :::
 
 ::: {.card .card-ink}
@@ -321,12 +313,12 @@ A passing check sends the change to human review before merge. The reviewer chec
 
 ## [04]{.rule-tag} Define done before delegating {.rule-slide}
 
-[State the outcome, what must stay unchanged, and the evidence that will show it works.]{.lede}
+[Define the outcome and criteria, then have the agent verify its own work.]{.lede}
 
 ![](media/define-done.webp){.illustration width="880" height="495" fig-alt="Three-panel illustration: a human gives a robot a brief containing the goal, constraints, and what stays unchanged; evidence is chosen to fit the task, reproducing and fixing a bug, inspecting a UI interaction, or measuring performance; a human and robot compare tests with requirements because both can share the same mistake. Agree the criteria, verify against them, and review the evidence."}
 
 ::: {.source}
-On specifying success and grading outcomes rather than paths, see [Demystifying evals for AI agents](https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents) (Anthropic).
+Source: [Anthropic on agent evaluations](https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents).
 :::
 
 ::: {.notes}
@@ -345,26 +337,32 @@ Prescribe steps when their order matters, such as migrations, incident response,
 
 ## [05]{.rule-tag} Maintain session hygiene {.rule-slide}
 
-[Coherent context beats haunted context.]{.lede}
+[As context grows, recall can degrade and agent output can drift.]{.lede}
 
-![](media/session-hygiene.webp){.illustration width="880" height="495" fig-alt="Three-panel illustration: a robot keeps useful context for task A and a related follow-up in the same coherent session, with one task as the default and a reset when confused; parallel tasks A and B run in separate Git worktrees from the same repository; durable conventions, decisions, and lessons move from chat history into AGENTS.md, which a new session consults. A compact handoff contains the goal, constraints, relevant files, ruled-out approaches, and acceptance checks."}
+![](media/context-rot.webp){.illustration width="880" height="495" fig-alt="A focused agent begins with a task and useful context. Stale assumptions, repeated corrections, and contradictory instructions accumulate as context grows. A battery gauge for usable context drains from 100% to nearly empty as recall degrades. The confused agent then misses the current requirement and revives a rejected approach."}
 
 ::: {.source}
-Sources: [Context engineering](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents) and [Claude Code best practices](https://code.claude.com/docs/en/best-practices) (Anthropic) · [Git worktrees](https://git-scm.com/docs/git-worktree).
+Source: Anthropic, [Effective context engineering for AI agents](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents).
 :::
 
 ::: {.notes}
-Keep sessions coherent, parallel tasks isolated, and durable knowledge in the repository.
+As the context window grows, an agent may retrieve relevant information less reliably. Stale assumptions, repeated corrections, and contradictory instructions add noise. The output can then miss the current requirement or revive an approach that was already rejected. The battery represents usable context: it drains as unhelpful material crowds the window, and recall degrades.
 
-Every correction, abandoned approach, and reversed decision stays in the context window. After enough of them, the agent is reasoning over contradictions.
+This degradation is called context rot. It is a reason to manage the information in a session deliberately, rather than treating every earlier message as equally useful.
+:::
 
-One task per session is a useful default, not an absolute. A closely related follow-up can benefit from the reasoning and discoveries already in context, and restarting has a cost: a handoff can lose an important constraint or a failed hypothesis. Length matters as well as coherence: Anthropic describes context rot, where recall of information in the context degrades as the token count grows. Clear context between unrelated tasks; compact only when continuing related work whose decisions are worth keeping. Restart when the context stops being coherent or is filling with material the next step does not need.
+## Maintain session hygiene in practice
 
-Use one Git worktree per parallel task so each task has its own working directory. Keep durable conventions, decisions, and lessons in the repository, for example in `AGENTS.md`, so future sessions can find them without relying on old chat history.
+![](media/session-hygiene.webp){.illustration width="880" height="495" fig-alt="Three practices keep context useful: a focused task can share coherent notes with a related follow-up; parallel tasks A and B work in separate Git worktrees; durable conventions, decisions, and lessons are saved in AGENTS.md for future sessions. Each panel concludes: less noise, better recall."}
 
-Signs of a haunted session include reviving a rejected approach, confusing earlier and current requirements, repeating the same correction, or continuing after the conversation has outgrown its original task. Claude Code's best practices suggest a concrete threshold: after two failed corrections on the same issue, start fresh with a better prompt.
+::: {.source}
+Sources: [Claude Code best practices](https://code.claude.com/docs/en/best-practices) (Anthropic) · [Git worktrees](https://git-scm.com/docs/git-worktree).
+:::
 
-Reset with a compact handoff: the goal in one sentence, constraints on what must not change, relevant files to start with, approaches already ruled out, and acceptance checks that show when the work is done.
+::: {.notes}
+Keep a session focused by default, while allowing a closely related follow-up to use context that is still coherent and useful. Separate parallel tasks into Git worktrees so each has its own working directory. Save durable conventions, decisions, and lessons in repository guidance such as `AGENTS.md` so they do not have to be reconstructed from old chat history.
+
+These habits reduce unrelated and contradictory material in the active context, helping the agent retrieve the information that matters to the current task.
 :::
 
 ## [06]{.rule-tag} Know thy tools {.rule-slide}
@@ -525,18 +523,18 @@ Together, these practices can turn a repository into a software factory. They sp
 
 [Routine requests flow to verified merges; people approve high-stakes work.]{.lede}
 
-![](media/software-factory.webp){.illustration width="880" height="495" fig-align="center" fig-alt="A feature request moves from a developer to a coding agent, which opens a pull request with UI screenshots and a red-and-green code diff. Automated QA gates show example checks for 100% code coverage, 100% type coverage, benchmarks, zero lint issues, zero warnings, mutation testing, accessibility, and SEO, followed by an ellipsis to indicate more checks. An independent reviewer agent sends findings back to the coding agent; after approval, the coding agent merges and the feature appears in a web app."}
+![](media/software-factory.webp){.illustration width="880" height="495" fig-align="center" fig-alt="A feature request moves from a developer to a coding agent, which opens a pull request with UI screenshots and a red-and-green code diff. The magnified quality harness lists file naming, backend and configuration formatting, Markdown formatting and linting, backend lint, spelling, workflow lint, link checking, type checking, API schema validation, dependency audit, backend tests, mutation tests, type coverage, frontend QA, and a security scan, followed by an ellipsis. An independent reviewer agent sends findings back to the coding agent; after approval, the coding agent merges and the feature appears in a web app."}
 
 ::: {.source}
 Example: [chatbot-template](https://github.com/IndrajeetPatil/chatbot-template/) · OpenAI, [sandbox security](https://developers.openai.com/api/docs/guides/agents-api/environments/security) and [prompt injections](https://openai.com/safety/prompt-injections/).
 :::
 
 ::: {.notes}
-This is what the rules can add up to. Clear repository guidance and simple local commands give agents a reliable starting point; reusable prompts and skills automate repeat work; checks produce evidence at each step. The public chatbot-template repository shows the flow in practice. Locally, `make qa` runs the project quality suite and `make hooks` runs its pre-commit checks. GitHub Actions runs checks for formatting, linting, types, backend and frontend tests, end-to-end browser tests, security, and other quality gates. The main-branch ruleset requires the `prek`, `test`, `backend`, `frontend`, `e2e`, and `qa` status checks. The inset highlights example gates from this strict harness and uses an ellipsis to show that the list continues; other projects can select checks that fit their needs. These are example thresholds, not proof that the implementation is correct; compare the results with the requirements and inspect the behaviour too.
+This is what the rules can add up to. Clear repository guidance and simple local commands give agents a reliable starting point; reusable prompts and skills automate repeat work; checks produce evidence at each step. The public chatbot-template repository shows the flow in practice. Locally, `make qa` runs the project quality suite and `make hooks` runs its pre-commit checks. The illustration names checks included in `make qa`: file naming; backend, configuration, and Markdown formatting; backend and Markdown lint; spelling; workflow lint; link checks; type checks; API schema validation; dependency audit; backend tests, mutation tests, and type coverage; frontend QA; and security scanning. An ellipsis indicates that the list continues. GitHub Actions also runs end-to-end browser tests and other checks, with required `prek`, `test`, `backend`, `frontend`, `e2e`, and `qa` statuses. These checks provide evidence, not proof that an implementation meets the requirements, so inspect the behaviour too.
 
 For frontend changes, the repository's agent instructions require the coding agent to attach screenshots to the pull request. The image shows a red-and-green code diff alongside those screenshots. Browser tests also compare visual snapshots, and CodSpeed reports performance regressions. The pull-request workflow asks for a current-head Codex review, sends findings back through a fix-and-review loop, and lets the coding agent squash-merge once Codex gives a thumbs-up and the required checks pass. Codex approval is part of the repository workflow; it is not one of the GitHub ruleset's required status checks.
 
-The team that owns the repository sets the risk boundary and the rules that enforce it. Small, reversible changes such as documentation or formatting updates may qualify for an automatic merge when the task is explicit and every required check passes. The coding and reviewer agents do not set that boundary. People own the policy, monitor its results, and review changes with wider impact, uncertainty, or exceptions; mission-critical systems can require human approval at key steps. Sandboxed work, restricted network access, and scoped credentials limit the impact of mistakes. Repository files and issue text can also contain malicious instructions, so treat them as untrusted input and keep control of consequential actions.
+The team that owns the repository sets the risk boundary and the rules that enforce it. Small, reversible changes such as documentation or formatting updates may qualify for an automatic merge when the task is explicit and every required check passes. The coding and reviewer agents do not set that boundary. People own the policy, monitor its results, and review changes with wider impact or uncertainty; mission-critical systems can require human approval at key steps. Sandboxed work, restricted network access, and scoped credentials limit the impact of mistakes. Repository files and issue text can also contain malicious instructions, so treat them as untrusted input and keep control of consequential actions.
 :::
 
 # Conclusion
