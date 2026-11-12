@@ -73,9 +73,12 @@ just axe       # Preview with the axe accessibility checker enabled
   in `media/devex-agentex.webp`, `media/one-command-setup.webp`,
   `media/session-hygiene.webp`, and `media/know-thy-tools.webp`: airy ivory or
   warm stone, fine near-black pen-and-ink linework, simple friendly figures,
-  restrained gold accents, and square, light panels. Avoid painterly or
-  photoreal scenes, saturated fills, and decorative green checks. Compare new
-  art at slide size with these references. The
+  restrained gold accents, and square, light panels. Keep the overall value
+  light like these references: bright ivory backgrounds, pale warm-stone panels,
+  and sparse shading. Reserve near-black for fine linework and text; avoid
+  brown-dominant fills and dense shadows. Avoid painterly or photoreal scenes,
+  saturated fills, and decorative green checks. Compare new art at slide size
+  with these references. The
   artwork must not repeat the slide title or subtitle verbatim. Keep any
   necessary bottom caption unboxed and free of flanking horizontal rules, at a
   readable size. Use a concise subtitle for the key takeaway and let the

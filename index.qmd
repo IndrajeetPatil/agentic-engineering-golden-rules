@@ -113,7 +113,7 @@ Engineering rigour depends on the work. Throwaway proofs of concept, demos, and 
 
 ### Anthropic
 
-![](media/agentic-stack-anthropic.webp){.illustration width="880" height="495" fig-alt="Anthropic example. Claude Desktop's Code tab sends a task to the Claude Code harness, which manages context, permissions, and execution. The agent is a Claude language model working with that harness in a loop. The model requests a tool call; the harness runs read, edit, or shell tools and returns their results to the model. Anthropic provides the model through its API. The diagram shows responsibilities, not where processes run."}
+![](media/agentic-stack-anthropic.webp){.illustration width="880" height="495" fig-alt="Anthropic example. Claude Desktop sends a task to the Claude Code harness, which manages context, permissions, and execution. The agent is a Claude language model working with that harness in a loop. The model requests a tool call; the harness runs read, edit, or shell tools and returns their results to the model. Anthropic provides the model through its API. The diagram shows responsibilities, not where processes run."}
 
 ::: {.source}
 [Claude Code architecture](https://code.claude.com/docs/en/how-claude-code-works) · [Desktop interface](https://code.claude.com/docs/en/desktop)
@@ -121,7 +121,7 @@ Engineering rigour depends on the work. Throwaway proofs of concept, demos, and 
 
 ### OpenAI
 
-![](media/agentic-stack-openai.webp){.illustration width="880" height="495" fig-alt="OpenAI example. The ChatGPT desktop app's Codex workspace sends a task to the Codex harness, which manages context, permissions, and execution. The agent is a GPT language model working with that harness in a loop. The model requests a tool call; the harness runs read, edit, or shell tools and returns their results to the model. OpenAI provides the model through its API. The diagram shows responsibilities, not where processes run."}
+![](media/agentic-stack-openai.webp){.illustration width="880" height="495" fig-alt="OpenAI example. The ChatGPT desktop app sends a task to the Codex harness, which manages context, permissions, and execution. The agent is a GPT language model working with that harness in a loop. The model requests a tool call; the harness runs read, edit, or shell tools and returns their results to the model. OpenAI provides the model through its API. The diagram shows responsibilities, not where processes run."}
 
 ::: {.source}
 [Codex harness](https://developers.openai.com/blog/codex-as-a-platform) · [Desktop interface](https://learn.chatgpt.com/docs/app)
@@ -129,10 +129,10 @@ Engineering rigour depends on the work. Throwaway proofs of concept, demos, and 
 
 ### GitHub Copilot
 
-![](media/agentic-stack-copilot.webp){.illustration width="880" height="495" fig-alt="GitHub Copilot example, using a Claude model. VS Code's Copilot interface sends a task to the Copilot harness, which manages context, permissions, and execution. The agent is the selected Claude language model working with the Copilot harness in a loop. The model requests a tool call; the harness runs read, edit, or shell tools and returns their results to the model. Anthropic develops the model; GitHub Copilot provides model access. Selecting Claude does not switch to the Claude Code harness. The diagram shows responsibilities, not where processes run."}
+![](media/agentic-stack-copilot.webp){.illustration width="880" height="495" fig-alt="GitHub Copilot example, using a Claude model. The GitHub Copilot App sends a task to the Copilot harness, which manages context, permissions, and execution. The agent is the selected Claude language model working with that harness in a loop. The model requests a tool call; the harness runs read, edit, or shell tools and returns their results to the model. Anthropic develops the model; GitHub Copilot provides model access. Selecting Claude does not switch to the Claude Code harness. The diagram shows responsibilities, not where processes run."}
 
 ::: {.source}
-[Copilot harness and model access](https://code.visualstudio.com/docs/agents/concepts/agent-harnesses) · [Supported models](https://docs.github.com/en/copilot/reference/ai-models/supported-models)
+[GitHub Copilot App](https://docs.github.com/en/copilot/concepts/copilot-surfaces/github-copilot-app) · [Supported models](https://docs.github.com/en/copilot/reference/ai-models/supported-models)
 :::
 
 ::::
@@ -146,7 +146,7 @@ In the Anthropic example, the Code tab in Claude Desktop is the interface, Claud
 
 The OpenAI example keeps those roles: the Codex workspace in the ChatGPT desktop app is the interface, the Codex harness runs the loop, and an OpenAI GPT model supplies the reasoning. Codex is a product and harness name, rather than a synonym for a language model.
 
-The Copilot example uses VS Code as the desktop interface and the Copilot harness. We choose a Claude model to make one distinction visible: Anthropic develops that model, while GitHub Copilot supplies access to it. Choosing Claude in Copilot does not turn the Copilot harness into Claude Code. Other supported models are available, subject to your account and configuration.
+The GitHub Copilot App is the desktop interface in this example, and Copilot provides the harness. We choose a Claude model to make one distinction visible: Anthropic develops that model, while GitHub Copilot supplies access to it. Choosing Claude in Copilot does not turn the Copilot harness into Claude Code. Other supported models are available, subject to your account and configuration.
 
 Across these examples, the labels change while the responsibilities remain comparable. Keep the model, harness, interface, tools, and model-access service distinct as we work through the rules.
 :::
@@ -499,7 +499,7 @@ Together, these practices can turn a repository into a software factory. They sp
 
 [Routine requests flow to verified merges; people approve high-stakes work.]{.lede}
 
-![](media/software-factory.webp){.illustration width="880" height="495" fig-align="center" fig-alt="A feature request moves from a developer to a coding agent, which opens a pull request with UI screenshots and a red-and-green code diff. Automated QA gates show example checks for 100% code coverage, 100% type coverage, benchmarks, zero lint issues, zero warnings, Lighthouse performance, accessibility, and SEO, followed by an ellipsis to indicate more checks. An independent reviewer agent sends findings back to the coding agent; after approval, the coding agent merges and the feature appears in a web app."}
+![](media/software-factory.webp){.illustration width="880" height="495" fig-align="center" fig-alt="A feature request moves from a developer to a coding agent, which opens a pull request with UI screenshots and a red-and-green code diff. Automated QA gates show example checks for 100% code coverage, 100% type coverage, benchmarks, zero lint issues, zero warnings, mutation testing, accessibility, and SEO, followed by an ellipsis to indicate more checks. An independent reviewer agent sends findings back to the coding agent; after approval, the coding agent merges and the feature appears in a web app."}
 
 ::: {.source}
 Example: [chatbot-template](https://github.com/IndrajeetPatil/chatbot-template/) · OpenAI, [sandbox security](https://developers.openai.com/api/docs/guides/agents-api/environments/security) and [prompt injections](https://openai.com/safety/prompt-injections/).
