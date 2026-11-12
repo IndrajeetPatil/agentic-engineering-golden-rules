@@ -71,7 +71,13 @@ This is a practical talk about using coding agents to improve software engineeri
 Think about one part of your daily work where you lose time: finding context, repeating an edit, coordinating changes, or waiting for feedback. Keep that example in mind as we work through the rules.
 :::
 
-## Before we start
+## Before we start {.bookmark-slide}
+
+::: {.notes}
+Before we start, let us set expectations for this talk: we are focusing on production software, while recognising that prototypes can call for a lighter process.
+:::
+
+## Managing expectations
 
 :::: {.card-grid .card-grid-3}
 
@@ -149,6 +155,14 @@ The OpenAI example keeps those roles: the Codex workspace in the ChatGPT desktop
 The GitHub Copilot App is the desktop interface in this example, and Copilot provides the harness. We choose a Claude model to make one distinction visible: Anthropic develops that model, while GitHub Copilot supplies access to it. Choosing Claude in Copilot does not turn the Copilot harness into Claude Code. Other supported models are available, subject to your account and configuration.
 
 Across these examples, the labels change while the responsibilities remain comparable. Keep the model, harness, interface, tools, and model-access service distinct as we work through the rules.
+:::
+
+## Common artefacts
+
+![](media/common-artefacts.webp){.illustration width="880" height="495" fig-alt="Glossary of files used to guide coding agents in a repository: AGENTS.md for shared repository guidance; .agents/skills/<skill-name>/SKILL.md for reusable skill instructions; related skill assets such as scripts, templates, and examples; DESIGN.md for project design decisions; .github/prompts/<prompt-name>.md for reusable task prompts; and .github/instructions/<name>.instructions.md for path-specific guidance. A friendly coding agent consults a repository index beside the glossary cards. These are examples; repositories use different conventions."}
+
+::: {.notes}
+These examples are specifically about files that can guide coding agents while they work in a codebase. AGENTS.md carries shared repository instructions. A skill lives under .agents/skills with its own SKILL.md and may include supporting scripts, templates, or examples. DESIGN.md gives agents project-specific design decisions to follow. Files under .github/prompts can provide reusable task prompts, while .github/instructions can apply guidance to particular paths. The exact conventions vary by tool and repository; keep instructions close to the work they describe.
 :::
 
 ## Golden rules {.smaller}

@@ -18,6 +18,10 @@ The talk is aimed at software engineers who ship production software and have at
 
 A single tabbed slide introduces the same responsibility diagram for Anthropic, OpenAI, and GitHub Copilot. An LLM reasons and requests tools; the harness manages context, session state, permissions, and tool execution. The agent is the model and harness working in a task loop. Tool-calling sends an action request and returns its result. A desktop app is the user interface, and model access is a separate service. Examples: Claude Desktop / Claude Code harness / Claude / Anthropic; ChatGPT desktop / Codex harness / GPT / OpenAI; GitHub Copilot App / Copilot harness / selected Claude model / Anthropic as model developer, with access through GitHub Copilot. Selecting Claude within Copilot does not select the Claude Code harness. The diagrams show responsibilities, not deployment boundaries.
 
+## Common artefacts
+
+The deck's glossary covers files that can guide coding agents in a codebase: `AGENTS.md` for shared repository guidance; `.agents/skills/<skill-name>/SKILL.md` and related scripts, templates, or examples for reusable skills; `DESIGN.md` for project design decisions; `.github/prompts/<prompt-name>.md` for reusable task prompts; and `.github/instructions/<name>.instructions.md` for path-specific guidance. These are examples, and conventions vary by tool and repository.
+
 ## The golden rules
 1. Prepare the codebase for agents. Agents tend to reproduce patterns the repository exposes, including uneven or suboptimal ones. Pay down high-impact technical debt, make sound conventions easy to find, and establish reliable checks before scaling agent work; this helps prevent existing problems from being repeated in new changes.
 2. Improve developer experience. If humans hunt for context, agents burn tokens too. Clear structure, one-command workflows (such as make setup and make qa), deterministic QA, living documentation (including a short AGENTS.md), and modular design help humans and agents alike.

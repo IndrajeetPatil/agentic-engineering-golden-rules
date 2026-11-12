@@ -187,6 +187,25 @@
   color: var(--deck-muted);
 }
 
+.reveal .slides section.bookmark-slide {
+  text-align: center;
+}
+
+.reveal .slides section.bookmark-slide h2 {
+  font-size: 2em;
+  font-style: italic;
+}
+
+.reveal .slides section.bookmark-slide h2::before {
+  content: "";
+  display: block;
+  width: 0.72em;
+  height: 0.96em;
+  margin: 0 auto 0.9em;
+  background: var(--deck-gold);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 72%, 0 100%);
+}
+
 /* ---------- Rule slides ---------- */
 
 .reveal .rule-tag {

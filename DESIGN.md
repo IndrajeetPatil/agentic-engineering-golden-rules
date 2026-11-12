@@ -102,6 +102,7 @@ The theme format is Quarto RevealJS (`theme: simple`). Tokens live as CSS custom
   - `.card-outline`: Gold border (`--deck-gold`), transparent background.
 - **Grids:** `.card-grid` paired with `.card-grid-2`, `.card-grid-3`, or `.card-grid-4`.
 - **Eyebrows & Ledes:** `.eyebrow` for tracked, uppercase category labels in deep gold; `.lede` for introductory sentences under headings in muted ink.
+- **Bookmark slides:** `.bookmark-slide` marks a section transition with a centred italic heading and a small gold bookmark silhouette.
 - **Tables:** Contained within `.table-card` on stone backgrounds with uppercase gold-deep headers and gold dividers.
 - **Code Blocks:** Display code inside stone blocks with `.code-with-filename` tabs in ink with gold labels. Syntax highlighting uses the palette tokens.
 - **Illustrations:** Framed with `.illustration` using a gold border, 6px padding on ivory, and square corners. Artwork follows the restrained editorial style of `media/devex-agentex.webp`, `media/one-command-setup.webp`, `media/session-hygiene.webp`, and `media/know-thy-tools.webp`: bright ivory backgrounds, pale warm-stone panels, fine near-black linework, simple friendly figures, sparse shading, and restrained gold accents. Keep the overall value light and reserve near-black for linework and text; avoid brown-dominant fills and dense shadows. Avoid painterly or photoreal scenes, saturated colour, and decorative green checks.
