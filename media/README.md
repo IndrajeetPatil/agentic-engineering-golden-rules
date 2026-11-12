@@ -13,13 +13,13 @@ and was retained.
 
 ## common-artefacts.webp
 
-The glossary groups repository files that can guide coding agents: `AGENTS.md`,
-skill instructions and supporting assets, `DESIGN.md`, reusable prompts, and
-path-specific instructions. These are examples; conventions vary by tool and
-repository.
+The glossary presents four file patterns used while developing codebases with
+coding agents: `AGENTS.md`, skills with related assets, `DESIGN.md`, and reusable
+GitHub Copilot prompt files. The four matching cards are evenly sized in a
+two-by-two grid.
 
 ```text
-Create a 16:9 editorial glossary illustration for an engineering presentation. Show a friendly coding agent consulting a repository index beside six spacious cards. Label them exactly: "AGENTS.md" / "Shared repository guidance"; ".agents/skills/<skill-name>/SKILL.md" / "Reusable skill instructions"; "Related skill assets" / "Scripts · templates · examples"; "DESIGN.md" / "Project design decisions"; ".github/prompts/<prompt-name>.prompt.md" / "Reusable task prompts"; and ".github/instructions/<name>.instructions.md" / "Path-specific guidance". Use a bright ivory canvas, pale warm-stone square-corner cards, fine near-black pen-and-ink linework, restrained gold hairlines, readable dark text, and sparse shading. Match the deck's friendly editorial illustration style. Keep labels exact, complete, and legible. No overall title, unrelated project files, logos, or watermark.
+Create a 16:9 editorial glossary illustration with exactly four equal cards in a centred, symmetrical 2-by-2 grid. Label them exactly: "AGENTS.md" / "Repository guidance for coding agents"; ".agents/skills/<skill-name>/SKILL.md" / "Reusable workflow instructions, with related scripts, references, templates, and assets"; "DESIGN.md" / "Project design decisions for agents to follow"; and ".github/prompts/<prompt-name>.prompt.md" / "Reusable focused tasks for GitHub Copilot". Keep all four file names slightly smaller than the earlier version, use consistent type sizing, and wrap the longer paths neatly over at most two lines. Use a bright ivory canvas, pale warm-stone square-corner cards, fine near-black pen-and-ink linework, restrained gold hairlines, readable dark text, and sparse shading. Match the deck's friendly editorial illustration style. No extra cards or unrelated project files, overall title, logos, or watermark.
 ```
 
 ## guardrails-workflow.webp
