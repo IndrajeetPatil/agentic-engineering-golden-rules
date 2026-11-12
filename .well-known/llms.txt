@@ -16,6 +16,7 @@ This presentation distils ten golden rules for agentic engineering: working with
 
 - Agentic engineering and coding agents
 - LLM, agent, harness, tool-calling, desktop interface, and model provider: Anthropic, OpenAI, and GitHub Copilot examples
+- Agent-specific repository artefacts: AGENTS.md, skills with related assets, DESIGN.md, and reusable GitHub Copilot prompt files
 - Codebase preparation and improving patterns before introducing agents
 - Improve developer experience for humans and agents
 - Set deterministic quality gates and fast feedback loops
