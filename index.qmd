@@ -177,7 +177,7 @@ Ten rules for using coding agents to boost productivity without compromising qua
 The next ten rules offer practical ways to use coding agents productively while protecting software quality.
 :::
 
-## The ten rules {.smaller}
+## The rules {.smaller}
 
 :::: {.card-grid .card-grid-2 .rule-index}
 
@@ -244,7 +244,7 @@ The next ten rules offer practical ways to use coding agents productively while 
 ::::
 
 ::: {.notes}
-The ten rules begin with preparing a codebase for agents, improving the shared developer and agent experience, and setting deterministic quality gates. They then define outcomes, maintain useful context, use tools well, keep guidance current as models change, automate repeated work, remove delivery bottlenecks, and build a curious, humble, and kind team culture.
+The rules begin with preparing a codebase for agents, improving the shared developer and agent experience, and setting deterministic quality gates. They then define outcomes, maintain useful context, use tools well, keep guidance current as models change, automate repeated work, remove delivery bottlenecks, and build a curious, humble, and kind team culture.
 :::
 
 ## [01]{.rule-tag} Prepare the codebase for agents {.rule-slide}
