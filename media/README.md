@@ -1,7 +1,9 @@
 # Deck artwork
 
 The rule illustrations use built-in image generation and a shared editorial
-style. The quality-gates practice example uses a generated Ruff F841 feedback
+style. `devex-agentex.webp`, `one-command-setup.webp`, `session-hygiene.webp`,
+and `know-thy-tools.webp` are the visual references for new and restyled art.
+The quality-gates practice example uses a generated Ruff F841 feedback
 loop; the setup contrast illustrates a shared
 one-command entry point. The automation examples demonstrate dependency
 updates and PR screenshot workflows. The tool-affordance examples were checked against
@@ -91,6 +93,10 @@ engineering presentation, with warm ivory canvas, warm stone panels,
 near-black pen-and-ink linework, restrained deep-gold hairlines and arrows,
 refined serif headings, and clear sans-serif labels. Crisp high contrast,
 readable at 880×495 pixels, generous whitespace, consistent visual weight.
+Use square-cornered light ivory or warm-stone panels, fine near-black ink
+outlines, and restrained gold accents. Green and red are reserved for the
+meaningful added and removed lines in the code diff; use gold for quality
+checks and workflow markers.
 
 Show one clear left-to-right causal flow across the upper half: developer
 submits a card labelled “Feature request” → a coding agent works in a repository
@@ -98,8 +104,8 @@ submits a card labelled “Feature request” → a coding agent works in a repo
 “UI screenshots” and a small unified code diff → automated QA gates → an
 independent reviewer agent checks the diff. A small “Findings” arrow loops
 from reviewer back to coding agent.
-From the reviewer, a clear forward arrow labelled with a green check leads to
-the coding agent merging; at far right, show the completed feature running in
+From the reviewer, a clear forward arrow labelled with a deep-gold check leads
+to the coding agent merging; at far right, show the completed feature running in
 a small web app. Keep every other arrow flowing left-to-right. No human should
 appear at review or verification. In the pull-request station, include a
 compact unified code diff with pale red removed lines and pale green added
@@ -110,9 +116,9 @@ automated QA stage by a fine gold leader line and magnifier cue. Inset heading
 exactly “QUALITY HARNESS”; subheading exactly “example gates”. Inside, show
 exactly eight large, neatly aligned checklist items in two columns: “100% code
 coverage”; “100% type coverage”; “Benchmarks”; “0 lint issues”; “0 warnings”;
-“Lighthouse performance”; “Accessibility”; “SEO”. Use one restrained check
-icon per item. Add a small, centred “… and more” below the checks to show the
-list continues. Spelling must be exact. Keep all panel fills light ivory or
+“Lighthouse performance”; “Accessibility”; “SEO”. Use one restrained
+deep-gold check icon per item. Add a small, centred “… and more” below the
+checks to show the list continues. Spelling must be exact. Keep all panel fills light ivory or
 warm stone; use dark ink for text and linework, never dark-filled boxes. The
 callout should look like a compact quality checklist and feel strict, not like
 a dashboard. Make the entire image a single coherent infographic.
@@ -132,11 +138,12 @@ work while keeping quality standards intact.
 ```text
 Create a polished 16:9 landscape editorial illustration for the final
 conclusion slide of a software engineering presentation. Flat warm ivory
-canvas; light warm-stone panels only; near-black pen-and-ink linework;
-restrained gold arrows and hairlines; small green check marks. Refined serif
-labels, simple elegant human and friendly robot figures, generous balanced
-whitespace. No dark-filled panels or boxes: panel backgrounds must remain
-light ivory or warm stone.
+canvas; square light warm-stone panels; fine near-black pen-and-ink linework;
+restrained gold arrows, hairlines, and check marks. Refined serif labels,
+simple friendly human and robot figures, generous balanced whitespace. Match
+the supplied reference illustrations' line weight and panel geometry. Avoid
+painterly or photoreal scenes, rounded peach panels, bright green checks,
+dark-filled panels, gradients, and watermark.
 
 Show a single clear left-to-right software lifecycle in five spacious stations,
 connected by one continuous gold flow line: “Plan”, “Code”, “Review”, “Verify”,
@@ -148,7 +155,7 @@ who makes a final judgement at Release, so the story shows agent acceleration
 with human oversight where it matters.
 
 Under the five stations, draw one straight, steady quality rail passing beneath
-every stage, with a small crisp green check or shield marker under each stage
+every stage, with a small crisp deep-gold check or shield marker under each stage
 to show that the quality bar stays consistent from start to finish. Make this
 visual rail elegant and unmistakable, not a separate dark box or dashboard.
 The complete composition should make it clear that routine work moves faster
@@ -200,13 +207,15 @@ documentation.
 ## Shared style prompt
 
 For existing rule artwork being restyled, supply the previous version as
-image 1 (edit target) and `social-media-card.webp` as image 2 (style reference).
-Previous versions remain available through Git history. Apply this shared
-style prompt followed by the asset-specific instructions below. New artwork
-uses the references specified under Additional rule illustrations.
+image 1 (edit target) and use the other illustrations named below as style
+references, excluding the edit target itself. For new art, use
+`devex-agentex.webp`, `one-command-setup.webp`, `session-hygiene.webp`, and
+`know-thy-tools.webp` as style references only; the social card remains a
+palette and typography reference when useful. Apply this shared style prompt
+followed by the asset-specific instructions below.
 
 ```text
-Restyle into a refined editorial infographic matching the supplied slide social-card style: flat ivory #fdfaf3 background, warm stone #e9e5db square panels, near-black #141414 text and fine line illustrations, restrained gold #dac284 hairlines and borders ONLY, dark brown #7d6020 where emphasis needs text. Elegant high-contrast Bodoni/Didot serif headings, legible Montserrat-like sans-serif labels. Spacious, disciplined layout, thin rules, square corners, confident professional composition. No blue, green, purple, red, bright colours, gradients, glossy 3D, rounded UI cards, heavy shadows, or excessive decoration. Keep text clear, large and sparse enough to read when projected. Keep the original conceptual message and visual metaphor; improve hierarchy and clarity. No slide number, no redundant large slide title, and no text that repeats the slide title or subtitle verbatim. Do not frame a bottom caption in a box or flank it with horizontal rules. If a bottom caption adds information, set it unboxed in large, readable type with generous whitespace. Landscape 16:9 composition. No watermark.
+Restyle into the deck's restrained editorial illustration style shown in the four supplied reference images: flat ivory #fdfaf3 canvas, light warm-stone #e9e5db square panels, fine near-black #141414 pen-and-ink linework, restrained gold #dac284 hairlines and accents, and dark brown #7d6020 only for readable emphasis. Use elegant Bodoni/Didot-like serif headings, legible Montserrat-like labels, simple friendly human and robot figures, sparse shading, and generous whitespace. Match the references' line weight, palette, panel geometry, and visual simplicity. Avoid painterly or photoreal scenes, heavy washes, dark backgrounds, rounded peach panels, decorative green checks, gradients, glossy 3D, heavy shadows, and excessive decoration. Keep the original conceptual message and visual metaphor. Do not repeat the slide title or subtitle verbatim. Keep any useful bottom caption unboxed and unflanked by rules. Landscape 16:9 composition. No watermark.
 ```
 
 ## devex-agentex.webp
@@ -256,6 +265,30 @@ BOTTOM: title exactly "Reset with a compact handoff". Five readable fields, with
 Redesign the information graphic into a readable landscape layout. Top elegant process with exactly "Repeated work → Capture once → Run many times → Review results". Middle four square columns, one per mechanism: "Prompt" / "Changing instructions"; "Skill" / "Domain know-how"; "Slash command" / "Stable shortcut"; "Workflow" / "Steps & branches". Include simple line-drawn page, book, terminal, and branching-process symbols. Bottom process exactly "Input list → For each item → Collect results → Human review". Preserve capture-once/run-many, the four alternatives, and looping over a list; remove dense original table and paragraphs.
 ```
 
+## model-change-maintenance.webp
+
+The illustration shows two maintenance loops: model changes prompt review of
+prompts and skills, while source changes prompt cleanup of stale `AGENTS.md`
+guidance and verification through tests. Keep both loops visible and use the
+shared reference style above.
+
+```text
+Create a landscape 16:9 presentation illustration in the deck's shared
+editorial style, using devex-agentex.webp, one-command-setup.webp,
+session-hygiene.webp, and know-thy-tools.webp as style references only. Use a
+flat ivory canvas, two square light-stone panels, fine near-black ink linework,
+restrained gold arrows and details, and simple friendly human and robot
+figures. Give the panels simple serif headings exactly "LLM CHANGES" and
+"SOURCE CHANGES". LEFT: show a model update, stale PROMPTS crossed out, current
+PROMPTS and SKILLS cards, and a developer and robot verifying the edits. RIGHT:
+show a source diff, stale AGENTS.md advice crossed out, current AGENTS.md
+guidance being added, and a robot checking TESTS. Make the causal links from
+change to review, update, and verification easy to follow. Keep labels short
+and legible; do not repeat the slide title or subtitle, add a footer, or use
+painterly rendering, rounded panel frames, green checks, gradients, or dark
+backgrounds.
+```
+
 ## curious-humble.webp
 
 ```text
@@ -264,11 +297,13 @@ Preserve a 2×2 illustration comparing helpful and unhelpful working habits. Top
 
 ## one-command-setup.webp
 
-Both supplied images are style references: `devex-agentex.webp` and
-`social-media-card.webp`. Generate a new image with the following prompt.
+Use `devex-agentex.webp`, `one-command-setup.webp`, `session-hygiene.webp`,
+and `know-thy-tools.webp` as the shared visual references. The social card is
+an optional palette and typography reference. Generate a new image with the
+following prompt.
 
 ```text
-Use case: productivity-visual. Asset type: two-panel presentation illustration for "Improve developer experience: in practice". The supplied images are STYLE REFERENCES only: image 1 is another illustration in this deck; image 2 is the deck title card. Create a NEW landscape 16:9 illustration matching their elegant ivory, stone, near-black, and restrained gold editorial style, crisp pen-and-ink linework, Bodoni/Didot-like serif headings, readable Montserrat-like sans-serif body text, square panels with fine gold border rules, no bright colours, no glossy 3D, no gradients, no watermark.
+Use case: productivity-visual. Asset type: two-panel presentation illustration for "Improve developer experience: in practice". Use `devex-agentex.webp`, `session-hygiene.webp`, and `know-thy-tools.webp` as visual references only; use the social card only as a supplementary palette and typography reference. Create a NEW landscape 16:9 illustration matching their airy ivory and stone backgrounds, near-black fine pen-and-ink linework, restrained gold accents, simple friendly figures, square light panels, Bodoni/Didot-like serif headings, and readable Montserrat-like sans-serif body text. Avoid painterly rendering, rounded peach panels, bright decorative colours, glossy 3D, gradients, and watermark.
 Primary message: a detailed manual project-setup procedure is confusing for both a human developer and a coding agent; encapsulating that procedure in make setup gives both the same simple, reliable entry point.
 Composition: two equal side-by-side panels. At LEFT, heading exactly "Manual setup". A large project instruction sheet labelled exactly "Project setup" shows this detailed numbered checklist in readable dark text: "1. Install the required runtime", "2. Create a virtual environment", "3. Install project dependencies", "4. Configure environment variables", "5. Install the Git hooks", "6. Start the local services", "7. Apply database migrations", "8. Load development fixtures", "9. Check tool versions", "10. Verify the setup". Below or beside the sheet, a human developer and a friendly small robot coding agent BOTH visibly look confused and overwhelmed: furrowed brows, puzzled expressions, a few subtle question marks. At RIGHT, heading exactly "One command". Show ONE clean document labelled exactly "AGENTS.md". That document has only ONE instruction, exactly "run `make setup`". Render make setup in very legible monospace, with the lowercase word run before it; the backticks may be literal Markdown characters because this is a Markdown instruction file. No other instructions, code, checklist, or labels inside the right document. Below or beside it, the SAME human developer and the SAME robot BOTH visibly happy, relaxed, and confident, smiling with a small celebratory thumbs-up gesture. Make the contrast between both pairs of expressions unmistakable, while retaining professional editorial restraint. Keep all four characters large enough to read from the back of a room. Warm stone panels on flat ivory #fdfaf3; near-black #141414 text; gold #dac284 for fine borders and separators and dark brown #7d6020 for occasional emphasis. Text must be accurate and clear. Do not add Makefile source code, terminal code blocks, additional commands, overall slide title, or a footer slogan.
 ```
@@ -337,10 +372,10 @@ examples, not an exhaustive or exclusive feature comparison.
 ```text
 Use case: productivity-visual.
 Asset type: landscape 16:9 illustration for the "Know thy tools" slide in an engineering presentation.
-Input images: image 1 is a style and character reference ONLY (Maintain session hygiene); image 2 is a typography and palette reference ONLY (social card). Create NEW content, do not reproduce their wording or subjects.
+Input images: `devex-agentex.webp`, `one-command-setup.webp`, and `session-hygiene.webp` are style references only; the social card is an optional typography and palette reference. Create NEW content, do not reproduce their wording or subjects.
 Primary request: an elegant, memorable illustration of three example tool affordances users miss: Claude Code voice dictation, Codex built-in image generation, and GitHub Copilot CLI computer use. Exactly one capability per product, plus an ellipsis suggesting more to discover. Illustrate meaningful actions, not a feature table.
 
-Style: refined pen-and-ink editorial illustration. Flat ivory #fdfaf3 canvas, warm stone #e9e5db square panels, near-black #141414 text and linework. Restrained gold #dac284 for thin borders and dividers only, dark brown #7d6020 for readable occasional emphasis text. Bodoni/Didot high-contrast serif headings and Montserrat-like sans-serif body. Spacious layout with square corners. Friendly small robot consistent with image 1. No official product logos, bright colours, gradients, glossy 3D, tiny paragraphs, or watermarks.
+Style: refined pen-and-ink editorial illustration. Flat ivory #fdfaf3 canvas, warm stone #e9e5db square panels, near-black #141414 text and linework. Restrained gold #dac284 for thin borders and dividers only, dark brown #7d6020 for readable occasional emphasis text. Bodoni/Didot high-contrast serif headings and Montserrat-like sans-serif body. Spacious layout with square corners. Friendly small robot consistent with the supplied style references. No official product logos, bright colours, gradients, glossy 3D, tiny paragraphs, or watermarks.
 
 Layout: one prominent restrained top heading exactly "Example affordances that users miss". Beneath it, three equal square-corner panels side by side with ample white space. Product names at top, feature headline below, generous expressive illustration, then a short caption and command/example.
 
@@ -432,16 +467,17 @@ selected artwork. Re-run `just axe` after changing slide markup.
 ## Additional rule illustrations
 
 Generated with the built-in image-generation tool. For each image below,
-`deterministic-tooling.webp` is the style and character reference, and
-`social-media-card.webp` is the typography and palette reference. Both are
-references only; the outputs depict new advice. Complete prompts follow.
+`devex-agentex.webp`, `one-command-setup.webp`, `session-hygiene.webp`, and
+`know-thy-tools.webp` are the shared visual references; the social card is an
+optional typography and palette reference. All are references only; the
+outputs depict new advice. Complete prompts follow.
 
 ### prepare-codebase-for-agents.webp
 
 ```text
 Use case: productivity-visual.
 Asset type: NEW landscape 16:9 editorial illustration for a Quarto presentation slide about preparing a codebase before introducing coding agents.
-Input image 1 is a style and character reference ONLY (the deck's friendly pen-and-ink robot and illustration craft). Input image 2 is a typography and palette reference ONLY (the title card). Create new artwork; do not copy their composition or wording.
+Use `devex-agentex.webp`, `one-command-setup.webp`, `session-hygiene.webp`, and `know-thy-tools.webp` as style references only. The title card is an optional typography and palette reference. Create new artwork; do not copy reference compositions or wording.
 
 Primary request: show that a coding agent amplifies the patterns it finds in a repository, so people should improve and clarify those patterns before scaling agent use. Make the causal point immediately legible: inconsistent conventions, duplication, shortcuts, and weak checks get repeated; clear conventions, coherent modules, and reliable checks give the agent a sound pattern to follow. Show human preparation first, then agent work.
 
@@ -460,7 +496,7 @@ Final built-in image edit: remove the bottom caption and balance the ivory margi
 ### define-done.webp
 
 ```text
-Use case: productivity-visual. Asset type: NEW landscape 16:9 presentation illustration, about 1672 by 941 px. Input images are style references ONLY, never edit targets: deterministic-tooling.webp for the friendly pen-and-ink robot, social-media-card.webp for typography and palette. Refined editorial infographic: flat ivory #fdfaf3 canvas, warm stone #e9e5db square panels, near-black #141414 text and fine hand-drawn linework. Restrained gold #dac284 for hairline borders and dividers only, dark brown #7d6020 for optional readable emphasis. Bodoni/Didot serif panel headings, Montserrat-like sans-serif labels. Spacious professional composition, friendly small robot and human consistent with the reference. No bright colours, gradients, glossy 3D, rounded cards, heavy shadows, watermark, slide number, or redundant overall slide title. Text must be exact and comfortably legible when shown at 880 px wide.
+Use case: productivity-visual. Asset type: NEW landscape 16:9 presentation illustration, about 1672 by 941 px. Use `devex-agentex.webp`, `one-command-setup.webp`, `session-hygiene.webp`, and `know-thy-tools.webp` as style references only, never as edit targets. Refined editorial infographic: flat ivory #fdfaf3 canvas, warm stone #e9e5db square panels, near-black #141414 text and fine hand-drawn linework. Restrained gold #dac284 for hairline borders and accents, dark brown #7d6020 for optional readable emphasis. Bodoni/Didot-like serif panel headings, Montserrat-like sans-serif labels. Spacious professional composition, friendly small robot and human consistent with the references. Sparse shading; no painterly or photoreal scenes, bright colours, gradients, glossy 3D, rounded peach panels, heavy shadows, watermark, slide number, or redundant overall slide title. Text must be exact and comfortably legible when shown at 880 px wide.
 Primary request: illustrate defining observable success BEFORE delegating and then gathering relevant evidence. Three equal square-corner panels side by side, each with one elegant serif heading and an expressive scene.
 LEFT heading exactly "State the outcome". A human hands a brief to a robot. Three large labels on brief exactly "Goal", "Constraints", "What stays unchanged". Caption exactly "Give a target, not a script".
 CENTRE heading exactly "Choose the evidence". Three neatly aligned line-drawn objects: a bug with a before-and-after test report, a browser window with a human interacting with it, and a stopwatch beside two benchmark traces. Three short captions exactly "Bug: reproduce, then fix", "UI: inspect the interaction", "Performance: measure". No fabricated numbers.
