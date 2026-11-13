@@ -471,46 +471,6 @@ AI should make us better teammates, not careless or difficult ones.
 Be curious about what the tools can do, humble about their limits, and kind in how we review agent-generated work and each other's experiments.
 :::
 
-## Be curious. Be humble. Be kind: in practice {.smaller}
-
-:::: {.card-grid .card-grid-3}
-
-::: {.card .card-stone}
-[Curious]{.card-title}
-
-Experiment, prototype, and keep learning the fundamentals the agent is standing on.
-:::
-
-::: {.card .card-stone}
-[Humble]{.card-title}
-
-Agents can be confidently wrong. So can we. Verify before you trust, including your own prompt.
-:::
-
-::: {.card .card-stone}
-[Kind]{.card-title}
-
-Listen generously, offer respectful and actionable feedback, and make room for teammates to learn.
-:::
-
-::::
-
-::: {.pull-quote}
-[“It’s more fun to be competent”]{.pull-quote-text}
-
-[DHH]{.pull-quote-attribution}
-:::
-
-::: {.source}
-Quote: DHH, [Opening Keynote, Rails World 2024](https://www.rubyevents.org/talks/opening-keynote-rails-world-2024).
-:::
-
-::: {.notes}
-Curiosity means trying useful workflows while continuing to understand the underlying system. Humility means checking plausible-looking output and being willing to revise our own assumptions. Kindness is about how we treat one another: listen generously, be respectful when we disagree, and give feedback that helps colleagues learn.
-
-David Heinemeier Hansson puts it simply: “It’s more fun to be competent.” Keep building competence as the tools change: understand the system, verify the work, and stay curious while giving colleagues kind, constructive feedback.
-:::
-
 # The Reward
 
 Build a steady flow of verified work, freeing people to focus on direction and judgement.
