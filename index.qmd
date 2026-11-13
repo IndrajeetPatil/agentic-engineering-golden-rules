@@ -111,7 +111,7 @@ Engineering rigour depends on the work. Throwaway proofs of concept, demos, and 
 
 ### Anthropic
 
-![](media/agentic-stack-anthropic.webp){.illustration width="880" height="495" fig-alt="Anthropic example. Claude Desktop sends a task to the Claude Code harness, which manages context, permissions, and execution. The agent is a Claude language model working with that harness in a loop. The model requests a tool call; the harness runs read, edit, or shell tools and returns their results to the model. Anthropic provides the model through its API. The diagram shows responsibilities, not where processes run."}
+![](media/agentic-stack-anthropic.webp){.illustration width="880" height="495" fig-alt="Anthropic example. Claude Desktop sends a task to the Claude Code CLI harness, which manages context, permissions, and execution. The agent is a Claude language model working with that harness in a loop. The model requests a tool call; the harness runs read, edit, or shell tools and returns their results to the model. Anthropic provides the model through its API. The diagram shows responsibilities, not where processes run."}
 
 ::: {.source}
 [Claude Code architecture](https://code.claude.com/docs/en/how-claude-code-works) · [Desktop interface](https://code.claude.com/docs/en/desktop)
@@ -119,15 +119,15 @@ Engineering rigour depends on the work. Throwaway proofs of concept, demos, and 
 
 ### OpenAI
 
-![](media/agentic-stack-openai.webp){.illustration width="880" height="495" fig-alt="OpenAI example. The ChatGPT desktop app sends a task to the Codex harness, which manages context, permissions, and execution. The agent is a GPT language model working with that harness in a loop. The model requests a tool call; the harness runs read, edit, or shell tools and returns their results to the model. OpenAI provides the model through its API. The diagram shows responsibilities, not where processes run."}
+![](media/agentic-stack-openai.webp){.illustration width="880" height="495" fig-alt="OpenAI example. The ChatGPT desktop app sends a task to the Codex CLI harness, which manages context, permissions, and execution. The agent is a GPT language model working with that harness in a loop. The model requests a tool call; the harness runs read, edit, or shell tools and returns their results to the model. OpenAI provides the model through its API. The diagram shows responsibilities, not where processes run."}
 
 ::: {.source}
-[Codex harness](https://developers.openai.com/blog/codex-as-a-platform) · [Desktop interface](https://learn.chatgpt.com/docs/app)
+[Codex CLI](https://developers.openai.com/blog/codex-as-a-platform) · [Desktop interface](https://learn.chatgpt.com/docs/app)
 :::
 
 ### GitHub Copilot
 
-![](media/agentic-stack-copilot.webp){.illustration width="880" height="495" fig-alt="GitHub Copilot example, using a Claude model. The GitHub Copilot App sends a task to the Copilot harness, which manages context, permissions, and execution. The agent is the selected Claude language model working with that harness in a loop. The model requests a tool call; the harness runs read, edit, or shell tools and returns their results to the model. Anthropic develops the model; GitHub Copilot provides model access. Selecting Claude does not switch to the Claude Code harness. The diagram shows responsibilities, not where processes run."}
+![](media/agentic-stack-copilot.webp){.illustration width="880" height="495" fig-alt="GitHub Copilot example, using a Claude model. The GitHub Copilot App sends a task to the GitHub Copilot CLI harness, which manages context, permissions, and execution. The agent is the selected Claude language model working with that harness in a loop. The model requests a tool call; the harness runs read, edit, or shell tools and returns their results to the model. Anthropic develops the model; GitHub Copilot provides model access. Selecting Claude does not switch to the Claude Code CLI harness. The diagram shows responsibilities, not where processes run."}
 
 ::: {.source}
 [GitHub Copilot App](https://docs.github.com/en/copilot/concepts/copilot-surfaces/github-copilot-app) · [Supported models](https://docs.github.com/en/copilot/reference/ai-models/supported-models)
@@ -140,11 +140,11 @@ Before we discuss the rules, let us agree on the vocabulary. This is a map of re
 
 That surrounding software is the harness. It manages the conversation, supplies context, applies configured permissions, executes tools, and returns their results to the model. Here, an agent means the working system: a model and its harness pursuing a task through that loop. A tool is a capability such as reading a file, editing code, or running a shell command. Tool-calling is the request-and-result exchange; the model requests, and the harness executes.
 
-In the Anthropic example, the Code tab in Claude Desktop is the interface, Claude Code supplies the harness, Claude is the model family, and Anthropic supplies model access. The desktop app and the model are different parts of the stack.
+In the Anthropic example, the Code tab in Claude Desktop is the interface, Claude Code CLI supplies the harness, Claude is the model family, and Anthropic supplies model access. The desktop app and the model are different parts of the stack.
 
-The OpenAI example keeps those roles: the Codex workspace in the ChatGPT desktop app is the interface, the Codex harness runs the loop, and an OpenAI GPT model supplies the reasoning. Codex is a product and harness name, rather than a synonym for a language model.
+The OpenAI example keeps those roles: ChatGPT desktop is the interface, Codex CLI runs the loop, and an OpenAI GPT model supplies the reasoning. Codex CLI is a product and harness name, rather than a synonym for a language model.
 
-The GitHub Copilot App is the desktop interface in this example, and Copilot provides the harness. We choose a Claude model to make one distinction visible: Anthropic develops that model, while GitHub Copilot supplies access to it. Choosing Claude in Copilot does not turn the Copilot harness into Claude Code. Other supported models are available, subject to your account and configuration.
+The GitHub Copilot App is the desktop interface in this example, and GitHub Copilot CLI provides the harness. We choose a Claude model to make one distinction visible: Anthropic develops that model, while GitHub Copilot supplies access to it. Choosing Claude in Copilot does not turn the Copilot harness into Claude Code CLI. Other supported models are available, subject to your account and configuration.
 
 Across these examples, the labels change while the responsibilities remain comparable. Keep the model, harness, interface, tools, and model-access service distinct as we work through the rules.
 :::
@@ -230,18 +230,18 @@ The next ten rules offer practical ways to use coding agents productively while 
 ::: {.card}
 [10]{.rule-number}
 
-**Be curious. Be humble. Be kind.**
+**Be curious. Be humble.**
 :::
 
 ::::
 
 ::: {.notes}
-The rules begin with preparing a codebase for agents, improving the shared developer and agent experience, and setting deterministic quality gates. They then define outcomes, maintain useful context, use tools well, keep guidance current as models change, automate repeated work, remove delivery bottlenecks, and build a curious, humble, and kind team culture.
+The rules begin with preparing a codebase for agents, improving the shared developer and agent experience, and setting deterministic quality gates. They then define outcomes, maintain useful context, use tools well, keep guidance current as models change, automate repeated work, remove delivery bottlenecks, and build a curious and humble team culture.
 :::
 
 ## [01]{.rule-tag} Prepare the codebase for agents {.rule-slide}
 
-[Improve the patterns agents will inherit and repeat.]{.lede}
+[Pay down technical debt before scaling agent work.]{.lede}
 
 ![](media/prepare-codebase-for-agents.webp){.illustration width="880" height="495" fig-alt="Two-panel illustration: on the left, an agent copies inconsistent naming, duplicated code, and weak checks, multiplying a tangled codebase. On the right, a person prepares clear conventions, coherent modules, and reliable checks before an agent extends the same orderly module pattern."}
 
@@ -291,10 +291,10 @@ The work still happens; the command owns the sequence, checks prerequisites, and
 
 [Let deterministic checks catch what they can, fast.]{.lede}
 
-![](media/deterministic-tooling.webp){.illustration width="880" height="495" fig-alt="Two-panel illustration contrasting a confused robot amid inconsistent style, flaky tests, broken assumptions, hallucinated APIs, and failed builds with a calm robot in a safety harness labelled Formatter, Linter, Type checker, Pre-commit, CI, Sanitisers, and Valgrind. Output cards show consistent style and configured gates passing for tests, types, and builds. Human review is still needed to assess requirements, behaviour, and user experience. A change flows through checks to human review; passing gates is evidence for review."}
+![](media/deterministic-tooling.webp){.illustration width="880" height="495" fig-alt="Two-panel illustration contrasting a confused robot amid inconsistent style, flaky tests, broken assumptions, hallucinated APIs, and failed builds with a calm robot in a safety harness labelled Formatter, Linter, Type checker, Pre-commit, CI, Sanitisers, and Valgrind. Output cards show consistent style and configured gates passing for tests, types, and builds. Human review is still needed to assess requirements, behaviour, and user experience. A change flows through checks to human review."}
 
 ::: {.notes}
-With a prepared codebase and clear shared workflows, deterministic checks make repeatable quality expectations concrete. Formatters, linters, type checkers, and tests give agents fast feedback and catch known classes of mistakes on every change. They cannot decide whether the work meets an unstated requirement or makes sense for users, so people still review the evidence and the work's impact.
+With a prepared codebase and clear shared workflows, deterministic checks make repeatable quality expectations concrete. Formatters, linter runs, type checkers, and tests give agents fast feedback and catch known classes of mistakes on every change. They cannot decide whether the work meets an unstated requirement or makes sense for users, so people still review the evidence and the work's impact.
 :::
 
 ## Quality gates in practice
@@ -369,16 +369,16 @@ These habits reduce unrelated and contradictory material in the active context, 
 
 [Sometimes the unlock is a hidden tool affordance.]{.lede}
 
-![](media/know-thy-tools.webp){.illustration width="880" height="495" fig-alt="Example affordances that users miss: Claude Code voice dictation turns a spoken prompt into terminal input with /voice; Codex generates and edits visual assets; GitHub Copilot CLI computer use operates GUI-only desktop apps with /computer on. An ellipsis indicates more examples, and the footer encourages reading the changelog to discover what the tools can do."}
+![](media/know-thy-tools.webp){.illustration width="880" height="495" fig-alt="Example affordances that users miss: Claude Code CLI voice dictation turns a spoken prompt into terminal input with /voice; Codex CLI generates and edits visual assets; GitHub Copilot CLI computer use operates GUI-only desktop apps with /computer on. An ellipsis indicates more examples, and the footer encourages reading the changelog to discover what the tools can do."}
 
 ::: {.source}
-Official docs: [Claude Code voice](https://code.claude.com/docs/en/voice-dictation) · [Codex images](https://learn.chatgpt.com/docs/image-generation) · [Copilot CLI computer use](https://docs.github.com/en/copilot/how-tos/copilot-cli/use-copilot-cli/computer-use).
+Official docs: [Claude Code CLI voice](https://code.claude.com/docs/en/voice-dictation) · [Codex CLI images](https://learn.chatgpt.com/docs/image-generation) · [Copilot CLI computer use](https://docs.github.com/en/copilot/how-tos/copilot-cli/use-copilot-cli/computer-use).
 :::
 
 ::: {.notes}
 The examples on this slide illustrate capabilities that can be easy to overlook. They reflect official documentation checked in October 2026, so consult the linked documentation for current availability.
 
-Claude Code offers voice input for dictating prompts, with the authentication and environment requirements described on the slide. Codex offers built-in image generation for creating and editing assets alongside the code. GitHub Copilot CLI offers computer use in its supported local environments, subject to permissions and policy. These are different affordances, not claims that one product alone can provide a capability.
+Claude Code CLI offers voice input for dictating prompts, with the authentication and environment requirements described on the slide. Codex CLI offers built-in image generation for creating and editing assets alongside the code. GitHub Copilot CLI offers computer use in its supported local environments, subject to permissions and policy. These are different affordances, not claims that one product alone can provide a capability.
 
 Choose the tool interface that fits the task. A direct API or command-line tool is useful when it exposes the operation clearly; computer use can help with a workflow available only through a graphical interface. When results disappoint, examine the context, tools, and feedback available to the agent as well as the model itself.
 :::
@@ -413,7 +413,7 @@ When a useful agent workflow repeats, package the instructions or choreography s
 
 [Choose the smallest reusable mechanism that fits the work.]{.lede}
 
-![](media/meta-automation-examples.webp){.illustration width="880" height="495" fig-alt="Four examples of packaged automation: a dependency update prompt, a PR screenshot skill, an illustrative review shortcut, and a vulnerability triage workflow. The workflow investigates a finding, fixes and verifies warranted changes, or records why no fix is needed; people review the evidence and decide what ships."}
+![](media/meta-automation-examples.webp){.illustration width="880" height="495" fig-alt="Four examples of packaged automation: a dependency update prompt, a PR screenshot skill, an illustrative review shortcut, and a vulnerability triage workflow. The workflow investigates a finding, fixes and verifies warranted changes, or records why no fix is needed."}
 
 ::: {.source}
 Examples: [public prompt library](https://github.com/IndrajeetPatil/chatbot-template/tree/main/.github/prompts) · [PR screenshot skill](https://github.com/IndrajeetPatil/chatbot-template/blob/main/.agents/skills/frontend-pr-screenshot/SKILL.md).
@@ -445,7 +445,7 @@ The 2025 DORA research describes AI as an amplifier of existing organizational s
 
 ## Identify and remove bottlenecks: in practice {.rule-slide}
 
-![](media/bottleneck-examples.webp){.illustration width="880" height="495" fig-alt="Three bottleneck examples: slow lint and type checks are improved with Rust-based tools Ruff, uv, and ty; a large pull request is split or stacked into smaller changes before an LLM author and reviewer loop; repeated manual behaviour checks become automated E2E tests."}
+![](media/bottleneck-examples.webp){.illustration width="880" height="495" fig-alt="Three bottleneck examples: a person waits beside queued changes and a slow clock before using Ruff, uv, and ty; several pull requests pile up as a surprised reviewer reacts, then smaller changes enter an LLM author and reviewer loop; an unhappy person repeats the same manual browser journey before an E2E test automates it."}
 
 ::: {.source}
 Rust-based tools: [Ruff](https://docs.astral.sh/ruff/), [uv](https://docs.astral.sh/uv/), and [ty](https://docs.astral.sh/ty/).
@@ -459,56 +459,20 @@ The second example starts by splitting or stacking a large pull request into sma
 The third example replaces repeated manual checks of a user journey with an end-to-end test. These tests can make important behaviour quicker to check, while exploratory testing remains useful for cases the tests do not cover. These are possible responses, not prescriptions; measure the whole delivery flow again because the bottleneck may move.
 :::
 
-## [10]{.rule-tag} Be curious. Be humble. Be kind. {.rule-slide}
+## [10]{.rule-tag} Be curious. Be humble. {.rule-slide}
 
 [AI is not an excuse to become incompetent or disagreeable.]{.lede}
 
-![](media/curious-humble.webp){.illustration width="880" height="495" fig-alt="Four-panel editorial illustration: be curious, with a developer experimenting alongside a robot; avoid deskilling, with a disengaged developer leaving the robot unattended; be humble and kind, with a team listening and discussing shared notes; avoid grandiosity, with an engineer, product manager, and designer dismissing one another while pointing to their own assistants."}
+![](media/curious-humble.webp){.illustration width="880" height="495" fig-alt="Four-panel editorial illustration: be curious, with a developer experimenting alongside a robot; avoid deskilling, with a disengaged developer leaving the robot unattended; be humble, with colleagues listening and discussing shared notes; avoid grandiosity, with an engineer, product manager, and designer all pointing fingers at one another in a flustered, nonviolent three-way standoff."}
+
+::: {.source}
+Standoff metaphor: Marc Andreessen on [the future of product, design, and engineering roles](https://www.lennysnewsletter.com/p/marc-andreessen-the-real-ai-boom).
+:::
 
 ::: {.notes}
 AI should make us better teammates, not careless or difficult ones.
 
-Be curious about what the tools can do, humble about their limits, and kind in how we review agent-generated work and each other's experiments.
-:::
-
-## Be curious. Be humble. Be kind: in practice {.smaller}
-
-:::: {.card-grid .card-grid-3}
-
-::: {.card .card-stone}
-[Curious]{.card-title}
-
-Experiment, prototype, and keep learning the fundamentals the agent is standing on.
-:::
-
-::: {.card .card-stone}
-[Humble]{.card-title}
-
-Agents can be confidently wrong. So can we. Verify before you trust, including your own prompt.
-:::
-
-::: {.card .card-stone}
-[Kind]{.card-title}
-
-Listen generously, offer respectful and actionable feedback, and make room for teammates to learn.
-:::
-
-::::
-
-::: {.pull-quote}
-[“It’s more fun to be competent”]{.pull-quote-text}
-
-[DHH]{.pull-quote-attribution}
-:::
-
-::: {.source}
-Quote: DHH, [Opening Keynote, Rails World 2024](https://www.rubyevents.org/talks/opening-keynote-rails-world-2024).
-:::
-
-::: {.notes}
-Curiosity means trying useful workflows while continuing to understand the underlying system. Humility means checking plausible-looking output and being willing to revise our own assumptions. Kindness is about how we treat one another: listen generously, be respectful when we disagree, and give feedback that helps colleagues learn.
-
-David Heinemeier Hansson puts it simply: “It’s more fun to be competent.” Keep building competence as the tools change: understand the system, verify the work, and stay curious while giving colleagues kind, constructive feedback.
+Be curious about what the tools can do and humble about their limits. Listen to colleagues, verify agent-generated work, and revise your assumptions when the evidence calls for it.
 :::
 
 # The Reward
