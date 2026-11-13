@@ -119,10 +119,10 @@ Engineering rigour depends on the work. Throwaway proofs of concept, demos, and 
 
 ### OpenAI
 
-![](media/agentic-stack-openai.webp){.illustration width="880" height="495" fig-alt="OpenAI example. The ChatGPT desktop app sends a task to the Codex harness, which manages context, permissions, and execution. The agent is a GPT language model working with that harness in a loop. The model requests a tool call; the harness runs read, edit, or shell tools and returns their results to the model. OpenAI provides the model through its API. The diagram shows responsibilities, not where processes run."}
+![](media/agentic-stack-openai.webp){.illustration width="880" height="495" fig-alt="OpenAI example. The ChatGPT desktop app sends a task to the Codex CLI harness, which manages context, permissions, and execution. The agent is a GPT language model working with that harness in a loop. The model requests a tool call; the harness runs read, edit, or shell tools and returns their results to the model. OpenAI provides the model through its API. The diagram shows responsibilities, not where processes run."}
 
 ::: {.source}
-[Codex harness](https://developers.openai.com/blog/codex-as-a-platform) · [Desktop interface](https://learn.chatgpt.com/docs/app)
+[Codex CLI](https://developers.openai.com/blog/codex-as-a-platform) · [Desktop interface](https://learn.chatgpt.com/docs/app)
 :::
 
 ### GitHub Copilot
@@ -142,7 +142,7 @@ That surrounding software is the harness. It manages the conversation, supplies 
 
 In the Anthropic example, the Code tab in Claude Desktop is the interface, Claude Code CLI supplies the harness, Claude is the model family, and Anthropic supplies model access. The desktop app and the model are different parts of the stack.
 
-The OpenAI example keeps those roles: the Codex workspace in the ChatGPT desktop app is the interface, the Codex harness runs the loop, and an OpenAI GPT model supplies the reasoning. Codex is a product and harness name, rather than a synonym for a language model.
+The OpenAI example keeps those roles: ChatGPT desktop is the interface, Codex CLI runs the loop, and an OpenAI GPT model supplies the reasoning. Codex CLI is a product and harness name, rather than a synonym for a language model.
 
 The GitHub Copilot App is the desktop interface in this example, and GitHub Copilot CLI provides the harness. We choose a Claude model to make one distinction visible: Anthropic develops that model, while GitHub Copilot supplies access to it. Choosing Claude in Copilot does not turn the Copilot harness into Claude Code CLI. Other supported models are available, subject to your account and configuration.
 
@@ -369,16 +369,16 @@ These habits reduce unrelated and contradictory material in the active context, 
 
 [Sometimes the unlock is a hidden tool affordance.]{.lede}
 
-![](media/know-thy-tools.webp){.illustration width="880" height="495" fig-alt="Example affordances that users miss: Claude Code CLI voice dictation turns a spoken prompt into terminal input with /voice; Codex generates and edits visual assets; GitHub Copilot CLI computer use operates GUI-only desktop apps with /computer on. An ellipsis indicates more examples, and the footer encourages reading the changelog to discover what the tools can do."}
+![](media/know-thy-tools.webp){.illustration width="880" height="495" fig-alt="Example affordances that users miss: Claude Code CLI voice dictation turns a spoken prompt into terminal input with /voice; Codex CLI generates and edits visual assets; GitHub Copilot CLI computer use operates GUI-only desktop apps with /computer on. An ellipsis indicates more examples, and the footer encourages reading the changelog to discover what the tools can do."}
 
 ::: {.source}
-Official docs: [Claude Code CLI voice](https://code.claude.com/docs/en/voice-dictation) · [Codex images](https://learn.chatgpt.com/docs/image-generation) · [Copilot CLI computer use](https://docs.github.com/en/copilot/how-tos/copilot-cli/use-copilot-cli/computer-use).
+Official docs: [Claude Code CLI voice](https://code.claude.com/docs/en/voice-dictation) · [Codex CLI images](https://learn.chatgpt.com/docs/image-generation) · [Copilot CLI computer use](https://docs.github.com/en/copilot/how-tos/copilot-cli/use-copilot-cli/computer-use).
 :::
 
 ::: {.notes}
 The examples on this slide illustrate capabilities that can be easy to overlook. They reflect official documentation checked in October 2026, so consult the linked documentation for current availability.
 
-Claude Code CLI offers voice input for dictating prompts, with the authentication and environment requirements described on the slide. Codex offers built-in image generation for creating and editing assets alongside the code. GitHub Copilot CLI offers computer use in its supported local environments, subject to permissions and policy. These are different affordances, not claims that one product alone can provide a capability.
+Claude Code CLI offers voice input for dictating prompts, with the authentication and environment requirements described on the slide. Codex CLI offers built-in image generation for creating and editing assets alongside the code. GitHub Copilot CLI offers computer use in its supported local environments, subject to permissions and policy. These are different affordances, not claims that one product alone can provide a capability.
 
 Choose the tool interface that fits the task. A direct API or command-line tool is useful when it exposes the operation clearly; computer use can help with a workflow available only through a graphical interface. When results disappoint, examine the context, tools, and feedback available to the agent as well as the model itself.
 :::

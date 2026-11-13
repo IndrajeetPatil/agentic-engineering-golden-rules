@@ -194,7 +194,7 @@ No vendor logos necessary; use original editorial icons. All text verbatim and s
 | Variant | Vendor-specific labels |
 | --- | --- |
 | Anthropic | Claude Desktop; Harness · Claude Code CLI; LLM · Claude; Model provider · Anthropic; Model API |
-| OpenAI | ChatGPT desktop; Harness · Codex; LLM · GPT; Model provider · OpenAI; Model API |
+| OpenAI | ChatGPT desktop; Harness · Codex CLI; LLM · GPT; Model provider · OpenAI; Model API |
 | GitHub Copilot | GitHub Copilot App; Harness · GitHub Copilot CLI; LLM · Claude; Model developer · Anthropic, Access via GitHub Copilot; Model access via Copilot |
 
 The desktop-app panel names the application only. Do not add secondary
@@ -205,7 +205,7 @@ The Copilot example deliberately uses Claude: selecting an Anthropic model
 does not switch the Copilot harness to Claude Code CLI. Sources are the official
 [Claude Code architecture](https://code.claude.com/docs/en/how-claude-code-works),
 [Claude Desktop](https://code.claude.com/docs/en/desktop),
-[Codex harness](https://developers.openai.com/blog/codex-as-a-platform),
+[Codex CLI](https://developers.openai.com/blog/codex-as-a-platform),
 [ChatGPT desktop](https://learn.chatgpt.com/docs/app), and
 [GitHub Copilot App](https://docs.github.com/en/copilot/concepts/copilot-surfaces/github-copilot-app)
 documentation.
@@ -364,7 +364,7 @@ Created with built-in image generation. The Maintain session hygiene illustratio
 and social card were supplied as style references, not edit targets.
 Official docs and release notes were checked on 8 October 2026:
 [Claude Code voice dictation](https://code.claude.com/docs/en/voice-dictation),
-[Codex image generation](https://learn.chatgpt.com/docs/image-generation), and
+[Codex CLI image generation](https://learn.chatgpt.com/docs/image-generation), and
 [Copilot CLI computer use](https://docs.github.com/en/copilot/how-tos/copilot-cli/use-copilot-cli/computer-use).
 The [1 October release note](https://github.blog/changelog/2026-10-01-github-copilot-can-now-interact-with-desktop-apps/)
 confirms Copilot computer use is in public preview. These are illustrative
@@ -374,7 +374,7 @@ examples, not an exhaustive or exclusive feature comparison.
 Use case: productivity-visual.
 Asset type: landscape 16:9 illustration for the "Know thy tools" slide in an engineering presentation.
 Input images: `devex-agentex.webp`, `one-command-setup.webp`, and `session-hygiene.webp` are style references only; the social card is an optional typography and palette reference. Create NEW content, do not reproduce their wording or subjects.
-Primary request: an elegant, memorable illustration of three example tool affordances users miss: Claude Code voice dictation, Codex built-in image generation, and GitHub Copilot CLI computer use. Exactly one capability per product, plus an ellipsis suggesting more to discover. Illustrate meaningful actions, not a feature table.
+Primary request: an elegant, memorable illustration of three example tool affordances users miss: Claude Code CLI voice dictation, Codex CLI built-in image generation, and GitHub Copilot CLI computer use. Exactly one capability per product, plus an ellipsis suggesting more to discover. Illustrate meaningful actions, not a feature table.
 
 Style: refined pen-and-ink editorial illustration. Flat ivory #fdfaf3 canvas, warm stone #e9e5db square panels, near-black #141414 text and linework. Restrained gold #dac284 for thin borders and dividers only, dark brown #7d6020 for readable occasional emphasis text. Bodoni/Didot high-contrast serif headings and Montserrat-like sans-serif body. Spacious layout with square corners. Friendly small robot consistent with the supplied style references. No official product logos, bright colours, gradients, glossy 3D, tiny paragraphs, or watermarks.
 
@@ -389,7 +389,7 @@ Large, clear terminal command exactly "/voice".
 Small legible scope note exactly "Claude.ai sign-in + local microphone".
 
 CENTRE:
-Product name exactly "Codex".
+Product name exactly "Codex CLI".
 Small scope label exactly "Desktop app".
 Feature headline exactly "Built-in image generation".
 Show a robot and human reviewing two editorial illustration thumbnails in an app window, with a sketched revision arrow and one thumbnail transformed. The thumbnails should be abstract image assets, not extra products or additional feature examples.
@@ -425,8 +425,8 @@ Use case: precise-object-edit.
 Edit this presentation illustration with exactly three changes:
 1. Remove the small line "Claude.ai sign-in + local microphone" beneath /voice in the left panel; leave clean matching ivory space.
 2. Remove the small line "Public preview · macOS / Windows" beneath /computer on in the right panel; leave clean matching ivory space.
-3. Remove the small "Desktop app" label and its vertical separator to the right of "Codex" in the centre panel. Centre the word "Codex" above "Built-in image generation".
-Keep every other element unchanged: the title "Example affordances that users miss", the three product names ("Claude Code CLI", "Codex", and "GitHub Copilot CLI") and capabilities, all illustration scenes, captions, /voice, /computer on, centre example prompt, ellipsis, unboxed footer caption, panel geometry, canvas dimensions, ivory/stone palette, fine gold borders, typography, and friendly line art. Do not replace the removed labels with new text or caveats.
+3. Remove the small "Desktop app" label and its vertical separator to the right of "Codex CLI" in the centre panel. Centre the words "Codex CLI" above "Built-in image generation".
+Keep every other element unchanged: the title "Example affordances that users miss", the three product names ("Claude Code CLI", "Codex CLI", and "GitHub Copilot CLI") and capabilities, all illustration scenes, captions, /voice, /computer on, centre example prompt, ellipsis, unboxed footer caption, panel geometry, canvas dimensions, ivory/stone palette, fine gold borders, typography, and friendly line art. Do not replace the removed labels with new text or caveats.
 ```
 
 ### know-thy-tools alignment
@@ -438,7 +438,7 @@ Use case: precise-object-edit.
 Edit this existing presentation illustration only for alignment and column heading sizes.
 For EACH of the three bordered columns, align all contents to that column's horizontal centre: product name, feature subtitle, illustration scene as a whole, caption, and command/example box. In the centre column, centre "Create a matching illustration" within its box; remove the small decorative sparkle in that box if it interferes with centred text.
 Reduce all three product-name titles and all three feature subtitles to about 85 percent of their present font sizes. Use one consistent product-name size across all columns, and one consistent feature-subtitle size across all columns. Keep their elegant serif styles and upright versus italic distinction. Put all product names on the same baseline and all feature subtitles on the same baseline; "GitHub Copilot CLI" and "Built-in image generation" should fit comfortably on one line at the smaller size. Maintain generous side margins and consistent spacing. Align the three captions to one baseline and the three command/example boxes to one baseline.
-Keep the top main title exactly "Example affordances that users miss" at its current size and position. Preserve all wording verbatim: "Claude Code CLI", "Voice dictation", "Speak your prompt", "/voice"; "Codex", "Built-in image generation", "Generate and edit visual assets", "Create a matching illustration"; "GitHub Copilot CLI", "Computer use", "Work in GUI-only desktop apps", "/computer on". Preserve the three illustration narratives, friendly robots and humans, ellipsis outside the panels, unboxed footer caption, canvas dimensions, ivory/stone palette, and fine gold borders. Do not add availability caveats, a Desktop app label, logos, dates, or new text. Change only horizontal alignment, consistent vertical alignment, and the requested column heading sizes.
+Keep the top main title exactly "Example affordances that users miss" at its current size and position. Preserve all wording verbatim: "Claude Code CLI", "Voice dictation", "Speak your prompt", "/voice"; "Codex CLI", "Built-in image generation", "Generate and edit visual assets", "Create a matching illustration"; "GitHub Copilot CLI", "Computer use", "Work in GUI-only desktop apps", "/computer on". Preserve the three illustration narratives, friendly robots and humans, ellipsis outside the panels, unboxed footer caption, canvas dimensions, ivory/stone palette, and fine gold borders. Do not add availability caveats, a Desktop app label, logos, dates, or new text. Change only horizontal alignment, consistent vertical alignment, and the requested column heading sizes.
 ```
 
 ## Integration checks
