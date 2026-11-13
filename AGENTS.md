@@ -4,37 +4,9 @@ A single-page [Quarto](https://quarto.org/) presentation rendered to
 [RevealJS](https://revealjs.com/) slides and deployed as a static site via
 GitHub Pages.
 
-## Repository layout
-
-```text
-index.qmd            # All slide content (the only file you usually need to edit)
-DESIGN.md            # Visual design tokens, typography, and styling rules
-_quarto.yml          # Quarto project config (output dir, resources list)
-_quarto-a11y.yml     # Opt-in profile enabling the axe accessibility checker (`just axe`)
-accessibility.html   # Compatibility fixes supplementing the a11y extension
-style.css            # Custom RevealJS theme (fonts, colours, component classes)
-meta-tags.html       # OpenGraph, Twitter Card, JSON-LD, and analytics tags
-justfile             # Command runner
-media/               # Images: AI-generated illustrations (WebP) and social card
-llms.txt, llms-full.txt   # Machine-readable summaries (mirrored in .well-known/)
-robots.txt, sitemap.xml   # Static crawl files; rarely change
-pyproject.toml, uv.lock   # Python dependencies for Quarto's Jupyter engine (uv)
-```
-
-`_site/`, `_extensions/`, `.quarto/` and `.venv/` are gitignored; never commit
-them.
-
-## Commands
-
-```bash
-just install   # Install Python dependencies and Quarto extensions
-just update    # Update Python dependencies
-just render    # Render index.qmd to _site/ (run after every change)
-just preview   # Live-reload dev server
-just clean     # Remove build artefacts
-just check     # Verify Quarto setup
-just axe       # Preview with the axe accessibility checker enabled
-```
+All slides live in `index.qmd`; the visual design is specified in
+[DESIGN.md](DESIGN.md). Run `just render` after every change; the `justfile`
+lists the other recipes.
 
 ## Key conventions
 
@@ -43,14 +15,11 @@ just axe       # Preview with the axe accessibility checker enabled
   (`:::`), columns (`.columns` / `.column`), raw HTML blocks (`{=html}`), and
   the `{.smaller}` class for dense slides. Follow the layout patterns of
   neighbouring slides.
-- **Design specification.** The visual design follows [DESIGN.md](DESIGN.md).
-  Always respect this document when creating or modifying slides, components,
-  styling, colours, and typography. Lay out content with the classes in
-  `style.css` rather than inline styles: `.card` plus one of `.card-stone`,
-  `.card-ink`, or `.card-outline`; `.card-grid` with `.card-grid-2`,
-  `.card-grid-3`, or `.card-grid-4`; `.eyebrow` for small uppercase labels;
-  `.lede` for the sentence under a heading; and `.source` for citations.
-  New widgets follow the naming patterns already in `style.css`. Colours live
+- **Design specification.** Follow [DESIGN.md](DESIGN.md) when creating or
+  modifying slides, components, styling, colours, and typography. Lay out
+  content with the component classes in `style.css` (cards, card grids,
+  `.eyebrow`, `.lede`, `.source`) rather than inline styles. New widgets
+  follow the naming patterns already in `style.css`. Colours live
   as custom properties under `:root` in `style.css`; do not hard-code new
   colours in `index.qmd`. Keep the theme `simple` and the format `revealjs`.
 - **Spelling and punctuation.** Use British spelling in prose (colour, licence,
@@ -68,18 +37,9 @@ just axe       # Preview with the axe accessibility checker enabled
   slide and the rule slide.
 - **Images.** Illustrations use the `.illustration` class (the gold hairline
   frame). Images are WebP; convert new PNG or JPEG assets with `cwebp`. The
-  illustration panels use light ivory or warm-stone fills; use dark ink for
-  text and linework, not dark panel backgrounds. Match the shared artwork style
-  in `media/devex-agentex.webp`, `media/one-command-setup.webp`,
-  `media/session-hygiene.webp`, and `media/know-thy-tools.webp`: airy ivory or
-  warm stone, fine near-black pen-and-ink linework, simple friendly figures,
-  restrained gold accents, and square, light panels. Keep the overall value
-  light like these references: bright ivory backgrounds, pale warm-stone panels,
-  and sparse shading. Reserve near-black for fine linework and text; avoid
-  brown-dominant fills and dense shadows. Avoid painterly or photoreal scenes,
-  saturated fills, and decorative green checks. Compare new art at slide size
-  with these references. The
-  artwork must not repeat the slide title or subtitle verbatim. Keep any
+  artwork follows the illustration style and reference images in
+  [DESIGN.md](DESIGN.md); compare new art with those references at slide size.
+  The artwork must not repeat the slide title or subtitle verbatim. Keep any
   necessary bottom caption unboxed and free of flanking horizontal rules, at a
   readable size. Use a concise subtitle for the key takeaway and let the
   illustration carry examples and flow; avoid explanatory copy inside the
@@ -124,7 +84,6 @@ just axe       # Preview with the axe accessibility checker enabled
   without deploying. Do not inline or modify that workflow here.
 - Reference the reusable workflow as `@main`, never a commit SHA: it is
   first-party, and a pinned SHA once went five months stale.
-- Dependabot updates GitHub Actions and `uv` dependencies weekly.
 
 ## Agent skills
 
