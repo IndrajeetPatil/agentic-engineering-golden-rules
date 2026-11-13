@@ -241,7 +241,7 @@ The rules begin with preparing a codebase for agents, improving the shared devel
 
 ## [01]{.rule-tag} Prepare the codebase for agents {.rule-slide}
 
-[Improve the patterns agents will inherit and repeat.]{.lede}
+[Pay down technical debt before scaling agent work.]{.lede}
 
 ![](media/prepare-codebase-for-agents.webp){.illustration width="880" height="495" fig-alt="Two-panel illustration: on the left, an agent copies inconsistent naming, duplicated code, and weak checks, multiplying a tangled codebase. On the right, a person prepares clear conventions, coherent modules, and reliable checks before an agent extends the same orderly module pattern."}
 
