@@ -32,7 +32,7 @@ The deck's glossary covers four file patterns used while developing codebases wi
 7. Keep pace with a fast-moving field. Frontier models, their interfaces, and codebases change quickly, so keep the agent harness current as well as the source: review prompts and skills when model behaviour or interfaces shift, and remove or add repository guidance such as AGENTS.md when source changes. Update only what the change calls for, verify it with suitable evaluations or tests, and record durable advice in the repository. Anthropic recommends checking model lifecycle updates and testing newer models before retirement.
 8. Automate repeated agent work. Capture effective recurring workflows in prompts, skills, slash commands, and multi-step workflows. Choose the smallest reusable mechanism that fits the work; automate coordination while people own evaluation and trade-offs. People set the explicit risk policy for any automatic merge and retain human review for ambiguous, risky, or exceptional changes.
 9. Identify and remove bottlenecks. Apply Amdahl’s law as an analogy across the SDLC: accelerating implementation alone cannot remove time spent waiting for review, verification, or release. Locate the current queue, choose a targeted intervention, and measure the full flow again because the constraint can move. Examples include Rust-based tools for slow lint and type checks, splitting or stacking large PRs before an LLM reviewer loop, and task-specific end-to-end tests for slow behaviour checks. The reviewer loop adds capacity; it does not replace human judgement.
-10. Be curious. Be humble. Be kind. Keep understanding your systems and building your skills as tools change.
+10. Be curious. Be humble. Keep understanding your systems and building your skills as tools change.
 
 ## A low-touch software factory example
 
@@ -52,6 +52,7 @@ Good agentic engineering practices can speed up routine work through Plan, Code,
 - Anthropic, Model deprecations.
 - Amdahl’s law (1967).
 - DORA, State of AI-assisted Software Development (2025).
+- Marc Andreessen, Lenny’s Podcast, “The real AI boom hasn’t even started yet.”
 - Git, git-worktree manual.
 - AGENTS.md, an open format for guiding coding agents.
 

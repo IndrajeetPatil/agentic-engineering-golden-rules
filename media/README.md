@@ -293,7 +293,7 @@ backgrounds.
 ## curious-humble.webp
 
 ```text
-Preserve a 2×2 illustration comparing helpful and unhelpful working habits. Top left "Be curious": engaged developer sketching prototypes with a friendly line-drawn robot. Top right "Avoid deskilling": disengaged developer reclining while robot runs unattended at screen. Bottom left "Be humble. Be kind.": diverse team listens and discusses around a table with shared notes. Bottom right "Avoid grandiosity": engineer, product manager, and designer each pointing at their own assistant and dismissing one another. Use refined pen-and-ink editorial figures, expressive restrained faces, ivory and stone panels with fine gold divider rules; no cartoon emoji or neon. Small text labels in bottom-right "Engineer", "Product manager", "Designer". Avoid racial stereotypes; convey disagreement calmly. No speech bubbles or extra paragraphs.
+Create a 2×2 illustration comparing helpful and unhelpful working habits. Top left "Be curious": an engaged developer sketches prototypes with a friendly line-drawn robot. Top right "Avoid deskilling": a disengaged developer reclines while a robot runs unattended at the screen. Bottom left "Be humble.": colleagues listen and discuss shared notes around a table. Bottom right "Avoid grandiosity": an engineer, product manager, and designer form a clear triangle, each pointing a finger at the other two in a mutual standoff. Give all three flustered, uneasy expressions so their stalemate is immediately clear. Keep it nonviolent: no weapons, threats, or physical contact. Label them "Engineer", "Product manager", and "Designer". Use refined pen-and-ink editorial figures, restrained expressions, an ivory canvas, warm-stone panels, near-black linework, and fine gold dividers. Use very few emphasis marks; avoid whisker-like rays. No cartoon emoji, speech bubbles, or extra paragraphs.
 ```
 
 ## one-command-setup.webp
@@ -439,12 +439,6 @@ Edit this existing presentation illustration only for alignment and column headi
 For EACH of the three bordered columns, align all contents to that column's horizontal centre: product name, feature subtitle, illustration scene as a whole, caption, and command/example box. In the centre column, centre "Create a matching illustration" within its box; remove the small decorative sparkle in that box if it interferes with centred text.
 Reduce all three product-name titles and all three feature subtitles to about 85 percent of their present font sizes. Use one consistent product-name size across all columns, and one consistent feature-subtitle size across all columns. Keep their elegant serif styles and upright versus italic distinction. Put all product names on the same baseline and all feature subtitles on the same baseline; "GitHub Copilot CLI" and "Built-in image generation" should fit comfortably on one line at the smaller size. Maintain generous side margins and consistent spacing. Align the three captions to one baseline and the three command/example boxes to one baseline.
 Keep the top main title exactly "Example affordances that users miss" at its current size and position. Preserve all wording verbatim: "Claude Code CLI", "Voice dictation", "Speak your prompt", "/voice"; "Codex", "Built-in image generation", "Generate and edit visual assets", "Create a matching illustration"; "GitHub Copilot CLI", "Computer use", "Work in GUI-only desktop apps", "/computer on". Preserve the three illustration narratives, friendly robots and humans, ellipsis outside the panels, unboxed footer caption, canvas dimensions, ivory/stone palette, and fine gold borders. Do not add availability caveats, a Desktop app label, logos, dates, or new text. Change only horizontal alignment, consistent vertical alignment, and the requested column heading sizes.
-```
-
-### curious-humble
-
-```text
-Use case: precise-object-edit. Edit only the lower-right panel headline of this presentation illustration. Replace BOTH existing headline lines ("Delusions of grandeur." and the smaller subtitle beneath it) with a SINGLE elegant line reading exactly "Avoid grandiosity" centred above the three colleagues. Remove the subtitle completely; leave clean ivory space. Keep all other text, characters, linework, panels, typography, colours, canvas dimensions, and composition unchanged. No extra text.
 ```
 
 ## Integration checks

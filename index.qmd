@@ -230,13 +230,13 @@ The next ten rules offer practical ways to use coding agents productively while 
 ::: {.card}
 [10]{.rule-number}
 
-**Be curious. Be humble. Be kind.**
+**Be curious. Be humble.**
 :::
 
 ::::
 
 ::: {.notes}
-The rules begin with preparing a codebase for agents, improving the shared developer and agent experience, and setting deterministic quality gates. They then define outcomes, maintain useful context, use tools well, keep guidance current as models change, automate repeated work, remove delivery bottlenecks, and build a curious, humble, and kind team culture.
+The rules begin with preparing a codebase for agents, improving the shared developer and agent experience, and setting deterministic quality gates. They then define outcomes, maintain useful context, use tools well, keep guidance current as models change, automate repeated work, remove delivery bottlenecks, and build a curious and humble team culture.
 :::
 
 ## [01]{.rule-tag} Prepare the codebase for agents {.rule-slide}
@@ -459,16 +459,20 @@ The second example starts by splitting or stacking a large pull request into sma
 The third example replaces repeated manual checks of a user journey with an end-to-end test. These tests can make important behaviour quicker to check, while exploratory testing remains useful for cases the tests do not cover. These are possible responses, not prescriptions; measure the whole delivery flow again because the bottleneck may move.
 :::
 
-## [10]{.rule-tag} Be curious. Be humble. Be kind. {.rule-slide}
+## [10]{.rule-tag} Be curious. Be humble. {.rule-slide}
 
 [AI is not an excuse to become incompetent or disagreeable.]{.lede}
 
-![](media/curious-humble.webp){.illustration width="880" height="495" fig-alt="Four-panel editorial illustration: be curious, with a developer experimenting alongside a robot; avoid deskilling, with a disengaged developer leaving the robot unattended; be humble and kind, with a team listening and discussing shared notes; avoid grandiosity, with an engineer, product manager, and designer dismissing one another while pointing to their own assistants."}
+![](media/curious-humble.webp){.illustration width="880" height="495" fig-alt="Four-panel editorial illustration: be curious, with a developer experimenting alongside a robot; avoid deskilling, with a disengaged developer leaving the robot unattended; be humble, with colleagues listening and discussing shared notes; avoid grandiosity, with an engineer, product manager, and designer all pointing fingers at one another in a flustered, nonviolent three-way standoff."}
+
+::: {.source}
+Standoff metaphor: Marc Andreessen on [the future of product, design, and engineering roles](https://www.lennysnewsletter.com/p/marc-andreessen-the-real-ai-boom).
+:::
 
 ::: {.notes}
 AI should make us better teammates, not careless or difficult ones.
 
-Be curious about what the tools can do, humble about their limits, and kind in how we review agent-generated work and each other's experiments.
+Be curious about what the tools can do and humble about their limits. Listen to colleagues, verify agent-generated work, and revise your assumptions when the evidence calls for it.
 :::
 
 # The Reward
