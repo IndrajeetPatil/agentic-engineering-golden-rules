@@ -83,8 +83,9 @@ underlines, reduced motion, and screen-reader announcements. Run `just install`
 again after `just clean`, which removes installed extensions.
 
 The `accessibility.html` helper handles scrollable code, slide-menu focus,
-and vertical-slide semantics. The extension's slide-menu patch and accessibility
-settings panel are disabled because they introduce ARIA and contrast failures.
+vertical-slide semantics, and keyboard navigation for the stack diagram's tabs.
+The extension's slide-menu patch and accessibility settings panel are disabled
+because they introduce ARIA and contrast failures.
 
 Use `just axe` to preview with the accessibility report. Check slides, fragments,
 and the menu in presentation and scroll views; the initial report does

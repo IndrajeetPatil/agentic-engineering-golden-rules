@@ -33,5 +33,5 @@ description: >
   checksum checks.
 - The extension's slide-menu patch and settings menu introduce ARIA and
   contrast failures, so both are disabled in `index.qmd`.
-- Keep `accessibility.html` for code scrolling, menu focus, and
-  vertical-slide semantics.
+- Keep `accessibility.html` for code scrolling, menu focus, vertical-slide
+  semantics, and the stack diagram's tab keyboard navigation.
