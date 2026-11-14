@@ -2,7 +2,7 @@
 
 [![Build and Deploy Presentation](https://github.com/IndrajeetPatil/agentic-engineering-golden-rules/actions/workflows/build-presentation.yaml/badge.svg)](https://github.com/IndrajeetPatil/agentic-engineering-golden-rules/actions/workflows/build-presentation.yaml)
 
-This presentation distils nine golden rules for agentic engineering: using
+This presentation distils ten golden rules for agentic engineering: using
 coding agents to boost productivity without compromising quality.
 
 1. Prepare the codebase for agents
@@ -11,9 +11,10 @@ coding agents to boost productivity without compromising quality.
 4. Define done before delegating
 5. Maintain session hygiene
 6. Know thy tools
-7. Automate repeated agent work
-8. Identify and remove bottlenecks
-9. Be curious. Be humble. Be kind.
+7. Keep pace with a fast-moving field
+8. Automate repeated agent work
+9. Identify and remove bottlenecks
+10. Be curious. Be humble.
 
 Before the rules, a three-tab diagram maps the LLM, agent, tool-calling loop,
 harness, desktop interface, and model provider across Anthropic, OpenAI, and
@@ -68,6 +69,7 @@ just preview  # Start a live preview with auto-reload
 just open     # Alias for preview (live-reload dev server over localhost)
 just clean    # Remove generated files and caches
 just check    # Check the Quarto and Python setup
+just axe      # Preview with the axe accessibility checker enabled
 just          # Install dependencies and start live-reload preview
 ```
 
