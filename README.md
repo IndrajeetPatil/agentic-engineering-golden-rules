@@ -82,12 +82,10 @@ The extension handles browser zoom, slide isolation, focus indicators, link
 underlines, reduced motion, and screen-reader announcements. Run `just install`
 again after `just clean`, which removes installed extensions.
 
-The `accessibility.html` helper still handles scrollable code, slide-menu focus,
-and vertical-slide semantics. It also handles keyboard navigation and focus for
-the stack diagram’s three tabs; use Left and Right arrows to switch tabs without
-changing slides. The extension's slide-menu patch and accessibility settings
-panel are disabled:
-version 0.2.3 introduces ARIA and contrast failures in those components.
+The `accessibility.html` helper handles scrollable code, slide-menu focus,
+vertical-slide semantics, and keyboard navigation for the stack diagram's tabs.
+The extension's slide-menu patch and accessibility settings panel are disabled
+because they introduce ARIA and contrast failures.
 
 Use `just axe` to preview with the accessibility report. Check slides, fragments,
 and the menu in presentation and scroll views; the initial report does
