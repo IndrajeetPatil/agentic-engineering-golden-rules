@@ -69,6 +69,7 @@ just preview  # Start a live preview with auto-reload
 just open     # Alias for preview (live-reload dev server over localhost)
 just clean    # Remove generated files and caches
 just check    # Check the Quarto and Python setup
+just axe      # Preview with the axe accessibility checker enabled
 just          # Install dependencies and start live-reload preview
 ```
 
