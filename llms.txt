@@ -28,7 +28,8 @@ This presentation distils ten golden rules for agentic engineering: working with
 - Identify and remove SDLC bottlenecks with targeted quality gates, LLM review loops, and end-to-end tests
 - Give agents more autonomy to create pull requests, publish packages, and inspect container logs while matching oversight and access to the task's risk
 - Software factory example: repository owners set risk boundaries for agent-led merges, while higher-risk changes receive human review and agent environments use scoped controls
-- Closing takeaway: agents accelerate routine work through Plan, Code, Review, Verify, and Release; people set direction and own risk boundaries
+- Constituents of success: quality gates check code, verification harnesses check behaviour, and an independent automated LLM reviewer returns findings, supporting low-touch delivery of routine changes
+- Closing takeaway: good engineering practices help agents speed up delivery across the SDLC without compromising quality
 
 ## Machine-readable companion
 

@@ -106,6 +106,40 @@ The three panels make waiting, review overload, and repetitive manual checks
 visible through queues and human expressions. Decorative emphasis marks are
 sparse.
 
+## constituents-of-success.webp
+
+The equation shows three complementary safeguards adding up to low-touch
+feature delivery. Quality gates lead to high code quality, a
+verification harness establishes verified behaviour, and an independent LLM
+reviewer surfaces issues early and returns findings to the coding agent. A
+person focuses on higher-level work and retains oversight. The exact panel
+labels are “Quality gates → High code quality”, “Verification harness →
+Verified behaviour”, “LLM reviewer → Issues surfaced early”, and
+“Low-touch feature delivery”. Large plus and equals signs make the
+relationship explicit.
+
+```text
+Edit the supplied presentation illustration to show an explicit equation.
+Make the first three safeguard panels additive inputs, with a large “+” sign
+between the first and second, another “+” between the second and third, and a
+large “=” before the result panel. Remove the arrow connectors between panels
+but retain arrows inside the reviewer feedback loop and the bottom quality
+rail. Keep the existing scenes and the deck's bright ivory canvas, pale
+warm-stone panels, square gold frames, fine near-black linework, and restrained
+gold accents.
+
+Use these exact panel labels and outcomes: “Quality gates” followed by
+“→ High code quality”; “Verification harness” followed by
+“→ Verified behaviour”; “LLM reviewer” followed by
+“→ Issues surfaced early”; and the final panel “Low-touch feature delivery”.
+Give each outcome line smaller but comfortably readable type.
+Keep plus and equals signs centred in spacious gutters, and preserve a calm
+human focusing on higher-level work in the result panel. No title, subtitle,
+footer, extra words, logos, or watermark. Avoid crowded boxes, bright green
+checks, gradients, dark panels, painterly or photorealistic rendering, or
+implying the reviewer is the coding agent.
+```
+
 ## software-factory.webp
 
 The closing example shows a feature request flowing through coding, a pull
@@ -129,44 +163,6 @@ lead an agent to miss a current requirement or revive a rejected approach. A
 battery gauge represents usable context draining from 100% as recall degrades.
 Its companion `session-hygiene.webp` shows focused related work, isolated
 parallel tasks, and durable repository knowledge as ways to keep context useful.
-
-## sdlc-conclusion.webp
-
-The closing conclusion shows agent support across five delivery stages, with a
-continuous quality rail and human direction at the beginning and judgement at
-release. It reinforces that strong engineering practices can speed up routine
-work while keeping quality standards intact.
-
-```text
-Create a polished 16:9 landscape editorial illustration for the final
-conclusion slide of a software engineering presentation. Flat warm ivory
-canvas; square light warm-stone panels; fine near-black pen-and-ink linework;
-restrained gold arrows, hairlines, and check marks. Refined serif labels,
-simple friendly human and robot figures, generous balanced whitespace. Match
-the supplied reference illustrations' line weight and panel geometry. Avoid
-painterly or photoreal scenes, rounded peach panels, bright green checks,
-dark-filled panels, gradients, and watermark.
-
-Show a single clear left-to-right software lifecycle in five spacious stations,
-connected by one continuous gold flow line: “Plan”, “Code”, “Review”, “Verify”,
-“Release”. Make the sequence feel brisk and fluid with subtle forward motion
-marks. At each station, a small coding-agent robot assists with routine work:
-organizing a plan, writing code, preparing a pull request, running checks, and
-packaging a release. Include one calm human who sets direction at Plan and one
-who makes a final judgement at Release, so the story shows agent acceleration
-with human oversight where it matters.
-
-Under the five stations, draw one straight, steady quality rail passing beneath
-every stage, with a small crisp deep-gold check or shield marker under each stage
-to show that the quality bar stays consistent from start to finish. Make this
-visual rail elegant and unmistakable, not a separate dark box or dashboard.
-The complete composition should make it clear that routine work moves faster
-while quality remains protected at every stage.
-
-Use only these five stage labels, spelled exactly as given; no other words,
-title, subtitle, long explanatory text, footer, logo, gradient, or watermark.
-Ensure the image is balanced and legible when displayed at 880×495 pixels.
-```
 
 ## Agentic stack diagrams
 
