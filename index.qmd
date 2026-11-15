@@ -447,10 +447,6 @@ The 2025 DORA research describes AI as an amplifier of existing organizational s
 
 ![](media/bottleneck-examples.webp){.illustration width="880" height="495" fig-alt="Three bottleneck examples: a person waits beside queued changes and a slow clock before using Ruff, uv, and ty; several pull requests pile up as a surprised reviewer reacts, then smaller changes enter an LLM author and reviewer loop; an unhappy person repeats the same manual browser journey before an E2E test automates it."}
 
-::: {.source}
-Rust-based tools: [Ruff](https://docs.astral.sh/ruff/), [uv](https://docs.astral.sh/uv/), and [ty](https://docs.astral.sh/ty/).
-:::
-
 ::: {.notes}
 Start by finding where work is waiting. In the first example, lint and type checks are slow, so the team considers Ruff for linting and formatting, uv for Python environments and packages, and ty for type checking. These tools target those checks; they do not make a slow test suite or build faster. Caching or parallelising work may suit other bottlenecks. Measure the affected step and the full workflow before and after.
 
@@ -522,7 +518,7 @@ Low-touch delivery does not mean no human oversight. People define the risk boun
 
 # Conclusion
 
-[Good engineering practices help agents speed up delivery across the SDLC without compromising quality.]{.lede}
+[Good engineering practices help agents speed up delivery across the software development life cycle without compromising quality.]{.lede}
 
 ::: {.notes}
 Quality gates, clear acceptance criteria, verification, automation, and appropriate autonomy help agents move routine work faster from Plan through Release. People set direction and risk boundaries, and apply judgement to uncertain or high-impact decisions.
