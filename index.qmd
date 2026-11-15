@@ -508,6 +508,12 @@ The team that owns the repository sets the risk boundary and the rules that enfo
 
 ![](media/constituents-of-success.webp){.illustration width="880" height="495" fig-align="center" fig-alt="An equation shows three safeguards adding up to low-touch feature delivery. Quality gates lead to high code quality; a verification harness compares expected and observed browser behaviour for verified behaviour; an independent LLM reviewer surfaces issues early and loops a finding back to the coding agent; then a completed feature is delivered while a person focuses on higher-level work and remains available for oversight."}
 
+::: {.source}
+[OpenAI, harness engineering](https://openai.com/index/harness-engineering/) ·
+[Google, agent behaviour evaluations](https://developers.googleblog.com/the-anatomy-of-harness-engineering-how-to-evaluate-iterate-and-guard-ai-coding-agents/) ·
+[Atlassian, LLM code review study](https://arxiv.org/abs/2601.01129).
+:::
+
 ::: {.notes}
 Three safeguards support routine feature delivery with little day-to-day human intervention. Quality gates check code quality; a verification harness exercises behaviour against observable acceptance criteria; and an automated LLM reviewer independently inspects the change and sends findings back to the coding agent. Together, they cover different failure modes and give the agent evidence to carry well-understood work forward without a person manually checking every step.
 
