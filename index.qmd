@@ -504,20 +504,22 @@ For frontend changes, the repository's agent instructions require the coding age
 The team that owns the repository sets the risk boundary and the rules that enforce it. Small, reversible changes such as documentation or formatting updates may qualify for an automatic merge when the task is explicit and every required check passes. The coding and reviewer agents do not set that boundary. People own the policy, monitor its results, and review changes with wider impact or uncertainty; mission-critical systems can require human approval at key steps. Sandboxed work, restricted network access, and scoped credentials limit the impact of mistakes. Repository files and issue text can also contain malicious instructions, so treat them as untrusted input and keep control of consequential actions.
 :::
 
-# Conclusion
+## Constituents of Success
+
+![](media/constituents-of-success.webp){.illustration width="880" height="495" fig-align="center" fig-alt="An equation shows three safeguards adding up to low-touch feature delivery. Quality gates lead to high code quality; a verification harness compares expected and observed browser behaviour for verified behaviour; an independent LLM reviewer surfaces issues early and loops a finding back to the coding agent; then a completed feature is delivered while a person focuses on higher-level work and remains available for oversight."}
 
 ::: {.notes}
-The software factory shows how these practices can help routine work move through delivery. The final view brings the flow together, with people setting direction and applying judgement while quality checks carry through each stage.
+Three safeguards support routine feature delivery with little day-to-day human intervention. Quality gates check code quality; a verification harness exercises behaviour against observable acceptance criteria; and an automated LLM reviewer independently inspects the change and sends findings back to the coding agent. Together, they cover different failure modes and give the agent evidence to carry well-understood work forward without a person manually checking every step.
+
+Low-touch delivery does not mean no human oversight. People define the risk boundary, monitor how the safeguards perform, and review uncertain or high-impact changes. The goal is to reserve attention for direction and judgement while routine, bounded changes move through reliable checks.
 :::
 
-## Speed up routine delivery work
+# Conclusion
 
-[People set direction and risk boundaries; agents accelerate routine work.]{.lede}
-
-![](media/sdlc-conclusion.webp){.illustration width="880" height="495" fig-alt="Five stages—Plan, Code, Review, Verify, and Release—connect from left to right. Agent robots assist with routine tasks at each stage; a person sets direction at Plan and applies judgement at Release. A continuous gold line with a checked shield under every stage represents a steady quality bar across the lifecycle."}
+[Good engineering practices help agents speed up delivery across the SDLC without compromising quality.]{.lede}
 
 ::: {.notes}
-These practices can speed up routine work through Plan, Code, Review, Verify, and Release. Clear tasks, a well-prepared codebase, useful tools, automation, and attention to bottlenecks make that speed useful. Quality gates carry through the lifecycle, so faster work does not have to mean lower standards. People set direction, own the risk boundary, and apply judgement to high-stakes decisions and exceptions.
+Quality gates, clear acceptance criteria, verification, automation, and appropriate autonomy help agents move routine work faster from Plan through Release. People set direction and risk boundaries, and apply judgement to uncertain or high-impact decisions.
 :::
 
 # Thank You

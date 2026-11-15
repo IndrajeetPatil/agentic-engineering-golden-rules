@@ -38,9 +38,13 @@ The deck's glossary covers four file patterns used while developing codebases wi
 
 The software-factory example uses the public [chatbot-template](https://github.com/IndrajeetPatil/chatbot-template/). Its local `make qa` and `make hooks` commands check changes before a pull request. The quality-harness inset names 17 checks included in `make qa`: file naming; backend, configuration, and Markdown formatting; backend and Markdown linting; spelling; workflow lint; link checking; type checking; API schema validation; dependency audit; backend tests, mutation tests, and type coverage; frontend QA; and security scanning. GitHub Actions also runs end-to-end browser tests and other checks. The main-branch ruleset requires `prek`, `test`, `backend`, `frontend`, `e2e`, and `qa` status checks. Frontend pull requests include screenshots under the repository's agent instructions. Those instructions also require a current-head Codex thumbs-up, resolution of review findings, and successful required checks before the coding agent squash-merges. Codex review is an agent-workflow requirement; it is not one of the GitHub ruleset's required statuses. These checks provide evidence, not proof that a change is correct. The team that owns the repository defines which small, reversible changes can auto-merge after all required checks pass. People own that policy, monitor its results, and review changes with higher impact or uncertainty. Agent work is sandboxed with restricted network access and scoped credentials, while repository files and issue text are treated as untrusted input that may contain malicious instructions.
 
+## Constituents of success
+
+Low-touch feature delivery depends on three complementary safeguards: quality gates that check code, a verification harness that checks behaviour against observable expectations, and an independent automated LLM reviewer that returns findings to the coding agent. Together they provide evidence for routine, bounded changes to move forward with little day-to-day human intervention. People still define the risk boundary, monitor the safeguards, and review uncertain or high-impact changes.
+
 ## Conclusion
 
-Good agentic engineering practices can speed up routine work through Plan, Code, Review, Verify, and Release, while quality gates protect standards. People set direction, own risk boundaries, and apply judgement to high-stakes decisions and exceptions.
+Good engineering practices help agents speed up delivery across the SDLC without compromising quality.
 
 ## References discussed
 
