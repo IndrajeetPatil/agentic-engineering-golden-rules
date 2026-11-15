@@ -44,7 +44,7 @@ Low-touch feature delivery depends on three complementary safeguards: quality ga
 
 ## Conclusion
 
-Good engineering practices help agents speed up delivery across the SDLC without compromising quality.
+Good engineering practices help agents speed up delivery across the software development life cycle without compromising quality.
 
 ## References discussed
 
