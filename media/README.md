@@ -290,10 +290,64 @@ painterly rendering, rounded panel frames, green checks, gradients, or dark
 backgrounds.
 ```
 
-## curious-humble.webp
+## agent-autonomy.webp
+
+The tenth rule's three panels make the argument in order: a woman delegates
+work to an agent, the agent advances routine work while she focuses on system
+design at a drawing board, and broader autonomy brings less direct control and
+a greater need for trust. The first panel shows pull-request creation, package
+publishing, and container log inspection; the last panel shows the woman
+actively setting autonomy, review, and scoped-access controls in one grounded
+interface. Muted blue-grey and soft sage accents distinguish interface and
+architecture details; the Azure logo uses its signature blue, and the trust
+and oversight chips use soft green and red fills. The ivory, warm-stone, ink,
+and gold palette remains dominant.
 
 ```text
-Create a 2×2 illustration comparing helpful and unhelpful working habits. Top left "Be curious": an engaged developer sketches prototypes with a friendly line-drawn robot. Top right "Avoid deskilling": a disengaged developer reclines while a robot runs unattended at the screen. Bottom left "Be humble.": colleagues listen and discuss shared notes around a table. Bottom right "Avoid grandiosity": an engineer, product manager, and designer form a clear triangle, each pointing a finger at the other two in a mutual standoff. Give all three flustered, uneasy expressions so their stalemate is immediately clear. Keep it nonviolent: no weapons, threats, or physical contact. Label them "Engineer", "Product manager", and "Designer". Use refined pen-and-ink editorial figures, restrained expressions, an ivory canvas, warm-stone panels, near-black linework, and fine gold dividers. Use very few emphasis marks; avoid whisker-like rays. No cartoon emoji, speech bubbles, or extra paragraphs.
+Use case: productivity-visual. Create a 16:9 slide illustration in the deck's
+refined ivory, warm-stone, near-black pen-and-ink, restrained-gold style, with
+friendly editorial figures and clean typography. Add only a few muted
+blue-grey and soft sage fills to small interface and architecture details;
+keep the background, panels, and linework in the warm neutral palette. Set
+panel headings in sentence case in an elegant Bodoni Moda-like serif,
+near-black, matching the deck's illustration references. Use three equal, clearly
+separated square-corner panels from left to right, with equal gutters, aligned
+heading baselines, consistent internal spacing, and generous outer margins.
+Show the same woman developer with dark curly hair and a light blouse in every
+panel. Panel 1, headed "Act on your behalf": she hands a concise task brief to
+a coding-agent robot. The agent independently creates a GitHub pull request,
+publishes an npm package, and reads Azure container logs. Show three outcomes:
+a submitted pull request, a published package version, and a short container-
+log excerpt. Add readable command labels "gh pr create", "npm publish", and
+"az container logs", each once. Use a recognizable taped cardboard parcel
+above "agent-kit", and the small Azure ribbon logo in its signature blue by
+"Azure". Place this scene high enough to leave a clear margin beneath the
+command labels. Panel 2, headed "More capacity": the same
+woman architects a system at a large upright drawing board with a few services
+connected by arrows, while the same agent moves routine work forward beside
+her. Position the robot and workflow near the heading, matching the spacing in
+the first panel. Do not add a subtitle or caption. Panel 3, headed
+"Less direct control":
+show the woman seated at the desk, leaning forward, hand on the mouse and
+actively adjusting the autonomy slider in the agent's monitor. The agent sits
+beside the workstation with hands off the keyboard, waiting while she sets its
+access. Keep all settings together inside the monitor: an "Agent access"
+heading, the autonomy slider, a "Review required" row, a "Scoped access:
+specific repos & actions" row, and "Match access to the task". Do not add a
+subtitle or caption above or around the monitor. Make it clear that the human
+sets these controls and the agent acts within them. Position the monitor and
+workstation near the heading, matching the spacing in the first panel. Show
+bottom chips "Trust ↑" on soft muted sage and "Oversight cost ↑" on soft dusty
+red, with near-black text and the existing icons. Make the sequence explicit:
+delegated action, visible benefit, then trade-off. Use a bright ivory canvas,
+pale warm stone, near-black linework, restrained gold for fine dividers and
+control marks, the few specified muted colour accents, light values, sparse
+shading, and comfortably inset headings. Use the same fine, airy linework and
+warm neutral shading as the deck references. No overall title,
+repeated slide subtitle, footer, extra prose, crowded UI, rounded panels,
+horizontal caption rules, chart axes, literal seesaw, fear imagery, gradients,
+brown-dominant fills, bright colours, decorative rays, sparkles,
+coffee mugs, or watermark.
 ```
 
 ## one-command-setup.webp
