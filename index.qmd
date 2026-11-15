@@ -29,7 +29,7 @@ execute:
   echo: true
   eval: false
 keywords: ["agentic-engineering", "coding-agents", "software-engineering", "ai-assisted-development"]
-description-meta: "Golden rules for agentic engineering: how to use coding agents to boost productivity without compromising quality. Ten rules covering codebase readiness, developer experience, deterministic quality gates, acceptance criteria, context, tools, agent harness maintenance as models and codebases change, automation, delivery bottlenecks, and team culture."
+description-meta: "Golden rules for agentic engineering: how to use coding agents to boost productivity without compromising quality. Ten rules covering codebase readiness, developer experience, deterministic quality gates, acceptance criteria, context, tools, agent harness maintenance as models and codebases change, automation, delivery bottlenecks, and autonomy matched to the work."
 license: "CC0 1.0 Universal"
 pagetitle: "Golden Rules for Agentic Engineering"
 author-meta: "Indrajeet Patil"
@@ -230,13 +230,13 @@ The next ten rules offer practical ways to use coding agents productively while 
 ::: {.card}
 [10]{.rule-number}
 
-**Be curious. Be humble.**
+**Give your agents more autonomy**
 :::
 
 ::::
 
 ::: {.notes}
-The rules begin with preparing a codebase for agents, improving the shared developer and agent experience, and setting deterministic quality gates. They then define outcomes, maintain useful context, use tools well, keep guidance current as models change, automate repeated work, remove delivery bottlenecks, and build a curious and humble team culture.
+The rules begin with preparing a codebase for agents, improving the shared developer and agent experience, and setting deterministic quality gates. They then define outcomes, maintain useful context, use tools well, keep guidance current as models change, automate repeated work, remove delivery bottlenecks, and choose how much autonomy to give agents for the work at hand.
 :::
 
 ## [01]{.rule-tag} Prepare the codebase for agents {.rule-slide}
@@ -459,20 +459,18 @@ The second example starts by splitting or stacking a large pull request into sma
 The third example replaces repeated manual checks of a user journey with an end-to-end test. These tests can make important behaviour quicker to check, while exploratory testing remains useful for cases the tests do not cover. These are possible responses, not prescriptions; measure the whole delivery flow again because the bottleneck may move.
 :::
 
-## [10]{.rule-tag} Be curious. Be humble. {.rule-slide}
+## [10]{.rule-tag} Give your agents more autonomy {.rule-slide}
 
-[AI is not an excuse to become incompetent or disagreeable.]{.lede}
+[Delegate action, gain capacity, and choose how much control to hand over.]{.lede}
 
-![](media/curious-humble.webp){.illustration width="880" height="495" fig-alt="Four-panel editorial illustration: be curious, with a developer experimenting alongside a robot; avoid deskilling, with a disengaged developer leaving the robot unattended; be humble, with colleagues listening and discussing shared notes; avoid grandiosity, with an engineer, product manager, and designer all pointing fingers at one another in a flustered, nonviolent three-way standoff."}
-
-::: {.source}
-Standoff metaphor: Marc Andreessen on [the future of product, design, and engineering roles](https://www.lennysnewsletter.com/p/marc-andreessen-the-real-ai-boom).
-:::
+![](media/agent-autonomy.webp){.illustration width="880" height="495" fig-alt="Three equal panels show the argument for agent autonomy. First, a woman delegates three CLI tasks to an agent: create a GitHub pull request with gh pr create, publish a package with npm publish, and read Azure container logs with az container logs. Second, the same woman focuses on system architecture at a drawing board while routine work moves forward. Third, she actively sets the agent's autonomy slider, requires review, and limits access to specific repositories and actions while the agent waits at the workstation."}
 
 ::: {.notes}
-AI should make us better teammates, not careless or difficult ones.
+Autonomy means an agent can act on our behalf with tools we make available. It can create a pull request with `gh pr create`, publish a package with `npm publish`, and read container output with `az container logs`. These commands use authenticated GitHub and Azure sessions, and npm registry credentials established through `npm login` or a configured token. Publishing a package is consequential, so give an agent that access only when the release task and review process warrant it.
 
-Be curious about what the tools can do and humble about their limits. Listen to colleagues, verify agent-generated work, and revise your assumptions when the evidence calls for it.
+The human sets the autonomy level, decides when review is required, and limits access to the repositories and actions needed for the task. The agent can then carry out work within that boundary. Broader permission may increase what gets done, but the human also gives up more direct control and relies more on the agent and its checks.
+
+This can keep routine work moving while the developer focuses on architecting a system. The trade-off is less direct control: broader autonomy lets the agent accomplish more, but leaves fewer steps for a person to watch and asks for more trust in the agent and its checks. Choose the boundary for the task. Well-understood, reversible work can suit wider delegation; consequential or uncertain work calls for closer oversight and scoped access.
 :::
 
 # The Reward

@@ -26,7 +26,7 @@ This presentation distils ten golden rules for agentic engineering: working with
 - Keep the agent harness current as frontier models and codebases change: update prompts and skills when model behaviour or interfaces shift, and remove stale repository guidance such as AGENTS.md when source changes
 - Automate repeated agent work with prompts, skills, shortcuts, and workflows
 - Identify and remove SDLC bottlenecks with targeted quality gates, LLM review loops, and end-to-end tests
-- Team culture and continued engineering competence
+- Give agents more autonomy to create pull requests, publish packages, and inspect container logs while matching oversight and access to the task's risk
 - Software factory example: repository owners set risk boundaries for agent-led merges, while higher-risk changes receive human review and agent environments use scoped controls
 - Closing takeaway: agents accelerate routine work through Plan, Code, Review, Verify, and Release; people set direction and own risk boundaries
 

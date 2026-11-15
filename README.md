@@ -14,7 +14,7 @@ coding agents to boost productivity without compromising quality.
 7. Keep pace with a fast-moving field
 8. Automate repeated agent work
 9. Identify and remove bottlenecks
-10. Be curious. Be humble.
+10. Give your agents more autonomy
 
 Before the rules, a three-tab diagram maps the LLM, agent, tool-calling loop,
 harness, desktop interface, and model provider across Anthropic, OpenAI, and

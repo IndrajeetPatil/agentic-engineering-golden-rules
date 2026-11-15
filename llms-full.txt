@@ -10,7 +10,7 @@ Language: English
 
 ## Summary
 
-This slide deck presents ten golden rules for agentic engineering: using coding agents to boost productivity without compromising quality. Quality depends on the engineering system around the agent: a codebase that is easy to navigate, a deterministic harness that gives fast feedback, observable acceptance criteria, prepared codebase patterns, clean context, useful tools, current prompts and repository guidance as models change, repeatable automation, end-to-end flow improvements, and a team culture that keeps humans responsible for what ships.
+This slide deck presents ten golden rules for agentic engineering: using coding agents to boost productivity without compromising quality. Quality depends on the engineering system around the agent: a codebase that is easy to navigate, a deterministic harness that gives fast feedback, observable acceptance criteria, prepared codebase patterns, clean context, useful tools, current prompts and repository guidance as models change, repeatable automation, end-to-end flow improvements, and autonomy matched to the task and its risk.
 
 The talk is aimed at software engineers who ship production software and have at least some experience with coding agents such as Claude Code CLI or GitHub Copilot CLI.
 
@@ -32,7 +32,7 @@ The deck's glossary covers four file patterns used while developing codebases wi
 7. Keep pace with a fast-moving field. Frontier models, their interfaces, and codebases change quickly, so keep the agent harness current as well as the source: review prompts and skills when model behaviour or interfaces shift, and remove or add repository guidance such as AGENTS.md when source changes. Update only what the change calls for, verify it with suitable evaluations or tests, and record durable advice in the repository. Anthropic recommends checking model lifecycle updates and testing newer models before retirement.
 8. Automate repeated agent work. Capture effective recurring workflows in prompts, skills, slash commands, and multi-step workflows. Choose the smallest reusable mechanism that fits the work; automate coordination while people own evaluation and trade-offs. People set the explicit risk policy for any automatic merge and retain human review for ambiguous, risky, or exceptional changes.
 9. Identify and remove bottlenecks. Apply Amdahl’s law as an analogy across the SDLC: accelerating implementation alone cannot remove time spent waiting for review, verification, or release. Locate the current queue, choose a targeted intervention, and measure the full flow again because the constraint can move. Examples include Rust-based tools for slow lint and type checks, splitting or stacking large PRs before an LLM reviewer loop, and task-specific end-to-end tests for slow behaviour checks. The reviewer loop adds capacity; it does not replace human judgement.
-10. Be curious. Be humble. Keep understanding your systems and building your skills as tools change.
+10. Give your agents more autonomy. A developer can delegate work that lets an agent create a pull request with `gh pr create`, publish a package with `npm publish`, and inspect container logs with `az container logs`. Each command relies on credentials for its account or registry. This keeps routine work moving while the developer focuses on harder work, such as architecting a system. Broader autonomy can accomplish more, but it reduces direct human control and requires trust in the agent and its checks. Match oversight and scoped access to the task: well-understood, reversible work can support wider delegation, while consequential or uncertain work calls for closer review.
 
 ## A low-touch software factory example
 
@@ -52,7 +52,6 @@ Good agentic engineering practices can speed up routine work through Plan, Code,
 - Anthropic, Model deprecations.
 - Amdahl’s law (1967).
 - DORA, State of AI-assisted Software Development (2025).
-- Marc Andreessen, Lenny’s Podcast, “The real AI boom hasn’t even started yet.”
 - Git, git-worktree manual.
 - AGENTS.md, an open format for guiding coding agents.
 
