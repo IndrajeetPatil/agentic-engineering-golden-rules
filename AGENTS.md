@@ -56,8 +56,7 @@ lists the other recipes.
   complete, audience-facing narration; keep staging cues, private reminders,
   and delivery checklists outside these blocks.
 - **Accessibility.** Images must have `fig-alt` text; raw HTML widgets use
-  `role="img"` and `aria-label`. Load the `check-accessibility` skill before
-  changing markup, styles, widgets or the a11y setup.
+  `role="img"` and `aria-label`.
 - **Icons.** Icons are HTML spans backed by only the required SVG path data in
   `style.css`; no icon font or Quarto icon extension. When adding one, add only
   its mask data, preserve the source licence attribution, and keep an
@@ -117,11 +116,3 @@ lists the other recipes.
   `actions/unpinned-tag`, zizmor `unpinned-uses`) flag this by design: do not
   report it or propose a pin; dismiss such alerts as "won't fix" with this
   reason.
-
-## Agent skills
-
-Skills live in `.agents/skills/<name>/SKILL.md`. Load one before its task:
-
-| Skill | Load before |
-| --- | --- |
-| `check-accessibility` | Changing slide markup, styles, widgets, menus or the a11y setup; any accessibility audit |
