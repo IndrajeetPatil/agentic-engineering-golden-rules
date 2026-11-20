@@ -82,29 +82,28 @@ labels, delivery queues, overwhelmed human reviewers, coding agents, and rocket.
 Three practical responses to queues in software delivery: use Rust-based
 Python tools for slow lint and type checks; split or stack large pull requests
 before an LLM author/reviewer loop; and replace repeated manual behaviour
-checks with E2E tests. Each panel has a matching open serif heading and a
-concise outcome label. The labels name possible interventions, not guaranteed
-speedups.
+checks with E2E tests. Each panel uses compact chips to label the bottleneck and
+its intervention. Ruff, uv, and ty are named in the first panel's illustration,
+so its intervention chip describes them collectively as Rust-based tools.
 
 ```text
 Use case: productivity-visual. Revise the supplied three-panel illustration
 in the deck's editorial style: flat ivory canvas, warm-stone panels, near-black
-pen-and-ink linework, restrained gold hairlines and arrows, and elegant open
-serif headings like the autonomy illustration. Give all three panels
-consistent, unboxed headings: “Slow checks”, “Review queues”, and “Manual
-verification”. Keep outcomes below: “Ruff · uv · ty”, “LLM review loop”, and
-“E2E tests”. Show a queue of changes waiting and a slow clock in panel one,
-then Ruff, uv, and ty; show an overwhelmed human reviewer above smaller changes
-entering a looping LLM author/reviewer workflow in panel two; show repeated
-manual web checks and a tired person above an automated E2E test in panel
-three. Use very few emphasis marks, with no decorative rays, whisker-like
-lines, or sparkles. Keep panels balanced and spacious. No overall title or
-footer.
+pen-and-ink linework, restrained gold hairlines and arrows. Preserve the three
+scenes. Use compact rounded outline label chips, with modest sans-serif type and
+ample vertical spacing before each scene. Top chip labels: “Slow lint/type
+checks”, “Pull request queues”, and “Manual behaviour checks”. Bottom
+intervention chips: “Rust-based tools”, “LLM review loop”, and “E2E tests”. Do
+not repeat Ruff, uv, or ty in any chip; they are already visibly listed in panel
+one. Show a queue and slow clock before Ruff, uv, and ty; smaller changes
+entering a two-way LLM author/reviewer loop after a review queue; and repeated
+manual browser checks automated by an E2E test. Keep labels aligned and panels
+balanced, accurate, and spacious. No oversized headings, duplicated
+information, overall title, caption, or watermark.
 ```
 
 The three panels make waiting, review overload, and repetitive manual checks
-visible through queues and human expressions. Decorative emphasis marks are
-sparse.
+visible through queues and human expressions. Decorative emphasis marks are sparse.
 
 ## constituents-of-success.webp
 
