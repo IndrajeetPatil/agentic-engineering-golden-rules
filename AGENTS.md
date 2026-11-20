@@ -38,7 +38,11 @@ lists the other recipes.
 - **Images.** Illustrations use the `.illustration` class (the gold hairline
   frame). Images are WebP; convert new PNG or JPEG assets with `cwebp`. The
   artwork follows the illustration style and reference images in
-  [DESIGN.md](DESIGN.md); compare new art with those references at slide size.
+  [DESIGN.md](DESIGN.md); use `media/agent-autonomy.webp` as the palette
+  reference for every illustration's bright ivory canvas and very pale panel
+  fills, and compare new art with the references at slide size. Keep large
+  backgrounds light enough to match that example; retain colour accents only
+  for small semantic details.
   The artwork must not repeat the slide title or subtitle verbatim. Keep any
   necessary bottom caption unboxed and free of flanking horizontal rules, at a
   readable size. Use a concise subtitle for the key takeaway and let the
