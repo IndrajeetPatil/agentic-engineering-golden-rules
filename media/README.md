@@ -97,8 +97,10 @@ intervention chips: “Rust-based tools”, “LLM review loop”, and “E2E te
 not repeat Ruff, uv, or ty in any chip; they are already visibly listed in panel
 one. Show a queue and slow clock before Ruff, uv, and ty; smaller changes
 entering a two-way LLM author/reviewer loop after a review queue; and repeated
-manual browser checks automated by an E2E test. Keep labels aligned and panels
-balanced, accurate, and spacious. No oversized headings, duplicated
+manual browser checks automated by an E2E agent that runs the same three checks
+shown above. Match the three manual browser windows with three automated browser
+test cards below, each with a clear completion check. Keep labels aligned and
+panels balanced, accurate, and spacious. No oversized headings, duplicated
 information, overall title, caption, or watermark.
 ```
 

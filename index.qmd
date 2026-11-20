@@ -445,7 +445,7 @@ The 2025 DORA research describes AI as an amplifier of existing organizational s
 
 ## Identify and remove bottlenecks: in practice {.rule-slide}
 
-![](media/bottleneck-examples.webp){.illustration width="880" height="495" fig-alt="Three panels show slow lint and type checks addressed with Rust-based tools, a pull request queue addressed with smaller changes and a two-way LLM author and reviewer loop, and tiring manual browser checks automated by an end-to-end test. Each panel uses compact chips for the bottleneck and intervention."}
+![](media/bottleneck-examples.webp){.illustration width="880" height="495" fig-alt="Three panels show slow lint and type checks addressed with Rust-based tools, a pull request queue addressed with smaller changes and a two-way LLM author and reviewer loop, and tiring manual browser checks replaced by an agent running the same three end-to-end checks. Each panel uses compact chips for the bottleneck and intervention."}
 
 ::: {.notes}
 Start by finding where work is waiting. In the first example, lint and type checks are slow, so the team considers Ruff for linting and formatting, uv for Python environments and packages, and ty for type checking. These tools target those checks; they do not make a slow test suite or build faster. Caching or parallelising work may suit other bottlenecks. Measure the affected step and the full workflow before and after.
