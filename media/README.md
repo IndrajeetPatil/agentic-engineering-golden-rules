@@ -1,8 +1,12 @@
 # Deck artwork
 
-The rule illustrations use built-in image generation and a shared editorial
-style. `devex-agentex.webp`, `one-command-setup.webp`, `session-hygiene.webp`,
-and `know-thy-tools.webp` are the visual references for new and restyled art.
+All slide illustrations use built-in image generation and a shared editorial
+style. `agent-autonomy.webp` sets the canvas and panel brightness for every
+asset: a bright ivory (`#fdfaf3`) canvas and very pale warm-stone (`#e9e5db`)
+panels with subtle contrast. Keep large background fills light; reserve other
+colours for small semantic accents. `devex-agentex.webp`,
+`one-command-setup.webp`, `session-hygiene.webp`, and `know-thy-tools.webp`
+guide the remaining visual style for new and restyled art.
 The quality-gates practice example uses a generated Ruff F841 feedback
 loop. Context rot and its management are shown in a paired illustration
 sequence. The setup contrast illustrates a shared one-command entry point.
@@ -221,7 +225,7 @@ palette and typography reference when useful. Apply this shared style prompt
 followed by the asset-specific instructions below.
 
 ```text
-Restyle into the deck's restrained editorial illustration style shown in the four supplied reference images: flat ivory #fdfaf3 canvas, light warm-stone #e9e5db square panels, fine near-black #141414 pen-and-ink linework, restrained gold #dac284 hairlines and accents, and dark brown #7d6020 only for readable emphasis. Use elegant Bodoni/Didot-like serif headings, legible Montserrat-like labels, simple friendly human and robot figures, sparse shading, and generous whitespace. Match the references' line weight, palette, panel geometry, and visual simplicity. Avoid painterly or photoreal scenes, heavy washes, dark backgrounds, rounded peach panels, decorative green checks, gradients, glossy 3D, heavy shadows, and excessive decoration. Keep the original conceptual message and visual metaphor. Do not repeat the slide title or subtitle verbatim. Keep any useful bottom caption unboxed and unflanked by rules. Landscape 16:9 composition. No watermark.
+Restyle into the deck's restrained editorial illustration style shown in the four supplied reference images: a flat, bright ivory #fdfaf3 canvas, light warm-stone #e9e5db panels, fine near-black #141414 pen-and-ink linework, restrained gold #dac284 hairlines and accents, and dark brown #7d6020 only for readable emphasis. Keep every canvas and large panel background light so the artwork pops against the slide; never use a dark or brown-dominant background. Use elegant Bodoni/Didot-like serif headings, legible Montserrat-like labels, simple friendly human and robot figures, sparse shading, and generous whitespace. Match the references' line weight, palette, panel geometry, and visual simplicity. Avoid painterly or photoreal scenes, heavy washes, rounded peach panels, decorative green checks, gradients, glossy 3D, heavy shadows, and excessive decoration. Keep the original conceptual message and visual metaphor. Do not repeat the slide title or subtitle verbatim. Keep any useful bottom caption unboxed and unflanked by rules. Landscape 16:9 composition. No watermark.
 ```
 
 ## devex-agentex.webp
@@ -265,10 +269,11 @@ Redesign the information graphic into a readable landscape layout. Top elegant p
 ## model-change-maintenance.webp
 
 The illustration shows why the agent harness must keep pace with a changing
-field and codebase: model or interface changes prompt review of prompts and
-skills, while source changes prompt cleanup of stale `AGENTS.md` guidance and
-verification through tests. Keep both loops visible and use the shared
-reference style above.
+field and codebase: model changes prompt review of prompts and skills, source
+changes prompt cleanup of stale `AGENTS.md` guidance and verification through
+tests, and CLI changes prompt shorter skill instructions. All three panels use
+a bright ivory canvas, pale warm-stone panels, fine near-black linework, and
+restrained gold accents.
 
 ```text
 Create a landscape 16:9 presentation illustration in the deck's shared
@@ -286,6 +291,12 @@ and legible; do not repeat the slide title or subtitle, add a footer, or use
 painterly rendering, rounded panel frames, green checks, gradients, or dark
 backgrounds.
 ```
+
+Final built-in image edit: use `agent-autonomy.webp` as a palette reference and
+lighten both the canvas and all three large panel interiors to bright ivory
+and very pale warm stone. Keep the panels subtly distinct from the canvas and
+retain the interface cards' pale pink and green accents. Preserve all text,
+artwork, and layout.
 
 ## agent-autonomy.webp
 
