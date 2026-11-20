@@ -82,38 +82,39 @@ labels, delivery queues, overwhelmed human reviewers, coding agents, and rocket.
 Three practical responses to queues in software delivery: use Rust-based
 Python tools for slow lint and type checks; split or stack large pull requests
 before an LLM author/reviewer loop; and replace repeated manual behaviour
-checks with E2E tests. The labels name possible interventions, not guaranteed
-speedups.
+checks with E2E tests. Each panel uses compact chips to label the bottleneck and
+its intervention. Ruff, uv, and ty are named in the first panel's illustration,
+so its intervention chip describes them collectively as Rust-based tools.
 
 ```text
 Use case: productivity-visual. Revise the supplied three-panel illustration
 in the deck's editorial style: flat ivory canvas, warm-stone panels, near-black
-pen-and-ink linework, restrained gold hairlines and arrows, serif headings,
-and legible labels. Keep the existing panel headings and interventions.
-Panel one, "Slow lint/type checks": show a queue of changes waiting, a slow
-clock, and a person visibly waiting for checks to finish; below, show the
-faster resolution with Ruff, uv, and ty. Panel two, "Split or stack PRs":
-show several pull requests piling up and one human reviewer looking surprised
-and overwhelmed; below, show smaller changes entering a looping LLM Author and
-Reviewer workflow. Panel three, "Manual behaviour checks": show the same web
-journey being manually repeated several times and one unhappy, tired human;
-below, show an E2E test automating that journey. Use very few emphasis marks,
-with no decorative rays, whisker-like lines, or sparkles. Keep the panels
-balanced, accurate, and spacious. No overall title or footer.
+pen-and-ink linework, restrained gold hairlines and arrows. Preserve the three
+scenes. Use compact rounded outline label chips, with modest sans-serif type and
+ample vertical spacing before each scene. Top chip labels: “Slow lint/type
+checks”, “Pull request queues”, and “Manual behaviour checks”. Bottom
+intervention chips: “Rust-based tools”, “LLM review loop”, and “E2E tests”. Do
+not repeat Ruff, uv, or ty in any chip; they are already visibly listed in panel
+one. Show a queue and slow clock before Ruff, uv, and ty; smaller changes
+entering a two-way LLM author/reviewer loop after a review queue; and repeated
+manual browser checks automated by an E2E agent that runs the same three checks
+shown above. Match the three manual browser windows with three automated browser
+test cards below, each with a clear completion check. Keep labels aligned and
+panels balanced, accurate, and spacious. No oversized headings, duplicated
+information, overall title, caption, or watermark.
 ```
 
 The three panels make waiting, review overload, and repetitive manual checks
-visible through queues and human expressions. Decorative emphasis marks are
-sparse.
+visible through queues and human expressions. Decorative emphasis marks are sparse.
 
 ## constituents-of-success.webp
 
 The equation shows three complementary safeguards adding up to low-touch
 feature delivery. Quality gates lead to high code quality, a
 verification harness establishes verified behaviour, and an independent LLM
-reviewer surfaces issues early and returns findings to the coding agent. A
-person focuses on higher-level work and retains oversight. The exact panel
-labels are “Quality gates → High code quality”, “Verification harness →
+reviewer surfaces issues early and exchanges findings and revised changes
+with an implementer agent in a two-way loop. A person focuses on higher-level
+work and retains oversight. The exact panel labels are “Quality gates → High code quality”, “Verification harness →
 Verified behaviour”, “LLM reviewer → Issues surfaced early”, and
 “Low-touch feature delivery”. Large plus and equals signs make the
 relationship explicit.
@@ -123,10 +124,10 @@ Edit the supplied presentation illustration to show an explicit equation.
 Make the first three safeguard panels additive inputs, with a large “+” sign
 between the first and second, another “+” between the second and third, and a
 large “=” before the result panel. Remove the arrow connectors between panels
-but retain arrows inside the reviewer feedback loop and the bottom quality
-rail. Keep the existing scenes and the deck's bright ivory canvas, pale
-warm-stone panels, square gold frames, fine near-black linework, and restrained
-gold accents.
+but retain two-way arrows between the independent reviewer and implementer
+inside the reviewer feedback loop, plus the bottom quality rail. Keep the
+existing scenes and the deck's bright ivory canvas, pale warm-stone panels,
+square gold frames, fine near-black linework, and restrained gold accents.
 
 Use these exact panel labels and outcomes: “Quality gates” followed by
 “→ High code quality”; “Verification harness” followed by

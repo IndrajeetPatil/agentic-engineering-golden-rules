@@ -445,7 +445,7 @@ The 2025 DORA research describes AI as an amplifier of existing organizational s
 
 ## Identify and remove bottlenecks: in practice {.rule-slide}
 
-![](media/bottleneck-examples.webp){.illustration width="880" height="495" fig-alt="Three bottleneck examples: a person waits beside queued changes and a slow clock before using Ruff, uv, and ty; several pull requests pile up as a surprised reviewer reacts, then smaller changes enter an LLM author and reviewer loop; an unhappy person repeats the same manual browser journey before an E2E test automates it."}
+![](media/bottleneck-examples.webp){.illustration width="880" height="495" fig-alt="Three panels show slow lint and type checks addressed with Rust-based tools, a pull request queue addressed with smaller changes and a two-way LLM author and reviewer loop, and tiring manual browser checks replaced by an agent running the same three end-to-end checks. Each panel uses compact chips for the bottleneck and intervention."}
 
 ::: {.notes}
 Start by finding where work is waiting. In the first example, lint and type checks are slow, so the team considers Ruff for linting and formatting, uv for Python environments and packages, and ty for type checking. These tools target those checks; they do not make a slow test suite or build faster. Caching or parallelising work may suit other bottlenecks. Measure the affected step and the full workflow before and after.
@@ -502,7 +502,7 @@ The team that owns the repository sets the risk boundary and the rules that enfo
 
 ## Constituents of Success
 
-![](media/constituents-of-success.webp){.illustration width="880" height="495" fig-align="center" fig-alt="An equation shows three safeguards adding up to low-touch feature delivery. Quality gates lead to high code quality; a verification harness compares expected and observed browser behaviour for verified behaviour; an independent LLM reviewer surfaces issues early and loops a finding back to the coding agent; then a completed feature is delivered while a person focuses on higher-level work and remains available for oversight."}
+![](media/constituents-of-success.webp){.illustration width="980" height="551" fig-align="center" fig-alt="An equation shows three safeguards adding up to low-touch feature delivery. Quality gates lead to high code quality; a verification harness compares expected and observed browser behaviour for verified behaviour; an independent LLM reviewer sends findings to an implementer agent, which returns a revised change in a two-way loop; then a completed feature is delivered while a person focuses on higher-level work and remains available for oversight."}
 
 ::: {.source}
 [OpenAI, harness engineering](https://openai.com/index/harness-engineering/) ·
