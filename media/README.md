@@ -282,8 +282,9 @@ read/parse/write guidance from AGENTS.md when helper.process() appears; and an
 LLM replacing tool plan/build/deploy instructions in SKILL.md with tool ship.
 Preserve the existing examples and causal arrows. Use a bright ivory canvas,
 very pale warm-stone panels, fine near-black linework, square gold hairlines,
-and restrained gold accents. No people, extra wording, title, footer,
-saturated colours, gradients, shadows, or watermark.
+and restrained gold accents. Preserve subtle pale pink and sage-green
+semantic fills. No people, extra wording, title, footer, saturated colours,
+gradients, shadows, or watermark.
 ```
 
 ## constituents-of-success.webp
@@ -309,6 +310,7 @@ code quality"; "Verification harness" → "Verified behaviour"; "LLM reviewer"
 guidance"; and "Low-touch feature delivery". Preserve the human's oversight
 role in the result panel. Match the bright ivory canvas, very pale warm-stone
 panels, square gold frames, near-black linework, and restrained gold accents.
+Preserve the subtle pale pink findings and sage-green revised-change fills.
 No extra text, dark fills, saturated colours, gradients, or watermark.
 ```
 
