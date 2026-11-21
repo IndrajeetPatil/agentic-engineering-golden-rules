@@ -522,9 +522,9 @@ Low-touch delivery does not mean no human oversight. People define the risk boun
 
 ## A software giga factory {.smaller}
 
-[A background daemon activates a proven project factory across a portfolio.]{.lede}
+[Get one project's factory right, and it can power portfolio-wide automation.]{.lede}
 
-![](media/giga-factory.webp){.illustration width="980" height="551" fig-align="center" fig-alt="An unattended background daemon uses a clock and gear to scan a portfolio and select one due prompt. It sends the prompt into a clearly drawn software factory inside one project. On its conveyor, a coding agent builds a change, quality gates and a verification harness check it, an independent LLM reviewer inspects it, and a verified pull request goes to a human maintainer. Other projects wait for their turn."}
+![](media/giga-factory.webp){.illustration width="900" height="506" fig-align="center" fig-alt="An unattended background daemon uses a clock and gear to scan a portfolio and select one due prompt. It sends the prompt into a clearly drawn software factory inside one project. On its conveyor, a coding agent builds a change, quality gates and a verification harness check it, an independent LLM reviewer inspects it, and a verified pull request goes to a human maintainer. Other projects wait for their turn."}
 
 ::: {.source}
 Example: [llm-dependabot](https://github.com/IndrajeetPatil/llm-dependabot) · [architecture](https://github.com/IndrajeetPatil/llm-dependabot/blob/main/docs/architecture.md).
