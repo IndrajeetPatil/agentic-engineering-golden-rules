@@ -389,8 +389,8 @@ Composition: two equal side-by-side panels. At LEFT, heading exactly "Manual set
 
 ## guardrails-autonomy.webp
 
-Two examples show infrastructure enforcing autonomy boundaries: protected
-branch rules stop a destructive change unless required checks pass, and a VPN
+Two examples show infrastructure enforcing autonomy boundaries: a protected
+Git branch blocks a destructive change unless required checks pass, and a VPN
 gateway gives an agent access to one isolated environment at a time.
 
 ```text
@@ -403,6 +403,12 @@ Left panel: show an agent represented by the same kind of friendly small desk ro
 Right panel: show a VPN/access gateway that can connect to either a production environment or a non-production environment, but only one at a time. Depict two separate isolated server environments, one labelled "PRODUCTION" and one labelled "NON-PRODUCTION"; a simple two-position selector in the middle visibly chooses one side and blocks the other side, never a bridge between them. Show the agent/robot working in non-production while production remains physically separated and inaccessible. Add only these exact short labels: "VPN", "PRODUCTION", "NON-PRODUCTION", "Choose one environment".
 No additional text or labels anywhere else in the artwork. Keep typography large and precise. No logos, gradients, shadows, dark panels, dark/brown-dominant fills, painterly or photorealistic rendering, bright green checks, watermark, or slide title.
 ```
+
+Final built-in image edit: brighten the canvas to ivory and make the panels
+very pale warm stone; remove all foliage; replace the left-panel gate with a
+Git branch diagram that labels and locks `main` while preserving the blocked
+deletion, required checks, and closed administrator-bypass examples. Keep the
+VPN and isolated production and non-production example unchanged.
 
 ## meta-automation-examples.webp
 
