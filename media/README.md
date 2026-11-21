@@ -7,9 +7,10 @@ panels with subtle contrast. Keep large background fills light; reserve other
 colours for small semantic accents. `devex-agentex.webp`,
 `one-command-setup.webp`, `session-hygiene.webp`, and `know-thy-tools.webp`
 guide the remaining visual style for new and restyled art.
-The quality-gates practice example uses a generated Ruff F841 feedback
-loop. Context rot and its management are shown in a paired illustration
-sequence. The setup contrast illustrates a shared one-command entry point.
+The quality-gates practice example shows an agent repeating strict checks
+until they pass, then handing the change to a human reviewer. Context rot and
+its management are shown in a paired illustration sequence. The setup contrast
+illustrates a shared one-command entry point.
 The automation examples demonstrate dependency updates and PR screenshot
 workflows. The tool-affordance examples were checked against current official
 docs. Final assets are WebP; the social card is the deck's
@@ -29,26 +30,24 @@ Create a 16:9 editorial glossary illustration with exactly four equal cards in a
 
 ## guardrails-workflow.webp
 
-The quality-gates practice workflow shows an unused local variable inside a
-function, the Ruff command, precise F841 feedback, an agent correction that
-replaces the unused assignment with a direct print, human review, and merge.
-The finding arrow returns to the corrected agent change. Code samples are
-unboxed within their stage panels. The Python mark, Ruff wordmark, agent,
-reviewer, and Git branch icons make each step easy to scan.
+The quality-gates practice workflow shows two rounds of checks. The first
+finds lint errors, failing tests, and coverage below target; the agent fixes
+the issues and retries. The second round passes all checks before a human
+reviews and merges the change.
 
 ```text
 Create a spacious 16:9 landscape diagram in the deck's ivory and warm-stone
 editorial style, with near-black ink, gold hairlines and arrows, serif stage
-headings, monospace code, and simple Python, Ruff, coding-agent, reviewer, and
-Git branch icons. Use only ivory (#fdfaf3), warm stone (#e9e5db), near-black
-ink (#141414), and restrained gold (#dac284) for hairlines and arrows. Show
-the workflow: Agent change (`def main():` then `greeting = "Hello!"`), Ruff
-checks (`ruff check example.py`), and an F841 message saying the local variable
-'greeting' is assigned but never used. A return arrow leads from the finding
-to a corrected agent change (`def main():` then `print("Hello!")`), followed
-by a second Ruff check, pass, human review, and merge. Keep code samples
-unboxed inside their stage panels. Keep the code and error accurate, legible,
-and sparse. No title or slogan.
+headings, legible sans-serif labels, and a friendly coding-agent robot and
+human reviewer. Use a bright ivory (#fdfaf3) canvas, pale warm-stone
+(#e9e5db) panels, near-black ink (#141414), and restrained gold (#dac284) for
+hairlines and arrows. Show two rounds: round one reports "Lint: 8 findings",
+"Tests: 3 failing", and "Coverage: below target". Return findings to the
+tireless coding agent to edit and retry. Round two reports "Lint: 0",
+"Tests: pass", and "Coverage: target met". Then send the passing change to
+human review and merge. Make the feedback loop and forward progression
+unmistakable, with sparse, readable text. No Ruff branding, title, slogan,
+footer, decorative rays, or watermark.
 ```
 
 ## sdlc-bottlenecks.webp
