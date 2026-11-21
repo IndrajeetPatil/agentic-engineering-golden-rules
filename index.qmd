@@ -299,6 +299,8 @@ With a prepared codebase and clear shared workflows, deterministic checks make r
 
 ## Quality gates in practice
 
+[Repeated checks can be tiresome for people; agents can clear them tirelessly, making strict gates practical.]{.lede}
+
 ![](media/guardrails-workflow.webp){.illustration width="880" height="495" fig-alt="Two-round quality-gate workflow. In round one, a tireless coding agent submits a change and checks report eight lint findings, three failing tests, and coverage below target. Findings return to the agent to fix and retry. In round two, lint has zero findings, tests pass, and coverage meets its target. The change proceeds to a human reviewer for inspection before merge."}
 
 ::: {.notes}
