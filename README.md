@@ -21,6 +21,13 @@ harness, desktop interface, and model provider across Anthropic, OpenAI, and
 GitHub Copilot. The Copilot example uses Claude to distinguish the model
 developer from the service providing access.
 
+The closing “Reward” section shows how a reliable project-level software
+factory can support automation across a portfolio. “Constituents of Success”
+covers its quality gates, verification harness, independent LLM review, and
+self-evolving artefacts; “A software giga factory” shows a background daemon
+activating these factories across repositories, illustrated by
+[llm-dependabot](https://github.com/IndrajeetPatil/llm-dependabot).
+
 The slides can be seen here:<br>
 <https://www.indrapatil.com/agentic-engineering-golden-rules/>
 
