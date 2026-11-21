@@ -478,6 +478,25 @@ The human sets the autonomy level, decides when review is required, and limits a
 This can keep routine work moving while the developer focuses on architecting a system. The trade-off is less direct control: broader autonomy lets the agent accomplish more, but leaves fewer steps for a person to watch and asks for more trust in the agent and its checks. Choose the boundary for the task. Well-understood, reversible work can suit wider delegation; consequential or uncertain work calls for closer oversight and scoped access.
 :::
 
+## Put firm guardrails around autonomy
+
+[Let agents work freely inside boundaries enforced by infrastructure.]{.lede}
+
+![](media/guardrails-autonomy.webp){.illustration width="880" height="495" fig-alt="Two panels show infrastructure enforcing limits on agent autonomy. On the left, a Git branch diagram marks main as protected with a padlock; an agent's attempted deletion is blocked, required checks gate changes, and there is no administrator bypass. On the right, a VPN selector connects to either production or non-production, never both; the agent works in non-production while production remains isolated."}
+
+::: {.source}
+[GitHub protected branches](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches) ·
+[NIST SP 800-53, boundary protection](https://csrc.nist.gov/CSRC/media/Projects/risk-management/800-53%20Downloads/800-53r5/SP_800-53_v5_1-derived-OSCAL.pdf)
+:::
+
+::: {.notes}
+Autonomy works within boundaries set by people, but important boundaries should also be enforced by the systems the agent uses. That way, a mistaken instruction or an accidental action cannot simply remove the safeguards.
+
+For a repository's main branch, require the relevant checks to pass, prevent branch deletion, and configure protection so administrators cannot bypass those rules. The agent can still make changes and carry out the work, but the platform blocks a direct destructive action or a change that has not passed the required workflows.
+
+For infrastructure work, keep production isolated from non-production. A VPN or access gateway can connect the agent to one environment at a time. When it is connected to non-production, the production environment and its credentials remain inaccessible. This makes the work area safe for investigation and repair without giving the agent a path into production.
+:::
+
 # The Reward
 
 Build a steady flow of verified work, freeing people to focus on direction and judgement.
