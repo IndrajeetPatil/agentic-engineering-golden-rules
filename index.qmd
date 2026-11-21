@@ -299,16 +299,12 @@ With a prepared codebase and clear shared workflows, deterministic checks make r
 
 ## Quality gates in practice
 
-![](media/guardrails-workflow.webp){.illustration width="880" height="495" fig-alt="Ruff feedback loop: a coding agent defines main() with an unused local greeting variable. Ruff runs `ruff check example.py` and reports F841. The finding points back to the agent, which replaces the assignment with `print(\"Hello!\")` and reruns Ruff. The passing change proceeds to human review and merge."}
-
-::: {.source}
-See [Ruff’s F841 rule](https://docs.astral.sh/ruff/rules/unused-variable/).
-:::
+![](media/guardrails-workflow.webp){.illustration width="880" height="495" fig-alt="Two-round quality-gate workflow. In round one, a tireless coding agent submits a change and checks report eight lint findings, three failing tests, and coverage below target. Findings return to the agent to fix and retry. In round two, lint has zero findings, tests pass, and coverage meets its target. The change proceeds to a human reviewer for inspection before merge."}
 
 ::: {.notes}
-The agent proposes a small Python change. Inside `main()`, it assigns a greeting but never uses it. Ruff reports F841 for that unused local variable. The finding loops back to the agent, which replaces the unused assignment with `print("Hello!")` and reruns the check.
+The first quality-gate run reports eight lint findings, three failing tests, and coverage below its target. The agent fixes the issues and runs the full set of checks again. In the second round, lint reports no findings, tests pass, and coverage meets its target. The agent can keep working through these demanding feedback loops tirelessly, making strict quality gates practical to apply on every change.
 
-A passing check sends the change to human review before merge. The reviewer checks the intended behaviour and whether the fix makes sense. A configured check is evidence, not proof that a change meets its requirement; automatic checks cannot take responsibility for what ships.
+The passing change then moves to a human reviewer, who inspects whether it meets the intended requirement and makes sense for users before merge. Automated checks provide evidence; people remain responsible for what ships.
 :::
 
 ## [04]{.rule-tag} Define done before delegating {.rule-slide}
