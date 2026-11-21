@@ -520,6 +520,22 @@ Four safeguards support routine feature delivery with little day-to-day human in
 Low-touch delivery does not mean no human oversight. People define the risk boundary, monitor how the safeguards perform, and review uncertain or high-impact changes. The goal is to reserve attention for direction and judgement while routine, bounded changes move through reliable checks.
 :::
 
+## A software giga factory {.smaller}
+
+[A background daemon activates a proven project factory across a portfolio.]{.lede}
+
+![](media/giga-factory.webp){.illustration width="980" height="551" fig-align="center" fig-alt="An unattended background daemon uses a clock and gear to scan a portfolio and select one due prompt. It sends the prompt into a clearly drawn software factory inside one project. On its conveyor, a coding agent builds a change, quality gates and a verification harness check it, an independent LLM reviewer inspects it, and a verified pull request goes to a human maintainer. Other projects wait for their turn."}
+
+::: {.source}
+Example: [llm-dependabot](https://github.com/IndrajeetPatil/llm-dependabot) · [architecture](https://github.com/IndrajeetPatil/llm-dependabot/blob/main/docs/architecture.md).
+:::
+
+::: {.notes}
+Once a repository has a reliable software factory of its own, another layer can coordinate repeatable work across many repositories. The public llm-dependabot project is an example: after configuration, macOS launchd starts its background process on a schedule. The daemon finds due repository-owned prompts, prepares an isolated Git worktree for each run, and invokes a configured coding agent. Inside each project's factory, prompts and guidance shape the work; quality gates, behavioural verification, and independent LLM review check the change before the agent opens a pull request for the project's normal review.
+
+The daemon decides which repository and prompt are due; it does not do the project factory's coding, checks, or review. Each repository remains responsible for its prompts, verification, and review. A reliable project factory makes its output predictable enough for a larger layer to schedule that work across a portfolio, while maintainers retain oversight of the resulting changes.
+:::
+
 # Conclusion
 
 [Good engineering practices help agents speed up delivery across the software development life cycle without compromising quality.]{.lede}
