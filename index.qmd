@@ -29,7 +29,7 @@ execute:
   echo: true
   eval: false
 keywords: ["agentic-engineering", "coding-agents", "software-engineering", "ai-assisted-development"]
-description-meta: "Golden rules for agentic engineering: how to use coding agents to boost productivity without compromising quality. Ten rules covering codebase readiness, developer experience, deterministic quality gates, acceptance criteria, context, tools, agent harness maintenance as models and codebases change, automation, delivery bottlenecks, and autonomy matched to the work."
+description-meta: "Golden rules for agentic engineering: how to use coding agents to boost productivity without compromising quality. Ten rules covering codebase readiness, developer experience, deterministic quality gates, acceptance criteria, context, tools, self-evolving agentic artefacts, workflow automation, delivery bottlenecks, and autonomy matched to the work."
 license: "CC0 1.0 Universal"
 pagetitle: "Golden Rules for Agentic Engineering"
 author-meta: "Indrajeet Patil"
@@ -383,18 +383,24 @@ Choose the tool interface that fits the task. A direct API or command-line tool 
 
 ## [07]{.rule-tag} Keep pace with a fast-moving field {.rule-slide}
 
-[Keep the agent harness current as models and codebases change.]{.lede}
+[LLMs can keep agentic artefacts current as models, tools, and codebases change.]{.lede}
 
-![](media/model-change-maintenance.webp){.illustration width="880" height="313" fig-alt="Three framed panels show how instructions can shrink as tools change. LLM Changes shows a person and robot updating prompts and skills after a model change. Source Changes replaces read, parse, and write steps with helper.process(); a person removes obsolete AGENTS.md instructions. CLI Changes replaces tool plan, tool build, and tool deploy with one tool ship command; a person shortens a SKILL.md checklist to that command. Both updated instruction sheets contain fewer steps."}
+![](media/model-change-maintenance.webp){.illustration width="880" height="313" fig-alt="Three framed panels show LLM robots maintaining agentic artefacts as tools change. In LLM Changes, an LLM updates prompts and skills after a model change. Source Changes replaces read, parse, and write steps with helper.process(); an LLM removes obsolete AGENTS.md instructions. CLI Changes replaces tool plan, tool build, and tool deploy with one tool ship command; an LLM shortens a SKILL.md checklist to that command."}
+
+::: {.prompt-example}
+[Prompt excerpt]{.prompt-label}
+
+“When a check fails … fix it, then ask what led you to it.”
+:::
 
 ::: {.source}
-Source: Anthropic, [Model deprecations](https://docs.anthropic.com/en/docs/about-claude/model-deprecations).
+Example: [Learn from mistakes prompt](https://github.com/IndrajeetPatil/llm-dependabot/pull/20) · Anthropic, [model deprecations](https://docs.anthropic.com/en/docs/about-claude/model-deprecations).
 :::
 
 ::: {.notes}
-The field moves quickly, and the agent harness needs maintenance too. When models, source code, or command-line tools change, look for a simpler way to complete the task. A source change may add a helper that replaces several operations; a CLI may combine a sequence of commands into one. Update `AGENTS.md` and `SKILL.md` to remove superseded steps and keep the useful guidance concise. This makes skills easier to maintain as the tools change.
+Models, source code, and command-line tools keep changing, so agentic artefacts need to evolve with them. LLMs can inspect new capabilities, remove superseded steps from prompts and skills, and update repository guidance when checks or reviews reveal a gap. The short prompt excerpt captures a useful loop: fix a failure, then identify what in the guidance or process led to it.
 
-The examples show two forms of simplification: a source helper replacing read, parse, and write steps, and a single CLI command replacing a three-command sequence. The goal is to keep agent instructions short and current, not to preserve procedural detail after the tools make it unnecessary.
+The examples show a model change prompting updates to prompts and skills, a source helper replacing read, parse, and write steps in `AGENTS.md`, and one CLI command replacing a three-command sequence in `SKILL.md`. The LLM maintains these artefacts as the environment changes, keeping its own instructions useful and concise.
 :::
 
 ## [08]{.rule-tag} Automate repeated agent work {.rule-slide}
@@ -500,7 +506,7 @@ The team that owns the repository sets the risk boundary and the rules that enfo
 
 ## Constituents of Success
 
-![](media/constituents-of-success.webp){.illustration width="980" height="551" fig-align="center" fig-alt="An equation shows three safeguards adding up to low-touch feature delivery. Quality gates lead to high code quality; a verification harness compares expected and observed browser behaviour for verified behaviour; an independent LLM reviewer sends findings to an implementer agent, which returns a revised change in a two-way loop; then a completed feature is delivered while a person focuses on higher-level work and remains available for oversight."}
+![](media/constituents-of-success.webp){.illustration width="980" height="490" fig-align="center" fig-alt="An equation shows four safeguards adding up to low-touch feature delivery: quality gates for high code quality, a verification harness for verified behaviour, an independent LLM reviewer that exchanges findings and revised changes with an implementer agent, and self-evolving artefacts that an LLM updates to keep agent guidance current. A person focuses on higher-level work and remains available for oversight."}
 
 ::: {.source}
 [OpenAI, harness engineering](https://openai.com/index/harness-engineering/) ·
@@ -509,7 +515,7 @@ The team that owns the repository sets the risk boundary and the rules that enfo
 :::
 
 ::: {.notes}
-Three safeguards support routine feature delivery with little day-to-day human intervention. Quality gates check code quality; a verification harness exercises behaviour against observable acceptance criteria; and an automated LLM reviewer independently inspects the change and sends findings back to the coding agent. Together, they cover different failure modes and give the agent evidence to carry well-understood work forward without a person manually checking every step.
+Four safeguards support routine feature delivery with little day-to-day human intervention. Quality gates check code quality; a verification harness exercises behaviour against observable acceptance criteria; an automated LLM reviewer independently inspects the change and sends findings back to the coding agent; and self-evolving artefacts let LLMs update prompts, skills, and repository guidance as tools and code change. Together, they cover different failure modes and help keep both the work and the instructions that guide it current.
 
 Low-touch delivery does not mean no human oversight. People define the risk boundary, monitor how the safeguards perform, and review uncertain or high-impact changes. The goal is to reserve attention for direction and judgement while routine, bounded changes move through reliable checks.
 :::

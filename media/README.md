@@ -267,35 +267,50 @@ Redesign the information graphic into a readable landscape layout. Top elegant p
 
 ## model-change-maintenance.webp
 
-The illustration shows why the agent harness must keep pace with a changing
-field and codebase: model changes prompt review of prompts and skills, source
-changes prompt cleanup of stale `AGENTS.md` guidance and verification through
-tests, and CLI changes prompt shorter skill instructions. All three panels use
-a bright ivory canvas, pale warm-stone panels, fine near-black linework, and
-restrained gold accents.
+The illustration shows LLMs maintaining prompts, skills, and repository
+guidance as models, source code, and CLI tools change. LLM robots make the
+updates in all three panels. The image uses a bright ivory canvas, pale
+warm-stone panels, fine near-black linework, and restrained gold accents.
 
 ```text
-Create a landscape 16:9 presentation illustration in the deck's shared
-editorial style, using devex-agentex.webp, one-command-setup.webp,
-session-hygiene.webp, and know-thy-tools.webp as style references only. Use a
-flat ivory canvas, two square light-stone panels, fine near-black ink linework,
-restrained gold arrows and details, and simple friendly human and robot
-figures. Give the panels simple serif headings exactly "LLM CHANGES" and
-"SOURCE CHANGES". LEFT: show a model update, stale PROMPTS crossed out, current
-PROMPTS and SKILLS cards, and a developer and robot verifying the edits. RIGHT:
-show a source diff, stale AGENTS.md advice crossed out, current AGENTS.md
-guidance being added, and a robot checking TESTS. Make the causal links from
-change to review, update, and verification easy to follow. Keep labels short
-and legible; do not repeat the slide title or subtitle, add a footer, or use
-painterly rendering, rounded panel frames, green checks, gradients, or dark
-backgrounds.
+Edit the supplied wide three-panel presentation illustration in the deck's
+editorial style, using agent-autonomy.webp as a palette reference only. Keep
+all three panels and their exact headings: "LLM CHANGES", "SOURCE CHANGES",
+and "CLI CHANGES". Replace every human with a friendly LLM robot. Show an LLM
+updating prompts and skills after a model change; an LLM removing obsolete
+read/parse/write guidance from AGENTS.md when helper.process() appears; and an
+LLM replacing tool plan/build/deploy instructions in SKILL.md with tool ship.
+Preserve the existing examples and causal arrows. Use a bright ivory canvas,
+very pale warm-stone panels, fine near-black linework, square gold hairlines,
+and restrained gold accents. No people, extra wording, title, footer,
+saturated colours, gradients, shadows, or watermark.
 ```
 
-Final built-in image edit: use `agent-autonomy.webp` as a palette reference and
-lighten both the canvas and all three large panel interiors to bright ivory
-and very pale warm stone. Keep the panels subtly distinct from the canvas and
-retain the interface cards' pale pink and green accents. Preserve all text,
-artwork, and layout.
+## constituents-of-success.webp
+
+The equation shows four safeguards adding up to low-touch feature delivery:
+quality gates, a verification harness, an independent LLM reviewer, and
+self-evolving artefacts. An LLM updates prompts, skills, and repository
+guidance as tools and code change. A person focuses on higher-level work and
+retains oversight.
+
+```text
+Edit the supplied presentation illustration to show four safeguards adding
+up to low-touch feature delivery. Preserve the quality gates, verification
+harness, independent LLM reviewer/implementer loop, final delivery panel, and
+bottom quality rail. Add a fourth safeguard panel labelled exactly
+"Self-evolving artefacts" followed by "→ Current agent guidance". Show an LLM
+robot learning from a failed check or reviewer finding and updating concise
+repository guidance, prompts, or skills. Keep five panels in a balanced
+left-to-right equation with plus signs between safeguards and an equals sign
+before the final result. Use readable exact labels: "Quality gates" → "High
+code quality"; "Verification harness" → "Verified behaviour"; "LLM reviewer"
+→ "Issues surfaced early"; "Self-evolving artefacts" → "Current agent
+guidance"; and "Low-touch feature delivery". Preserve the human's oversight
+role in the result panel. Match the bright ivory canvas, very pale warm-stone
+panels, square gold frames, near-black linework, and restrained gold accents.
+No extra text, dark fills, saturated colours, gradients, or watermark.
+```
 
 ## agent-autonomy.webp
 
