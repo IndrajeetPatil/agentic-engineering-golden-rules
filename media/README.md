@@ -387,6 +387,23 @@ Primary message: a detailed manual project-setup procedure is confusing for both
 Composition: two equal side-by-side panels. At LEFT, heading exactly "Manual setup". A large project instruction sheet labelled exactly "Project setup" shows this detailed numbered checklist in readable dark text: "1. Install the required runtime", "2. Create a virtual environment", "3. Install project dependencies", "4. Configure environment variables", "5. Install the Git hooks", "6. Start the local services", "7. Apply database migrations", "8. Load development fixtures", "9. Check tool versions", "10. Verify the setup". Below or beside the sheet, a human developer and a friendly small robot coding agent BOTH visibly look confused and overwhelmed: furrowed brows, puzzled expressions, a few subtle question marks. At RIGHT, heading exactly "One command". Show ONE clean document labelled exactly "AGENTS.md". That document has only ONE instruction, exactly "run `make setup`". Render make setup in very legible monospace, with the lowercase word run before it; the backticks may be literal Markdown characters because this is a Markdown instruction file. No other instructions, code, checklist, or labels inside the right document. Below or beside it, the SAME human developer and the SAME robot BOTH visibly happy, relaxed, and confident, smiling with a small celebratory thumbs-up gesture. Make the contrast between both pairs of expressions unmistakable, while retaining professional editorial restraint. Keep all four characters large enough to read from the back of a room. Warm stone panels on flat ivory #fdfaf3; near-black #141414 text; gold #dac284 for fine borders and separators and dark brown #7d6020 for occasional emphasis. Text must be accurate and clear. Do not add Makefile source code, terminal code blocks, additional commands, overall slide title, or a footer slogan.
 ```
 
+## guardrails-autonomy.webp
+
+Two examples show infrastructure enforcing autonomy boundaries: protected
+branch rules stop a destructive change unless required checks pass, and a VPN
+gateway gives an agent access to one isolated environment at a time.
+
+```text
+Use case: infographic-diagram. Asset type: 16:9 landscape editorial illustration for a RevealJS presentation slide.
+Input image: `agent-autonomy.webp` is a visual style and palette reference only; do not copy its people, composition, or content.
+Primary request: illustrate how agent autonomy operates within infrastructure guardrails, using exactly two equally weighted examples.
+Scene/backdrop: bright ivory (#fdfaf3) canvas, two spacious square-corner panels in very pale warm stone (#e9e5db), fine near-black pen-and-ink outlines, subtle gold (#dac284) hairlines and arrows, sparse restrained colour accents, high contrast, calm editorial teaching illustration. Match the hand-drawn technical clarity and typography of the reference.
+Composition: wide 16:9, two large side-by-side panels with generous whitespace and a slim central gutter. No overall title, subtitle, caption, decorative border around the whole image, or footer. The visual should remain clear at slide size.
+Left panel: show an agent represented by the same kind of friendly small desk robot, attempting an accidental destructive action on a repository's main branch. Show a protected main branch as a locked gate or branch lane, with a required workflow/check gate before changes can land, and an admin bypass route visibly closed. Make the protections clear without depicting a successful deletion. Add only these exact short labels, spelled exactly: "Protected main", "Required checks", "No admin bypass". Connect the agent's attempted change to the protected branch gate, where it is stopped.
+Right panel: show a VPN/access gateway that can connect to either a production environment or a non-production environment, but only one at a time. Depict two separate isolated server environments, one labelled "PRODUCTION" and one labelled "NON-PRODUCTION"; a simple two-position selector in the middle visibly chooses one side and blocks the other side, never a bridge between them. Show the agent/robot working in non-production while production remains physically separated and inaccessible. Add only these exact short labels: "VPN", "PRODUCTION", "NON-PRODUCTION", "Choose one environment".
+No additional text or labels anywhere else in the artwork. Keep typography large and precise. No logos, gradients, shadows, dark panels, dark/brown-dominant fills, painterly or photorealistic rendering, bright green checks, watermark, or slide title.
+```
+
 ## meta-automation-examples.webp
 
 The examples use generic, illustrative workflows for recurring agent work.
