@@ -42,6 +42,10 @@ The software-factory example uses the public [chatbot-template](https://github.c
 
 Low-touch feature delivery depends on four complementary safeguards: quality gates that check code, a verification harness that checks behaviour against observable expectations, an independent automated LLM reviewer that returns findings to the coding agent, and self-evolving artefacts that LLMs update as tools and code change. Together they provide evidence for routine, bounded changes to move forward with little day-to-day human intervention. People still define the risk boundary, monitor the safeguards, and review uncertain or high-impact changes.
 
+## A software giga factory
+
+Once repositories have reliable software factories of their own, a background daemon can schedule repeatable work across a portfolio. After configuration, macOS launchd starts the public [llm-dependabot project](https://github.com/IndrajeetPatil/llm-dependabot) on a schedule. It finds due repository-owned prompts, prepares an isolated Git worktree for each run, and invokes a configured coding agent. Each repository supplies its own prompts, instructions, checks, and review process; the agent opens a pull request for the project to verify and review. The daemon chooses which repository and prompt are due, while project maintainers retain oversight of the resulting changes. See the project's [architecture](https://github.com/IndrajeetPatil/llm-dependabot/blob/main/docs/architecture.md).
+
 ## Conclusion
 
 Good engineering practices help agents speed up delivery across the software development life cycle without compromising quality.

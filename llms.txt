@@ -29,6 +29,7 @@ This presentation distils ten golden rules for agentic engineering: working with
 - Give agents more autonomy to create pull requests, publish packages, and inspect container logs while matching oversight and access to the task's risk
 - Software factory example: repository owners set risk boundaries for agent-led merges, while higher-risk changes receive human review and agent environments use scoped controls
 - Constituents of success: quality gates check code, verification harnesses check behaviour, an independent automated LLM reviewer returns findings, and LLMs evolve prompts, skills, and repository guidance as tools and code change
+- Software giga factory: after configuration, a background daemon in the public [llm-dependabot](https://github.com/IndrajeetPatil/llm-dependabot) project schedules repository-owned prompts across a portfolio, gives each due prompt an isolated worktree, and hands pull requests to each project's own checks and maintainer review
 - Closing takeaway: good engineering practices help agents speed up delivery across the software development life cycle without compromising quality
 
 ## Machine-readable companion
