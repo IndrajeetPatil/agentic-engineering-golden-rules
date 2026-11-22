@@ -521,37 +521,6 @@
   grid-template-columns: repeat(4, 1fr);
 }
 
-/* Rule index: a spec-sheet grid of italic names under gold hairlines. */
-.reveal .rule-index {
-  row-gap: 0.45em;
-}
-
-.reveal .rule-index .card {
-  border-top: 1px solid var(--deck-gold);
-  border-radius: 0;
-  padding: 0.4em 0.2em 0;
-  min-height: 0;
-  font-size: 0.75em;
-}
-
-.reveal .rule-index strong {
-  font-family: var(--deck-display);
-  font-variation-settings: "opsz" 28;
-  font-style: italic;
-  font-weight: 500;
-  font-size: 1.35em;
-  line-height: 1.2;
-}
-
-.reveal .rule-number {
-  display: block;
-  font-size: 0.75em;
-  font-weight: 600;
-  letter-spacing: 0.25em;
-  color: var(--deck-gold-deep);
-  margin-bottom: 0.4em;
-}
-
 /* ---------- Tables, code, and lists ---------- */
 
 .reveal .table-card {

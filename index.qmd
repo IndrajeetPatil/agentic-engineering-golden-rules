@@ -169,76 +169,6 @@ Ten rules for using coding agents to boost productivity without compromising qua
 The next ten rules offer practical ways to use coding agents productively while protecting software quality.
 :::
 
-## The rules {.smaller}
-
-:::: {.card-grid .card-grid-2 .rule-index}
-
-::: {.card}
-[01]{.rule-number}
-
-**Prepare the codebase for agents**
-:::
-
-::: {.card}
-[02]{.rule-number}
-
-**Improve developer experience**
-:::
-
-::: {.card}
-[03]{.rule-number}
-
-**Set deterministic quality gates**
-:::
-
-::: {.card}
-[04]{.rule-number}
-
-**Define done before delegating**
-:::
-
-::: {.card}
-[05]{.rule-number}
-
-**Maintain session hygiene**
-:::
-
-::: {.card}
-[06]{.rule-number}
-
-**Know thy tools**
-:::
-
-::: {.card}
-[07]{.rule-number}
-
-**Make agentic artefacts self-correcting**
-:::
-
-::: {.card}
-[08]{.rule-number}
-
-**Automate repeated agent work**
-:::
-
-::: {.card}
-[09]{.rule-number}
-
-**Identify and remove bottlenecks**
-:::
-
-::: {.card}
-[10]{.rule-number}
-
-**Give your agents more autonomy**
-:::
-
-::::
-
-::: {.notes}
-The rules begin with preparing a codebase for agents, improving the shared developer and agent experience, and setting deterministic quality gates. They then define outcomes, maintain useful context, use tools well, keep guidance current as models change, automate repeated work, remove delivery bottlenecks, and choose how much autonomy to give agents for the work at hand.
-:::
-
 ## [01]{.rule-tag} Prepare the codebase for agents {.rule-slide}
 
 [Pay down technical debt before scaling agent work.]{.lede}
@@ -502,8 +432,6 @@ For infrastructure work, keep production isolated from non-production. A VPN or 
 :::
 
 # The Reward
-
-Build a steady flow of verified work, freeing people to focus on direction and judgement.
 
 ::: {.notes}
 Together, these practices can turn a repository into a software factory. They speed up routine work through planning, coding, review, verification, and release while people set direction and own risk boundaries.
