@@ -204,9 +204,13 @@
 }
 
 .reveal .slides section.level1 > p {
-  font-size: 0.6em;
+  max-inline-size: 78%;
+  margin-inline: auto;
+  font-size: 0.82em;
   font-weight: 300;
+  line-height: 1.5;
   color: var(--deck-muted);
+  text-align: center;
 }
 
 .reveal .slides section.bookmark-slide {
@@ -254,8 +258,79 @@
 }
 
 .reveal img.illustration {
+  display: block;
   background: var(--deck-ivory);
-  margin: 0.2em auto 0;
+  inline-size: min(100%, 880px);
+  max-inline-size: 100%;
+  block-size: auto;
+  object-fit: contain;
+  margin: 0.35em auto 0;
+}
+
+.reveal .slides section:has(img.illustration) h2 {
+  text-align: center;
+  font-size: 1.05em;
+}
+
+.reveal .slides section:has(img.illustration) p:has(> img.illustration) {
+  inline-size: 100%;
+  margin-block: 0;
+  margin-inline: auto;
+}
+
+.reveal .correction-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6em;
+}
+
+.reveal .correction-stack img.illustration {
+  margin: 0;
+}
+
+.reveal .correction-stack > p:has(> img.illustration) {
+  line-height: 0;
+}
+
+.reveal .correction-stack > .prompt-example,
+.reveal .correction-stack > .source {
+  margin: 0;
+}
+
+.reveal .correction-stack > .source {
+  position: static;
+}
+
+.reveal .slides section:has(img.illustration.crop-empty-canvas) > .source {
+  position: static;
+  margin: 0.6em auto 0;
+}
+
+.reveal .slides section:has(img.illustration.crop-empty-canvas) p:has(> img.illustration) {
+  line-height: 0;
+}
+
+.reveal img.illustration.crop-empty-canvas {
+  object-fit: cover;
+}
+
+.reveal img.illustration.crop-empty-canvas[src*="sdlc-bottlenecks"],
+.reveal img.illustration.crop-empty-canvas[data-src*="sdlc-bottlenecks"] {
+  aspect-ratio: 2.7 / 1;
+  object-position: center 61%;
+}
+
+.reveal img.illustration.crop-empty-canvas[src*="guardrails-autonomy"],
+.reveal img.illustration.crop-empty-canvas[data-src*="guardrails-autonomy"] {
+  aspect-ratio: 2.2 / 1;
+  object-position: center 68%;
+}
+
+.reveal img.illustration.crop-empty-canvas[src*="constituents-of-success"],
+.reveal img.illustration.crop-empty-canvas[data-src*="constituents-of-success"] {
+  aspect-ratio: 3.05 / 1;
+  object-position: center 63%;
 }
 
 /* ---------- Agentic stack tabset ---------- */
@@ -291,12 +366,6 @@
 .reveal .stack-tabs .panel-tabset-tabby a:focus-visible {
   outline: 2px solid var(--deck-ink);
   outline-offset: 2px;
-}
-
-.reveal .stack-tabs .illustration {
-  width: 880px;
-  max-height: 440px;
-  object-fit: contain;
 }
 
 .reveal .stack-tabs p {

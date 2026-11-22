@@ -11,7 +11,7 @@ coding agents to boost productivity without compromising quality.
 4. Define done before delegating
 5. Maintain session hygiene
 6. Know thy tools
-7. Keep pace with a fast-moving field
+7. Make agentic artefacts self-correcting
 8. Automate repeated agent work
 9. Identify and remove bottlenecks
 10. Give your agents more autonomy
