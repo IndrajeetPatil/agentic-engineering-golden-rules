@@ -16,6 +16,11 @@ format:
       text-spacing: false
       transcript: false
       slide-change-cue: false
+    width: 1280
+    height: 800
+    margin: 0.04
+    center: false
+    display: flex
     slide-number: true
     code-line-numbers: false
     preview-links: auto
@@ -60,7 +65,7 @@ jupyter: python3
 
 :::
 
-::: {.hero-source}
+::: {.source}
 Source code for these slides can be found [on GitHub](https://github.com/IndrajeetPatil/agentic-engineering-golden-rules/).
 All illustrations in this presentation are AI-generated.
 :::
@@ -73,11 +78,15 @@ Think about one part of your daily work where you lose time: finding context, re
 
 # Before we start
 
+[Who this talk is for, and the vocabulary it uses.]{.lede}
+
 ::: {.notes}
 Before we start, let us set expectations for this talk: we are focusing on production software, while recognising that prototypes can call for a lighter process.
 :::
 
-## Managing expectations
+## Managing expectations {data-kicker="Before we start"}
+
+[Who these rules are for, and what they cannot do.]{.lede}
 
 :::: {.card-grid .card-grid-2}
 
@@ -103,7 +112,7 @@ These rules sharpen judgement; they are not a magic recipe.
 Engineering rigour depends on the work. Throwaway proofs of concept, demos, and prototypes can defer tests, coverage, and polish; production software needs reliable checks and maintenance. Reassess the work as its purpose changes. The aim is to sharpen judgement, not to sell a magic solution.
 :::
 
-## The agentic stack {.rule-slide #agentic-stack}
+## The agentic stack {#agentic-stack data-kicker="Before we start"}
 
 [Same roles, different products. Follow one task through the loop.]{.lede}
 
@@ -111,7 +120,7 @@ Engineering rigour depends on the work. Throwaway proofs of concept, demos, and 
 
 ### Anthropic
 
-![](media/agentic-stack-anthropic.webp){.illustration width="880" height="495" fig-alt="Anthropic example. Claude Desktop sends a task to the Claude Code CLI harness, which manages context, permissions, and execution. The agent is a Claude language model working with that harness in a loop. The model requests a tool call; the harness runs read, edit, or shell tools and returns their results to the model. Anthropic provides the model through its API. The diagram shows responsibilities, not where processes run."}
+![](media/agentic-stack-anthropic.webp){.illustration width="1639" height="895" fig-alt="Anthropic example. Claude Desktop sends a task to the Claude Code CLI harness, which manages context, permissions, and execution. The agent is a Claude language model working with that harness in a loop. The model requests a tool call; the harness runs read, edit, or shell tools and returns their results to the model. Anthropic provides the model through its API. The diagram shows responsibilities, not where processes run."}
 
 ::: {.source}
 [Claude Code architecture](https://code.claude.com/docs/en/how-claude-code-works) · [Desktop interface](https://code.claude.com/docs/en/desktop)
@@ -119,7 +128,7 @@ Engineering rigour depends on the work. Throwaway proofs of concept, demos, and 
 
 ### OpenAI
 
-![](media/agentic-stack-openai.webp){.illustration width="880" height="495" fig-alt="OpenAI example. The ChatGPT desktop app sends a task to the Codex CLI harness, which manages context, permissions, and execution. The agent is a GPT language model working with that harness in a loop. The model requests a tool call; the harness runs read, edit, or shell tools and returns their results to the model. OpenAI provides the model through its API. The diagram shows responsibilities, not where processes run."}
+![](media/agentic-stack-openai.webp){.illustration width="1639" height="894" fig-alt="OpenAI example. The ChatGPT desktop app sends a task to the Codex CLI harness, which manages context, permissions, and execution. The agent is a GPT language model working with that harness in a loop. The model requests a tool call; the harness runs read, edit, or shell tools and returns their results to the model. OpenAI provides the model through its API. The diagram shows responsibilities, not where processes run."}
 
 ::: {.source}
 [Codex CLI](https://developers.openai.com/blog/codex-as-a-platform) · [Model instructions](https://developers.openai.com/api/reference/resources/responses/methods/create) · [Desktop interface](https://learn.chatgpt.com/docs/app)
@@ -127,7 +136,7 @@ Engineering rigour depends on the work. Throwaway proofs of concept, demos, and 
 
 ### GitHub
 
-![](media/agentic-stack-copilot.webp){.illustration width="880" height="495" fig-alt="GitHub Copilot example, using a Claude model. The GitHub Copilot App sends a task to the GitHub Copilot CLI harness, which manages context, permissions, and execution. The agent is the selected Claude language model working with that harness in a loop. The model requests a tool call; the harness runs read, edit, or shell tools and returns their results to the model. Anthropic develops the model; GitHub Copilot provides model access. Selecting Claude does not switch to the Claude Code CLI harness. The diagram shows responsibilities, not where processes run."}
+![](media/agentic-stack-copilot.webp){.illustration width="1638" height="891" fig-alt="GitHub Copilot example, using a Claude model. The GitHub Copilot App sends a task to the GitHub Copilot CLI harness, which manages context, permissions, and execution. The agent is the selected Claude language model working with that harness in a loop. The model requests a tool call; the harness runs read, edit, or shell tools and returns their results to the model. Anthropic develops the model; GitHub Copilot provides model access. Selecting Claude does not switch to the Claude Code CLI harness. The diagram shows responsibilities, not where processes run."}
 
 ::: {.source}
 [GitHub Copilot App](https://docs.github.com/en/copilot/concepts/copilot-surfaces/github-copilot-app) · [Supported models](https://docs.github.com/en/copilot/reference/ai-models/supported-models)
@@ -149,9 +158,11 @@ The GitHub Copilot App is the desktop interface in this example, and GitHub Copi
 Across these examples, the labels change while the responsibilities remain comparable. Keep the model, harness, interface, tools, and model-access service distinct as we work through the rules.
 :::
 
-## Common artefacts
+## Common artefacts {data-kicker="Before we start"}
 
-![](media/common-artefacts.webp){.illustration width="840" height="473" fig-alt="Four equal cards in a symmetrical grid show common coding-agent files: AGENTS.md for repository guidance; .agents/skills/<skill-name>/SKILL.md for reusable workflow instructions, with related scripts, references, templates, and assets in the same panel; DESIGN.md for project design decisions; and .github/prompts/<prompt-name>.prompt.md for reusable focused GitHub Copilot tasks."}
+[Plain-text files that tell agents how a project works.]{.lede}
+
+![](media/common-artefacts.webp){.illustration width="1608" height="805" fig-alt="Four equal cards in a symmetrical grid show common coding-agent files: AGENTS.md for repository guidance; .agents/skills/<skill-name>/SKILL.md for reusable workflow instructions, with related scripts, references, templates, and assets in the same panel; DESIGN.md for project design decisions; and .github/prompts/<prompt-name>.prompt.md for reusable focused GitHub Copilot tasks."}
 
 ::: {.source}
 [Codex AGENTS.md](https://developers.openai.com/cookbook/examples/codex/iterating-development-workflows-with-codex) · [Google Labs DESIGN.md](https://github.com/google-labs-code/design.md) · [GitHub prompt files](https://docs.github.com/en/copilot/concepts/prompting-and-context/prompt-files)
@@ -163,20 +174,20 @@ These four examples are files that can guide coding agents while they work in a 
 
 # Golden rules
 
-Ten rules for using coding agents to boost productivity without compromising quality.
+[Ten rules for using coding agents to boost productivity without compromising quality.]{.lede}
 
 ::: {.notes}
 The next ten rules offer practical ways to use coding agents productively while protecting software quality.
 :::
 
-## [01]{.rule-tag} Prepare the codebase for agents {.rule-slide}
+## Prepare the codebase for agents {data-kicker="Rule 01"}
 
 [Pay down technical debt before scaling agent work.]{.lede}
 
-![](media/prepare-codebase-for-agents.webp){.illustration width="880" height="495" fig-alt="Two-panel illustration: on the left, an agent copies inconsistent naming, duplicated code, and weak checks, multiplying a tangled codebase. On the right, a person prepares clear conventions, coherent modules, and reliable checks before an agent extends the same orderly module pattern."}
+![](media/prepare-codebase-for-agents.webp){.illustration width="1643" height="797" fig-alt="Two-panel illustration: on the left, an agent copies inconsistent naming, duplicated code, and weak checks, multiplying a tangled codebase. On the right, a person prepares clear conventions, coherent modules, and reliable checks before an agent extends the same orderly module pattern."}
 
 ::: {.source}
-Source: OpenAI, [Harness engineering](https://openai.com/index/harness-engineering/).
+OpenAI, [harness engineering](https://openai.com/index/harness-engineering/)
 :::
 
 ::: {.notes}
@@ -187,11 +198,11 @@ Prepare deliberately: pay down high-impact debt, make sound patterns easy to dis
 This foundation leads directly to the next two rules. First, improve developer experience so people and agents can find and follow the repository's sound patterns and workflows. Then make those expectations repeatable with deterministic quality gates and fast feedback.
 :::
 
-## [02]{.rule-tag} Improve developer experience {.rule-slide}
+## Improve developer experience {data-kicker="Rule 02"}
 
 [If humans hunt for context, agents burn tokens too.]{.lede}
 
-![](media/devex-agentex.webp){.illustration width="880" height="495" fig-alt="Editorial infographic: a human and a coding agent connect to the same well-designed codebase. Five panels identify clear structure (folders, names, boundaries), one-command workflows (setup, format, lint, test), deterministic QA (formatters, linters, types, tests), living documentation (README, conventions, examples), and modular design (small units, clear interfaces). Shared outcomes are speed, quality, and trust."}
+![](media/devex-agentex.webp){.illustration width="1572" height="831" fig-alt="Editorial infographic: a human and a coding agent connect to the same well-designed codebase. Five panels identify clear structure (folders, names, boundaries), one-command workflows (setup, format, lint, test), deterministic QA (formatters, linters, types, tests), living documentation (README, conventions, examples), and modular design (small units, clear interfaces). Shared outcomes are speed, quality, and trust."}
 
 ::: {.notes}
 With a sound codebase in place, DevEx equals AgentEx: what makes the repository easy for humans makes it cheaper and safer for agents to work in.
@@ -199,14 +210,14 @@ With a sound codebase in place, DevEx equals AgentEx: what makes the repository 
 If developers need to hunt through unclear documentation, inconsistent commands, or hidden conventions, agents will struggle too. They burn tokens, make assumptions, or ask for more context. The next rule makes the quality expectations in those shared workflows repeatable with deterministic checks and fast feedback.
 :::
 
-## Improve developer experience: in practice {.rule-slide}
+## Improve developer experience {#improve-developer-experience-in-practice data-kicker="Rule 02 · In practice"}
 
 [One setup command. The same starting point for humans and agents.]{.lede}
 
-![](media/one-command-setup.webp){.illustration width="880" height="495" fig-alt="Two-panel illustration: on the left, a detailed ten-step project setup checklist leaves both a human developer and a coding agent confused. On the right, AGENTS.md contains a single instruction, run make setup, and the same human and agent are happy. The command encapsulates the setup procedure behind one shared entry point."}
+![](media/one-command-setup.webp){.illustration width="1594" height="871" fig-alt="Two-panel illustration: on the left, a detailed ten-step project setup checklist leaves both a human developer and a coding agent confused. On the right, AGENTS.md contains a single instruction, run make setup, and the same human and agent are happy. The command encapsulates the setup procedure behind one shared entry point."}
 
 ::: {.source}
-See the [AGENTS.md](https://agents.md/) convention.
+[AGENTS.md convention](https://agents.md/)
 :::
 
 ::: {.notes}
@@ -217,21 +228,21 @@ Capture that procedure in a maintained setup command. Then AGENTS.md can point t
 The work still happens; the command owns the sequence, checks prerequisites, and reports useful errors. Keep the implementation reproducible and the instruction current so neither humans nor agents have to guess the next step.
 :::
 
-## [03]{.rule-tag} Set deterministic quality gates {.rule-slide}
+## Set deterministic quality gates {data-kicker="Rule 03"}
 
 [Let deterministic checks catch what they can, fast.]{.lede}
 
-![](media/deterministic-tooling.webp){.illustration width="880" height="495" fig-alt="Two-panel illustration contrasting a confused robot amid inconsistent style, flaky tests, broken assumptions, hallucinated APIs, and failed builds with a calm robot in a safety harness labelled Formatter, Linter, Type checker, Pre-commit, CI, Sanitisers, and Valgrind. Output cards show consistent style and configured gates passing for tests, types, and builds. Human review is still needed to assess requirements, behaviour, and user experience. A change flows through checks to human review."}
+![](media/deterministic-tooling.webp){.illustration width="1638" height="893" fig-alt="Two-panel illustration contrasting a confused robot amid inconsistent style, flaky tests, broken assumptions, hallucinated APIs, and failed builds with a calm robot in a safety harness labelled Formatter, Linter, Type checker, Pre-commit, CI, Sanitisers, and Valgrind. Output cards show consistent style and configured gates passing for tests, types, and builds. Human review is still needed to assess requirements, behaviour, and user experience. A change flows through checks to human review."}
 
 ::: {.notes}
 With a prepared codebase and clear shared workflows, deterministic checks make repeatable quality expectations concrete. Formatters, linter runs, type checkers, and tests give agents fast feedback and catch known classes of mistakes on every change. They cannot decide whether the work meets an unstated requirement or makes sense for users, so people still review the evidence and the work's impact.
 :::
 
-## Quality gates: in practice
+## Set deterministic quality gates {#set-deterministic-quality-gates-in-practice data-kicker="Rule 03 · In practice"}
 
 [Agents can repeat checks tirelessly, making strict gates practical.]{.lede}
 
-![](media/guardrails-workflow.webp){.illustration width="880" height="495" fig-alt="Two-round quality-gate workflow. In round one, a tireless coding agent submits a change and checks report eight lint findings, three failing tests, and coverage below target. Findings return to the agent to fix and retry. In round two, lint has zero findings, tests pass, and coverage meets its target. The change proceeds to a human reviewer for inspection before merge."}
+![](media/guardrails-workflow.webp){.illustration width="1626" height="578" fig-alt="Two-round quality-gate workflow. In round one, a tireless coding agent submits a change and checks report eight lint findings, three failing tests, and coverage below target. Findings return to the agent to fix and retry. In round two, lint has zero findings, tests pass, and coverage meets its target. The change proceeds to a human reviewer for inspection before merge."}
 
 ::: {.notes}
 The first quality-gate run reports eight lint findings, three failing tests, and coverage below its target. The agent fixes the issues and runs the full set of checks again. In the second round, lint reports no findings, tests pass, and coverage meets its target. The agent can keep working through these demanding feedback loops tirelessly, making strict quality gates practical to apply on every change.
@@ -239,14 +250,14 @@ The first quality-gate run reports eight lint findings, three failing tests, and
 The passing change then moves to a human reviewer, who inspects whether it meets the intended requirement and makes sense for users before merge. Automated checks provide evidence; people remain responsible for what ships.
 :::
 
-## [04]{.rule-tag} Define done before delegating {.rule-slide}
+## Define done before delegating {data-kicker="Rule 04"}
 
 [Define the outcome and criteria, then have the agent verify its own work.]{.lede}
 
-![](media/define-done.webp){.illustration width="880" height="495" fig-alt="Three-panel illustration: a human gives a robot a brief containing the goal, constraints, and what stays unchanged; evidence is chosen to fit the task, reproducing and fixing a bug, inspecting a UI interaction, or measuring performance; a human and robot compare requirements with test results because both can share the same mistake. Agree the criteria, verify against them, and review the evidence."}
+![](media/define-done.webp){.illustration width="1640" height="810" fig-alt="Three-panel illustration: a human gives a robot a brief containing the goal, constraints, and what stays unchanged; evidence is chosen to fit the task, reproducing and fixing a bug, inspecting a UI interaction, or measuring performance; a human and robot compare requirements with test results because both can share the same mistake. Agree the criteria, verify against them, and review the evidence."}
 
 ::: {.source}
-Source: [Anthropic on agent evaluations](https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents).
+Anthropic, [agent evaluations](https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents)
 :::
 
 ::: {.notes}
@@ -263,14 +274,14 @@ Agents must verify their own work: run relevant checks, inspect results, fix fai
 Prescribe steps when their order matters, such as migrations, incident response, or a proven diagnostic workflow. Otherwise, specify the outcome and constraints, provide strong tools, and retain human review of what ships.
 :::
 
-## [05]{.rule-tag} Maintain session hygiene {.rule-slide}
+## Maintain session hygiene {data-kicker="Rule 05"}
 
 [As context grows, recall can degrade and agent output can drift.]{.lede}
 
-![](media/context-rot.webp){.illustration width="880" height="495" fig-alt="A focused agent begins with a task and useful context. Stale assumptions, repeated corrections, and contradictory instructions accumulate as context grows. A battery gauge for usable context drains from 100% to nearly empty as recall degrades. The confused agent then misses the current requirement and revives a rejected approach."}
+![](media/context-rot.webp){.illustration width="1635" height="847" fig-alt="A focused agent begins with a task and useful context. Stale assumptions, repeated corrections, and contradictory instructions accumulate as context grows. A battery gauge for usable context drains from 100% to nearly empty as recall degrades. The confused agent then misses the current requirement and revives a rejected approach."}
 
 ::: {.source}
-Source: Anthropic, [Effective context engineering for AI agents](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents).
+Anthropic, [context engineering](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents)
 :::
 
 ::: {.notes}
@@ -279,12 +290,14 @@ As the context window grows, an agent may retrieve relevant information less rel
 This degradation is called context rot. It is a reason to manage the information in a session deliberately, rather than treating every earlier message as equally useful.
 :::
 
-## Maintain session hygiene: in practice
+## Maintain session hygiene {#maintain-session-hygiene-in-practice data-kicker="Rule 05 · In practice"}
 
-![](media/session-hygiene.webp){.illustration width="880" height="495" fig-alt="Three practices keep context useful: a focused task can share coherent notes with a related follow-up; parallel tasks A and B work in separate Git worktrees; durable conventions, decisions, and lessons are saved in AGENTS.md for future sessions. Each panel concludes: less noise, better recall."}
+[Keep each context focused, and save what should outlast the session.]{.lede}
+
+![](media/session-hygiene.webp){.illustration width="1668" height="808" fig-alt="Three practices keep context useful: a focused task can share coherent notes with a related follow-up; parallel tasks A and B work in separate Git worktrees; durable conventions, decisions, and lessons are saved in AGENTS.md for future sessions. Each panel concludes: less noise, better recall."}
 
 ::: {.source}
-Sources: [Claude Code best practices](https://code.claude.com/docs/en/best-practices) (Anthropic) · [Git worktrees](https://git-scm.com/docs/git-worktree).
+Anthropic, [Claude Code best practices](https://code.claude.com/docs/en/best-practices) · [Git worktrees](https://git-scm.com/docs/git-worktree)
 :::
 
 ::: {.notes}
@@ -293,14 +306,14 @@ Keep a session focused by default, while allowing a closely related follow-up to
 These habits reduce unrelated and contradictory material in the active context, helping the agent retrieve the information that matters to the current task.
 :::
 
-## [06]{.rule-tag} Know thy tools {.rule-slide}
+## Know thy tools {data-kicker="Rule 06"}
 
 [Sometimes the unlock is a hidden tool affordance.]{.lede}
 
-![](media/know-thy-tools.webp){.illustration width="880" height="495" fig-alt="Example affordances that users miss: Claude Code CLI voice dictation turns a spoken prompt into terminal input with /voice; Codex CLI generates and edits visual assets; GitHub Copilot CLI computer use operates GUI-only desktop apps with /computer on. An ellipsis indicates more examples, and the footer encourages reading the changelog to discover what the tools can do."}
+![](media/know-thy-tools.webp){.illustration width="1647" height="918" fig-alt="Example affordances that users miss: Claude Code CLI voice dictation turns a spoken prompt into terminal input with /voice; Codex CLI generates and edits visual assets; GitHub Copilot CLI computer use operates GUI-only desktop apps with /computer on. An ellipsis indicates more examples, and the footer encourages reading the changelog to discover what the tools can do."}
 
 ::: {.source}
-Official docs: [Claude Code CLI voice](https://code.claude.com/docs/en/voice-dictation) · [Codex CLI images](https://learn.chatgpt.com/docs/image-generation) · [Copilot CLI computer use](https://docs.github.com/en/copilot/how-tos/copilot-cli/use-copilot-cli/computer-use).
+[Claude Code CLI voice](https://code.claude.com/docs/en/voice-dictation) · [Codex CLI images](https://learn.chatgpt.com/docs/image-generation) · [Copilot CLI computer use](https://docs.github.com/en/copilot/how-tos/copilot-cli/use-copilot-cli/computer-use)
 :::
 
 ::: {.notes}
@@ -311,13 +324,11 @@ Claude Code CLI offers voice input for dictating prompts, with the authenticatio
 Choose the tool interface that fits the task. A direct API or command-line tool is useful when it exposes the operation clearly; computer use can help with a workflow available only through a graphical interface. When results disappoint, examine the context, tools, and feedback available to the agent as well as the model itself.
 :::
 
-## [07]{.rule-tag} Make agentic artefacts self-correcting {.rule-slide}
+## Make agentic artefacts self-correcting {data-kicker="Rule 07"}
 
 [When checks fail or tools change, correct the artefacts that guide future work.]{.lede}
 
-:::: {.correction-stack}
-
-![](media/model-change-maintenance.webp){.illustration width="1000" height="364" fig-alt="Three panels show LLM robots maintaining agentic artefacts as tools change. In LLM Changes, an LLM updates prompts and skills after a model change. Source Changes replaces read, parse, and write steps with helper.process(); an LLM removes obsolete AGENTS.md instructions. CLI Changes replaces tool plan, tool build, and tool deploy with one tool ship command; an LLM shortens a SKILL.md checklist to that command."}
+![](media/model-change-maintenance.webp){.illustration width="2112" height="744" fig-alt="Three panels show LLM robots maintaining agentic artefacts as tools change. In LLM Changes, an LLM updates prompts and skills after a model change. Source Changes replaces read, parse, and write steps with helper.process(); an LLM removes obsolete AGENTS.md instructions. CLI Changes replaces tool plan, tool build, and tool deploy with one tool ship command; an LLM shortens a SKILL.md checklist to that command."}
 
 ::: {.prompt-example}
 [Prompt excerpt]{.prompt-label}
@@ -326,10 +337,9 @@ Choose the tool interface that fits the task. A direct API or command-line tool 
 :::
 
 ::: {.source}
-Example: [Learn from mistakes prompt](https://github.com/IndrajeetPatil/llm-dependabot/pull/20) · Anthropic, [model deprecations](https://docs.anthropic.com/en/docs/about-claude/model-deprecations).
+[Learn-from-mistakes prompt](https://github.com/IndrajeetPatil/llm-dependabot/pull/20) · Anthropic, [model deprecations](https://docs.anthropic.com/en/docs/about-claude/model-deprecations)
 :::
 
-::::
 
 ::: {.notes}
 When checks fail or a review exposes a gap, fix the issue and correct the prompt, skill, or repository guidance that contributed to it. When models, source code, or command-line tools change, update the same artefacts to reflect the new environment. The short prompt excerpt captures this self-correction loop: fix a failure, then identify what in the guidance or process led to it.
@@ -337,24 +347,24 @@ When checks fail or a review exposes a gap, fix the issue and correct the prompt
 The examples show prompts and skills adapting to a model change, `AGENTS.md` replacing obsolete read, parse, and write steps with `helper.process()`, and `SKILL.md` replacing a three-command sequence with one CLI command. After each correction, verify that the updated guidance works and remains useful.
 :::
 
-## [08]{.rule-tag} Automate repeated agent work {.rule-slide}
+## Automate repeated agent work {data-kicker="Rule 08"}
 
 [Capture recurring workflows once, then run them consistently.]{.lede}
 
-![](media/meta-automation.webp){.illustration width="880" height="495" fig-alt="An infographic contrasts repeated work with automation: capture a useful process once, run it across an input list, collect results, then review them. Prompt, skill, slash command, and workflow are shown as distinct ways to package recurring agent work."}
+![](media/meta-automation.webp){.illustration width="1579" height="879" fig-alt="An infographic contrasts repeated work with automation: capture a useful process once, run it across an input list, collect results, then review them. Prompt, skill, slash command, and workflow are shown as distinct ways to package recurring agent work."}
 
 ::: {.notes}
 When a useful agent workflow repeats, package the instructions or choreography so it can be run consistently. Prompts capture task instructions, skills package reusable know-how, slash commands offer shortcuts, and workflows coordinate steps and branches. These mechanisms can also be composed.
 :::
 
-## Automate repeated agent work: in practice {.rule-slide}
+## Automate repeated agent work {#automate-repeated-agent-work-in-practice data-kicker="Rule 08 · In practice"}
 
 [Choose the smallest reusable mechanism that fits the work.]{.lede}
 
-![](media/meta-automation-examples.webp){.illustration width="880" height="495" fig-alt="Four examples of packaged automation: a dependency update prompt, a PR screenshot skill, an illustrative review shortcut, and a vulnerability triage workflow. The workflow investigates a finding, fixes and verifies warranted changes, or records why no fix is needed."}
+![](media/meta-automation-examples.webp){.illustration width="1566" height="866" fig-alt="Four examples of packaged automation: a dependency update prompt, a PR screenshot skill, an illustrative review shortcut, and a vulnerability triage workflow. The workflow investigates a finding, fixes and verifies warranted changes, or records why no fix is needed."}
 
 ::: {.source}
-Examples: [public prompt library](https://github.com/IndrajeetPatil/chatbot-template/tree/main/.github/prompts) · [PR screenshot skill](https://github.com/IndrajeetPatil/chatbot-template/blob/main/.agents/skills/frontend-pr-screenshot/SKILL.md).
+[Public prompt library](https://github.com/IndrajeetPatil/chatbot-template/tree/main/.github/prompts) · [PR screenshot skill](https://github.com/IndrajeetPatil/chatbot-template/blob/main/.agents/skills/frontend-pr-screenshot/SKILL.md)
 :::
 
 ::: {.notes}
@@ -363,14 +373,14 @@ The dependency-update prompt, review shortcut, and vulnerability-triage workflow
 Automate coordination such as gathering context, running checks, and formatting reports. People define the policy for any automated merge: only changes that meet explicit, low-risk criteria qualify. Human review remains the route for ambiguous, risky, or exceptional changes, and people remain accountable for the policy and its results.
 :::
 
-## [09]{.rule-tag} Identify and remove bottlenecks {.rule-slide}
+## Identify and remove bottlenecks {data-kicker="Rule 09"}
 
 [Speeding up one stage helps only as much as the rest allows.]{.lede}
 
-![](media/sdlc-bottlenecks.webp){.illustration .crop-empty-canvas width="880" height="495" fig-alt="A left-to-right software delivery pipeline shows Plan, Code, Review, Verify, and Release. Coding agents speed up Code and create a large pull-request queue at Review, where a flustered human reviewer is buried in changes. Another queue reaches Verify, where a second flustered human struggles to check behaviour manually."}
+![](media/sdlc-bottlenecks.webp){.illustration width="1648" height="584" fig-alt="A left-to-right software delivery pipeline shows Plan, Code, Review, Verify, and Release. Coding agents speed up Code and create a large pull-request queue at Review, where a flustered human reviewer is buried in changes. Another queue reaches Verify, where a second flustered human struggles to check behaviour manually."}
 
 ::: {.source}
-[Amdahl’s law (1967)](https://doi.org/10.1145/1465482.1465560) · [DORA (2025)](https://dora.dev/research/2025/dora-report/).
+[Amdahl’s law (1967)](https://doi.org/10.1145/1465482.1465560) · [DORA (2025)](https://dora.dev/research/2025/dora-report/)
 :::
 
 ::: {.notes}
@@ -381,9 +391,11 @@ The illustration shows coding agents producing changes faster than people can re
 The 2025 DORA research describes AI as an amplifier of existing organizational strengths and weaknesses. That supports improving the surrounding delivery system alongside agent capability. After relieving one bottleneck, measure again: constraints move, and the next improvement should follow the new evidence.
 :::
 
-## Identify and remove bottlenecks: in practice {.rule-slide}
+## Identify and remove bottlenecks {#identify-and-remove-bottlenecks-in-practice data-kicker="Rule 09 · In practice"}
 
-![](media/bottleneck-examples.webp){.illustration width="880" height="495" fig-alt="Three panels show slow lint and type checks addressed with Rust-based tools, a pull request queue addressed with smaller changes and a two-way LLM author and reviewer loop, and tiring manual browser checks replaced by an agent running the same three end-to-end checks. Each panel uses compact chips for the bottleneck and intervention."}
+[Relieve the slowest stage first, then look for the next one.]{.lede}
+
+![](media/bottleneck-examples.webp){.illustration width="1660" height="858" fig-alt="Three panels show slow lint and type checks addressed with Rust-based tools, a pull request queue addressed with smaller changes and a two-way LLM author and reviewer loop, and tiring manual browser checks replaced by an agent running the same three end-to-end checks. Each panel uses compact chips for the bottleneck and intervention."}
 
 ::: {.notes}
 Start by finding where work is waiting. In the first example, lint and type checks are slow, so the team considers Ruff for linting and formatting, uv for Python environments and packages, and ty for type checking. These tools target those checks; they do not make a slow test suite or build faster. Caching or parallelising work may suit other bottlenecks. Measure the affected step and the full workflow before and after.
@@ -393,15 +405,15 @@ The second example starts by splitting or stacking a large pull request into sma
 The third example replaces repeated manual checks of a user journey with an end-to-end test. These tests can make important behaviour quicker to check, while exploratory testing remains useful for cases the tests do not cover. These are possible responses, not prescriptions; measure the whole delivery flow again because the bottleneck may move.
 :::
 
-## [10]{.rule-tag} Give your agents more autonomy {.rule-slide}
+## Give your agents more autonomy {data-kicker="Rule 10"}
 
 [Delegate action, gain capacity, and choose how much control to hand over.]{.lede}
 
-![](media/agent-autonomy.webp){.illustration width="880" height="495" fig-alt="Three equal panels show the argument for agent autonomy. First, a woman delegates three CLI tasks to an agent: create a GitHub pull request with gh pr create, publish a package with npm publish, and read Azure container logs with az container logs. Second, the same woman focuses on system architecture at a drawing board while routine work moves forward. Third, she actively sets the agent's autonomy slider, requires review, and limits access to specific repositories and actions while the agent waits at the workstation."}
+![](media/agent-autonomy.webp){.illustration width="1656" height="718" fig-alt="Three equal panels show the argument for agent autonomy. First, a woman delegates three CLI tasks to an agent: create a GitHub pull request with gh pr create, publish a package with npm publish, and read Azure container logs with az container logs. Second, the same woman focuses on system architecture at a drawing board while routine work moves forward. Third, she actively sets the agent's autonomy slider, requires review, and limits access to specific repositories and actions while the agent waits at the workstation."}
 
 ::: {.source}
 [Parasuraman et al., automation levels](https://pubmed.ncbi.nlm.nih.gov/11760769/) ·
-[NIST AI RMF, human oversight](https://airc.nist.gov/airmf-resources/airmf/5-sec-core/).
+[NIST AI RMF, human oversight](https://airc.nist.gov/airmf-resources/airmf/5-sec-core/)
 :::
 
 ::: {.notes}
@@ -412,11 +424,11 @@ The human sets the autonomy level, decides when review is required, and limits a
 This can keep routine work moving while the developer focuses on architecting a system. The trade-off is less direct control: broader autonomy lets the agent accomplish more, but leaves fewer steps for a person to watch and asks for more trust in the agent and its checks. Choose the boundary for the task. Well-understood, reversible work can suit wider delegation; consequential or uncertain work calls for closer oversight and scoped access.
 :::
 
-## Put firm guardrails around autonomy
+## Give your agents more autonomy {#give-your-agents-more-autonomy-in-practice data-kicker="Rule 10 · In practice"}
 
-[Let agents work freely inside boundaries enforced by infrastructure.]{.lede}
+[Put firm guardrails around autonomy, enforced by infrastructure.]{.lede}
 
-![](media/guardrails-autonomy.webp){.illustration .crop-empty-canvas width="880" height="495" fig-alt="Two panels show infrastructure enforcing limits on agent autonomy. On the left, a Git branch diagram marks main as protected with a padlock; an agent's attempted deletion is blocked, required checks gate changes, and there is no administrator bypass. On the right, a VPN selector connects to either production or non-production, never both; the agent works in non-production while production remains isolated."}
+![](media/guardrails-autonomy.webp){.illustration width="1657" height="763" fig-alt="Two panels show infrastructure enforcing limits on agent autonomy. On the left, a Git branch diagram marks main as protected with a padlock; an agent's attempted deletion is blocked, required checks gate changes, and there is no administrator bypass. On the right, a VPN selector connects to either production or non-production, never both; the agent works in non-production while production remains isolated."}
 
 ::: {.source}
 [GitHub protected branches](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches) ·
@@ -431,20 +443,22 @@ For a repository's main branch, require the relevant checks to pass, prevent bra
 For infrastructure work, keep production isolated from non-production. A VPN or access gateway can connect the agent to one environment at a time. When it is connected to non-production, the production environment and its credentials remain inaccessible. This makes the work area safe for investigation and repair without giving the agent a path into production.
 :::
 
-# The Reward
+# The reward
+
+[What the rules add up to when they work together.]{.lede}
 
 ::: {.notes}
 Together, these practices can turn a repository into a software factory. They speed up routine work through planning, coding, review, verification, and release while people set direction and own risk boundaries.
 :::
 
-## A software factory {.smaller}
+## A software factory {data-kicker="The reward"}
 
 [Routine requests flow to verified merges; people approve high-stakes work.]{.lede}
 
-![](media/software-factory.webp){.illustration width="880" height="495" fig-align="center" fig-alt="A feature request moves from a developer to a coding agent, which opens a pull request with UI screenshots and a red-and-green code diff. Findings loop back through an artefact-adjustment step labelled Adjust skills & AGENTS.md before returning to the coding agent. The magnified quality harness lists file naming, backend and configuration formatting, Markdown formatting and linting, backend lint, spelling, workflow lint, link checking, type checking, API schema validation, dependency audit, backend tests, mutation tests, type coverage, frontend QA, and a security scan, followed by an ellipsis. After independent review and approval, the coding agent merges and the feature appears in a web app."}
+![](media/software-factory.webp){.illustration width="1670" height="913" fig-alt="A feature request moves from a developer to a coding agent, which opens a pull request with UI screenshots and a red-and-green code diff. Findings loop back through an artefact-adjustment step labelled Adjust skills & AGENTS.md before returning to the coding agent. The magnified quality harness lists file naming, backend and configuration formatting, Markdown formatting and linting, backend lint, spelling, workflow lint, link checking, type checking, API schema validation, dependency audit, backend tests, mutation tests, type coverage, frontend QA, and a security scan, followed by an ellipsis. After independent review and approval, the coding agent merges and the feature appears in a web app."}
 
 ::: {.source}
-Example: [chatbot-template](https://github.com/IndrajeetPatil/chatbot-template/) · OpenAI, [sandbox security](https://developers.openai.com/api/docs/guides/agents-api/environments/security) and [prompt injections](https://openai.com/safety/prompt-injections/).
+[chatbot-template](https://github.com/IndrajeetPatil/chatbot-template/) · OpenAI, [sandbox security](https://developers.openai.com/api/docs/guides/agents-api/environments/security) · [prompt injections](https://openai.com/safety/prompt-injections/)
 :::
 
 ::: {.notes}
@@ -455,14 +469,16 @@ For frontend changes, the repository's agent instructions require the coding age
 The team that owns the repository sets the risk boundary and the rules that enforce it. Small, reversible changes such as documentation or formatting updates may qualify for an automatic merge when the task is explicit and every required check passes. The coding and reviewer agents do not set that boundary. People own the policy, monitor its results, and review changes with wider impact or uncertainty; mission-critical systems can require human approval at key steps. Sandboxed work, restricted network access, and scoped credentials limit the impact of mistakes. Repository files and issue text can also contain malicious instructions, so treat them as untrusted input and keep control of consequential actions.
 :::
 
-## Constituents of Success
+## Constituents of success {data-kicker="The reward"}
 
-![](media/constituents-of-success.webp){.illustration .crop-empty-canvas width="980" height="490" fig-align="center" fig-alt="An equation shows four safeguards adding up to low-touch feature delivery: quality gates for high code quality, a verification harness for verified behaviour, an independent LLM reviewer that exchanges findings and revised changes with an implementer agent, and self-evolving artefacts that an LLM updates to keep agent guidance current. A person focuses on higher-level work and remains available for oversight."}
+[Each safeguard covers a gap the others leave open.]{.lede}
+
+![](media/constituents-of-success.webp){.illustration width="1761" height="575" fig-alt="An equation shows four safeguards adding up to low-touch feature delivery: quality gates for high code quality, a verification harness for verified behaviour, an independent LLM reviewer that exchanges findings and revised changes with an implementer agent, and self-evolving artefacts that an LLM updates to keep agent guidance current. A person focuses on higher-level work and remains available for oversight."}
 
 ::: {.source}
-[OpenAI, harness engineering](https://openai.com/index/harness-engineering/) ·
-[Google, agent behaviour evaluations](https://developers.googleblog.com/the-anatomy-of-harness-engineering-how-to-evaluate-iterate-and-guard-ai-coding-agents/) ·
-[Atlassian, LLM code review study](https://arxiv.org/abs/2601.01129).
+OpenAI, [harness engineering](https://openai.com/index/harness-engineering/) ·
+Google, [agent behaviour evaluations](https://developers.googleblog.com/the-anatomy-of-harness-engineering-how-to-evaluate-iterate-and-guard-ai-coding-agents/) ·
+Atlassian, [LLM code review study](https://arxiv.org/abs/2601.01129)
 :::
 
 ::: {.notes}
@@ -471,14 +487,14 @@ Four safeguards support routine feature delivery with little day-to-day human in
 Low-touch delivery does not mean no human oversight. People define the risk boundary, monitor how the safeguards perform, and review uncertain or high-impact changes. The goal is to reserve attention for direction and judgement while routine, bounded changes move through reliable checks.
 :::
 
-## A software giga factory {.smaller}
+## A software giga factory {data-kicker="The reward"}
 
 [Get one project's factory right, and it can power portfolio-wide automation.]{.lede}
 
-![](media/giga-factory.webp){.illustration width="900" height="506" fig-align="center" fig-alt="An unattended background daemon uses a clock and gear to scan a portfolio and select one due prompt. It sends the prompt into a clearly drawn software factory inside one project. On its conveyor, an artefact-adjustment station labelled Adjust skills & AGENTS.md feeds the coding agent; a gold feedback loop from quality gates and the LLM reviewer returns to this station so faulty guidance can be corrected. A verification harness checks the change, and a verified pull request goes to a human maintainer. Other projects wait for their turn."}
+![](media/giga-factory.webp){.illustration width="1665" height="890" fig-alt="An unattended background daemon uses a clock and gear to scan a portfolio and select one due prompt. It sends the prompt into a clearly drawn software factory inside one project. On its conveyor, an artefact-adjustment station labelled Adjust skills & AGENTS.md feeds the coding agent; a gold feedback loop from quality gates and the LLM reviewer returns to this station so faulty guidance can be corrected. A verification harness checks the change, and a verified pull request goes to a human maintainer. Other projects wait for their turn."}
 
 ::: {.source}
-Example: [llm-dependabot](https://github.com/IndrajeetPatil/llm-dependabot) · [architecture](https://github.com/IndrajeetPatil/llm-dependabot/blob/main/docs/architecture.md).
+[llm-dependabot](https://github.com/IndrajeetPatil/llm-dependabot) · [architecture](https://github.com/IndrajeetPatil/llm-dependabot/blob/main/docs/architecture.md)
 :::
 
 ::: {.notes}
@@ -495,24 +511,16 @@ The daemon decides which repository and prompt are due; it does not do the proje
 Quality gates, clear acceptance criteria, verification, automation, and appropriate autonomy help agents move routine work faster from Plan through Release. People set direction and risk boundaries, and apply judgement to uncertain or high-impact decisions.
 :::
 
-# Thank You
+# Thank you
 
-Go forth and delegate responsibly.
+[Go forth and delegate responsibly.]{.lede}
 
-<br>
-
-::: {style="text-align: center; font-size: 0.7em;"}
+::: {.closing-links}
 
 Check out my other [slide decks](https://www.indrapatil.com/presentations/) on software development best practices
 
-:::
-
-::: {style="text-align: center; font-size: 1em;"}
-
 <a class="deck-icon-link" href="https://www.linkedin.com/in/indrajeet-patil-ph-d-397865174/" aria-label="LinkedIn"><span class="deck-icon deck-icon-brands-linkedin" aria-hidden="true"></span></a>
-&nbsp;&nbsp;
 <a class="deck-icon-link" href="https://github.com/IndrajeetPatil" aria-label="GitHub"><span class="deck-icon deck-icon-brands-github" aria-hidden="true"></span></a>
-&nbsp;&nbsp;
 <a class="deck-icon-link" href="mailto:patilindrajeet.science@gmail.com" aria-label="Email"><span class="deck-icon deck-icon-solid-envelope" aria-hidden="true"></span></a>
 
 :::
