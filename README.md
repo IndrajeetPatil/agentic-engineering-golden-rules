@@ -22,7 +22,7 @@ GitHub Copilot. The Copilot example uses Claude to distinguish the model
 developer from the service providing access.
 
 The closing “Reward” section shows how a reliable project-level software
-factory can support automation across a portfolio. “Constituents of Success”
+factory can support automation across a portfolio. “Constituents of success”
 covers its quality gates, verification harness, independent LLM review, and
 self-evolving artefacts; “A software giga factory” shows a background daemon
 activating these factories across repositories, illustrated by
@@ -42,9 +42,10 @@ an ivory page, warm stone panels, near-black ink, gold reserved for hairlines,
 high-contrast [Bodoni Moda](https://fonts.google.com/specimen/Bodoni+Moda)
 headings, and small tracked [Montserrat](https://fonts.google.com/specimen/Montserrat)
 labels, the same typefaces the site uses. All illustrations in the deck are
-AI-generated and use the same ivory, stone, ink, and gold palette. The
-quality-gates example pairs code with a generated Ruff feedback-loop
-illustration. See
+AI-generated and use the same ivory, stone, ink, and gold palette. Every slide
+shares one layout on a 16:10 canvas: a kicker, a title, a one-line lede, an
+illustration stage, and a source footer. [DESIGN.md](DESIGN.md) specifies the
+layout and tokens. See
 [media/README.md](media/README.md) for illustration prompts and regeneration
 guidance.
 
@@ -77,6 +78,7 @@ just open     # Alias for preview (live-reload dev server over localhost)
 just clean    # Remove generated files and caches
 just check    # Check the Quarto and Python setup
 just axe      # Preview with the axe accessibility checker enabled
+just trim-art # Trim blank canvas from illustrations and sync their sizes
 just          # Install dependencies and start live-reload preview
 ```
 

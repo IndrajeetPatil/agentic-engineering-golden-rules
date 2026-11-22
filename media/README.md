@@ -1,5 +1,40 @@
 # Deck artwork
 
+## Checklist for new or changed illustrations
+
+Follow these steps with any coding agent's built-in image generation. The
+slide layout and palette are specified in [DESIGN.md](../DESIGN.md).
+
+1. **Canvas:** generate a landscape image at 16:9 or wider. Compose the
+   artwork to fill the canvas edge to edge; content around 2:1 fills the slide
+   stage best, and narrower than 16:9 leaves empty space at the sides.
+
+2. **Palette:** bright ivory (`#fdfaf3`) canvas with a uniform, flat border
+   area, very pale warm-stone (`#e9e5db`) panels, near-black linework and
+   text, and gold for hairlines and arrows only. Match the brightness of
+   `agent-autonomy.webp`.
+
+3. **Style:** match `devex-agentex.webp`, `one-command-setup.webp`,
+   `session-hygiene.webp`, and `know-thy-tools.webp`: restrained editorial pen
+   and ink, square-cornered panels, sparse shading, and no painterly or
+   photoreal scenes, saturated colour, dark backgrounds, emoji, logos, or
+   watermarks.
+
+4. **Text:** never repeat the slide title or lede, and add no overall title
+   inside the art. Keep labels short, readable at slide size, and accurate.
+
+5. **Save:** convert to WebP in `media/` (`cwebp` for PNG or JPEG output),
+   then run `just trim-art media/<name>.webp`. It trims blank canvas to an even
+   margin and updates the image's `width` and `height` in `index.qmd`.
+
+6. **Describe:** update the slide's `fig-alt`, its speaker notes, and the
+   prompt section for the file below.
+
+7. **Verify:** run `just render` and compare the slide with its neighbours at
+   slide size; the artwork should fill the stage without clipping.
+
+## Style notes
+
 All slide illustrations use built-in image generation and a shared editorial
 style. `agent-autonomy.webp` sets the canvas and panel brightness for every
 asset: a bright ivory (`#fdfaf3`) canvas and very pale warm-stone (`#e9e5db`)
@@ -13,7 +48,8 @@ its management are shown in a paired illustration sequence. The setup contrast
 illustrates a shared one-command entry point.
 The automation examples demonstrate dependency updates and PR screenshot
 workflows. The tool-affordance examples were checked against current official
-docs. Final assets are WebP; the social card is the deck's
+docs. Final assets are WebP, trimmed with `just trim-art`; the prompts below
+describe the generation canvas before trimming. The social card is the deck's
 typography and palette reference. The social card already matched the theme
 and was retained.
 

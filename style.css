@@ -3,6 +3,11 @@
  * warm stone panels, near-black ink, gold reserved for hairlines and rims,
  * high-contrast Bodoni Moda headings, small tracked Montserrat labels, and
  * softly rounded panels.
+ *
+ * Every slide shares one 1280 x 800 (16:10) canvas and one anatomy:
+ * kicker, title, lede, a stage that fills the remaining height, and a
+ * reserved source footer. Slides are flex columns (`display: flex` in the
+ * front matter), so the stage and footer sit in the same place on every slide.
  */
 @import url("https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..700&family=Montserrat:wght@300;400;500;600&display=swap");
 
@@ -19,6 +24,8 @@
   --deck-mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
   /* Softly rounded corners for every boxed text panel. */
   --deck-radius: 10px;
+  /* Height reserved at the foot of every slide for the source line. */
+  --deck-footer: 56px;
 
   --r-background-color: var(--deck-ivory);
   --r-main-color: var(--deck-ink);
@@ -56,15 +63,6 @@
   text-wrap: balance;
 }
 
-.reveal h2 {
-  font-size: 1.45em;
-  margin-bottom: 0.35em;
-}
-
-.reveal .slides section.smaller h2 {
-  font-size: 1.45em;
-}
-
 .reveal a {
   color: inherit;
   text-decoration: underline;
@@ -83,19 +81,104 @@
   font-size: 1.08em;
 }
 
-.reveal .lede {
+/* Tracked uppercase label: card eyebrows and slide kickers. */
+.reveal .eyebrow,
+.reveal .slides section[data-kicker]::before {
   display: block;
-  font-size: 0.62em;
-  font-weight: 300;
-  line-height: 1.5;
-  color: var(--deck-muted);
-  margin-bottom: 0.9em;
+  font-family: var(--deck-sans);
+  font-size: 0.7em;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--deck-gold-deep);
 }
 
+/* ---------- Slide anatomy ---------- */
+
+.reveal .slides section.slide {
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 0 40px var(--deck-footer);
+  text-align: center;
+}
+
+/* Kicker: the running head above every content slide title. */
+.reveal .slides section[data-kicker]::before {
+  content: attr(data-kicker);
+  flex: none;
+  margin: 0.4em 0 0.7em;
+  font-size: 0.34em;
+}
+
+.reveal .slides section.level2 > h2 {
+  flex: none;
+  margin: 0;
+  font-size: 1.2em;
+}
+
+.reveal .slides section.slide > p,
+.reveal .slides section.slide > div {
+  margin: 0;
+}
+
+.reveal .slides section.level2 > p:has(> .lede) {
+  flex: none;
+  margin: 0.45em 0 0.8em;
+}
+
+.reveal .lede {
+  display: block;
+  font-size: 0.54em;
+  font-weight: 300;
+  line-height: 1.45;
+  color: var(--deck-muted);
+}
+
+/* Stage: an illustration fills the space left between header and footer. */
+.reveal .slides section.slide p:has(> img.illustration) {
+  flex: 1 1 0;
+  min-block-size: 0;
+  inline-size: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}
+
+.reveal .slides section.slide img.illustration {
+  inline-size: auto;
+  block-size: auto;
+  max-inline-size: 100%;
+  max-block-size: 100%;
+  margin: 0;
+  object-fit: contain;
+  background: var(--deck-ivory);
+}
+
+/* Source footer: pinned in the reserved band on every slide. */
+.reveal .source {
+  position: absolute;
+  inset: auto 0 0;
+  block-size: var(--deck-footer);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.36em;
+  line-height: 1.4;
+  color: var(--deck-muted);
+}
+
+.reveal .source p {
+  margin: 0;
+}
+
+/* A quoted prompt shown beneath an illustration. */
 .reveal .prompt-example {
-  max-width: 72%;
-  margin: 0.25em auto 0.1em;
-  padding: 0.32em 0.8em;
+  flex: none;
+  max-inline-size: 70%;
+  margin: 0.7em auto 0;
+  padding: 0.4em 1em;
   border-radius: var(--deck-radius);
   background: var(--deck-stone);
   font-family: var(--deck-display);
@@ -103,41 +186,25 @@
   line-height: 1.3;
 }
 
+.reveal .prompt-example p {
+  margin: 0;
+}
+
 .reveal .prompt-label {
   display: block;
-  margin-bottom: 0.12em;
+  margin-bottom: 0.2em;
   color: var(--deck-gold-deep);
   font-family: var(--deck-sans);
-  font-size: 0.72em;
+  font-size: 0.66em;
   font-weight: 600;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-}
-
-.reveal .slides section.smaller .lede {
-  font-size: 0.9em;
-  margin-bottom: 0.6em;
-}
-
-.reveal .source {
-  position: absolute;
-  bottom: -0.6em;
-  left: 0;
-  right: 0;
-  text-align: center;
-  font-size: 0.42em;
-  color: var(--deck-muted);
-}
-
-.reveal .slides section.smaller .source {
-  font-size: 0.6em;
 }
 
 /* ---------- Title slide: a centred wordmark ---------- */
 
-.reveal .hero {
-  text-align: center;
-  margin-top: 1.4em;
+.reveal .slides section.title-slide-custom {
+  justify-content: center;
 }
 
 .reveal .hero p {
@@ -164,11 +231,11 @@
 }
 
 .reveal .hero-title {
-  font-size: 2.9em;
+  font-size: 3.2em;
 }
 
 .reveal .hero-title-italic {
-  font-size: 1.9em;
+  font-size: 2.1em;
   font-style: italic;
   margin-top: 0.05em;
 }
@@ -184,172 +251,77 @@
   border-top: 1px solid var(--deck-gold);
 }
 
-.reveal .hero-source {
-  text-align: center;
-  font-size: 0.38em;
-  color: var(--deck-muted);
-  margin-top: 3.5em;
-}
-
 /* ---------- Section slides ---------- */
 
 .reveal .slides section.level1 {
+  justify-content: center;
   text-align: center;
 }
 
 .reveal .slides section.level1 h1 {
-  font-size: 2.4em;
+  margin: 0;
+  font-size: 2.6em;
   font-style: italic;
   text-transform: lowercase;
 }
 
-.reveal .slides section.level1 > p {
-  max-inline-size: 78%;
-  margin-inline: auto;
-  font-size: 0.82em;
-  font-weight: 300;
-  line-height: 1.5;
-  color: var(--deck-muted);
-  text-align: center;
-}
-
-.reveal .slides section.bookmark-slide {
-  text-align: center;
-}
-
-.reveal .slides section.bookmark-slide h2 {
-  font-size: 2em;
-  font-style: italic;
-}
-
-.reveal .slides section.bookmark-slide h2::before {
+/* A short gold hairline separates the section title from its lede. */
+.reveal .slides section.level1 h1::after {
   content: "";
   display: block;
-  width: 0.72em;
-  height: 0.96em;
-  margin: 0 auto 0.9em;
+  inline-size: 2.2em;
+  block-size: 1px;
+  margin: 0.4em auto 0;
   background: var(--deck-gold);
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 72%, 0 100%);
 }
 
-/* ---------- Rule slides ---------- */
-
-.reveal .rule-tag {
-  font-family: var(--deck-display);
-  font-style: italic;
-  font-size: 0.8em;
-  color: var(--deck-gold-deep);
-  margin-right: 0.35em;
-  padding-right: 0.45em;
-  border-right: 1px solid var(--deck-gold);
+.reveal .slides section.level1 > p:has(> .lede) {
+  max-inline-size: 70%;
+  margin: 0.9em auto 0;
 }
 
-.reveal .slides section.rule-slide {
-  text-align: center;
+.reveal .slides section.level1 .lede {
+  font-size: 0.66em;
 }
 
-.reveal .slides section.rule-slide h2 {
-  font-size: 1.3em;
+.reveal .slides section.slide > .closing-links {
+  margin-top: 2.4em;
+  font-size: 0.5em;
 }
 
-.reveal .slides section.rule-slide .lede {
-  font-size: 0.56em;
-  margin-bottom: 0.6em;
+.reveal .closing-links p {
+  margin: 0 0 0.8em;
 }
 
-.reveal img.illustration {
-  display: block;
-  background: var(--deck-ivory);
-  inline-size: min(100%, 880px);
-  max-inline-size: 100%;
-  block-size: auto;
-  object-fit: contain;
-  margin: 0.35em auto 0;
-}
-
-.reveal .slides section:has(img.illustration) h2 {
-  text-align: center;
-  font-size: 1.05em;
-}
-
-.reveal .slides section:has(img.illustration) p:has(> img.illustration) {
-  inline-size: 100%;
-  margin-block: 0;
-  margin-inline: auto;
-}
-
-.reveal .correction-stack {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.6em;
-}
-
-.reveal .correction-stack img.illustration {
-  margin: 0;
-}
-
-.reveal .correction-stack > p:has(> img.illustration) {
-  line-height: 0;
-}
-
-.reveal .correction-stack > .prompt-example,
-.reveal .correction-stack > .source {
-  margin: 0;
-}
-
-.reveal .correction-stack > .source {
-  position: static;
-}
-
-.reveal .slides section:has(img.illustration.crop-empty-canvas) > .source {
-  position: static;
-  margin: 0.6em auto 0;
-}
-
-.reveal .slides section:has(img.illustration.crop-empty-canvas) p:has(> img.illustration) {
-  line-height: 0;
-}
-
-.reveal img.illustration.crop-empty-canvas {
-  object-fit: cover;
-}
-
-.reveal img.illustration.crop-empty-canvas[src*="sdlc-bottlenecks"],
-.reveal img.illustration.crop-empty-canvas[data-src*="sdlc-bottlenecks"] {
-  aspect-ratio: 2.7 / 1;
-  object-position: center 61%;
-}
-
-.reveal img.illustration.crop-empty-canvas[src*="guardrails-autonomy"],
-.reveal img.illustration.crop-empty-canvas[data-src*="guardrails-autonomy"] {
-  aspect-ratio: 2.2 / 1;
-  object-position: center 68%;
-}
-
-.reveal img.illustration.crop-empty-canvas[src*="constituents-of-success"],
-.reveal img.illustration.crop-empty-canvas[data-src*="constituents-of-success"] {
-  aspect-ratio: 3.05 / 1;
-  object-position: center 63%;
+.reveal .closing-links .deck-icon-link {
+  display: inline-block;
+  margin: 0 0.6em;
+  font-size: 1.5em;
+  color: var(--deck-ink);
 }
 
 /* ---------- Agentic stack tabset ---------- */
 
 .reveal .stack-tabs {
-  text-align: center;
+  flex: 1 1 0;
+  min-block-size: 0;
+  inline-size: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .reveal .stack-tabs .panel-tabset-tabby {
+  flex: none;
   display: flex;
   justify-content: center;
   gap: 0.4em;
-  margin: 0;
+  margin: 0 0 0.6em;
   border-bottom: 1px solid var(--deck-gold);
-  font-size: 0.5em;
+  font-size: 0.44em;
 }
 
 .reveal .stack-tabs .panel-tabset-tabby a {
-  padding: 0.5em 1.1em;
+  padding: 0.45em 1.1em;
   border: 1px solid transparent;
   border-radius: 0;
   color: var(--deck-ink);
@@ -368,53 +340,42 @@
   outline-offset: 2px;
 }
 
-.reveal .stack-tabs p {
-  margin: 0;
-}
-
-.reveal .stack-tabs .source {
-  margin-top: 0.4em;
+.reveal .stack-tabs .tab-content,
+.reveal .stack-tabs .tab-content > :not([hidden]) {
+  flex: 1 1 0;
+  min-block-size: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 /* ---------- Cards ---------- */
 
+.reveal .slides section.slide > .card-grid {
+  inline-size: 88%;
+  margin-block: auto;
+  display: grid;
+  gap: 0.7em;
+}
+
+.reveal .card-grid-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
 .reveal .card {
-  padding: 0.85em 1.05em;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-block-size: 9em;
+  margin: 0;
+  padding: 1.4em 1.8em;
   border-radius: var(--deck-radius);
-  font-size: 0.6em;
+  font-size: 0.66em;
   line-height: 1.5;
   text-align: left;
 }
 
-.reveal .slides section.smaller .card {
-  font-size: 0.92em;
-}
-
-.reveal .card > :first-child {
-  margin-top: 0;
-}
-
-.reveal .card > :last-child {
-  margin-bottom: 0;
-}
-
-.reveal .card p,
-.reveal .card ul {
+.reveal .card p {
   margin: 0.35em 0;
-}
-
-.reveal .card ul {
-  padding-left: 1.1em;
-  margin-left: 0;
-  display: block;
-}
-
-.reveal .card li {
-  margin: 0.2em 0;
-}
-
-.reveal .card li::marker {
-  color: var(--deck-gold-deep);
 }
 
 .reveal .card-title {
@@ -423,9 +384,9 @@
   font-variation-settings: "opsz" 28;
   font-style: italic;
   font-weight: 500;
-  font-size: 1.6em;
+  font-size: 1.7em;
   line-height: 1.15;
-  margin: 0.15em 0 0.35em;
+  margin: 0.3em 0 0.4em;
 }
 
 .reveal .card-stone {
@@ -437,238 +398,8 @@
   color: var(--deck-ivory);
 }
 
-.reveal .card-ink .eyebrow,
-.reveal .card-ink li::marker {
+.reveal .card-ink .eyebrow {
   color: var(--deck-gold);
-}
-
-.reveal .card-ink code {
-  color: var(--deck-ivory);
-}
-
-.reveal .card-ink a {
-  text-decoration-color: var(--deck-gold);
-}
-
-.reveal .card-outline {
-  border: 1px solid var(--deck-gold);
-}
-
-.reveal .card-wide {
-  margin-top: 0.8em;
-}
-
-.reveal .pull-quote {
-  max-width: 32em;
-  margin: 2em auto 0.2em;
-  padding-top: 0.65em;
-  border-top: 1px solid var(--deck-gold);
-  text-align: center;
-}
-
-.reveal .pull-quote p {
-  margin: 0.15em 0;
-}
-
-.reveal .pull-quote-text {
-  font-family: var(--deck-display);
-  font-size: 1.8em;
-  font-style: italic;
-  line-height: 1.15;
-}
-
-.reveal .pull-quote-attribution {
-  display: block;
-  margin-top: 0.5em;
-  color: var(--deck-muted);
-  font-size: 0.55em;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-}
-
-.reveal .card-tall {
-  min-height: 9em;
-}
-
-.reveal .eyebrow {
-  display: block;
-  font-size: 0.7em;
-  font-weight: 600;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--deck-gold-deep);
-}
-
-.reveal .card-grid {
-  display: grid;
-  gap: 0.6em;
-  margin-top: 0.4em;
-}
-
-.reveal .card-grid > .card {
-  margin: 0;
-}
-
-.reveal .card-grid-2 {
-  grid-template-columns: repeat(2, 1fr);
-}
-
-.reveal .card-grid-3 {
-  grid-template-columns: repeat(3, 1fr);
-}
-
-.reveal .card-grid-4 {
-  grid-template-columns: repeat(4, 1fr);
-}
-
-/* ---------- Tables, code, and lists ---------- */
-
-.reveal .table-card {
-  background: var(--deck-stone);
-  border-radius: var(--deck-radius);
-  padding: 0.6em 1em;
-}
-
-.reveal .table-card table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 0.85em;
-}
-
-.reveal .table-card th,
-.reveal .table-card td {
-  border-bottom: 1px solid var(--deck-gold);
-  padding: 0.4em 0.6em;
-  text-align: left;
-}
-
-.reveal .table-card tr:last-child td {
-  border-bottom: none;
-}
-
-.reveal .table-card thead th {
-  font-weight: 600;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  font-size: 0.75em;
-  color: var(--deck-gold-deep);
-}
-
-.reveal .table-card tbody td:first-child {
-  font-family: var(--deck-display);
-  font-variation-settings: "opsz" 28;
-  font-style: italic;
-  font-size: 1.15em;
-}
-
-.reveal .slides div.sourceCode {
-  background: var(--deck-stone);
-  border: none;
-  border-radius: var(--deck-radius);
-  margin: 0 0 0.6em;
-}
-
-.reveal div.sourceCode pre {
-  background: transparent;
-  border: none;
-}
-
-/* Syntax colours from the deck palette (contrast-checked on stone). */
-.reveal div.sourceCode code,
-.reveal div.sourceCode code span {
-  color: var(--deck-ink);
-}
-
-.reveal div.sourceCode code span.co,
-.reveal div.sourceCode code span.do,
-.reveal div.sourceCode code span.cv {
-  color: var(--deck-muted);
-  font-style: italic;
-}
-
-.reveal div.sourceCode code span.dt,
-.reveal div.sourceCode code span.kw,
-.reveal div.sourceCode code span.cf {
-  color: var(--deck-ink);
-  font-weight: 600;
-}
-
-.reveal div.sourceCode code span.fu,
-.reveal div.sourceCode code span.va,
-.reveal div.sourceCode code span.at,
-.reveal div.sourceCode code span.op,
-.reveal div.sourceCode code span.er {
-  color: var(--deck-ink);
-}
-
-.reveal div.sourceCode code span.st,
-.reveal div.sourceCode code span.ch,
-.reveal div.sourceCode code span.ss,
-.reveal div.sourceCode code span.vs,
-.reveal div.sourceCode code span.dv,
-.reveal div.sourceCode code span.fl,
-.reveal div.sourceCode code span.bn {
-  color: var(--deck-gold-deep);
-}
-
-/* Filename header (```{.lang filename="..."}): an ink tab with a gold label. */
-.reveal .code-with-filename {
-  margin: 0 0 0.6em;
-}
-
-.reveal .code-with-filename .code-with-filename-file {
-  background: var(--deck-ink);
-  border: none;
-  border-bottom: 1px solid var(--deck-gold);
-  border-radius: var(--deck-radius) var(--deck-radius) 0 0;
-  padding: 0.45em 0.9em;
-}
-
-.reveal .code-with-filename .code-with-filename-file pre {
-  margin: 0;
-  padding: 0;
-  background: none;
-  box-shadow: none;
-  font-family: var(--deck-sans);
-  font-size: 0.42em;
-  line-height: 1.4;
-}
-
-/* Keep the filename's real case: filenames are case-sensitive. */
-.reveal .code-with-filename .code-with-filename-file strong {
-  font-family: var(--deck-mono);
-  font-weight: 500;
-  letter-spacing: 0.04em;
-  color: var(--deck-gold);
-}
-
-.reveal .code-with-filename .slides div.sourceCode,
-.reveal .code-with-filename div.sourceCode {
-  margin: 0;
-  border-radius: 0 0 var(--deck-radius) var(--deck-radius);
-}
-
-.reveal code,
-.reveal pre,
-.reveal pre code {
-  font-family: var(--deck-mono);
-}
-
-.reveal code {
-  color: inherit;
-}
-
-.reveal .reading-list ul {
-  font-size: 1em;
-  line-height: 1.45;
-}
-
-.reveal .reading-list li {
-  margin-bottom: 0.35em;
-}
-
-.reveal .reading-list li::marker {
-  color: var(--deck-gold-deep);
 }
 
 /* ---------- Reveal chrome ---------- */
@@ -694,12 +425,7 @@
   background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23141414" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/></svg>');
 }
 
-/* Links in the closing slide's icon row. */
-.reveal .deck-icon-link {
-  color: var(--deck-ink);
-}
-
-/* Name dense slides for assistive technology without moving their content. */
+/* Name the title slide for assistive technology without showing a heading. */
 .reveal .slides section.sr-only-heading > h2 {
   position: absolute;
   width: 1px;
@@ -723,12 +449,6 @@
   -webkit-mask: var(--deck-icon-image) center / contain no-repeat;
   mask: var(--deck-icon-image) center / contain no-repeat;
   vertical-align: -0.125em;
-}
-
-.deck-icon-2xl {
-  width: 2em;
-  height: 2em;
-  vertical-align: -0.1875em;
 }
 
 .deck-icon-brands-github {
