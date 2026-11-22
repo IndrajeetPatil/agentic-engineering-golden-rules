@@ -385,6 +385,8 @@ Choose the tool interface that fits the task. A direct API or command-line tool 
 
 [When checks fail or tools change, correct the artefacts that guide future work.]{.lede}
 
+:::: {.correction-stack}
+
 ![](media/model-change-maintenance.webp){.illustration width="1000" height="364" fig-alt="Three panels show LLM robots maintaining agentic artefacts as tools change. In LLM Changes, an LLM updates prompts and skills after a model change. Source Changes replaces read, parse, and write steps with helper.process(); an LLM removes obsolete AGENTS.md instructions. CLI Changes replaces tool plan, tool build, and tool deploy with one tool ship command; an LLM shortens a SKILL.md checklist to that command."}
 
 ::: {.prompt-example}
@@ -396,6 +398,8 @@ Choose the tool interface that fits the task. A direct API or command-line tool 
 ::: {.source}
 Example: [Learn from mistakes prompt](https://github.com/IndrajeetPatil/llm-dependabot/pull/20) · Anthropic, [model deprecations](https://docs.anthropic.com/en/docs/about-claude/model-deprecations).
 :::
+
+::::
 
 ::: {.notes}
 When checks fail or a review exposes a gap, fix the issue and correct the prompt, skill, or repository guidance that contributed to it. When models, source code, or command-line tools change, update the same artefacts to reflect the new environment. The short prompt excerpt captures this self-correction loop: fix a failure, then identify what in the guidance or process led to it.
@@ -433,7 +437,7 @@ Automate coordination such as gathering context, running checks, and formatting 
 
 [Speeding up one stage helps only as much as the rest allows.]{.lede}
 
-![](media/sdlc-bottlenecks.webp){.illustration width="880" height="495" fig-alt="A left-to-right software delivery pipeline shows Plan, Code, Review, Verify, and Release. Coding agents speed up Code and create a large pull-request queue at Review, where a flustered human reviewer is buried in changes. Another queue reaches Verify, where a second flustered human struggles to check behaviour manually."}
+![](media/sdlc-bottlenecks.webp){.illustration .crop-empty-canvas width="880" height="495" fig-alt="A left-to-right software delivery pipeline shows Plan, Code, Review, Verify, and Release. Coding agents speed up Code and create a large pull-request queue at Review, where a flustered human reviewer is buried in changes. Another queue reaches Verify, where a second flustered human struggles to check behaviour manually."}
 
 ::: {.source}
 [Amdahl’s law (1967)](https://doi.org/10.1145/1465482.1465560) · [DORA (2025)](https://dora.dev/research/2025/dora-report/).
@@ -482,7 +486,7 @@ This can keep routine work moving while the developer focuses on architecting a 
 
 [Let agents work freely inside boundaries enforced by infrastructure.]{.lede}
 
-![](media/guardrails-autonomy.webp){.illustration width="880" height="495" fig-alt="Two panels show infrastructure enforcing limits on agent autonomy. On the left, a Git branch diagram marks main as protected with a padlock; an agent's attempted deletion is blocked, required checks gate changes, and there is no administrator bypass. On the right, a VPN selector connects to either production or non-production, never both; the agent works in non-production while production remains isolated."}
+![](media/guardrails-autonomy.webp){.illustration .crop-empty-canvas width="880" height="495" fig-alt="Two panels show infrastructure enforcing limits on agent autonomy. On the left, a Git branch diagram marks main as protected with a padlock; an agent's attempted deletion is blocked, required checks gate changes, and there is no administrator bypass. On the right, a VPN selector connects to either production or non-production, never both; the agent works in non-production while production remains isolated."}
 
 ::: {.source}
 [GitHub protected branches](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches) ·
@@ -525,7 +529,7 @@ The team that owns the repository sets the risk boundary and the rules that enfo
 
 ## Constituents of Success
 
-![](media/constituents-of-success.webp){.illustration width="980" height="490" fig-align="center" fig-alt="An equation shows four safeguards adding up to low-touch feature delivery: quality gates for high code quality, a verification harness for verified behaviour, an independent LLM reviewer that exchanges findings and revised changes with an implementer agent, and self-evolving artefacts that an LLM updates to keep agent guidance current. A person focuses on higher-level work and remains available for oversight."}
+![](media/constituents-of-success.webp){.illustration .crop-empty-canvas width="980" height="490" fig-align="center" fig-alt="An equation shows four safeguards adding up to low-touch feature delivery: quality gates for high code quality, a verification harness for verified behaviour, an independent LLM reviewer that exchanges findings and revised changes with an implementer agent, and self-evolving artefacts that an LLM updates to keep agent guidance current. A person focuses on higher-level work and remains available for oversight."}
 
 ::: {.source}
 [OpenAI, harness engineering](https://openai.com/index/harness-engineering/) ·
