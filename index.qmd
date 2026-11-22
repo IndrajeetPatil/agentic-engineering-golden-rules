@@ -297,9 +297,9 @@ The work still happens; the command owns the sequence, checks prerequisites, and
 With a prepared codebase and clear shared workflows, deterministic checks make repeatable quality expectations concrete. Formatters, linter runs, type checkers, and tests give agents fast feedback and catch known classes of mistakes on every change. They cannot decide whether the work meets an unstated requirement or makes sense for users, so people still review the evidence and the work's impact.
 :::
 
-## Quality gates in practice
+## Quality gates: in practice
 
-[Repeated checks can be tiresome for people; agents can clear them tirelessly, making strict gates practical.]{.lede}
+[Agents can repeat checks tirelessly, making strict gates practical.]{.lede}
 
 ![](media/guardrails-workflow.webp){.illustration width="880" height="495" fig-alt="Two-round quality-gate workflow. In round one, a tireless coding agent submits a change and checks report eight lint findings, three failing tests, and coverage below target. Findings return to the agent to fix and retry. In round two, lint has zero findings, tests pass, and coverage meets its target. The change proceeds to a human reviewer for inspection before merge."}
 
@@ -313,7 +313,7 @@ The passing change then moves to a human reviewer, who inspects whether it meets
 
 [Define the outcome and criteria, then have the agent verify its own work.]{.lede}
 
-![](media/define-done.webp){.illustration width="880" height="495" fig-alt="Three-panel illustration: a human gives a robot a brief containing the goal, constraints, and what stays unchanged; evidence is chosen to fit the task, reproducing and fixing a bug, inspecting a UI interaction, or measuring performance; a human and robot compare tests with requirements because both can share the same mistake. Agree the criteria, verify against them, and review the evidence."}
+![](media/define-done.webp){.illustration width="880" height="495" fig-alt="Three-panel illustration: a human gives a robot a brief containing the goal, constraints, and what stays unchanged; evidence is chosen to fit the task, reproducing and fixing a bug, inspecting a UI interaction, or measuring performance; a human and robot compare requirements with test results because both can share the same mistake. Agree the criteria, verify against them, and review the evidence."}
 
 ::: {.source}
 Source: [Anthropic on agent evaluations](https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents).
@@ -349,7 +349,7 @@ As the context window grows, an agent may retrieve relevant information less rel
 This degradation is called context rot. It is a reason to manage the information in a session deliberately, rather than treating every earlier message as equally useful.
 :::
 
-## Maintain session hygiene in practice
+## Maintain session hygiene: in practice
 
 ![](media/session-hygiene.webp){.illustration width="880" height="495" fig-alt="Three practices keep context useful: a focused task can share coherent notes with a related follow-up; parallel tasks A and B work in separate Git worktrees; durable conventions, decisions, and lessons are saved in AGENTS.md for future sessions. Each panel concludes: less noise, better recall."}
 
@@ -385,7 +385,7 @@ Choose the tool interface that fits the task. A direct API or command-line tool 
 
 [LLMs can keep agentic artefacts current as models, tools, and codebases change.]{.lede}
 
-![](media/model-change-maintenance.webp){.illustration width="880" height="313" fig-alt="Three framed panels show LLM robots maintaining agentic artefacts as tools change. In LLM Changes, an LLM updates prompts and skills after a model change. Source Changes replaces read, parse, and write steps with helper.process(); an LLM removes obsolete AGENTS.md instructions. CLI Changes replaces tool plan, tool build, and tool deploy with one tool ship command; an LLM shortens a SKILL.md checklist to that command."}
+![](media/model-change-maintenance.webp){.illustration width="1000" height="364" fig-alt="Three panels show LLM robots maintaining agentic artefacts as tools change. In LLM Changes, an LLM updates prompts and skills after a model change. Source Changes replaces read, parse, and write steps with helper.process(); an LLM removes obsolete AGENTS.md instructions. CLI Changes replaces tool plan, tool build, and tool deploy with one tool ship command; an LLM shortens a SKILL.md checklist to that command."}
 
 ::: {.prompt-example}
 [Prompt excerpt]{.prompt-label}

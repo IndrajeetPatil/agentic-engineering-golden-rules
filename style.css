@@ -255,8 +255,6 @@
 
 .reveal img.illustration {
   background: var(--deck-ivory);
-  border: 1px solid var(--deck-gold);
-  padding: 6px;
   margin: 0.2em auto 0;
 }
 
