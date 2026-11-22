@@ -254,8 +254,22 @@
 }
 
 .reveal img.illustration {
+  display: block;
   background: var(--deck-ivory);
-  margin: 0.2em auto 0;
+  inline-size: min(84%, 880px);
+  max-inline-size: 100%;
+  block-size: auto;
+  object-fit: contain;
+  margin: 0.35em auto 0;
+}
+
+.reveal .slides section:has(img.illustration) h2 {
+  text-align: center;
+}
+
+.reveal .slides section:has(img.illustration) p:has(> img.illustration) {
+  margin-block: 0;
+  margin-inline: auto;
 }
 
 /* ---------- Agentic stack tabset ---------- */
@@ -291,12 +305,6 @@
 .reveal .stack-tabs .panel-tabset-tabby a:focus-visible {
   outline: 2px solid var(--deck-ink);
   outline-offset: 2px;
-}
-
-.reveal .stack-tabs .illustration {
-  width: 880px;
-  max-height: 440px;
-  object-fit: contain;
 }
 
 .reveal .stack-tabs p {

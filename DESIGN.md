@@ -106,6 +106,7 @@ The theme format is Quarto RevealJS (`theme: simple`). Tokens live as CSS custom
 - **Tables:** Contained within `.table-card` on stone backgrounds with uppercase gold-deep headers and gold dividers.
 - **Code Blocks:** Display code inside stone blocks with `.code-with-filename` tabs in ink with gold labels. Syntax highlighting uses the palette tokens.
 - **Illustrations:** Use `.illustration` without a surrounding frame or padding. Artwork follows the restrained editorial style of `media/devex-agentex.webp`, `media/one-command-setup.webp`, `media/session-hygiene.webp`, and `media/know-thy-tools.webp`; use `media/agent-autonomy.webp` as the palette reference for canvas and panel brightness. Use a bright ivory (`#fdfaf3`) canvas and very pale warm-stone (`#e9e5db`) panels, with subtle contrast between them. Keep every canvas and large panel background light so the artwork pops against the slide; use no dark or brown-dominant backgrounds. Keep the overall value light and reserve near-black for linework and text; avoid dense shadows. Avoid painterly or photoreal scenes, saturated colour, and decorative green checks.
+- **Illustrated slides:** Centre slide titles and illustrations. Use the shared illustration width and spacing defined by `.illustration` in `style.css`, preserving each artwork's proportions with `object-fit: contain`. Keep image paragraphs free of default margins so the title-to-art spacing stays predictable.
 
 ## Do's and Don'ts
 

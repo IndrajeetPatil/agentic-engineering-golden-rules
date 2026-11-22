@@ -212,7 +212,7 @@ The next ten rules offer practical ways to use coding agents productively while 
 ::: {.card}
 [07]{.rule-number}
 
-**Keep pace with a fast-moving field**
+**Make agentic artefacts self-correcting**
 :::
 
 ::: {.card}
@@ -381,9 +381,9 @@ Claude Code CLI offers voice input for dictating prompts, with the authenticatio
 Choose the tool interface that fits the task. A direct API or command-line tool is useful when it exposes the operation clearly; computer use can help with a workflow available only through a graphical interface. When results disappoint, examine the context, tools, and feedback available to the agent as well as the model itself.
 :::
 
-## [07]{.rule-tag} Keep pace with a fast-moving field {.rule-slide}
+## [07]{.rule-tag} Make agentic artefacts self-correcting {.rule-slide}
 
-[LLMs can keep agentic artefacts current as models, tools, and codebases change.]{.lede}
+[When checks fail or tools change, correct the artefacts that guide future work.]{.lede}
 
 ![](media/model-change-maintenance.webp){.illustration width="1000" height="364" fig-alt="Three panels show LLM robots maintaining agentic artefacts as tools change. In LLM Changes, an LLM updates prompts and skills after a model change. Source Changes replaces read, parse, and write steps with helper.process(); an LLM removes obsolete AGENTS.md instructions. CLI Changes replaces tool plan, tool build, and tool deploy with one tool ship command; an LLM shortens a SKILL.md checklist to that command."}
 
@@ -398,9 +398,9 @@ Example: [Learn from mistakes prompt](https://github.com/IndrajeetPatil/llm-depe
 :::
 
 ::: {.notes}
-Models, source code, and command-line tools keep changing, so agentic artefacts need to evolve with them. LLMs can inspect new capabilities, remove superseded steps from prompts and skills, and update repository guidance when checks or reviews reveal a gap. The short prompt excerpt captures a useful loop: fix a failure, then identify what in the guidance or process led to it.
+When checks fail or a review exposes a gap, fix the issue and correct the prompt, skill, or repository guidance that contributed to it. When models, source code, or command-line tools change, update the same artefacts to reflect the new environment. The short prompt excerpt captures this self-correction loop: fix a failure, then identify what in the guidance or process led to it.
 
-The examples show a model change prompting updates to prompts and skills, a source helper replacing read, parse, and write steps in `AGENTS.md`, and one CLI command replacing a three-command sequence in `SKILL.md`. The LLM maintains these artefacts as the environment changes, keeping its own instructions useful and concise.
+The examples show prompts and skills adapting to a model change, `AGENTS.md` replacing obsolete read, parse, and write steps with `helper.process()`, and `SKILL.md` replacing a three-command sequence with one CLI command. After each correction, verify that the updated guidance works and remains useful.
 :::
 
 ## [08]{.rule-tag} Automate repeated agent work {.rule-slide}
