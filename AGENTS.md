@@ -11,10 +11,17 @@ lists the other recipes.
 ## Key conventions
 
 - **Single-file deck.** All slides live in `index.qmd`; do not split it. Slides
-  are separated by `##` headings. Use Quarto's RevealJS dialect: fenced divs
-  (`:::`), columns (`.columns` / `.column`), raw HTML blocks (`{=html}`), and
-  the `{.smaller}` class for dense slides. Follow the layout patterns of
-  neighbouring slides.
+  are separated by `##` headings, and `#` headings open sections. Use Quarto's
+  RevealJS dialect: fenced divs (`:::`) and raw HTML blocks (`{=html}`).
+
+- **Slide anatomy.** The canvas is 1280 × 800 (16:10), and every content slide
+  follows one schema: a `data-kicker` running head on the heading, a one-line
+  title, one `.lede` line, a single stage (an illustration, the tabset, or a
+  card grid) that fills the remaining height, and a `.source` footer pinned in
+  a reserved band. Never resize titles per slide or add `{.smaller}`; shorten
+  the text instead. Section slides (`#`) carry an italic title and one `.lede`
+  line. See [DESIGN.md](DESIGN.md) for the full schema.
+
 - **Design specification.** Follow [DESIGN.md](DESIGN.md) when creating or
   modifying slides, components, styling, colours, and typography. Lay out
   content with the component classes in `style.css` (cards, card grids,
@@ -22,21 +29,29 @@ lists the other recipes.
   follow the naming patterns already in `style.css`. Colours live
   as custom properties under `:root` in `style.css`; do not hard-code new
   colours in `index.qmd`. Keep the theme `simple` and the format `revealjs`.
+
 - **Spelling and punctuation.** Use British spelling in prose (colour, licence,
   catalogue, artefact) and the Oxford comma in lists of three or more. Leave
   code, identifiers, file names, URLs, quotations, and proper names (`license`
   in YAML, `.well-known/api-catalog`) as they are.
-- **Code blocks.** Give display code a `filename` attribute
-  (```` ```{.makefile filename="Makefile"} ````) so it renders with the ink
-  filename tab. Syntax colours are mapped to the deck palette in `style.css`;
-  extend that mapping rather than relying on Quarto's default highlight colours.
+
+- **Code blocks.** The deck shows no display code, so `style.css` has no code
+  styles. Before adding code to a slide, add palette-mapped syntax colours to
+  `style.css` rather than relying on Quarto's default highlight colours.
+
 - **Rule slides.** Each golden rule opens on an illustration slide
-  (`## [NN]{.rule-tag} Title {.rule-slide}`) whose `.lede` states the rule in
-  one line, followed by an "in practice" slide where one exists. There are no
-  separate rule title slides; keep the rule name identical on the overview
-  slide and the rule slide.
+  (`## Title {data-kicker="Rule NN"}`) whose `.lede` states the rule in one
+  line, followed by an "in practice" slide where one exists. The practice
+  slide repeats the rule title, takes the kicker `Rule NN · In practice`, and
+  sets an explicit `-in-practice` slide ID. Non-rule slides use their section
+  name as the kicker. There are no separate rule title slides; keep rule
+  names identical to the README and `llms.txt` lists.
+
 - **Images.** Illustrations use `.illustration` without a surrounding frame or
-  padding. Images are WebP; convert new PNG or JPEG assets with `cwebp`. The
+  padding, and the stage scales each to fit. After adding or changing an
+  image, run `just trim-art media/<name>.webp`: it trims blank canvas in the
+  file (never crop in CSS) and syncs the `width` and `height` attributes in
+  `index.qmd`. Images are WebP; convert new PNG or JPEG assets with `cwebp`. The
   artwork follows the illustration style and reference images in
   [DESIGN.md](DESIGN.md); use `media/agent-autonomy.webp` as the palette
   reference for every illustration's bright ivory canvas and very pale panel
@@ -50,34 +65,46 @@ lists the other recipes.
   artwork when the visual is self-explanatory. The quality-gates example is a
   generated feedback-loop illustration; preserve its fail, fix, retry, pass,
   and human-review steps in the image and speaker notes.
+
 - **Sources.** Every factual claim or borrowed idea has a `.source` div at the
   bottom of its slide. Keep references succinct: hyperlink a short concept,
   author, or organisation label instead of spelling out a paper title unless
-  the full title is necessary.
+  the full title is necessary. Write each footer as `Organisation, [concept](url)`
+  items joined by ` · `, with no `Source:` prefix and no trailing full stop.
+
 - **Speaker notes.** Most slides carry `::: {.notes}` blocks; keep them in sync
   when changing slide content.
+
 - **Spoken notes.** The read-aloud control speaks the `.notes` content. Write
   complete, audience-facing narration; keep staging cues, private reminders,
   and delivery checklists outside these blocks.
+
 - **Accessibility.** Images must have `fig-alt` text; raw HTML widgets use
   `role="img"` and `aria-label`.
+
 - **Icons.** Icons are HTML spans backed by only the required SVG path data in
   `style.css`; no icon font or Quarto icon extension. When adding one, add only
   its mask data, preserve the source licence attribution, and keep an
   accessible label where the icon conveys meaning.
-- **Diagrams.** Use the built-in image-generation tool for diagram artwork.
+
+- **Diagrams.** Use the built-in image-generation tool for diagram artwork and
+  follow the checklist at the top of [media/README.md](media/README.md).
   Keep the labels and flow accurate, with equivalent detail in alternative
-  text and speaker notes.
+  text and speaker notes, and record each prompt in that file.
+
 - **No code execution.** The front matter sets `execute: eval: false`; code
   blocks are display-only. Do not enable `eval: true` unless the deck genuinely
   needs computed output.
+
 - **Python dependencies.** The deck declares `jupyter: python3`; the virtualenv
   only satisfies Quarto's engine. Depend only on `ipykernel`, `nbclient` and
   `pyyaml`. Do not add the `jupyter` metapackage: it pulls in JupyterLab and
   Notebook and only attracts irrelevant security alerts.
+
 - **Discoverability files.** Update `meta-tags.html` when the title,
   description, or social card changes, and `llms.txt` / `llms-full.txt` (and
   their `.well-known/` mirrors) when the content changes significantly.
+
 - **No new top-level files** without a clear reason; the structure is flat.
 
 ## Pull requests

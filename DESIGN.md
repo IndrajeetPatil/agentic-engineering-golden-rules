@@ -5,7 +5,14 @@ description: >-
   Rossini Caviar-inspired visual identity for the agentic engineering slides:
   ivory page, warm stone panels, near-black ink, gold reserved for hairlines and
   rims, high-contrast Bodoni Moda headings, small tracked Montserrat labels,
-  softly rounded panels, and square frames.
+  softly rounded panels, and one fixed slide anatomy on a 16:10 canvas.
+canvas:
+  width: 1280px
+  height: 800px
+  aspectRatio: "16:10"
+  margin: 0.04
+  sidePadding: 40px
+  footerBand: 56px
 colors:
   primary: "{colors.gold-deep}"
   ivory: "#fdfaf3"
@@ -17,33 +24,40 @@ colors:
 typography:
   display:
     fontFamily: Bodoni Moda, Didot, Bodoni 72, Georgia, serif
-    fontSize: 2.9em
+    fontSize: 3.2em
     fontWeight: 500
     letterSpacing: -0.01em
-    lineHeight: 1.1
+    lineHeight: 1
+  section:
+    fontFamily: Bodoni Moda, Didot, Bodoni 72, Georgia, serif
+    fontSize: 2.6em
+    fontStyle: italic
+    fontWeight: 500
   heading:
     fontFamily: Bodoni Moda, Didot, Bodoni 72, Georgia, serif
-    fontSize: 1.45em
+    fontSize: 1.2em
     fontWeight: 500
     letterSpacing: -0.01em
     lineHeight: 1.1
+  kicker:
+    fontFamily: Montserrat, Helvetica Neue, Arial, sans-serif
+    fontSize: 0.34em
+    fontWeight: 600
+    letterSpacing: 0.18em
+  lede:
+    fontFamily: Montserrat, Helvetica Neue, Arial, sans-serif
+    fontSize: 0.54em
+    fontWeight: 300
+    lineHeight: 1.45
+  source:
+    fontFamily: Montserrat, Helvetica Neue, Arial, sans-serif
+    fontSize: 0.36em
+    fontWeight: 400
   body:
     fontFamily: Montserrat, Helvetica Neue, Arial, sans-serif
     fontSize: 1rem
     fontWeight: 400
     lineHeight: 1.5
-  lede:
-    fontFamily: Montserrat, Helvetica Neue, Arial, sans-serif
-    fontSize: 0.62em
-    fontWeight: 300
-    lineHeight: 1.5
-  eyebrow:
-    fontFamily: Montserrat, Helvetica Neue, Arial, sans-serif
-    fontSize: 0.7em
-    fontWeight: 600
-    letterSpacing: 0.18em
-  code:
-    fontFamily: ui-monospace, SF Mono, Menlo, Consolas, monospace
 rounded:
   panel: 10px
   frame: 0px
@@ -59,11 +73,10 @@ components:
     backgroundColor: "{colors.ink}"
     textColor: "{colors.ivory}"
     rounded: "{rounded.panel}"
-  card-outline:
-    borderColor: "{colors.gold}"
+  prompt-example:
+    backgroundColor: "{colors.stone}"
     rounded: "{rounded.panel}"
   illustration:
-    borderColor: "{colors.gold}"
     rounded: "{rounded.frame}"
 ---
 
@@ -75,44 +88,71 @@ The visual design specification of the Golden Rules for Agentic Engineering pres
 
 The visual design is inspired by [Rossini Caviar](https://rossinicaviar.com/): an ivory page (`#fdfaf3`), warm stone panels (`#e9e5db`), near-black ink (`#141414`), and gold (`#dac284`) used only for hairlines and borders, never for text on light backgrounds (where `--deck-gold-deep` is used instead).
 
-Headings use Bodoni Moda at a fixed 28pt optical size; body text and tracked uppercase labels use Montserrat; code uses a system monospace stack. Boxed text panels (cards, table cards, and code blocks) have softly rounded corners (10px); hairline rules, tabs, and illustration frames remain strictly square.
+Headings use Bodoni Moda at a fixed 28pt optical size; body text and tracked uppercase labels use Montserrat. Boxed text panels (cards and the prompt example) have softly rounded corners (10px); hairline rules and tabs remain strictly square.
 
 The theme format is Quarto RevealJS (`theme: simple`). Tokens live as CSS custom properties under `:root` in `style.css` and are mirrored in the front matter above.
+
+## Canvas
+
+The deck renders on a 1280 × 800 (16:10) canvas with a 4% outer margin. The front matter sets `center: false` and `display: flex`, so every slide is a full-height flex column and each region lands in the same place on every slide. The 16:10 ratio leaves enough height for a full-width illustration beneath a three-line header.
+
+## Slide anatomy
+
+Every content (`##`) slide follows the same schema, top to bottom:
+
+| Region | Markup | Style |
+| --- | --- | --- |
+| Kicker | `data-kicker="…"` on the heading | Tracked uppercase Montserrat in deep gold, rendered by `section[data-kicker]::before` |
+| Title | `## Title` | Bodoni Moda at `1.2em`, one line, the same size on every slide |
+| Lede | `[…]{.lede}` | One line of light Montserrat in muted ink |
+| Stage | one illustration, the `.stack-tabs` tabset, or a `.card-grid` | Fills the remaining height; content is scaled to fit and centred |
+| Footer | `::: {.source}` | Pinned in a reserved 56px band; the band stays empty when a slide has no source |
+
+Kickers name the slide's place in the talk:
+
+- Golden rules: `Rule NN`, and `Rule NN · In practice` for the follow-up slide, which repeats the rule title.
+
+- Other slides: the section name (`Before we start`, `The reward`).
+
+Section (`#`) slides centre an italic lowercase title, a short gold hairline, and one `.lede` line. The closing slide adds a `.closing-links` block. The title slide is a centred `.hero` wordmark with the repository note in the standard `.source` footer.
 
 ## Colours
 
 - **Ivory (`--deck-ivory` / `#fdfaf3`):** Canvas background for slides and illustration backdrops.
-- **Stone (`--deck-stone` / `#e9e5db`):** Soft, warm neutral used for card panels, table cards, code block backgrounds, and active tabs.
-- **Ink (`--deck-ink` / `#141414`):** Near-black ink used for body text, headings, code text, filename tabs, and inverted `card-ink` backgrounds.
-- **Gold (`--deck-gold` / `#dac284`):** Ornamental metallic hue reserved for hairline dividers, card outlines, illustration borders, table row dividers, and text selection highlights. Never used for text on light backgrounds due to contrast requirements.
-- **Deep Gold (`--deck-gold-deep` / `#7d6020`):** Darker gold meeting WCAG AA contrast (>= 4.5:1) against ivory and stone. Used for links, link hovers, eyebrows, rule tags, rule numbers, list item bullet markers, and code syntax accents.
-- **Muted Ink (`--deck-muted` / `#5c574d`):** Medium grey-brown used for `.lede` introductory sentences, `.source` citation footers, and code comments.
+- **Stone (`--deck-stone` / `#e9e5db`):** Soft, warm neutral used for card panels, the prompt example, and active tabs.
+- **Ink (`--deck-ink` / `#141414`):** Near-black ink used for body text, headings, and inverted `card-ink` backgrounds.
+- **Gold (`--deck-gold` / `#dac284`):** Ornamental metallic hue reserved for hairline dividers, tab rules, the section-title hairline, eyebrows on ink cards, and text selection highlights. Never used for text on light backgrounds due to contrast requirements.
+- **Deep Gold (`--deck-gold-deep` / `#7d6020`):** Darker gold meeting WCAG AA contrast (>= 4.5:1) against ivory and stone. Used for kickers, eyebrows, the prompt label, link underlines, and link hovers.
+- **Muted Ink (`--deck-muted` / `#5c574d`):** Medium grey-brown used for `.lede` lines, `.source` footers, and the slide number.
 
 ## Typography
 
-- **Display & Headings:** `Bodoni Moda` (with fallbacks `Didot`, `Bodoni 72`, `Georgia`, `serif`). Font variation setting `opsz: 28`, weight `500`. Italic variants are used for section titles, card titles, slide ledes, and hero subtitles.
-- **Body & Labels:** `Montserrat` (with fallbacks `Helvetica Neue`, `Arial`, `sans-serif`). Weight `400` for normal body, `300` for ledes, `600` for strong/emphasis and eyebrows.
-- **Code:** Monospace stack (`ui-monospace`, `SF Mono`, `Menlo`, `Consolas`, `monospace`).
+- **Display and headings:** `Bodoni Moda` (with fallbacks `Didot`, `Bodoni 72`, `Georgia`, `serif`). Font variation setting `opsz: 28`, weight `500`. Italic variants are used for section titles, card titles, and the hero's second line.
+- **Body and labels:** `Montserrat` (with fallbacks `Helvetica Neue`, `Arial`, `sans-serif`). Weight `400` for body, `300` for ledes, and `600` for strong text, kickers, and eyebrows.
 
-## Layout & Components
+## Components
 
-- **Cards:** Structured blocks with `.card` and one of:
-  - `.card-stone`: Stone background (`--deck-stone`), ink text.
-  - `.card-ink`: Ink background (`--deck-ink`), ivory text, gold eyebrows/markers.
-  - `.card-outline`: Gold border (`--deck-gold`), transparent background.
-- **Grids:** `.card-grid` paired with `.card-grid-2`, `.card-grid-3`, or `.card-grid-4`.
-- **Eyebrows & Ledes:** `.eyebrow` for tracked, uppercase category labels in deep gold; `.lede` for introductory sentences under headings in muted ink.
-- **Bookmark slides:** `.bookmark-slide` marks a section transition with a centred italic heading and a small gold bookmark silhouette.
-- **Tables:** Contained within `.table-card` on stone backgrounds with uppercase gold-deep headers and gold dividers.
-- **Code Blocks:** Display code inside stone blocks with `.code-with-filename` tabs in ink with gold labels. Syntax highlighting uses the palette tokens.
-- **Illustrations:** Use `.illustration` without a surrounding frame or padding. Artwork follows the restrained editorial style of `media/devex-agentex.webp`, `media/one-command-setup.webp`, `media/session-hygiene.webp`, and `media/know-thy-tools.webp`; use `media/agent-autonomy.webp` as the palette reference for canvas and panel brightness. Use a bright ivory (`#fdfaf3`) canvas and very pale warm-stone (`#e9e5db`) panels, with subtle contrast between them. Keep every canvas and large panel background light so the artwork pops against the slide; use no dark or brown-dominant backgrounds. Keep the overall value light and reserve near-black for linework and text; avoid dense shadows. Avoid painterly or photoreal scenes, saturated colour, and decorative green checks.
-- **Illustrated slides:** Centre slide titles and illustrations, using the shared heading size, illustration width, and spacing defined in `style.css`. Preserve artwork proportions with `object-fit: contain` by default, and keep image paragraphs free of default margins so title-to-art spacing stays predictable. When an illustration is followed by a prompt example and source caption, group them in `.correction-stack` to keep their gaps equal and flow together. If an artwork canvas has excess blank margins, add `.crop-empty-canvas` and set a per-image crop ratio and focal position in `style.css`; use `object-fit: cover` only when the crop keeps every diagram label and element visible. Let source captions for cropped illustrations follow the image in normal flow.
+- **Cards:** `.card` with `.card-stone` (stone background, ink text) or `.card-ink` (ink background, ivory text, gold eyebrow), placed in a `.card-grid .card-grid-2` stage. Each card opens with an `.eyebrow` and a `.card-title`.
+- **Prompt example:** `.prompt-example` with a `.prompt-label` quotes a prompt beneath an illustration, between the stage and the footer.
+- **Tabset:** `.stack-tabs` on a Quarto `.panel-tabset` places square tabs above the stage; each tab pane carries its own illustration and `.source`.
+- **Icons:** `.deck-icon` mask spans, linked through `.deck-icon-link` in `.closing-links`.
+
+## Illustrations
+
+- Use `.illustration` without a surrounding frame or padding. The stage scales each image with `object-fit: contain`, so its width and height attributes only need to match the file's pixel size.
+- Generate artwork on a landscape canvas of 16:9 or wider, composed to fill it. Then run `just trim-art media/<name>.webp`, which trims blank canvas from the WebP file to a small even margin and syncs the image's `width` and `height` in `index.qmd`, so every illustration fills the stage at the same visual weight. Do not crop in CSS.
+- The step-by-step checklist for generating or changing artwork lives in [media/README.md](media/README.md).
+- Artwork follows the restrained editorial style of `media/devex-agentex.webp`, `media/one-command-setup.webp`, `media/session-hygiene.webp`, and `media/know-thy-tools.webp`; use `media/agent-autonomy.webp` as the palette reference for canvas and panel brightness. Use a bright ivory (`#fdfaf3`) canvas and very pale warm-stone (`#e9e5db`) panels, with subtle contrast between them.
+- Keep every canvas and large panel background light so the artwork pops against the slide; use no dark or brown-dominant backgrounds. Keep the overall value light and reserve near-black for linework and text; avoid dense shadows. Avoid painterly or photoreal scenes, saturated colour, and decorative green checks.
+- Wide artwork (around 2:1 or wider) suits the stage best; anything narrower than 16:9 leaves empty space at the sides.
 
 ## Do's and Don'ts
 
-- **Do** use predefined CSS classes from `style.css` rather than ad-hoc inline styles.
-- **Do** maintain WCAG AA contrast by using `--deck-gold-deep` for text on ivory/stone backgrounds.
-- **Do** preserve 10px rounded corners for cards and code containers, while keeping hairlines and tabs square.
+- **Do** use predefined CSS classes from `style.css` rather than ad hoc inline styles.
+- **Do** keep every title and lede to one line so the stage starts at the same height on every slide.
+- **Do** maintain WCAG AA contrast by using `--deck-gold-deep` for text on ivory and stone backgrounds.
+- **Don't** change title or lede sizes on individual slides, or bring back `{.smaller}`.
 - **Don't** hard-code hex colours or novel font families in `index.qmd`.
 - **Don't** use gold (`#dac284`) for text on light backgrounds.
+- **Don't** give cards or callouts coloured edges or accent bars; use the stone or ink fills.
 - **Don't** use emoji in UI chrome or diagram text; use typographic or SVG equivalents.
