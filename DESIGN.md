@@ -105,13 +105,13 @@ The theme format is Quarto RevealJS (`theme: simple`). Tokens live as CSS custom
 - **Bookmark slides:** `.bookmark-slide` marks a section transition with a centred italic heading and a small gold bookmark silhouette.
 - **Tables:** Contained within `.table-card` on stone backgrounds with uppercase gold-deep headers and gold dividers.
 - **Code Blocks:** Display code inside stone blocks with `.code-with-filename` tabs in ink with gold labels. Syntax highlighting uses the palette tokens.
-- **Illustrations:** Framed with `.illustration` using a gold border, 6px padding on ivory, and square corners. Artwork follows the restrained editorial style of `media/devex-agentex.webp`, `media/one-command-setup.webp`, `media/session-hygiene.webp`, and `media/know-thy-tools.webp`; use `media/agent-autonomy.webp` as the palette reference for canvas and panel brightness. Use a bright ivory (`#fdfaf3`) canvas and very pale warm-stone (`#e9e5db`) panels, with subtle contrast between them. Keep every canvas and large panel background light so the artwork pops against the slide; use no dark or brown-dominant backgrounds. Keep the overall value light and reserve near-black for linework and text; avoid dense shadows. Avoid painterly or photoreal scenes, saturated colour, and decorative green checks.
+- **Illustrations:** Use `.illustration` without a surrounding frame or padding. Artwork follows the restrained editorial style of `media/devex-agentex.webp`, `media/one-command-setup.webp`, `media/session-hygiene.webp`, and `media/know-thy-tools.webp`; use `media/agent-autonomy.webp` as the palette reference for canvas and panel brightness. Use a bright ivory (`#fdfaf3`) canvas and very pale warm-stone (`#e9e5db`) panels, with subtle contrast between them. Keep every canvas and large panel background light so the artwork pops against the slide; use no dark or brown-dominant backgrounds. Keep the overall value light and reserve near-black for linework and text; avoid dense shadows. Avoid painterly or photoreal scenes, saturated colour, and decorative green checks.
 
 ## Do's and Don'ts
 
 - **Do** use predefined CSS classes from `style.css` rather than ad-hoc inline styles.
 - **Do** maintain WCAG AA contrast by using `--deck-gold-deep` for text on ivory/stone backgrounds.
-- **Do** preserve 10px rounded corners for cards and code containers, but keep hairlines, tabs, and illustration frames square.
+- **Do** preserve 10px rounded corners for cards and code containers, while keeping hairlines and tabs square.
 - **Don't** hard-code hex colours or novel font families in `index.qmd`.
 - **Don't** use gold (`#dac284`) for text on light backgrounds.
 - **Don't** use emoji in UI chrome or diagram text; use typographic or SVG equivalents.
