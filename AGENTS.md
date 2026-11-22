@@ -35,8 +35,8 @@ lists the other recipes.
   one line, followed by an "in practice" slide where one exists. There are no
   separate rule title slides; keep the rule name identical on the overview
   slide and the rule slide.
-- **Images.** Illustrations use the `.illustration` class (the gold hairline
-  frame). Images are WebP; convert new PNG or JPEG assets with `cwebp`. The
+- **Images.** Illustrations use `.illustration` without a surrounding frame or
+  padding. Images are WebP; convert new PNG or JPEG assets with `cwebp`. The
   artwork follows the illustration style and reference images in
   [DESIGN.md](DESIGN.md); use `media/agent-autonomy.webp` as the palette
   reference for every illustration's bright ivory canvas and very pale panel
