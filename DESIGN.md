@@ -100,13 +100,13 @@ The deck renders on a 1280 × 800 (16:10) canvas with a 4% outer margin. The fro
 
 Every content (`##`) slide follows the same schema, top to bottom:
 
-| Region | Markup | Style |
-| --- | --- | --- |
-| Kicker | `data-kicker="…"` on the heading | Tracked uppercase Montserrat in deep gold, rendered by `section[data-kicker]::before` |
-| Title | `## Title` | Bodoni Moda at `1.2em`, one line, the same size on every slide |
-| Lede | `[…]{.lede}` | One line of light Montserrat in muted ink |
-| Stage | one illustration, the `.stack-tabs` tabset, or a `.card-grid` | Fills the remaining height; content is scaled to fit and centred |
-| Footer | `::: {.source}` | Pinned in a reserved 56px band; the band stays empty when a slide has no source |
+| Region | Markup                                                        | Style                                                                                 |
+| ------ | ------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| Kicker | `data-kicker="…"` on the heading                              | Tracked uppercase Montserrat in deep gold, rendered by `section[data-kicker]::before` |
+| Title  | `## Title`                                                    | Bodoni Moda at `1.2em`, one line, the same size on every slide                        |
+| Lede   | `[…]{.lede}`                                                  | One line of light Montserrat in muted ink                                             |
+| Stage  | one illustration, the `.stack-tabs` tabset, or a `.card-grid` | Fills the remaining height; content is scaled to fit and centred                      |
+| Footer | `::: {.source}`                                               | Pinned in a reserved 56px band; the band stays empty when a slide has no source       |
 
 Kickers name the slide's place in the talk:
 

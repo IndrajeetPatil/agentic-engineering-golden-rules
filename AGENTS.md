@@ -70,7 +70,7 @@ lists the other recipes.
   bottom of its slide. Keep references succinct: hyperlink a short concept,
   author, or organisation label instead of spelling out a paper title unless
   the full title is necessary. Write each footer as `Organisation, [concept](url)`
-  items joined by ` · `, with no `Source:` prefix and no trailing full stop.
+  items joined by `·`, with no `Source:` prefix and no trailing full stop.
 
 - **Speaker notes.** Most slides carry `::: {.notes}` blocks; keep them in sync
   when changing slide content.

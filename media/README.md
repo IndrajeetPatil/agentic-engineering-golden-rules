@@ -228,10 +228,10 @@ Place the exact caption "Task → model → tool → result → repeat" centred 
 No vendor logos necessary; use original editorial icons. All text verbatim and spelt correctly. Generous whitespace.
 ```
 
-| Variant | Vendor-specific labels |
-| --- | --- |
-| Anthropic | Claude Desktop; Harness · Claude Code CLI; LLM · Claude; Model provider · Anthropic; Model API |
-| OpenAI | ChatGPT desktop; Harness · Codex CLI; LLM · GPT; Model provider · OpenAI; Model API |
+| Variant        | Vendor-specific labels                                                                                                                           |
+| -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Anthropic      | Claude Desktop; Harness · Claude Code CLI; LLM · Claude; Model provider · Anthropic; Model API                                                   |
+| OpenAI         | ChatGPT desktop; Harness · Codex CLI; LLM · GPT; Model provider · OpenAI; Model API                                                              |
 | GitHub Copilot | GitHub Copilot App; Harness · GitHub Copilot CLI; LLM · Claude; Model developer · Anthropic, Access via GitHub Copilot; Model access via Copilot |
 
 The desktop-app panel names the application only. Do not add secondary
