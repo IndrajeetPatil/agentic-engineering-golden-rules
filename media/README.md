@@ -191,7 +191,8 @@ requests. The coding agent's verification harness is labelled “tests · types 
 screenshots”. The magnified “QUALITY GUARDRAILS” checklist is grouped into
 Correctness, Security, and Style; an ellipsis indicates the checks continue.
 The slide notes distinguish representative gates from the wider CI workflow
-and explain that checks provide evidence for human judgement.
+and explain that checks provide evidence for human judgement. The final panel
+labels the delivered result “Completed Change”.
 
 ```text
 Edit the supplied software-factory illustration. Preserve the seven-panel
@@ -214,6 +215,10 @@ naming, Backend format, Config format, Markdown format, Backend lint, Markdown
 lint, Spell check, Link check). Replace “Frontend QA” with “E2E/UI tests” and
 make no other text or artwork changes.
 ```
+
+Final built-in image edit: replace the final panel heading “Completed Feature”
+with “Completed Change”, preserving its two-line layout, type, size, colour,
+line spacing, and placement. Preserve every other pixel and all other text.
 
 ```text
 Change only the text inside the small request card in the far-left Developer
