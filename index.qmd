@@ -351,23 +351,15 @@ The examples show prompts and skills adapting to a model change, `AGENTS.md` rep
 
 [Capture recurring workflows once, then run them consistently.]{.lede}
 
-![](media/meta-automation.webp){.illustration width="1579" height="879" fig-alt="An infographic contrasts repeated work with automation: capture a useful process once, run it across an input list, collect results, then review them. Prompt, skill, slash command, and workflow are shown as distinct ways to package recurring agent work."}
-
-::: {.notes}
-When a useful agent workflow repeats, package the instructions or choreography so it can be run consistently. Prompts capture task instructions, skills package reusable know-how, slash commands offer shortcuts, and workflows coordinate steps and branches. These mechanisms can also be composed.
-:::
-
-## Automate repeated agent work {#automate-repeated-agent-work-in-practice data-kicker="Rule 08 · In practice"}
-
-[Choose the smallest reusable mechanism that fits the work.]{.lede}
-
-![](media/meta-automation-examples.webp){.illustration width="1566" height="866" fig-alt="Four examples of packaged automation: a dependency update prompt, a PR screenshot skill, an illustrative review shortcut, and a vulnerability triage workflow. The workflow investigates a finding, fixes and verifies warranted changes, or records why no fix is needed."}
+![](media/meta-automation-combined.webp){.illustration width="1755" height="866" fig-alt="Four aligned columns pair reusable mechanisms with examples: a prompt for dependency updates using repeated instructions, a skill for capturing PR screenshots, a slash command for addressing review comments, and a vulnerability management workflow that fixes and verifies warranted findings or records why no fix is needed."}
 
 ::: {.source}
 [Public prompt library](https://github.com/IndrajeetPatil/chatbot-template/tree/main/.github/prompts) · [PR screenshot skill](https://github.com/IndrajeetPatil/chatbot-template/blob/main/.agents/skills/frontend-pr-screenshot/SKILL.md)
 :::
 
 ::: {.notes}
+When useful agent work repeats, package it so it can be run consistently. A prompt captures repeated instructions, a skill packages domain know-how, a slash command offers a stable shortcut, and a workflow coordinates steps and branches. The examples pair each mechanism with a matching task: dependency updates, PR screenshots, review comments, and vulnerability management.
+
 The dependency-update prompt, review shortcut, and vulnerability-triage workflow are adapted from the public prompt library. The screenshot example follows its PR screenshot skill. The review shortcut is illustrative; this deck does not install it. The vulnerability example shows a generic triage decision: investigate a finding, fix and verify it when warranted, or record why no fix is needed.
 
 Automate coordination such as gathering context, running checks, and formatting reports. People define the policy for any automated merge: only changes that meet explicit, low-risk criteria qualify. Human review remains the route for ambiguous, risky, or exceptional changes, and people remain accountable for the policy and its results.
