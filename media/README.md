@@ -296,10 +296,27 @@ separate Git worktrees, and save durable conventions, decisions, and lessons
 in `AGENTS.md` for future sessions. Each panel connects the practice to less
 noise and better recall.
 
-## meta-automation.webp
+## meta-automation-combined.webp
+
+The illustration pairs four reusable mechanisms with aligned examples: a
+repeated-instructions prompt for dependency updates, a PR screenshot skill, a
+review-comment slash command, and a vulnerability management workflow.
 
 ```text
-Redesign the information graphic into a readable landscape layout. Top elegant process with exactly "Repeated work → Capture once → Run many times → Review results". Middle four square columns, one per mechanism: "Prompt" / "Changing instructions"; "Skill" / "Domain know-how"; "Slash command" / "Stable shortcut"; "Workflow" / "Steps & branches". Include simple line-drawn page, book, terminal, and branching-process symbols. Bottom process exactly "Input list → For each item → Collect results → Human review". Preserve capture-once/run-many, the four alternatives, and looping over a list; remove dense original table and paragraphs.
+Use case: infographic-diagram. Create one wide landscape presentation illustration, close to 2:1, in the deck's refined editorial pen-and-ink style. Use a bright ivory #fdfaf3 canvas, very pale warm-stone #e9e5db fills, near-black #141414 text and linework, restrained gold #dac284 borders and arrows, and occasional readable dark-brown #7d6020 emphasis. Use square corners, sparse shading, serif headings, and clear sans-serif labels. Match agent-autonomy.webp for palette brightness.
+
+Create exactly four equal, aligned vertical columns, left to right: Prompt, Skill, Slash command, Workflow. Each column has a mechanism area above and its practical example below, divided by a thin gold horizontal rule. Do not include the former top or bottom process rows, an overall title, or a footer.
+
+Upper mechanism areas: “Prompt” / “Repeated instructions”; “Skill” / “Domain know-how”; “Slash command” / “Stable shortcut”; “Workflow” / “Steps & branches”. Use simple line drawings of a document, book, terminal, and branching process.
+
+Lower examples, aligned under their matching mechanism:
+
+1. Prompt — title “Dependency update”. Show an instruction document labelled “update-deps.md” with the readable lines “Refresh dependencies”, “Fix compatibility breaks”, and “Run QA; prepare a draft PR”.
+2. Skill — title “PR screenshot”. Show a preview browser, a captured image, and its attachment to a pull request. Label the steps “Preview app”, “Capture”, and “Attach to PR”; include “frontend-pr-screenshot”.
+3. Slash command — title “Address review comments”. Show the prominent terminal command “/address-review” and the sequence “Read threads → Fix → Reply”.
+4. Workflow — title “Vulnerability management”. Show “Scan” → “Triage” → “Worth fixing?”; the yes branch continues “Fix” → “Verify” → “Draft PR”, and the no branch goes to “Record reason”. Keep the branches distinct.
+
+Keep all wording exact, legible at slide size, and contained within its column. No extra text, invented claims, tiny copy, overlap, rounded cards, gradients, bright colours, logos, or watermark.
 ```
 
 ## model-change-maintenance.webp
@@ -447,54 +464,6 @@ Git branch diagram that labels and locks `main` while preserving the blocked
 deletion, required checks, and closed administrator-bypass examples. Keep the
 VPN and isolated production and non-production example unchanged.
 
-## meta-automation-examples.webp
-
-The examples use generic, illustrative workflows for recurring agent work.
-
-```text
-Use case: infographic-diagram.
-Asset type: landscape 16:9 presentation illustration, four concrete examples of meta-automation.
-Input image 1 is a STYLE REFERENCE ONLY: preserve its refined editorial visual language, not its content or layout. Create a new image. Ivory #fdfaf3 canvas, warm stone #e9e5db square panels, near-black #141414 text and thin line illustrations, restrained gold #dac284 hairlines, dark brown #7d6020 for text emphasis. Bodoni/Didot-style serif headings, legible Montserrat-like sans-serif labels, monospaced filenames and slash command. No bright colours (including green ticks), gradients, glossy 3D, rounded cards, watermark, or overall title.
-
-Composition: spacious 2-by-2 grid of four square-cornered panels with gold hairline dividers. Each panel has a large type heading, a medium example title, and an accurate, compact visual showing what that example does. Text must read clearly when the full image is displayed at 880 pixels wide on a slide. Prioritise the examples over decoration; no long code snippets or tiny body text.
-
-TOP LEFT:
-Heading exactly "Prompt"
-Example title exactly "Dependency update"
-Show a versioned instruction document labelled "update-deps.md", containing three readable lines exactly:
-"Refresh dependencies"
-"Fix compatibility breaks"
-"Run QA; prepare a draft PR"
-Small caption exactly "Reusable instructions"
-A small line-drawn document or engaged coding agent is optional.
-
-TOP RIGHT:
-Heading exactly "Skill"
-Example title exactly "PR screenshot"
-Show a simple browser window with an abstract chat interface (no small chat text) and a captured image being attached to a pull request sheet. A compact three-step sequence has labels exactly "Preview app", "Capture", "Attach to PR", connected left to right.
-Filename-like label exactly "frontend-pr-screenshot"
-Small caption exactly "Packaged know-how"
-
-BOTTOM LEFT:
-Heading exactly "Slash command"
-Example title exactly "Address review comments"
-A crisp terminal/chat input prominently shows "/address-review" in large readable monospace.
-Below, show three simple review comment bubbles becoming checked resolved comment bubbles, with a concise arrow sequence exactly "Read threads → Fix → Reply".
-Small caption exactly "One shortcut to a saved prompt"
-This is an illustrative shortcut, not a claim about an installed command.
-
-BOTTOM RIGHT:
-Heading exactly "Workflow"
-Example title exactly "Vulnerability management"
-Draw a clear compact branching flowchart:
-main first row "Scan" → "Triage" → decision diamond "Worth fixing?"
-The diamond's "yes" branch leads to "Fix" → "Verify" → "Draft PR".
-The diamond's "no" branch leads to "Record reason".
-Separate the two branches clearly; do not allow no to flow into Fix or Draft PR. Use neat ivory/stone nodes with black text and black arrows, no crossings. The decision label can wrap to two lines. Put Draft PR after Verify only. Avoid implying findings are trusted automatically or changes merge automatically.
-Small caption exactly "Steps, decisions, and evidence"
-
-Leave the space below the panels clear. Do not add a footer sentence or icon. No additional headings, slogans, invented numbers, CVE IDs, or text.
-```
 
 ## know-thy-tools.webp
 
