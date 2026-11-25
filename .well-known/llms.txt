@@ -24,7 +24,7 @@ This presentation distils ten golden rules for agentic engineering: working with
 - Maintain session hygiene and manage context
 - Tool affordances that coding agents offer
 - Make agentic artefacts self-correcting: when checks or reviews reveal a guidance gap, fix the issue, update the contributing prompt, skill, or repository guidance, and verify the correction. Adapt these artefacts as models, tools, and codebases change
-- Automate repeated agent work with prompts, skills, shortcuts, and workflows
+- Automate repeated agent work with prompts, skills, and slash commands
 - Identify and remove SDLC bottlenecks with targeted quality gates, LLM review loops, and end-to-end tests
 - Give agents more autonomy within enforceable guardrails: protect main with required checks and no bypass, and isolate non-production access from production
 - Software factory example: repository owners set risk boundaries for agent-led merges, while higher-risk changes receive human review and agent environments use scoped controls

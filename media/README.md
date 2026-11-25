@@ -298,25 +298,23 @@ noise and better recall.
 
 ## meta-automation-combined.webp
 
-The illustration pairs four reusable mechanisms with aligned examples: a
-repeated-instructions prompt for dependency updates, a PR screenshot skill, a
-review-comment slash command, and a vulnerability management workflow.
+The illustration pairs three reusable mechanisms with aligned examples: a
+repeated-instructions prompt for dependency updates, a PR screenshot skill,
+and a review-comment slash command.
 
 ```text
 Use case: infographic-diagram. Create one wide landscape presentation illustration, close to 2:1, in the deck's refined editorial pen-and-ink style. Use a bright ivory #fdfaf3 canvas, very pale warm-stone #e9e5db fills, near-black #141414 text and linework, restrained gold #dac284 borders and arrows, and occasional readable dark-brown #7d6020 emphasis. Use square corners, sparse shading, serif headings, and clear sans-serif labels. Match agent-autonomy.webp for palette brightness.
 
-Create exactly four equal, aligned vertical columns, left to right: Prompt, Skill, Slash command, Workflow. Each column has a mechanism area above and its practical example below, divided by a thin gold horizontal rule. Do not include the former top or bottom process rows, an overall title, or a footer.
+Create exactly three equal, aligned vertical columns, left to right: Prompt, Skill, Slash command. Each column has a mechanism area above and its practical example below, divided by a thin gold horizontal rule. Do not add further mechanisms, an overall title, or a footer.
 
-Upper mechanism areas: “Prompt” / “Repeated instructions”; “Skill” / “Domain know-how”; “Slash command” / “Stable shortcut”; “Workflow” / “Steps & branches”. Use simple line drawings of a document, book, terminal, and branching process.
+Upper mechanism areas: “Prompt” / “Repeated instructions”; “Skill” / “Domain know-how”; “Slash command” / “Stable shortcut”. Use simple line drawings of a document, book, and terminal.
 
 Lower examples, aligned under their matching mechanism:
 
 1. Prompt — title “Dependency update”. Show an instruction document labelled “update-deps.md” with the readable lines “Refresh dependencies”, “Fix compatibility breaks”, and “Run QA; prepare a draft PR”.
 2. Skill — title “PR screenshot”. Show a preview browser, a captured image, and its attachment to a pull request. Label the steps “Preview app”, “Capture”, and “Attach to PR”; include “frontend-pr-screenshot”.
 3. Slash command — title “Address review comments”. Show the prominent terminal command “/address-review” and the sequence “Read threads → Fix → Reply”.
-4. Workflow — title “Vulnerability management”. Show “Scan” → “Triage” → “Worth fixing?”; the yes branch continues “Fix” → “Verify” → “Draft PR”, and the no branch goes to “Record reason”. Keep the branches distinct.
-
-Keep all wording exact, legible at slide size, and contained within its column. No extra text, invented claims, tiny copy, overlap, rounded cards, gradients, bright colours, logos, or watermark.
+Keep all wording exact, legible at slide size, and contained within its column. No extra mechanisms, examples, text, invented claims, tiny copy, overlap, rounded cards, gradients, bright colours, logos, or watermark.
 ```
 
 ## model-change-maintenance.webp
