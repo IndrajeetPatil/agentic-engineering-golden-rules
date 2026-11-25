@@ -196,6 +196,11 @@ format, Backend lint, Markdown lint, Spell check, Workflow lint, Link check,
 Type check, API schema, Dependency audit, Backend tests, Mutation tests, Type
 coverage, Frontend QA, and Security scan.
 
+Final built-in image edit: in the leftmost panel headed “Developer”, add a
+clearly visible human seated behind and using the existing laptop, with their
+face and upper body visible. Change only this panel; preserve the seven-panel
+workflow, labels, arrows, checklist, style, and all other artwork.
+
 ## context-rot.webp
 
 The first session-hygiene slide illustrates how stale assumptions, repeated
