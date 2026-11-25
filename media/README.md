@@ -182,24 +182,56 @@ implying the reviewer is the coding agent.
 
 ## software-factory.webp
 
-The closing example shows a feature request flowing through coding, a pull
-request with UI screenshots and a red-and-green diff, automated quality gates,
-an independent review loop, and agent-led merge. Findings can lead to an
-adjustment of skills and `AGENTS.md` before the next coding attempt. The
-magnified checklist names 17 checks included in `make qa`, set in smaller type
-to retain a light, spacious composition. An ellipsis indicates that the
-repository's checks continue. The slide notes distinguish these gates from the
-wider CI workflow and explain that checks provide evidence for human judgement.
+The closing example shows a change request flowing through coding, a pull
+request with UI screenshots and a code diff, automated quality gates, an
+independent review, and agent-led merge. Dashed reviewer and QA feedback sends
+the coding agent back to fix and retry the current pull request. A separate
+reviewer-findings loop updates skills and `AGENTS.md` for future pull
+requests. The coding agent's verification harness is labelled “tests · types ·
+screenshots”. The magnified “QUALITY GUARDRAILS” checklist is grouped into
+Correctness, Security, and Style; an ellipsis indicates the checks continue.
+The slide notes distinguish representative gates from the wider CI workflow
+and explain that checks provide evidence for human judgement.
 
-The inset labels are File naming, Backend format, Config format, Markdown
-format, Backend lint, Markdown lint, Spell check, Workflow lint, Link check,
-Type check, API schema, Dependency audit, Backend tests, Mutation tests, Type
-coverage, Frontend QA, and Security scan.
+```text
+Edit the supplied software-factory illustration. Preserve the seven-panel
+hand-drawn workflow, characters, panel order, typography, and warm ochre,
+off-white, and black palette. Label the developer's card “Change request”.
+Rename the existing feedback label to “Reviewer findings” without changing its
+arrow or “Adjust skills & AGENTS.md” box. Add a distinct dashed teal “Fix and
+retry” loop from automated QA and the independent reviewer back to the coding
+agent, routed below the existing loop without crossings. Add a rounded
+“Verification harness” tag with the smaller line
+“tests · types · screenshots” below the coding robot and keep “Repository”.
+Add “(different model)” beneath “Independent Reviewer Agent” in the style of
+“(by Coding Agent)”. Keep the Merge panel unchanged.
 
-Final built-in image edit: in the leftmost panel headed “Developer”, add a
-clearly visible human seated behind and using the existing laptop, with their
-face and upper body visible. Change only this panel; preserve the seven-panel
-workflow, labels, arrows, checklist, style, and all other artwork.
+Rename “QUALITY HARNESS” to “QUALITY GUARDRAILS”; keep “example gates” and
+“... and more”. Regroup the checklist with teal check marks in three columns: Correctness
+(Type check, Type coverage, API schema, Backend tests, Mutation tests, E2E/UI
+tests); Security (Security scan, Dependency audit, Workflow lint); Style (File
+naming, Backend format, Config format, Markdown format, Backend lint, Markdown
+lint, Spell check, Link check). Replace “Frontend QA” with “E2E/UI tests” and
+make no other text or artwork changes.
+```
+
+```text
+Change only the text inside the small request card in the far-left Developer
+panel. Replace “Feature request” with “Change request” on two lines, centred
+in the same card, matching the existing serif typeface, size, black ink, line
+spacing, and placement. Preserve the card outline and all surrounding artwork
+exactly. Do not change any other pixels or text.
+```
+
+```text
+Move the two gold circular approval icons to the horizontal workflow arrows
+immediately before and after the “Merge (by Coding Agent)” panel, centred on
+each connector. Preserve the gold-circle and white-check appearance. Give each
+of the seven top workflow panels the same clearly visible fine warm gold
+outline as the Automated QA gates panel. Preserve the panel geometry, spacing,
+fills, wording, characters, arrows, checklist, and all other illustration
+details.
+```
 
 ## context-rot.webp
 
